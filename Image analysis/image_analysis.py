@@ -58,6 +58,8 @@ final = pd.DataFrame(index=index, columns=columns);
 BoundingArray = np.array([4390,1518,10910,1446]);
 thresh_val = 140;
 
+## The image path should be define accordingly ! (it is not correct here)
+
 #   1. Flip if needed
 for i in range(990):
     print('Analysis: image # ' + str(i+1));
