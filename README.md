@@ -19,14 +19,13 @@ In this script, the JMP design for the experience is uploaded and replicated to 
 Inputs:
 
 - [Table] JMP design
-- [Table] Germination info (weight, number of germ. seeds)
 - [Table] Border runs and NA runs on the platform
 
 Outputs:
 
-- [Table] planned_design_table
-- [Table] design_table
-- [Figure] design_layout
-- [Figure] design_repartition
+- [Table] Design table (tank,strip,position,QRcode,planned genotype,real genotype)
+- [Table] Design repartition
+- [Figure] Still and mowing tanks design layouts
+- [Figure] Genotype distribution among strips, positions and tanks
 
 ### WEIGHT

@@ -5,8 +5,6 @@
 #' Updates the design table with the germination and border runs.
 #' Inputs:
 #' - JMP design table (.xlsx)
-#' - GENO_INFO (xslx)
-#' - germination table (xlsx)
 #' - Border runs and NA runs (xlsx)
 
 # USER DESIGNED FUNCTIONS -----------------------------------------------------
@@ -21,6 +19,11 @@ repeat_design <- function(mat){
   return(mat)
 }
 
+QR_CODE <- function(mat){
+  #' Creates the QR code for a table with TANK,STRIP and POSITION
+  mat <- mat%>%mutate(QR = paste(TANK,STRIP,POSITION,sep = "_"))
+  return(mat)
+}
 
 # JMP DESIGN -----------------------------------------------------------------
 
@@ -41,9 +44,39 @@ JMP_design <- read_excel("Inputs/30G_33S_10ST.xlsx")%>%
 design_table <- repeat_design(JMP_design)
 
 # Add the QR code
-design_table <- design_table%>%
-  mutate(QR = paste(TANK,STRIP,POSITION,sep = "_"))
+design_table <- design_table%>%QR_CODE()
 
+# GERMINATION UPDATE ---------------------------------------------------------
+
+# Load the border/NA runs files, format and apply QR_CODE()
+na_runs <- read_excel("Inputs/BORDER_NA.xlsx", sheet = 1)%>%
+  select(-CODE)%>%
+  QR_CODE()
+border_runs <- read_excel("Inputs/BORDER_NA.xlsx", sheet = 2)%>%
+  select(-CODE)%>%
+  mutate(TANK = ifelse(TANK == "Moving", "A", "B"))%>%
+  QR_CODE()
+
+# Add another column for 'real runs' in the design table
+design_table%>%
+  anti_join(na_runs, by = "QR")%>%
+  anti_join(border_runs, by = "QR")%>%
+  rbind(na_runs,border_runs)%>%
+  mutate(REAL_GENOTYPE = as.numeric(GENOTYPE))%>%
+  select(REAL_GENOTYPE, QR)%>%
+  full_join(design_table, by = 'QR') -> design_table
+
+# REPARTITION TABLE ----------------------------------------------------------
+design_table%>%
+  dplyr::filter(REAL_GENOTYPE != 31)%>%
+  ggplot(aes(x = REAL_GENOTYPE))+
+  geom_histogram(fill = "gray", color = "black", binwidth = 1, boundary = -0.5)+
+  scale_x_continuous(breaks = c(1:30))+
+  labs(y = "COUNT")+
+  coord_flip()+
+  facet_grid(TANK~POSITION)+
+  theme_bw()
+  
 # LAYOUT PLOT  -----------------------------------------------------------------------
 
 # MOVING
@@ -86,30 +119,25 @@ ggsave("Figures/design_layout_still.pdf",
 
 # REPARTITION PLOT -----------------------------------------------------------
 
-# By position
+# Histogram for genotypes per TANK and POSITION
+# Planned repartition and real repartition
 tank_labels <- c(A = "MOVING", B = "STILL")
+
 repartition_plot <- design_table%>%
-  ggplot(aes(x = GENOTYPE))+
-  geom_histogram(fill = "gray", color = "black", binwidth = 1, boundary = -0.5)+
-  scale_x_continuous(breaks = c(1:30))+
-  labs(y = "COUNT")+
+  gather(GENO_ID, GENO_VALUE, - TANK, -STRIP, -POSITION, -QR)%>%
+  ggplot(aes(GENO_VALUE, fill = GENO_ID))+
+  geom_histogram(color = "black", binwidth = 1, boundary = -0.5)+
+  scale_x_continuous(breaks = c(1:31))+
+  labs(y = "COUNT",
+       x = "GENOTYPE")+
   coord_flip()+
   facet_grid(TANK~POSITION, labeller = labeller(TANK = tank_labels))+
   theme_bw()+
   theme(panel.grid.minor = element_blank(),
         text = element_text(size = 15),
-        axis.text.x = element_text(size = 10))
+        axis.text.x = element_text(size = 10),
+        legend.position = "none")
 
 ggsave("Figures/repartition_plot.pdf",
        plot = repartition_plot, device = "pdf",
        width = 11, height = 8.5)
-
-# GERMINATION UPDATE ---------------------------------------------------------
-
-# Load the border/NA runs file
-na_runs <- read_excel("Inputs/BORDER_NA.xlsx", sheet = 1)
-border_runs <- read_excel("Inputs/BORDER_NA.xlsx", sheet = 2)%>%
-  select(-CODE)%>%
-  mutate(TANK = ifelse(TANK == "Moving", "A", "B"))
-
-# REPARTITION TABLE ----------------------------------------------------------
