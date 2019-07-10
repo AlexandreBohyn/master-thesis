@@ -1,6 +1,6 @@
 # MASTER THESIS CODE
 
-Code for the data processing and data analysis of my thesis: Comparison of statistical methods for analyzing data coming from a high throughput phenotyping platform: Aeroponics at the UCL.
+Code for the data processing and data analysis of my thesis: Comparison of statistical methods for analyzing data coming from a high throughput phenotyping platform: Comparison of statistical methods and designs for a high throughput phenotyping experiment.
 
 The code is presented as a map of the different scripts, then a detailed explanation of the folders, scripts, datasets and what they contain.
 
