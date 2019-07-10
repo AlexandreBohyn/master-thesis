@@ -1,0 +1,115 @@
+\RequirePackage{fix-cm}
+\documentclass[12pt,a4paper,twoside]{report}
+\usepackage[utf8]{inputenc}
+\usepackage[T3,T1]{fontenc}
+%\usepackage[english]{babel}
+\usepackage{csquotes} %to avoid probelms with babel in quotes
+
+% Create the inverted breve in math mode
+\DeclareSymbolFont{tipa}{T3}{cmr}{m}{n}
+\DeclareMathAccent{\invbreve}{\mathalpha}{tipa}{16}
+
+% Fonts
+\usepackage{textcomp} % nice greek alphabet
+\usepackage{pifont}   % Dingbats
+\usepackage{booktabs}
+\renewcommand\familydefault{\sfdefault} %Define the font
+
+% Math and equations
+\usepackage{amssymb,amsthm}
+\usepackage{amsmath}
+\usepackage{bm} % bold math
+\usepackage{amsfonts} %for bold font in math environement
+\usepackage{wasysym} %to have the diameter symbol
+\numberwithin{equation}{subsection} %allow equation numbering to be divided by ubsection numbering
+\renewcommand{\theequation}{\thesubsection\arabic{equation}} %avoid double dot in the numbering of equation using subsection numbering
+
+% Figures placement
+\usepackage{float}
+\usepackage[section]{placeins}
+
+% Appendix 
+\usepackage[toc,page]{appendix}
+
+%Packages for the cover
+\usepackage[table]{xcolor} %the table option allows us to alternate coloring in table rows
+\usepackage{graphicx,textpos}
+\usepackage{helvet}
+
+%Extra packages
+\usepackage{afterpage} %To get a blank page
+\usepackage{lipsum} %To test display
+\usepackage[font=small,labelfont={bf}]{caption} %To get caption on subfigures
+\usepackage{subcaption} %To get subfigures
+\usepackage[breaklinks,hidelinks]{hyperref} %For url in bibliography
+\usepackage{todonotes} %To add to-do notes in the text
+\usepackage{rotating} %To have landscape figures
+\usepackage{enumitem} %To have descriptive lists
+\usepackage{chemformula} %To write chemical formulas more easily
+\usepackage{pdfpages} % to include pdf as whole pages in the appendix
+
+
+%New command to get a clear page (for the cover page)
+\newcommand\blankpage{%
+    \null
+    \thispagestyle{empty}%
+    \addtocounter{page}{-1}%
+    \newpage} 
+
+\graphicspath{ {figures/} } %Where the figures are stored
+
+%Bibliography
+\usepackage[backend=biber,
+style=nature,
+citestyle=authoryear-comp,
+doi=false,
+isbn=false,
+url=false,
+uniquename=init,
+giveninits]{biblatex}
+\addbibresource{references.bib}
+
+%page settings
+\topmargin -10mm
+\textwidth 160truemm
+\textheight 240truemm
+\oddsidemargin 0mm
+\evensidemargin 0mm
+
+%Colors for the title page
+\definecolor{green}{RGB}{172,196,0}
+\definecolor{bluetitle}{RGB}{29,141,176}
+\definecolor{blueaff}{RGB}{0,0,128}
+\definecolor{blueline}{RGB}{82,189,236}
+\setlength{\TPHorizModule}{1mm}
+\setlength{\TPVertModule}{1mm}
+
+%Header and footer settings
+\usepackage{fancyhdr} %Header package
+\pagestyle{fancy}
+\fancyhead{}
+\fancyhead[LE]{\leftmark}
+\fancyhead[RO]{\rightmark}
+\fancyfoot{}
+\fancyfoot[LE,RO]{\thepage}
+\renewcommand{\headrulewidth}{0.3pt} %Set header rule width 
+
+%Command and package for tables
+\usepackage{multirow}
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta, quotes}
+\usepackage{array}
+\usepackage{threeparttable} % footnotes in tables
+\usepackage{cellspace}
+    \setlength\cellspacetoplimit{4pt}
+    \setlength\cellspacebottomlimit{4pt}
+\newcolumntype{C}[1]{>{\centering\arraybackslash}p{#1}} %new type of column
+
+% Command and package to make a "formal" environment 
+%to have note inside the text.
+\usepackage{framed} % for defining framed environment
+\newenvironment{formal}{
+    \def\FrameCommand{{\color{red}\vrule width 2pt}\hspace{2pt}}
+    \MakeFramed{\advance\hsize-\width}
+    \vspace{2pt}\noindent\hspace{-7pt}\vspace{3pt}
+    }{\vspace{3pt}\endMakeFramed}

@@ -1,0 +1,85 @@
+\input{extra/preamble} %Contains all the packages and specifications
+
+%Glossary and abreviations
+\input{extra/glossary_and_abreviations}
+
+
+\begin{document}
+% Front Cover
+\input{extra/front_cover}
+%
+%\pagenumbering{roman} %roman numerals
+%
+%\chapter*{Preface}
+%\addcontentsline{toc}{chapter}{Preface}
+%\input{chapters/1preface}
+%\newpage
+%
+%\chapter*{Summary}
+%\addcontentsline{toc}{chapter}{Summary}
+%\input{chapters/2summary}
+%
+%%List of acronyms
+%\printglossary[type=\acronymtype] 
+%
+%%Glossary
+%\printglossary
+%
+%%Table of contents
+%\tableofcontents
+%\addcontentsline{toc}{chapter}{Contents}
+%
+%%List of figures
+%\listoffigures 
+%\addcontentsline{toc}{chapter}{List of Figures}
+%
+%%List of tables
+%\listoftables 
+%\addcontentsline{toc}{chapter}{List of Tables}
+%
+%%Introduction
+%\chapter{Introduction}
+%\pagenumbering{arabic} %normal numerals
+%
+%\input{chapters/3introduction}
+%
+%
+%%%Objectives
+%%\chapter{Objectives}
+%%\input{chapters/4objectives}
+
+%State of the art
+\chapter{Literature review}
+\input{chapters/5state_of_the_art}
+
+%Material and methods
+\chapter{Material and methods}
+\input{chapters/6material_and_methods}
+
+%Results
+\chapter{Results and discussion}
+\input{chapters/7results}
+
+%Discussion
+%\chapter{Discussion}
+%\input{chapters/8discussion}
+
+%Conclusion
+\chapter{Conclusion}
+\input{chapters/9conclusion}
+
+\clearpage
+
+
+% Bibliography
+\printbibliography
+
+%Appendix
+\begin{appendices}
+%\addcontentsline{toc}{chapter}{Appendix}
+\input{extra/appendix}
+\end{appendices}
+
+% Back cover
+\input{extra/back_cover}
+\end{document}

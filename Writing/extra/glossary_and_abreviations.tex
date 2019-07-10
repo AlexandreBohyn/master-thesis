@@ -1,0 +1,76 @@
+%Remove the dot at the end of each abbreviation - nopostdot
+%Remove page number at the end of each abbreviation nonumberlist
+%Prevent abbreviation grouping - nogroupskip
+%Add "List of Abbreviations" to Table of Content - toc
+
+\usepackage[acronym,nopostdot,nogroupskip,nonumberlist,toc,automake]{glossaries} %Load glossaries package
+
+\makeglossaries
+
+% Acronyms
+\newacronym{eppn}{EPPN}{European Phenotyping Platforms Network}
+\newacronym{EU}{EU}{European Union}
+\newacronym{QTL}{QTL}{Quantitative Trait Loci}
+\newacronym{PLS}{PLS}{Penalized Least Squares}
+\newacronym{SpATS}{SpATS}{Spatial Analysis using Tensor Splines}
+\newacronym{inra}{INRA}{Institut National de Recherche Agronomimque (FR) - \textit{National Institute of Agronomical Research}}
+\newacronym{VIF}{VIF}{Variance Inflation Factor}
+\newacronym{DOE}{DOE}{Design of experiment}
+
+% Definitions
+\newglossaryentry{phenotype}{
+	name={Phenotype},
+	description={Profiling of the structures and functions associated with allelic variants, at the scale of cells, organs, whole plants and canopy}}
+	
+\newglossaryentry{biostress}{
+	name={Biotic stress},
+	description={A stress that is caused in plants due to damage instigated by other living organisms, including fungi, bacteria, viruses, parasites, weeds, insects, and other native or cultivated plants.}}
+	
+\newglossaryentry{abiostress}{
+	name={Abiotic stress},
+	description={Negative impacts on plants caused by external non-living environmental factors.}}
+
+\newglossaryentry{quantiTL}{
+	name={Quantitative trait loci},
+	description={Regions of the genome containing one or more genes, associated with variations of a quantitative trait.}
+}
+
+\newglossaryentry{screening}{
+	name={Screening experiment},
+	description={An experiment designed to evaluate the significance of factors and factor-interactions in a model. The factor are usually two-level factor because they are either present in the model or not.}
+}
+
+\newglossaryentry{Rs_exp}{
+	name={Response surface experiment},
+	description={An experiment designed to find the optimal settings for the factors. In this experiment, the significant factors of the model are already determined.}
+}
+
+\newglossaryentry{genome}{
+	name={Genome},
+	description={All of the genes of an individual or organism. All the information that codes for the phenotype that a species displays.}
+}
+
+\newglossaryentry{genotype}{
+	name={Genotype},
+	description={Genetic information, present in the DNA, for a particular trait.}
+}
+
+\newglossaryentry{germplasm}{
+	name={Germplasm},
+	description={Germplasm are living genetic resources such as seeds or tissues that are maintained for the purpose of animal and plant breeding, preservation, and other research uses.}
+}
+
+% DEFINITIONS TO INCLUDE:
+% - phenotype
+% - phenome
+% - genotype
+% - genome
+% - phenomics
+% - locus: A locus (plural loci) in genetics is a fixed position on a chromosome, like the position of a gene or a marker (genetic marker).[ (doi:10.1016/0307-4412(95)90659-2)
+
+%\newglossaryentry{}{
+%	name={},
+%	description={}
+%}
+
+\glsaddall  %Adds all the definition to the glossary and all acronyms to the list of abreviations
