@@ -66,16 +66,18 @@ design_table%>%
   select(REAL_GENOTYPE, QR)%>%
   full_join(design_table, by = 'QR') -> design_table
 
+# Save it into .RData for other scripts
+save(design_table, file = "data.RData")
+
 # REPARTITION TABLE ----------------------------------------------------------
 design_table%>%
   dplyr::filter(REAL_GENOTYPE != 31)%>%
-  ggplot(aes(x = REAL_GENOTYPE))+
-  geom_histogram(fill = "gray", color = "black", binwidth = 1, boundary = -0.5)+
-  scale_x_continuous(breaks = c(1:30))+
-  labs(y = "COUNT")+
-  coord_flip()+
-  facet_grid(TANK~POSITION)+
-  theme_bw()
+  group_by(TANK,POSITION,REAL_GENOTYPE)%>%
+  summarise(COUNT = n())%>%
+  unite(temp,TANK,POSITION)%>%
+  spread(temp,COUNT)%>%
+  xtable(digits = 0)%>%
+  print(include.rownames=FALSE, NA.string = "/")
   
 # LAYOUT PLOT  -----------------------------------------------------------------------
 
@@ -104,7 +106,7 @@ still_plot <- JMP_design%>%
   dplyr::filter(TANK == 'B')%>%
   ggplot(aes(x = STRIP, y = POSITION, fill = factor(GENOTYPE)))+
   geom_tile(colour = "white")+
-  scale_x_continuous(breaks =  test)+
+  scale_x_continuous(breaks =  seq(1,33))+
   scale_fill_discrete(name = "GENOTYPE")+
   labs(title = 'STILL TANK',
        subtitle = "2D schematic genotype repartition map")+
@@ -126,17 +128,19 @@ tank_labels <- c(A = "MOVING", B = "STILL")
 repartition_plot <- design_table%>%
   gather(GENO_ID, GENO_VALUE, - TANK, -STRIP, -POSITION, -QR)%>%
   ggplot(aes(GENO_VALUE, fill = GENO_ID))+
-  geom_histogram(color = "black", binwidth = 1, boundary = -0.5)+
+  geom_histogram(alpha = 0.7, color = "black", binwidth = 1, boundary = -0.5)+
   scale_x_continuous(breaks = c(1:31))+
+  scale_fill_discrete(name = "",
+                      labels = c('Planned repartition','Actual repartition'))+
   labs(y = "COUNT",
        x = "GENOTYPE")+
   coord_flip()+
   facet_grid(TANK~POSITION, labeller = labeller(TANK = tank_labels))+
   theme_bw()+
   theme(panel.grid.minor = element_blank(),
-        text = element_text(size = 15),
+        axis.title = element_text(size = 15),
         axis.text.x = element_text(size = 10),
-        legend.position = "none")
+        legend.position = "bottom")
 
 ggsave("Figures/repartition_plot.pdf",
        plot = repartition_plot, device = "pdf",
