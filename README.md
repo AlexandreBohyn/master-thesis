@@ -23,9 +23,23 @@ Inputs:
 
 Outputs:
 
-- [Table] Design table (tank,strip,position,QRcode,planned genotype,real genotype)
+- [Dataset] Design table (tank,strip,position,QRcode,planned genotype,real genotype)
 - [Table] Design repartition
 - [Figure] Still and mowing tanks design layouts
 - [Figure] Genotype distribution among strips, positions and tanks
 
-### WEIGHT
+### METRICS
+
+In this script, the different metrics characterizing the plant growth are added to the design table.
+The metrics are: dry and fresh weight for the root and leaf system and area of the root system. The area metric comes from the `area_percentage.py` script in the *Image analysis* folder.
+
+Inputs:
+
+- [Dataset] Design table
+- [Table] Weights tables (dry and fresh weights)
+- [Table] Area percentage file (.txt)
+
+Outputs:
+
+- [Dataset] Data table (all metrics with the related genotype)
+- [Figure] Correlation plot of all the metrics
