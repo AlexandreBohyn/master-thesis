@@ -21,7 +21,10 @@ repeat_design <- function(mat){
 
 QR_CODE <- function(mat){
   #' Creates the QR code for a table with TANK,STRIP and POSITION
-  mat <- mat%>%mutate(QR = paste(TANK,STRIP,POSITION,sep = "_"))
+  mat <- mat%>%mutate(QR = paste(TANK,
+                                 str_pad(STRIP, 2, pad = "0"),
+                                 POSITION,
+                                 sep = "_"))
   return(mat)
 }
 
