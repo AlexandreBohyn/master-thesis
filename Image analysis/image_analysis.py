@@ -3,7 +3,7 @@ import glob
 import cv2
 import numpy as np
 import pandas as pd
-/* cSpell: disable * /
+
 """
 Image analysis code.
     Root system area as a percentage of the total area of the cropped
@@ -36,7 +36,7 @@ def area_percentage(img_path, thresh_val, flipBool, BoundingArray):
 
    """
     img = cv2.imread(img_path, 0)
-    if not img:
+    if img is None:
         return float('nan')
     else:
         if(flipBool):
@@ -51,7 +51,7 @@ def area_percentage(img_path, thresh_val, flipBool, BoundingArray):
 # %% Read the data and apply the function
 
 # Read the data and extract the last 990 photos
-data_filtered = pd.read_csv('EntryFile.txt', sep='\t', header=0)
+data_filtered = pd.read_csv('Image analysis\EntryFile.txt', sep='\t', header=0)
 # data_filtered = data.query('Folder == "13-03-19"'); # Uncomment this line to analyze the final files only
 # data_filtered.index = np.arange(data_filtered.size); # Use only when filtering the data
 
