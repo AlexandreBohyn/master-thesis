@@ -100,17 +100,4 @@ data_table <- data_table%>%
 # Save the design table and data table
 save(design_table,data_table, file = "data.RData")
 
-# SUMMARY TABLE ---------------------------------------------------------------
-
-# Correlation matrix for the variables
-data_table%>%
-  select(-QR,-GENOTYPE, -TANK, -STRIP, -POSITION, -REAL_GENOTYPE)%>%
-  correlate( use = "pairwise.complete.obs",
-             method = "pearson",
-             diagonal = 0) -> corr_mat
-corr_plot <- corr_mat%>%
-  rplot(colours = c("blue","red","green"),
-      print_cor = TRUE)+
-  theme(legend.position = "bottom")
-corr_plot
 
