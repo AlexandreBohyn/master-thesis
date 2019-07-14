@@ -13,7 +13,6 @@
 # USER DESIGNED FUNCTIONS -----------------------------------------------------
 QRreformat <- function(vec){
   #' Reformats the QRcode from the weighting data into standard QR format
-  #' Use sep = TRUE for the QR already using "_" as a separator
   return(paste(toupper(str_sub(vec,1,1)),
                str_pad(str_sub(vec,2,-2), 2, pad = "0"),
                str_sub(vec,-1),
