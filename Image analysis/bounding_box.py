@@ -24,4 +24,4 @@ img[ymin:ymax, xmax-offset:xmax+offset] = box_col
 img[ymin:ymax, xmin-offset:xmin+offset] = box_col
 
 # %% Export the picture
-cv2.imwrite('Image analysis/drawn_bounding_box.png',img)
+cv2.imwrite('Writing/figures/OK.jpg',img)
