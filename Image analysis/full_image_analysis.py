@@ -64,5 +64,5 @@ for i in range(len(files)):
         Filepath, thresh_val, files.verticalFlip[i], BoundingArray)
 
 
-#%% Save the resutl to csv file
+# %% Save the resutl to csv file
 final.to_csv(r'full_analysis.csv', '\t')
