@@ -1,13 +1,18 @@
 # METRICS: INTRODUCTION ----
-#' Creates all the plots and tables, summarizing the metrics 
+#' Add the outliers file and compute the weight matrix.
+#' Filter the data and compute weighted mean, var and quantiles
+#' Creates custom boxplots for the diff. variables
+#' Creates tables summarizing the metrics 
 #' for each genotype, tank, etc...
+#' 
 #' Tables: mean and standard deviation for weight (D and F), AUPC, area
 #' Plots: Boxplots of the repartition between genotypes 
 #' and difference between tanks
 #' 
 #' Inputs:
-#' - Data table
-#' - Outliers table
+#' - Data table (.RData)
+#' - Outliers table (outliers.xlsx)
+#' - Genotype information table (GENO_INFO.xlsx)
 #'
 # USER DESIGNED FUNCTIONS -----------------------------------------------------
 QRreformat <- function(vec){
@@ -27,7 +32,8 @@ load("data.RData")
 # Load the outliers file
 outliers <- read_xlsx("Inputs/outliers.xlsx", sheet = 'table', na = "0")%>%
   mutate(QR = QRreformat(CODE))%>%
-  select(-COMMENT, -CODE)%>%
+  select(-COMMENT, -CODE,
+         NOT_FG = NOT_FULL_GROWTH)%>%
   as.data.frame()
 
 # Replace NA's by zeroes
@@ -38,25 +44,48 @@ outliers[is.na(outliers)] <- 0
 weights_table <- read_xlsx('Inputs/outliers.xlsx', sheet = 'weights')
 
 # Load the seeds initial weights
-seed_weights <- read_xlsx('Inputs/GENO_INFO.xlsx', sheet = 'WEIGHT')%>%
+seed_weights <- read_xlsx('Inputs/GENO_INFO.xlsx', sheet = 'WEIGHT')
+seed_weights <- seed_weights%>%
   mutate(WEIGHT = rowMeans(seed_weights)/10)%>%
   select(REAL_GENOTYPE = GENOTYPE, 
          S_WEIGHT = WEIGHT)
 
 # WEIGHTS ---------------------------------------------------------------------
 
-# Original seed weight condition
-temp <- data_table%>%
+# Form temp dataset with all conditions and added final AREA and 
+#   WEIGHT weights
+filtered_data <- data_table%>%
   left_join(seed_weights, by = "REAL_GENOTYPE")%>%
   left_join(outliers, by = "QR")%>%
-  mutate(WEIGHT = 0)
+  mutate(w_WEIGHT = ifelse(NO_SEED == 1, 0,
+                         ifelse(NO_RS ==1, 1 ,
+                                ifelse(NO_LS == 1, 2, 
+                                       ifelse(BAD_LS == 1, 3,
+                                              ifelse(NOT_FG == 1, 4, 5)
+                                              )
+                                       )
+                                )
+                         ),
+         w_AREA = ifelse(OVERLAP ==1, 0, 1) 
+         )%>%
+  select(-c(NO_RS, NO_LS, BAD_LS, NOT_FG, NO_SEED, OK, OVERLAP))
 
-# Loop through the data table to set the weight value
-for (i in 1:990){
-  if (OK ==1){
-    temp$WEIGHT = 1
-  }
-  
-}
+# Fix the wrong NA genotypes
+filtered_data <- filtered_data%>%
+  mutate(REAL_GENOTYPE = ifelse(is.na(REAL_GENOTYPE) & w_WEIGHT > 0,
+                                GENOTYPE, REAL_GENOTYPE)
+  )%>%
+  dplyr::filter(w_WEIGHT > 0)
+        
 
-  
+# SUMMARY MEASURES ------------------------------------------------
+
+# Weighted mean
+filtered_data%>%
+  group_by(REAL_GENOTYPE)%>%
+  summarise_at(.vars = vars(DRY_LS, DRY_RS, FRESH_LS, FRESH_RS),
+               .funs = list(mean = ~wtd.mean(., weights = w_WEIGHT),
+                            var = ~wtd.var(., weights = w_WEIGHT, 
+                                           normwt = TRUE)))%>%
+  gather(key = "key", value = "value", -REAL_GENOTYPE) -> test
+               
