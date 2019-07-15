@@ -1,4 +1,4 @@
-# METRICS: INTRODUCTION ----
+# SUMMARY_PLOT: INTRODUCTION ----
 #' Add the outliers file and compute the weight matrix.
 #' Filter the data and compute weighted mean, var and quantiles
 #' Creates custom boxplots for the diff. variables
