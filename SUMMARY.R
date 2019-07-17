@@ -116,6 +116,19 @@ filtered_data <- filtered_data %>%
 
 # SUMMARY TABLES ------------------------------------------------
 
+# Print the latex table for the seed weights
+print(xtable(seed_weights, digits = c(0,0,2),
+             caption = "Mean individual seed weight for each genotype"),
+      file = "Tables/latex_seed_Weight_table.txt",
+      append = FALSE,
+      include.rownames = FALSE,
+      caption.placement = "top",
+      sanitize.text.function = identity,
+      booktabs = TRUE,
+      timestamp = NULL,
+      comment = FALSE)
+
+
 # Weighted mean and SD
 summary_table <- filtered_data %>%
   group_by(REAL_GENOTYPE, TANK) %>%
