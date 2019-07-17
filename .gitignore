@@ -6,3 +6,11 @@
 .log
 Writing/thesis_main.run.xml
 Writing/thesis_main.bcf
+Writing/thesis_main.acn
+Writing/thesis_main.aux
+Writing/thesis_main.bbl
+Writing/thesis_main.blg
+Writing/thesis_main.glo
+Writing/thesis_main.ist
+Writing/thesis_main.out
+Writing/thesis_main.synctex.gz
