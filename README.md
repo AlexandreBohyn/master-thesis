@@ -1,6 +1,6 @@
 # MASTER THESIS CODE
 
-Code for the data processing and data analysis of my thesis: Comparison of statistical methods for analyzing data coming from a high throughput phenotyping platform: Comparison of statistical methods and designs for a high throughput phenotyping experiment.
+Code for the data processing and data analysis of my thesis: Comparison of statistical methods and designs for a high throughput phenotyping experiment.
 
 The code is presented as a map of the different scripts, then a detailed explanation of the folders, scripts, datasets and what they contain.
 
@@ -31,7 +31,7 @@ Outputs:
 ### METRICS
 
 In this script, the different metrics characterizing the plant growth are added to the design table.
-The metrics are: dry and fresh weight for the root and leaf system and area of the root system. The area metric comes from the `area_percentage.py` script in the *Image analysis* folder.
+The metrics are: dry and fresh weight for the root and leaf system and area of the root system. The area metric comes from the `area_percentage.py` script in the _Image analysis_ folder.
 
 Inputs:
 
@@ -43,3 +43,19 @@ Outputs:
 
 - [Dataset] Data table (all metrics with the related genotype)
 - [Figure] Correlation plot of all the metrics
+
+### SUMMARY
+
+In this script, the weight of each plant data is determined and applied to the data set. The outliers are removed from the final set of data, according to the weight exclusions (null weights are removed to avoid any inconsistencies) and to external criteria (see material and methods section of the thesis pdf). Using those weights, two summary measures are computed, the weighted mean and the weighted standard deviation. Summary tables are then created for all the main variables (fresh and dry weight for both systems and the area).
+
+Inputs:
+
+- [Dataset] Data table
+- [Dataset] Outliers table and weight matrix (same file)
+- [Dataset] Baseline seed weight
+
+Outputs:
+
+- [Dataset] Summary measures
+- [Figure] Summary plots
+- [File] latex table of the summary tables
