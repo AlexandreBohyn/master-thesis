@@ -6,77 +6,55 @@ Say how custom designs are more efficient because they fit to the problem rather
 The main principle in custom design is to maximize an optimality criterion to get the best design possible.
 \end{formal}
 
-
 \subsection{Orthogonal designs}
-Consider a regression, or ANOVA-type, model written in matrix form  
-\begin{equation}
-    \mathbf{Y} = \bm{X\beta} + \bm{\epsilon} \text{,}
-\end{equation} 
-where $\mathbf{Y}$ is a ($n \times 1$) column vector for the response variable, $\mathbf{X}$ is a ($n \times p$) design matrix, $\bm{\beta}$ is a ($p \times 1$) column vector for the coefficients and $\bm{\epsilon}$ is a ($nx1$) column vector for the random error term.\\
-The best linear unbiased estimator (BLUE) of the coefficients matrix is given by the ordinary least squares (OLS) estimator
-\begin{equation}
-    \hat{\bm{\beta}} = (\mathbf{X}^{\prime} \mathbf{X})^{-1}\mathbf{X}^{\prime} \mathbf{Y} \text{,}
-\end{equation} 
-because it minimizes the variance of the estimators
-\begin{equation} \label{eq:var_coef_mat_unexpanded}
-    var(\hat{\bm{\beta}}) = \sigma_{\epsilon}^2(\mathbf{X}^{\prime}
-\mathbf{X})^{-1} \text{,}
-\end{equation}
-where $\sigma_{\epsilon}^2 = \operatorname{Var}\left(\varepsilon_{i}\right)$ is the variance of the random error term $\mathbf{\epsilon}$. 
-In its developed form, the variance-covariance matrix is
-\begin{equation}
-    var(\hat{\bm{\beta}}) =
-\begin{bmatrix}
-var(\hat{\beta}_0) &  &  &  \\ 
-cov(\hat{\beta}_0,\hat{\beta}_1) & var(\hat{\beta}_1) &  &  \\ 
-\vdots & \vdots & \ddots & \\ 
-cov(\hat{\beta}_0,\hat{\beta}_k) & cov(\hat{\beta}_1,\hat{\beta}_k) & \dots & var(\hat{\beta}_k)
-\end{bmatrix} 
-\text{,}
-\label{eq:var_cov_mat}
-\end{equation}
-where the diagonal elements represent the individual variances of the estimates of the model coefficients and the off-diagonal elements represent the covariances between pairs of estimates. Ideally, these variances should be as small as possible to allow powerful significance tests and narrow confidence intervals about the unknown factor effects.\\
-When planning an experiment, the error variance $\sigma_{\epsilon}^2$  is usually unknown and often set to one to only consider the elements of $ (\mathbf{X}^{\prime} \mathbf{X})^{-1}$. The diagonals elements of that matrix are called the relative variances of the estimates of the model's parameters and are denoted by 
-\begin{equation}
-     v_i = \dfrac{1}{\sigma_{\epsilon}^2}var(\Hat{\beta}_i)
-     \text{.}
-     \label{eq:relative_variance}
-\end{equation}
-The inverse of the variance-covariance matrix (\ref{eq:var_cov_mat}), denoted by
-\begin{equation}
-    \mathbf{M} = \dfrac{1}{\sigma^2_{\epsilon}} \mathbf{X^{\prime} X}
-    \text{,}
-    \label{eq:info_matrix}
-\end{equation}
-is called the information matrix because it summarizes the available information on the model's parameters. \\
-As detailed by \textcite{goos2011optimal}, when the $(\mathbf{X}^{\prime}\mathbf{X})$ matrix is diagonal and when all the diagonal elements are $n$ then the design is said to be orthogonal.\\
-An orthogonal design allows for the independent estimation of the model's parameters and the covariance between each pair of estimates is zero. Therefore the estimates are said to be independent and uncorrelated. Moreover when a design is orthogonal, the addition or subtraction of terms in the model does not affect the estimates.\\
-Finally, the information matrix (\ref{eq:info_matrix}) is also diagonal whenever the design is orthogonal.
-
-\subsubsection{Variance inflation}
-\label{sec:variance_inflation}
-When a design is not orthogonal, the relative variances (\ref{eq:relative_variance}) of at least one of estimates of the model parameters will be bigger than $1/n$. The variance is said to be inflated and the factor by which it is inflated is called the variance inflation factor (VIF). For two-level designs, the VIF is 
-\begin{equation}
-    \text{VIF}= nv_i
-\end{equation}
-The minimum value for the VIF is one. For orthogonal designs, the VIF of every factor-effect estimate is one. The rule of thumb used by many authors, is that a VIF of more than 5 indicates potential collinearity problems.
-%\subsubsection{Aliasing}
+In design of experiments, orthogonal designs are interesting because they guarantees that each main effect and interaction can 
+be estimated independently. Meaning that the effect of one factor or interaction can be estimated separately from the effect of other factors
+and that the addition or subtraction of terms in the model does not affect the estimates.
+In a regression or ANOVA-type model, the best linear unbiased predictor (or BLUE) of the regression coefficients is obtained by using 
+the ordinary least squares (OLS) method, because it minimizes the variance of the estimators. 
+These variances are often represented in variance-covariance (VCOV) matrix, 
+where the diagonal is the variance of the estimators and the non-diagonal elements are the pairwise covariances between estimators. 
+The inverse of this matrix is the information matrix, 
+because it summarizes the available information  on the model's coefficients (a low variance means a lot of information, and inversely).
+As detailed in \textcite{goos2011optimal}, when the information matrix is diagonal, then the design is said to be orthogonal.
 
 \subsection{Optimality criteria}
-In order to generate optimal designs, one needs to use an optimality criterion to compare different designs. The two main criteria are the D-optimality and the I-optimality. The first one aims at minimizing the variance of the factors effects estimates and is more useful for significance testing. D-optimal designs are therefore more appropriate for screening experiments. The second one aims at minimizing the average relative prediction variance over the experimental region. I-optimal designs are focused on prediction and thus are more suited to response surface experiments.
-There also exists a G-optimality criterion that is similar to the I-optimality criterion but minimizes the maximum prediction variance. Recent work \parencite{rodriguez2010generating} has shown that I-optimal designs are often better choices than the G-optimal ones. Since this is a screening experiment, only the D-optimality is detailed here. For more information about I-optimal and G-optimal design, refer to \textcite{goos2011optimal,atkinson2014optimal}.
+In order to generate optimal designs, one needs to use an optimality criterion to compare different designs. 
+The two main criteria are the D-optimality and the I-optimality. 
+The first one aims at minimizing the variance of the factors effects estimates and is more useful for significance testing. 
+D-optimal designs are therefore more appropriate for screening experiments. 
+The second one aims at minimizing the average relative prediction variance over the experimental region. 
+I-optimal designs are focused on prediction and thus are more suited to response surface experiments.
+There also exists a G-optimality criterion that is similar to the I-optimality criterion but minimizes the maximum prediction variance. 
+Recent work \parencite{rodriguez2010generating} has shown that I-optimal designs are often better choices than the G-optimal ones. 
+Since this is a screening experiment, only the D-optimality is detailed here. 
+For more information about I-optimal and G-optimal design, refer to \textcite{goos2011optimal,atkinson2014optimal}.
 
 \subsubsection{D-optimality}
-As said previously, for an orthogonal design all the non-diagonal elements of the $(\mathbf{X}^{\prime}\mathbf{X})^{-1}$ matrix are null and the determinant of the matrix, $\vert(\mathbf{X}^{\prime}\mathbf{X})^{-1}\vert$ is simply the product of the diagonal elements. Since the goal is to have the smallest value for the variance of the estimates, an orthogonal design will have the smallest determinant value. Therefore the determinant can be used as an overall measure of the variance of the estimates.\\
-Minimizing the determinant of the $(\mathbf{X}^{\prime}\mathbf{X})^{-1}$ is similar to maximizing the determinant of the $(\mathbf{X}^{\prime}\mathbf{X})$ matrix. Since this matrix is proportional to the information matrix (\ref{eq:info_matrix}), the factor settings that maximize the determinant of $(\mathbf{X}^{\prime}\mathbf{X})$ will maximize the available information about the model's parameters. The design that maximize the determinant of the $(\mathbf{X}^{\prime}\mathbf{X})$ matrix is called the "D-optimal design", where the "D" stands for determinant and the value of the determinant itself is called the "D-optimality criterion".\\
+As said previously, for an orthogonal design all the non-diagonal elements of the VCOV matrix are null,
+and thus, the determinant is simply the product of all the diagonal elements, i.e. the estimators variances.
+Since the goal is to have the smallest variance of the estimates, the VCOV matrix with the smallest determinant will have the 
+estimates with the smallest variance. 
+Minimizing the determinant of the VCOV matrix is similar to maximizing the determinant of the information matrix. 
+Therefore, the design with factor settings that maximize the determinant of information matrix, 
+will maximize the available information about the model's parameters. 
+This design is called the "D-optimal design", 
+where the "D" stands for determinant and the value of the determinant itself is called the "D-optimality criterion".
 
-For any model with two-levels factors and two-factor interaction effects, orthogonal designs will always be D-optimal. However if the number of runs is not a multiple of 4 then there are no orthogonal designs available for two-level factors. This condition offers little flexibility for experimenters and is not always feasible. In contrast, the optimal experimental design approach allows for any number of runs. As mentioned in section \ref{sec:variance_inflation}, in non-orthogonal designs, the variance of the estimates is inflated and they are correlated. However this inflation is usually small and not dramatic and the correlation is too small to cause any concerns. Therefore there exist non-orthogonal designs that still maximize the information of the model being estimated.\\
-The D-optimal designs may not be unique. For a specified number of runs, several designs might have the maximal value for the determinant of the $(\mathbf{X}^{\prime}\mathbf{X})$ matrix.\\
+For any model with two-levels factors and two-factor interaction effects, orthogonal designs will always be D-optimal. 
+However if the number of runs is not a multiple of 4 then there are no orthogonal designs available for two-level factors. 
+This condition offers little flexibility for experimenters and is not always feasible. 
+In contrast, the optimal experimental design approach allows for any number of runs. 
+However, in non-orthogonal designs the variance of the estimates is inflated and the estimates are correlated. 
+Nevertheless this inflation is usually small and the correlation is too small to cause any concerns.
+Therefore there exist non-orthogonal designs that still maximize the information of the model being estimated.
+The D-optimal designs may not be unique. For a specified number of runs,
+ several designs might have the maximal value for the determinant of the information matrix.\\
 
 %%\paragraph{D-efficiency}
 %%The D-efficiency of a given design compares the determinant of the information matrix of that design to an ideal determinant corresponding to an orthogonal design. Since orthogonal design do not always exist, the ideal determinant is defined as $n^p$ for a design with $n$ runs and $p$ parameters in the vector $\boldsymbol{\beta}$.  The D-efficiency is therefore computed as
 %%\begin{equation}
-%%    \text{D-efficiency} = \left(\dfrac{\vert\mathbf{X}^{\prime}\mathbf{X}\vert}{n^{p}} \right)^{1/p}=
+%%   \text{D-efficiency} = \left(\dfrac{\vert\mathbf{X}^{\prime}\mathbf{X}\vert}{n^{p}} \right)^{1/p}=
 %%    \dfrac{\vert\mathbf{X}^{\prime}\mathbf{X}\vert^{1/p}}{n}
 %%    \text{,}
 %%\end{equation}
