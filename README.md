@@ -59,3 +59,5 @@ Outputs:
 - [Dataset] Summary measures
 - [Figure] Summary plots
 - [File] latex table of the summary tables
+
+### SPATS 
