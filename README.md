@@ -4,6 +4,7 @@ Code for the data processing and data analysis of my thesis: Comparison of stati
 
 The code is presented as a map of the different scripts, then a detailed explanation of the folders, scripts, datasets and what they contain.
 
+Additionally, the _Writing_ folder in the repository contains all the `tex` code as well as the pdf of the thesis manuscript.
 ## Project roadmap
 
 In this section, the project roadmap is presented in different sections that correspond to experimental planning, data processing, data analysis, data visualization. In each section the analysis performed, with the intended goals, is described. A more detailed explanation of the scripts is presented the _Scripts explanation_ section.
