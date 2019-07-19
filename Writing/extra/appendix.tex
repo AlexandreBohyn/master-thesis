@@ -1,12 +1,12 @@
 \chapter{Additional informations on computation}
 \label{appendix:add_info}
-\section*{Element-wise product}
+\section{Element-wise product}
 The element-wise product between two matrix $\mathbf{A}$ and $\mathbf{B}$ is noted $\mathbf{A} \odot \mathbf{B}$ and is defined in the following way:\\
 For two matrices $\mathbf{A}$, $\mathbf{B}$ of same dimensions $n \times m$, the element-wise product is a $n \times m$ matrix where the elements are defined by:
 \[(\mathbf{A} \odot \mathbf{B})_{i,j} = (\mathbf{A})_{i,j} \cdot (\mathbf{B})_{i,j}\]
 The product is undefined for matrices of different dimensions
 
-\section*{Kronecker product}
+\section{Kronecker product}
 The Kronecker product of two matrix $\mathbf{A}$ and $\mathbf{B}$ of respective dimensions $n \times m$ and $p \times q$ is a $np \times mq$ block matrix where the elements are defined by:
 \[\mathbf { A } \otimes \mathbf { B } = 
 \left[ 
@@ -15,7 +15,8 @@ The Kronecker product of two matrix $\mathbf{A}$ and $\mathbf{B}$ of respective 
 \end{array} 
 \right]\] 
 
-\section*{Polynomials splines}
+\section{Polynomials splines}
+\label{appendix:polynomial_splines}
 \textcite{fahrmeir_regression:_2013} state that a function $f : [ a , b ] \rightarrow \mathbb { R }$ is called a polynomial spline of degree $l \geq 0$ with knots $a = \kappa _ { 1 } < \ldots < \kappa _ { m } = b$, if it fulfills the following conditions:
 \begin{enumerate}
 \item $f(z)$ is $(l-1)$ times continuously differentiable. The special case of $l = 1$ corresponds to $f(z)$ being continuous (but not differentiable). We do not state any smoothness requirements for $f(z)$ when $l=0$.
@@ -25,7 +26,7 @@ Moreover, it can be shown that each polynomial spline of degree $l$ with
 knots $\kappa _ { 1 } < \ldots < \kappa _ { m }$ can be uniquely determined as a linear combination of the $d = l+m-1$ functions
 $B_1, \dots , B_d$, called the \textit{basis functions}, since we can uniquely represent all polynomials splines by using these functions.
 
-\subsection*{B-splines}
+\subsection{B-splines}
 B-splines are polynomial splines with specific basis functions. B-spline basis functions are constructed
 from piecewise polynomials that are fused smoothly at the knots to achieve the desired smoothness constraints. More specifically, a B-spline basis function consists
 of $(l+1)$ polynomial pieces of degree $l$ , which are joined in an $(l-1)$ continuously differentiable way. All B-spline basis functions are set up based on a given knot configuration. Using the complete basis, the function $f(z)$ can again be represented through a linear combination of $d = m + l-1$ basis
@@ -47,7 +48,7 @@ The estimation of a B-spline fit can be summarized in three steps:
 \item We obtain the final estimate by summing the scaled basis function.
 \end{enumerate}
 
-\subsection*{Penalized splines}
+\subsection{Penalized splines}
 We clearly see that the quality of the estimation by polynomials splines highly depends on the number of knots and that this can easily lead to an over-fitting issue. To overcome this problem, \textit{penalized splines (P-splines)} introduce a roughness penalty term that prevents over-fitting and minimize a \textit{penalized least squares (PLS) criterion} instead of the usual least squares criterion.\\
 To characterize the smoothness of any type of function, the
 use of (squared) derivatives is appropriate, since these represent measures for the variability of a function. Therefore penalties based on the second derivative, such as
@@ -60,6 +61,30 @@ where $\mathbf{K_r}$ is the $r$th-order difference penalty matrix, and can be de
 The smoothing parameter $\lambda \geq 0$ controls the compromise between fidelity to the data and smoothness of the resulting function estimate. The PLS estimate of the coefficient matrix is then 
 \[ \hat { \boldsymbol{\gamma} } = \left(\mathbf{ Z} ^ { \prime } \mathbf {Z} + \lambda \mathbf{K} \right) ^ { - 1 }\mathbf{ Z} ^ { \prime }\mathbf{ y} \text{.}\]
 For more detailed information about polynomials splines, please refer to \textcite{fahrmeir_regression:_2013} and \textcite{eilers_flexible_1996}
+
+\section{Penalized form of the solution}
+\label{appendix:penalized_solution_form}
+Let us consider the following model, representing the bivariate surface:
+\begin{equation}
+	\Hat{\boldsymbol{\alpha}} = (\mathbf{B}^t\mathbf{B})^{-1}\mathbf{B}^t\mathbf{y}
+\end{equation}
+Since the model is purely parametric, it can be estimated by minimizing the residual sum of squares (with explicit solution $\Hat{\boldsymbol{\alpha}} = (\mathbf{B}^t\mathbf{B})^{-1}\mathbf{B}^t\mathbf{y}$). To prevent over-fitting, \textcite{eilers_flexible_1996} propose to incorporate a discrete penalty on the coefficient associated to adjacent B-splines. For the two-dimensional case, the vector $\boldsymbol{\alpha}$ can be seen as an  $(L \times P)$  matrix  of  coefficients, $\mathbf{A}=[\alpha_{lp}]$. Now the rows  and columns of $\mathbf{A}$ correspond to the regression coefficients in the $v$ and  $u$ direction, respectively. In anisotropic (direction-dependant) P-splines, a different amount of smoothing is assumed along the $u$ and $v$ directions. It leads to two penalties:  one on all rows of $\mathbf{A}$,  the other on all of its columns; and the penalized least squares objective function becomes \parencite{eilers_multivariate_2003}
+\begin{equation}
+\begin{aligned}
+    S^{*} & = \underbrace{\|\boldsymbol{y}-\boldsymbol{B} \boldsymbol{\alpha}\|^{2}}_{\text{Original objective function}} \\
+    	  & +\underbrace{\invbreve{\lambda}\|\invbreve{\boldsymbol{D}} A\|_{F}^{2}}_{\text{Penalty along the columns}} \\
+    	  & +\underbrace{\breve{\lambda}\left\|\boldsymbol{A} \breve{D}^{t}\right\|_{F}^{2}}_{\text{Penalty along the rows}} \\
+    =	  & \|\boldsymbol{y}-\boldsymbol{B} \boldsymbol{\alpha}\|^{2}+\boldsymbol{\alpha}^{t} \boldsymbol{P} \boldsymbol{\alpha}
+    \text{,}
+    \label{eq:least_squares_penalized}
+\end{aligned}
+\end{equation}
+where $\boldsymbol{P}=\invbreve{\lambda}\left(\boldsymbol{I}_{P} \otimes \invbreve{\boldsymbol{D}}^{t} \invbreve{\boldsymbol{D}}\right)+\breve{\lambda}\left(\breve{\boldsymbol{D}}^{t} \breve{\boldsymbol{D}} \otimes \boldsymbol{I}_{L}\right)$ is the penalty matrix, $\invbreve{\lambda}$ and $\breve{\lambda}$ are the smoothing parameters acting, respectively, on the columns and rows of $\mathbf{A}$, and $\invbreve{\mathbf{D}}$ and $\breve{\mathbf{D}}$ are the matrices that form differences of order $d_u$ and $d_v$ respectively\footnote{See appendix \ref{appendix:add_info} for more information about ordered differences in P-splines}. The minimizer of \ref{eq:least_squares_penalized} then becomes 
+\begin{equation}
+    \widehat{\boldsymbol{\alpha}}=\left(\boldsymbol{B}^{t} \boldsymbol{B}+\boldsymbol{P}\right)^{-1} \boldsymbol{B}^{t} 
+    \boldsymbol{y}
+    \text{.}
+\end{equation}
 
 \clearpage
 
