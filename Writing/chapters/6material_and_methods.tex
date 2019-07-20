@@ -565,7 +565,7 @@ The block structure of $\mathbf{X}_s$ and $\mathbf{Z}_s$ implies
 \end{equation}
 where $\boldsymbol{c}_{sk} \ (k = 1,\ldots,5)$ contains the elements of $\boldsymbol{c}_s$ that correspond to the $k$th block of $\boldsymbol{Z}_s$, i.e. $\boldsymbol{c}_s = (\boldsymbol{c}_{s1}^t,\ldots,\boldsymbol{c}_{s5}^t)^t$. The details about the specific block component of $\boldsymbol{Z}_s$ and the computation of the new penalty matrix are available in the paper of \textcite{rodriguez-alvarez_correcting_2018} and the appendices therein.
 
-Therefore, using this new notation, model \ref{eq:smooth_part_only_model} only containing a smooth bivariate surface and an error term can be rewritten in the following way:
+Therefore, using this new notation, model \ref{eq:smooth_part_only_model} that only contains a smooth bivariate surface and an error term can be rewritten in the following way:
 
 \begin{equation}
     \boldsymbol{y}=\boldsymbol{X}_{s} \boldsymbol{\beta}_{s}+\boldsymbol{Z}_{s} \boldsymbol{c}_{s}+\boldsymbol{\varepsilon}, 	
@@ -599,13 +599,9 @@ is the $k$th block of the $\mathbf{G}_{s}$ matrix, depending on the specific var
 In other words, here the tensor product P-splines mixed model is represented as the sum of 5 sets of mutually independent Gaussian random components $\mathbf{c}_{sk}$, each depending on one variance $\sigma_{sk}^2 \ (k=1,\ldots,5)$.
 
 
-%%\begin{figure}
-%%	\centering
-%%	\includegraphics[width = \textwidth]{}
-%%	\caption{Diagram detailing the structure of the matrices used in this section.}
-%%	\label{fig:matrix_diagram}
-%%\end{figure}
 
+
+\input{extra/TIKZ_matrix_diagram}
 
 \subsection{Spatial models for field trials}
 The tensor product P-spline, presented in the previous section, constitutes the base for the analysis of agricultural field trials because it allows the modeling of the random spatial variation typically presented in a field. On top of this spatial field, we need to build up more complex models in order to account for the genetic variation, the presence of blocks effects, or other sources of variation (see section \ref{sec:sources_of_variation}). From now on, we therefore consider the following linear mixed model

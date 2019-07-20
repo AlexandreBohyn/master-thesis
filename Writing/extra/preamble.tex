@@ -113,3 +113,14 @@ giveninits]{biblatex}
     \MakeFramed{\advance\hsize-\width}
     \vspace{2pt}\noindent\hspace{-7pt}\vspace{3pt}
     }{\vspace{3pt}\endMakeFramed}
+    
+% Commands for the TIKZ graphs
+\usepackage{tikz}
+\usetikzlibrary{matrix,arrows,decorations.pathmorphing}
+\usetikzlibrary{automata,positioning,calc}
+% \mhline[<style>]{<matrix name>}{<column number below of the line>}{<number of columns in a row>}
+\newcommand\mhline[4][]{%
+  \node[fit=(#2-#3-1),inner sep=0pt,outer sep=0pt](R){};
+  \foreach \i in {1,...,#4}\node[fit=(R) (#2-#3-\i),inner sep=0pt,outer sep=0pt](R){};
+  \draw[#1] (R.north -| #2.west) -- (R.north -| #2.east);
+}

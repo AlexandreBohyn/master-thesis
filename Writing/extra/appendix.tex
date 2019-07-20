@@ -79,7 +79,7 @@ Since the model is purely parametric, it can be estimated by minimizing the resi
     \label{eq:least_squares_penalized}
 \end{aligned}
 \end{equation}
-where $\boldsymbol{P}=\invbreve{\lambda}\left(\boldsymbol{I}_{P} \otimes \invbreve{\boldsymbol{D}}^{t} \invbreve{\boldsymbol{D}}\right)+\breve{\lambda}\left(\breve{\boldsymbol{D}}^{t} \breve{\boldsymbol{D}} \otimes \boldsymbol{I}_{L}\right)$ is the penalty matrix, $\invbreve{\lambda}$ and $\breve{\lambda}$ are the smoothing parameters acting, respectively, on the columns and rows of $\mathbf{A}$, and $\invbreve{\mathbf{D}}$ and $\breve{\mathbf{D}}$ are the matrices that form differences of order $d_u$ and $d_v$ respectively\footnote{See appendix \ref{appendix:add_info} for more information about ordered differences in P-splines}. The minimizer of \ref{eq:least_squares_penalized} then becomes 
+where $\boldsymbol{P}=\invbreve{\lambda}\left(\boldsymbol{I}_{P} \otimes \invbreve{\boldsymbol{D}}^{t} \invbreve{\boldsymbol{D}}\right)+\breve{\lambda}\left(\breve{\boldsymbol{D}}^{t} \breve{\boldsymbol{D}} \otimes \boldsymbol{I}_{L}\right)$ is the penalty matrix, $\invbreve{\lambda}$ and $\breve{\lambda}$ are the smoothing parameters acting, respectively, on the columns and rows of $\mathbf{A}$, and $\invbreve{\mathbf{D}}$ and $\breve{\mathbf{D}}$ are the matrices that form differences of order $d_u$ and $d_v$ respectively. The minimizer of \ref{eq:least_squares_penalized} then becomes 
 \begin{equation}
     \widehat{\boldsymbol{\alpha}}=\left(\boldsymbol{B}^{t} \boldsymbol{B}+\boldsymbol{P}\right)^{-1} \boldsymbol{B}^{t} 
     \boldsymbol{y}
