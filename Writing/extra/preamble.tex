@@ -20,38 +20,8 @@
 \fancyhead[LE]{\leftmark}
 \fancyhead[RO]{\rightmark}
 \fancyfoot{}
-\fancyfoot[LE,RO]{\thepage}
+\fancyfoot[LE,RO]{\textbf{\thepage}}
 \renewcommand{\headrulewidth}{0.3pt} %Set header rule width 
-
-
-%% NEW COMMANDS/SYMBOLS %%
-
-%% New command for horizontal lines in matrices in TikZ diagrams
-% \mhline[<style>]{<matrix name>}{<column number below of the line>}{<number of columns in a row>}
-\newcommand\mhline[4][]{%
-  \node[fit=(#2-#3-1),inner sep=0pt,outer sep=0pt](R){};
-  \foreach \i in {1,...,#4}\node[fit=(R) (#2-#3-\i),inner sep=0pt,outer sep=0pt](R){};
-  \draw[#1] (R.north -| #2.west) -- (R.north -| #2.east);
-}
-
-%% Create the inverted breve in math mode %%
-\DeclareSymbolFont{tipa}{T3}{cmr}{m}{n}
-\DeclareMathAccent{\invbreve}{\mathalpha}{tipa}{16}
-
-%% Command and package to make a "formal" environment to have note inside the text.
-\usepackage{framed} % for defining framed environment
-\newenvironment{formal}{
-    \def\FrameCommand{{\color{red}\vrule width 2pt}\hspace{2pt}}
-    \MakeFramed{\advance\hsize-\width}
-    \vspace{2pt}\noindent\hspace{-7pt}\vspace{3pt}
-    }{\vspace{3pt}\endMakeFramed}
-
-%% Get a clear page (for the cover page) %%
-\newcommand\blankpage{%
-    \null
-    \thispagestyle{empty}%
-    \addtocounter{page}{-1}%
-    \newpage} 
 
 %% FONTS %%
 
@@ -133,3 +103,39 @@ giveninits]{biblatex}
 \usepackage{pdfpages} % to include pdf as whole pages in the appendix
 
 
+%% NEW COMMANDS/SYMBOLS %%
+
+%% Marker symbols for the caption
+\usetikzlibrary{shapes}
+% Empty square
+\newcommand{\emptysquare}{\raisebox{0.5pt}{\tikz{\node[draw,scale=0.4,regular polygon, regular polygon sides=4,fill=none](){};}}}
+
+% Blackline
+\newcommand{\blackline}{\raisebox{2pt}{\tikz{\draw[-,black,solid,line width = 0.9pt](0,0) -- (5mm,0);}}}
+
+%% New command for horizontal lines in matrices in TikZ diagrams
+% \mhline[<style>]{<matrix name>}{<column number below of the line>}{<number of columns in a row>}
+\newcommand\mhline[4][]{%
+  \node[fit=(#2-#3-1),inner sep=0pt,outer sep=0pt](R){};
+  \foreach \i in {1,...,#4}\node[fit=(R) (#2-#3-\i),inner sep=0pt,outer sep=0pt](R){};
+  \draw[#1] (R.north -| #2.west) -- (R.north -| #2.east);
+}
+
+%% Create the inverted breve in math mode %%
+\DeclareSymbolFont{tipa}{T3}{cmr}{m}{n}
+\DeclareMathAccent{\invbreve}{\mathalpha}{tipa}{16}
+
+%% Command and package to make a "formal" environment to have note inside the text.
+\usepackage{framed} % for defining framed environment
+\newenvironment{formal}{
+    \def\FrameCommand{{\color{red}\vrule width 2pt}\hspace{2pt}}
+    \MakeFramed{\advance\hsize-\width}
+    \vspace{2pt}\noindent\hspace{-7pt}\vspace{3pt}
+    }{\vspace{3pt}\endMakeFramed}
+
+%% Get a clear page (for the cover page) %%
+\newcommand\blankpage{%
+    \null
+    \thispagestyle{empty}%
+    \addtocounter{page}{-1}%
+    \newpage} 
