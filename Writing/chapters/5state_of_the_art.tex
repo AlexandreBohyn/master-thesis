@@ -26,10 +26,10 @@ However, \textcite{piepho_problems_2015} recently discussed several issues with 
 \textcite{rodriguez-alvarez_correcting_2018} introduced a novel spatial model that adjusts for both global and local trends simultaneously: the SpATS model (Spatial Analysis of field Trials with Splines). The new spatial method makes use of penalized splines \parencite{eilers_flexible_1996} to estimate a bivariate smooth function over the rows and columns of a plot. Using the work of \textcite{lee_efficient_2013,lee_hwang_smoothing_2010,lee_p-spline_2011} the spatial variability is characterized using tensor products of two-dimensional P-splines \parencite{dierckx_curve_1995} and decomposed in a PS-ANOVA system. By exploiting the similarities between P-splines and mixed models \parencite{currie_flexible_2002,durban_adjusting_2001, wand_smoothing_2003}, the P-splines are expressed as a mixed model, which allows the use of classical mixed-model software but also the use of additional random and fixed effects to the model to better capture the variation along the 2-dimensional field.
 It has already been tested on simulated data \parencite{rodriguez-alvarez_correcting_2018} and previous field trials data \parencite{lado_increased_2013} and showed promising results.\\
 
-As \textcite{wilkinson1983nearest} and \textcite{gilmour_accounting_1997} highlight, in field trials data modelling, three main sources of spatial variations need to be accounted for:
+As \textcite{wilkinson_nearest_1983} and \textcite{gilmour_accounting_1997} highlight, in field trials data modelling, three main sources of spatial variations need to be accounted for:
 \begin{description}
     \item[Stationary variations] 
-    	\footnote{\textcite{risser2016nonstationary} defines a stationary process as follows:\\
+    	\footnote{\textcite{risser_nonstationary_2016} defines a stationary process as follows:\\
 	    Let $C$ be a spatial covariance function, it is said to be stationary if the features of $C$ do not depend on spatial 
 	    location. More formally, a process $\{Y(\mathbf{s}) : \mathbf{s} \in G\}$ is said to be second-order stationary (or 
 	    weakly 

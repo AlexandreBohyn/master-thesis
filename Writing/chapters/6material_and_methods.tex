@@ -21,7 +21,7 @@ estimators.
 The inverse of this matrix is the information matrix, 
 because it summarizes the available information  on the model's coefficients (a low variance means a lot of information, and 
 inversely).
-As detailed in \textcite{goos2011optimal}, when the information matrix is diagonal, then the design is said to be orthogonal.
+As detailed in \textcite{goos_optimal_2011}, when the information matrix is diagonal, then the design is said to be orthogonal.
 
 \subsection{Optimality criteria}
 In order to generate optimal designs, one needs to use an optimality criterion to compare different designs. 
@@ -32,10 +32,10 @@ The second one aims at minimizing the average relative prediction variance over 
 I-optimal designs are focused on prediction and thus are more suited to response surface experiments.
 There also exists a G-optimality criterion that is similar to the I-optimality criterion but minimizes the maximum prediction 
 variance. 
-Recent work \parencite{rodriguez2010generating} has shown that I-optimal designs are often better choices than the G-optimal 
+Recent work \parencite{rodriguez_generating_2010} has shown that I-optimal designs are often better choices than the G-optimal 
 ones. 
 Since this is a screening experiment, only the D-optimality is detailed here. 
-For more information about I-optimal and G-optimal design, refer to \textcite{goos2011optimal,atkinson2014optimal}.
+For more information about I-optimal and G-optimal design, refer to \textcite{goos_optimal_2011,atkinson2014optimal}.
 
 \subsubsection{D-optimality}
 As said previously, for an orthogonal design all the non-diagonal elements of the VCOV matrix are null,
@@ -61,14 +61,17 @@ The D-optimal designs may not be unique. For a specified number of runs,
 
 \subsection{Generating optimal designs}
 In order to generate an optimal design, the determinant of the $\mathbf{X}^{\prime}\mathbf{X}$ matrix needs to be computed 
-multiple times. Therefore algorithms are used to gain time and avoid errors. Several algorithms exist but the most common one is 
-the coordinate exchange algorithm, created by \textcite{meyer1995coordinate}. It has the advantage to run in polynomial time, 
-which means that the time needed to find an optimal design does not explode when the size of the design increases. Another 
-similar algorithm is the point-exchange algorithm, created by \textcite{fedorov2013theory} and modified several times to speed 
-it up \parencite{johnson1983some,atkinson1989construction}. The main drawback of this algorithm is that it needs a list of 
+multiple times. 
+Therefore algorithms are used to gain time and avoid errors. 
+Several algorithms exist but the most common one is 
+the coordinate exchange algorithm, created by \textcite{meyer_coordinate-exchange_1995}. 
+It has the advantage to run in polynomial time, which means that the time needed to find an optimal design does not explode when 
+the size of the design increases. 
+Another similar algorithm is the point-exchange algorithm, created by \textcite{fedorov_theory_1972} and modified several times to speed 
+it up \parencite{johnson_guidelines_1983,atkinson_construction_1989}. The main drawback of this algorithm is that it needs a list of 
 possible design points as input, which can be quite tedious to do for large designs. In recent years, other types of algorithm 
-such as genetic algorithms \parencite{heredia2003genetic,heredia2004model}, simulating annealing algorithms 
-\parencite{bohachevsky1986generalized,meyer1988constructing} and tabu search algorithms \parencite{jung1996construction} have 
+such as genetic algorithms \parencite{heredia-langner_genetic_2003,heredia-langner_model-robust_2004}, simulating annealing algorithms 
+\parencite{bohachevsky_generalized_1986,meyer_constructing_1988} and tabu search algorithms \parencite{jung_construction_1996} have 
 been used in experimental designs. While these algorithms maintain a level of performance comparable to more traditional design 
 construction techniques, they are not as popular because they are either far more complex, only feasible in some specific cases 
 or better for some specific models and do not lead to designs that make a significant difference in practice.
@@ -416,7 +419,7 @@ The area of the root system was computed using the final root scan of each plant
 
 
 \section{SpATS model}
-In this section, the SpATS model is introduced. For a more thorough treatment of the model and all its components, see \textcite{rodriguez2016spatial}.\\
+In this section, the SpATS model is introduced. For a more thorough treatment of the model and all its components, see \textcite{rodriguez-alvarez_spatial_2016}.\\
 Consider a field trial of $n$ plots arranged in a rectangular grid, where the plot positions are collected in vectors of row $(\mathbf{r})$ and column $(\mathbf{c})$ coordinates. If $\mathbf{y}$ is the vector of plot data in field order, a common model for $\mathbf{y}$, to use as a starting point is
 	\begin{equation}
 	    \boldsymbol{y}=\mathbf{1}_{n} \beta_{0}+\boldsymbol{Z}_{r} \boldsymbol{c}_{r}+\boldsymbol{Z}_{c} \boldsymbol{c}_{c}
@@ -515,7 +518,7 @@ columns) and $\breve{\lambda}$ (smoothing along the rows).
 
 \subsection{Mixed model based smoothing parameter selection}
 
-As explained in \textcite{rodriguez2016spatial}, $\mathbf{P}$ is rank-deficient, meaning that the rank is smaller than the 
+As explained in \textcite{rodriguez-alvarez_spatial_2016}, $\mathbf{P}$ is rank-deficient, meaning that the rank is smaller than the 
 number of rows and/or columns, and this causes numerical instability when applying mixed model estimation techniques. To obtain 
 a full-rank penalty matrix, the key is to write model \ref{eq:spline_model_mat_form} as 
 \begin{equation}
@@ -576,6 +579,7 @@ Therefore, using this new notation, model \ref{eq:smooth_part_only_model} that o
     \text { and } 
     \boldsymbol{c}_{s} \sim N\left(\mathbf{0}, \boldsymbol{G}_{s}\right)
     \text{,}
+\label{eq:smooth_surface_PS_ANOVA_rewritten}
 \end{equation}
 where $\boldsymbol{G}_{s} = \sigma^2\widetilde{\boldsymbol{P}}^{-1}$. It is straightforward to see that $\boldsymbol{G}_{s}$ 
 also has a block diagonal structure, similar to that of $\widetilde{\boldsymbol{P}}$ (this structure is also represented on 
@@ -586,7 +590,7 @@ As shown in the diagram in figure \ref{fig:matrix_diagram}, the same variance pa
 main effects and interactions terms. 
 This prevents the use of standard mixed models software for estimation since $\mathbf{G}_s$ has its last block depending on both 
 $\breve{\sigma}^2$ and $\invbreve{\sigma}^2$, but in a non-linear way. 
-Even though \textcite{rodriguez2015fast} presented a specialized algorithm to deal with this issue, 
+Even though \textcite{rodriguez-alvarez_fast_2015} presented a specialized algorithm to deal with this issue, 
 here the PS-ANOVA decomposition approach \parencite{lee_efficient_2013} is used to allow the use of standard mixed model estimation procedures.\textcite{lee_efficient_2013} therefore propose to use a different variance component for each smooth component in $\mathbf{G}_s$, thus redefining this matrix as a linear function of variance parameters:
 \begin{equation}
     \boldsymbol{G}_{s} = 
@@ -598,102 +602,104 @@ here the PS-ANOVA decomposition approach \parencite{lee_efficient_2013} is used 
 \end{equation}
 where $\boldsymbol{G}_{s k}$ %= \sigma_{sk}^2\boldsymbol{\Lambda}_{sk} \ (k=1,\ldots,5)$
 is the $k$th block of the $\mathbf{G}_{s}$ matrix, depending on the specific variance component $\sigma_{sk}^2$. 
-In other words, here the tensor product P-splines mixed model is represented as the sum of 5 sets of mutually independent Gaussian random components $\mathbf{c}_{sk}$, each depending on one variance $\sigma_{sk}^2 \ (k=1,\ldots,5)$.
+In other words, here the tensor product P-splines mixed model is represented as the sum of 5 sets of mutually independent Gaussian random components $\mathbf{c}_{sk}$, each depending on one variance $\sigma_{sk}^2 \ (k=1,\ldots,5)$.\\
+Within this mixed model framework, the smoothing parameters, defined earlier as the ratio between the residual variance and the
+corresponding variance effect $\lambda_{sk} = \sigma^2_{e} / \sigma^2_{sk}$, are determined by restricted maximum likelihood (REML). Therefore the smoothness of the spatial surface is tuned by five distinct parameters, applying anisotropic (direction-dependant) smoothing. This parametrization provides flexibility to account for both global and local variations in the field. Furthermore, the decomposition of $f(\mathbf{u},\mathbf{v})$ enables a more explicit interpretation of the main patterns of spatial variation \parencite{rodriguez-alvarez_correcting_2018}.
 
 
 \input{extra/TIKZ_matrix_diagram}
 
 
 \subsection{Spatial models for field trials}
-The tensor product P-spline, presented in the previous section, constitutes the base for the analysis of agricultural field trials because it allows the modeling of the random spatial variation typically presented in a field. On top of this spatial field, we need to build up more complex models in order to account for the genetic variation, the presence of blocks effects, or other sources of variation (see section \ref{sec:sources_of_variation}). From now on, we therefore consider the following linear mixed model
+The tensor product P-spline, presented in the previous section, constitutes the base for the analysis of agricultural field trials because it allows the modeling of the random spatial variation typically presented in a field. 
+On top of this spatial field, we need to build up a more complex models in order to account for the genetic variation, the different tanks, strips and positions. From now on, we therefore consider the following linear mixed model
 \begin{equation}
-    \boldsymbol{y}=\underbrace{\boldsymbol{X}_{s} \boldsymbol{\beta}_{s}+Z_{s} \boldsymbol{c}_{s}}_{f(\boldsymbol{u}, \boldsymbol{v})}+\boldsymbol{X}_{d} \boldsymbol{\beta}_{d}+\boldsymbol{Z}_{d} \boldsymbol{c}_{d}+\varepsilon, \text { with } \boldsymbol{c}_{s} \sim N\left(\mathbf{0}, \boldsymbol{G}_{s}\right) \text { and } \boldsymbol{c}_{d} \sim N\left(\mathbf{0}, \boldsymbol{G}_{d}\right)
+    \boldsymbol{y}=
+    \underbrace{
+    	\boldsymbol{X}_{s} \boldsymbol{\beta}_{s}+
+    	\boldsymbol{Z}_{s} \boldsymbol{c}_{s}
+    	}_{f(\boldsymbol{u}, \boldsymbol{v})}+
+    \boldsymbol{X}_{d} \boldsymbol{\beta}_{d}+
+    \boldsymbol{Z}_{d} \boldsymbol{c}_{d}+
+    \varepsilon, 
+    \text { with } 
+    \boldsymbol{c}_{s} \sim N\left(\mathbf{0}, \boldsymbol{G}_{s}\right) 
+    \text { and } 
+    \boldsymbol{c}_{d} \sim N\left(\mathbf{0}, \boldsymbol{G}_{d}\right)
     \text{,}
     \label{eq:full_random_and_additonal_effects_model}
 \end{equation}
-where $\boldsymbol{X}_{s}$, $\boldsymbol{Z}_{s}$ and $\boldsymbol{G}_{s}$ are defined in the previous section and where $\boldsymbol{X}_{d}$ and $\boldsymbol{Z}_{d}$ represent column-partitioned matrices, associated respectively with extra fixed and random components, as for instance, row, column, genotypic effects. We assume that $\boldsymbol{X}_{d}$ has full rank, $\boldsymbol{Z}_{d}=\left[\boldsymbol{Z}_{d 1}, \ldots, \boldsymbol{Z}_{d b}\right]$ and $\boldsymbol{c}_d = \left( \boldsymbol{c}_{d1}^t,\ldots,\boldsymbol{c}_{db}^t\right)^t$. Each $\boldsymbol{Z}_{dk}$ corresponds to the design matrix of the $k$th random component $\boldsymbol{c}_{dk}$, with $\boldsymbol{c}_{dk}$ being a $(m_{dk} \times 1)$ vector $(k=1,\ldots,b)$. We assume further that $\boldsymbol{c}_s$ and $\boldsymbol{c}_d$ are independant, and that $\boldsymbol{G}_{d}=\bigoplus_{k=1}^{b} \boldsymbol{G}_{d k}=\bigoplus_{k=1}^{b} \sigma_{d k}^{2} \mathbf{\Lambda}_{d k}$, where $\boldsymbol{\Lambda}_{dk}$ are diagonal matrices. To keep the notation simple, we rewrite model (\ref{eq:full_random_and_additonal_effects_model}) as
+where $\boldsymbol{X}_{s}$, $\boldsymbol{Z}_{s}$ and $\boldsymbol{G}_{s}$ are defined in the previous section and form the mixed model expression of the smooth spatial surface, and $\boldsymbol{X}_{d}$ and $\boldsymbol{Z}_{d}$ represent column-partitioned matrices, associated respectively with fixed and random components. Since we do not have any check genotypic varieties or resolvable block effect, the only extra fixed effects are: an intercept ($1_n$) and the tank effect ($t$). 
+We assume that the $\boldsymbol{X}_{d}$ matrix has full-rank. 
+The position on the strip ($p$) and strip ($s$) variables are added as random effects in $\mathbf{Z}_{d}$. 
+Therefore $\mathbf{X}_{d} = 
+\left[ 
+	\mathbf{X}_{1_n},\mathbf{X}_{t} 
+\right]$, 
+$\boldsymbol{Z}_{d}=
+\left[
+	\boldsymbol{Z}_{dp}, \boldsymbol{Z}_{ds}
+\right]$ and 
+$\boldsymbol{G}_{d}= 
+\text{ blockdiag }
+\left(
+	\boldsymbol{G}_{dp}, \boldsymbol{G}_{ds}
+\right)$. 
+We further assume that $\boldsymbol{c}_s$ and $\boldsymbol{c}_d$ are independent.
+To keep the notation simple, we rewrite model (\ref{eq:full_random_and_additonal_effects_model}) as
 \begin{equation}
-    \boldsymbol{y}=\boldsymbol{X} \boldsymbol{\beta}+\boldsymbol{Z} \boldsymbol{c}+\boldsymbol{\varepsilon}, \text { with } \boldsymbol{c} \sim N(\mathbf{0}, \boldsymbol{G}) \text { and } \boldsymbol{\varepsilon} \sim N\left(\mathbf{0}, \sigma^{2} \boldsymbol{I}_{n}\right)
+    \boldsymbol{y}=
+    \boldsymbol{X} \boldsymbol{\beta}+
+    \boldsymbol{Z} \boldsymbol{c}+
+    \boldsymbol{\varepsilon}, 
+    \text { with } 
+    \boldsymbol{c} \sim N(\mathbf{0}, \boldsymbol{G}) 
+    \text { and } 
+    \boldsymbol{\varepsilon} \sim N\left(\mathbf{0}, \sigma^{2} \boldsymbol{I}_{n}\right)
 \end{equation}
-where $\boldsymbol{X}=\left[\boldsymbol{X}_{s}, \boldsymbol{X}_{d}\right], \boldsymbol{Z}=\left[\boldsymbol{Z}_{s}, \boldsymbol{Z}_{d}\right]=\left[\boldsymbol{Z}_{1}, \ldots, \boldsymbol{Z}_{q}\right] \ (q=5+b)$, and 
+where $\boldsymbol{X}=
+\left[
+	\boldsymbol{X}_{s}, \boldsymbol{X}_{d_{1}}, \mathbf{X}_{d_{t}} 
+\right], 
+\boldsymbol{Z}=
+\left[
+	\boldsymbol{Z}_{s}, \boldsymbol{Z}_{d_{p}}, \mathbf{Z}_{d_{s}}
+\right]$, and 
 \begin{equation}
-    \boldsymbol{G}=\text { blockdiag }\left(\boldsymbol{G}_{s}, \boldsymbol{G}_{d}\right)=\bigoplus_{k=1}^{q} \boldsymbol{G}_{k}=\bigoplus_{k=1}^{q} \sigma_{k}^{2} \boldsymbol{\Lambda}_{k}
+    \boldsymbol{G}=\text { blockdiag }\left(\boldsymbol{G}_{s}, \boldsymbol{G}_{dp}, \boldsymbol{G}_{ds} \right)
 \end{equation}
 
 \subsection{Model estimation}
-Estimates of the fixed and random effects coefficients in model \ref{eq:final_MM_eq}, for given values of the variance components, follow from standard mixed-mode theory and can be obtained by maximizing the REML log-likelihood function
-\begin{equation}
-    l=-\frac{1}{2} \log |\boldsymbol{V}|-\frac{1}{2} \log \left|\boldsymbol{X}^{t} \boldsymbol{V}^{-\mathbf{1}} \boldsymbol{X}\right|-\frac{1}{2}(\boldsymbol{y}-\boldsymbol{X} \widehat{\boldsymbol{\beta}})^{t} \boldsymbol{V}^{-1}(\boldsymbol{y}-\boldsymbol{X} \widehat{\boldsymbol{\beta}})
-    \text{.}
-\end{equation}
-The implementation of this procedure in the SpATS packages is detailed in the appendix of \textcite{rodriguez2016spatial}. The REML estimates are obtained taking the derivatives of the previous equation, with respect to the variance components $\sigma_k^2 \ (k=1,\ldots,q)$ and equating the obtained expression to zero (see e.g. \cite{rodriguez2015fast,johnson1995restricted}), we obtain that
-\begin{equation}
-    \widehat{\sigma}_{k}^{2}=\frac{\widehat{\mathbf{c}}_{k}^{t} \boldsymbol{\Lambda}_{k}^{-1} \widehat{\mathbf{c}}_{k}}{\mathrm{ED}_{k}}, k=1, \ldots, q
-\end{equation}
-with
-\begin{equation}
-    \mathrm{ED}_{k}=\operatorname{trace}\left(\mathbf{Z}_{k}^{t} \mathbf{Q} \mathbf{Z}_{k} \mathbf{G}_{k}\right)
-\end{equation}
-where $\mathbf{Q}=\boldsymbol{V}^{-1}-\boldsymbol{V}^{-1} \boldsymbol{X}\left(\boldsymbol{X}^{t} \boldsymbol{V}^{-1} \boldsymbol{X}\right)^{-1} \boldsymbol{X}^{t} \boldsymbol{V}^{-1}$ with $\boldsymbol{V}=\boldsymbol{R}+\mathbf{Z}\boldsymbol{G} \mathbf{Z}^{t}$ and $\boldsymbol{R}=\sigma^{2} \boldsymbol{I}_{n}$. An estimate of $\sigma^2$ can also be easily obtained following the same reasoning
-\begin{equation}
-    \widehat{\sigma}^{2}=\frac{\widehat{\boldsymbol{\varepsilon}}^{t} \hat{\boldsymbol{\varepsilon}}}{\mathrm{ED}_{\boldsymbol{\varepsilon}}}
-    \label{eq:var_estimation_SPATS}
-\end{equation}
-where $\widehat{\boldsymbol{\varepsilon}}=\mathbf{y}-\mathbf{X} \widehat{\boldsymbol{\beta}}+\mathbf{Z} \widehat{\mathbf{c}}$ and
-\begin{equation}
-    \mathrm{ED}_{\boldsymbol{\varepsilon}}=\operatorname{trace}(\mathbf{R Q})=n-\operatorname{rank}(\mathbf{X})-\sum_{k=1}^{q} \mathrm{ED}_{k}
-    \text{.}
-    \label{eq:ED_error_term}
-\end{equation}
-In these equations the real values of $\boldsymbol{\beta}$ and $\mathbf{c}$ are not known, so their BLUEs $(\widehat{\boldsymbol{\beta}})$ and BLUP $(\hat{\mathbf{c}})$, respectively are used instead. Their closed form expressions are detailed in the Appendix B of \textcite{rodriguez2016spatial}.
+With all these specifications in mind, the model was fitted using cubic B-splines and second-order penalties. These settings are commonly used and allow flexibility of the model \parencite{rodriguez-alvarez_correcting_2018,rodriguez-alvarez_spatial_2016,rodriguez-alvarez_fast_2015}. We used 99 and 5 equally spaced knots for the the P-splines, corresponding to the strips and positions, respectively. In this way there was approximately one knot for every plot. Then there was a total of 362 model parameters to be estimated for the smooth surface. As \textcite{rodriguez-alvarez_correcting_2018} explains, the number of knot is not critical since the optimization of the fit to the data is essentially dependant on the smoothing parameters.\\
+The estimation procedure was performed using the R-package \texttt{SpATS} \parencite{rodriguez-alvarez_spats:_2016}. This package provides a REML-based estimation of the variances components and computes the best linear unbiased estimators (BLUEs) of the fixed effects and the empirical best linear unbiased predictors (BLUPs) of the random effects. A useful by-product of this computation is the effective dimension associated to each random effect.
 
 \subsubsection{Effective dimensions}
-Denoting the denominator of (\ref{eq:var_estimation_SPATS}) as $\mathrm{ED}_{[.]}$ (for effective dimension) was not done without purpose. In the smoothing context, the effective dimension of a "smooth" model is defined as the trace of the so-called "hat" matrix $\mathbf{H}$, defined as $\Hat{\mathbf{y}}=\mathbf{Hy}$ \parencite{hastie1990generalized}. In this setting the ED can be interpreted as a measure of the complexity of the model: the more complex the model, the larger the ED (see also \cite{eilers2015twenty}).\\
-In recent years, several new definitions and generalizations of the concept of effective dimension that are applicable to (generalized) linear mixed models have been proposed in the statistical literature (see, e.g., \cite{you2016generalized}, and references therein). In almost all cases, the aim has been to provide a complexity measure that allows models' comparison and selection (via, for instance, the AIC). For our application, however, we are more interested in obtaining a separate complexity measure for each component in model (\ref{eq:final_MM_eq}), that can give us insights about the contribution of that effect when explaining the response (phenotypic) variation \parencite{cui2010partitioning}.\\
-As shown in details in the appendix of \parencite{rodriguez-alvarez_correcting_2018}, for model (\ref{eq:final_MM_eq}) we can write
+In P-splines methodology, the effective dimension ($ED$) measures the complexity of the model components \parencite{eilers_twenty_2015}, it is similar to the more common concept of effective degree of freedom \parencite{buja1989linear}. It is computed as the trace of the hat matrix $\mathbf{H}$. If we only take the spatial part of our model (equation \ref{eq:smooth_surface_PS_ANOVA_rewritten}), we can write:
 \begin{equation}
-    \boldsymbol{H} \boldsymbol{y}=\widehat{\boldsymbol{y}}=\boldsymbol{X} \widehat{\boldsymbol{\beta}}+\mathbf{Z} \widehat{\boldsymbol{c}}=\boldsymbol{H}_{F} \boldsymbol{y}+\boldsymbol{H}_{R} \boldsymbol{y} =
-    \boldsymbol{H}_{F} \boldsymbol{y} + \sum_{k=1}^{q} \mathbf{H}_{k}\mathbf{y}
+	\begin{aligned}
+		\tilde{\mathbf{y}} &= \mathbf{Hy} \\
+		\tilde{f}(\mathbf{u},\mathbf{v}) &= \boldsymbol{X}_{s} \hat{\boldsymbol{\beta}}_{s}+
+											\boldsymbol{Z}_{s} \tilde{\boldsymbol{c}}_{s} \\
+			&= \mathbf{H}_{\beta}\mathbf{y} + \mathbf{H}_{s}\mathbf{y}
+	\end{aligned}
+	\text{ ,}
 \end{equation}
-where $\boldsymbol{H}_{F}$ and $\boldsymbol{H}_{R}$ are the hat matrix for the fixed and random parts of the model, and $\mathbf{H}_{k}\mathbf{y}$ is the hat matrix corresponfing to the random $k$th component $\mathbf{c}_k$. Since the effective dimension of $\mathbf{c}_k$ is defined as the trace of $\mathbf{H}_k$ then the total effective dimension of model (\ref{eq:final_MM_eq}) is
+where $\mathbf{H}_{\beta}$ is the hat matrix of the fixed components and $\mathbf{H}_{s}$ is the hat matrix of the random components, also known as the smoother matrix. In this context, the sum of the diagonal elements of $\mathbf{H}_{s}$ expresses the number of parameters effectively involved in the modelling of the spatial surface. This decomposition is allowed from the PS-ANOVA structure of the spatial model. Following this, the smoother matrix can be further decomposed according to the five additive and interaction smooth components of the smooth bivariate surface, giving $\mathbf{H}_{s} = \sum_{k=1}^{5} \mathbf{H}_{s_{k}}$, and we can compute the individual effective dimension for each component ($ED_{s_{k}}$). As explained in \textcite{rodriguez-alvarez_spatial_2016}, the effective dimension varies with the smoothing parameter:
 \begin{equation}
-    \begin{aligned}
-        \mathrm{ED}=\operatorname{trace}(\boldsymbol{H})=\operatorname{trace}\left(\boldsymbol{H}_{F}\right)+\operatorname{trace}\left(\boldsymbol{H}_{R}\right)
-        & = \operatorname{trace}\left(\boldsymbol{H}_{F}\right)+\sum_{k=1}^{q} \operatorname{trace}\left(\boldsymbol{H}_{k}\right) \\
-        & =\operatorname{rank}(\boldsymbol{X})+\sum_{k=1}^{q} \mathrm{ED}_{k}.
-    \end{aligned}
+	\begin{aligned}
+		\lambda_{s_{k}} = \dfrac{\sigma^2_{e}}{\sigma^2_{s_{k}}} & \rightarrow \infty \text{  then  } ED_{s_{k}} \rightarrow 0 \\
+		\lambda_{s_{k}} = \dfrac{\sigma^2_{e}}{\sigma^2_{s_{k}}} & \rightarrow 0 \text{  then  } ED_{s_{k}} \rightarrow 
+			\text{upper bound}\text{ ,}
+	\end{aligned}
 \end{equation}
-Taking this equation and equation (\ref{eq:ED_error_term}) into consideration we note that
-\begin{equation}
-    n=\operatorname{rank}(X)+\sum_{k=1}^{q} E D_{k}+E D_{\varepsilon}
-    \text{.}
-\end{equation}
-Thus, the number of observations $n$ is partitioned into independent effective dimensions for the model's components and error.\\
-For all components $\mathrm{ED}_k \ (k=1,\ldots,q)$ will vary between zero and $\operatorname{rank}\left(\left[\mathbf{X}, \mathbf{Z}_{k}\right]\right)-\operatorname{rank}(\mathbf{X})$. The signal-to-noise ratio $\sigma_{k}^{2} / \sigma^{2}$ modulates the value of $\mathrm{ED}_k$: when $\sigma_{k}^{2} / \sigma^{2} \rightarrow 0$ then $\mathrm{ED}_{k} \rightarrow 0$ and when $\sigma_{k}^{2} / \sigma^{2} \rightarrow \inf$ then $\mathrm{ED}_k$ approaches the maximum value. $\mathrm{ED}_k$ can therefore be interpreted as a measure of the complexity of the corresponding component, which in turn gives a separate measure for its contribution.\\
-For the $\mathrm{ED}_k$ corresponding to smoothing parameters $\lambda_{sk}$, the upper bound is determined by the number of knots used to fit the smooth surface. Therefore $\mathrm{ED}_{sk}$ serves as a reverse indicator of the smoothness of the corresponding components, i.e. the higher the degree of smoothness (larger value of $\lambda_{sk}$) the smaller the number of $\mathrm{ED}_{sk}$, and is indicative of the relative importance of the spatial component in the construction smooth surface.
+where the upper bound is determined by the number of knots.
+\\
 
-\subsubsection{Heritability and effective dimension}
-The standard heritability is defined by \textcite{rodriguez-alvarez_correcting_2018} as the proportion of total (phenotypic) variation that is attributable to the genetic component. It is useful to compare the genetic effects of each genotype in a single trial but also between different models. The effective dimension associated with the genotypic effects $\mathrm{ED}_g = \operatorname{trace}(\mathbf{H}_g)$ is a measure of the degree of shrinkage imposed on genotypic effects, where $\mathbf{H}_g$ is the hat matrix for genotypes. In this case, $\mathbf{H}_g$ depends on the regularization parameter $\lambda_g = \sigma^2_e/\sigma^2_g$ and transforms
-the observations into predicted genotypic values, such
-that $\mathbf{H}_g\mathbf{y} = \mathbf{Z}_g\mathbf{\hat{g}}$. Therefore, $\mathrm{ED}_g$ decreases as shrinkage of genotypic effects increases. Given the properties of the genetic effective dimension, \textcite{rodriguez2016spatial} proposed a novel expression of heritability:
-\begin{equation}
-    H^2 = \dfrac{\mathrm{ED_g}}{n_g-l}
-\end{equation}
-where $n_g$ is the number of genotypes and $l$ is the number of non-zero eigenvalues of $\mathbf{H}_g$. Furthermore, in the specific
-situation when genotypic effects are assumed independent
-(i.e., ignoring pedigree/marker information), and by ignoring
-the zero eigenvalues, the following equivalence can be established:
-\begin{equation}
-    H^{2}=\frac{\mathrm{ED}_{g}}{n_{g}}=1-\frac{\overline{\mathrm{PEV}}}{\sigma_{g}^{2}}
-    \text{,}
-    \label{eq:new_heritability}
-\end{equation}
-where $\overline{\mathrm{PEV}}$ stands for the average prediction error variance of genotype BLUPs. Note that the right-hand term corresponds to the generalized heritability developed by \textcite{welham2010comparison} and is also equivalent to the one given in \textcite{cullis_design_2006}. This generalized heritability is adapted to models with additional fixed and random components in comparison to the standard heritability which only works for a model with a genotypic random component only.
+Consequently, the total effective dimension $ED_{s}$ can be interpreted as a measure of the magnitude of field variations with larger values indicating more intense spatial patterns. In addition, the partial effective dimensions $ED_{s_{k}}$ are indicative of the contribution of each component to the fitted surface, and reflect the complexity of the spatial pattern.
+
+%\subsubsection{Generalized heritability}
 
 
-\begin{formal}
-Do a section explaining which model was chosen and how it was modelled in reality
-\end{formal}
 
 \section{ARXAR model}
 In this section the ARXAR model, and its extension to the linear variance (LV) model, are explained. For more detailed information about the original ARxAR model, consult \textcite{gilmour_accounting_1997}. For information about the extensions of the model, see \textcite{Piepho2010} and \textcite{williams_neighbour_1986}.\\
