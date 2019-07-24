@@ -7,33 +7,11 @@
 #' - Data table (.RData)
 #' - Outliers table (outliers.xlsx)
 #' - Genotype information table (GENO_INFO.xlsx)
-#'
-# SPATS PARAMETERS ------------------------------------------------------------
 
 library(SpATS)
 
-<<<<<<< Updated upstream
 # SPATS PARAMETERS ------------------------------------------------------------
 
-vars <- c('FRESH_LS','FRESH_RS','DRY_LS','DRY_RS')
-genotype <- "GENOTYPE"
-geno.decomp <- NULL
-spatial <- ~formula()
-fixed <- ~formula()
-random <- ~formula()
-data <- data_table
-family <- gaussian()
-offset <- 0
-weights <- data_table$w_WEIGHTS
-
-# SPATS MODEL -----------------------------------------------------------------
-
-SpATS(response, genotype, geno.decomp = NULL,
-      genotype.as.random = FALSE, spatial, 
-      fixed = NULL, random = NULL, data,
-      family = gaussian(), offset = 0, weights = NULL, 
-      control = controlSpATS())
-=======
 # Load the data
 load("data.RData")
 
@@ -91,6 +69,22 @@ fits <- map(vars, ~fit.spats(.x))
 
 # SUMMARY ---------------------------------------------------------------------------
 
+# Dimensions table with percentage of total
+dim <- matrix(nrow = 13, ncol = 0)
+for(i in c(1:4)){
+  dim <- cbind(dim, fits[[i]]$eff.dim)
+}
+colnames(dim) <- c('Effective_FRESH_LS','Effective_FRESH_RS',
+                     'Effective_DRY_LS','Effective_DRY_RS')
+perc <- function(x)(x/sum(x)*100)
+dim <- dim%>%
+  as_tibble()%>%
+  mutate_all(list(percentage = ~perc))
+
+data.frame(Model = c(1,1,1,1,1,30,5,99,6,100,6,100,150))
+
+write.xlsx(t(dim), file = "Tables/dim.xlsx")
+
 # Summary measures
 summary(fit.spats)
 summary(fit.spats, which = "variances")
@@ -100,4 +94,3 @@ summary(fit.spats, which = "variances")
 
 # Plots
 plot(fit.spats, depict.missing = TRUE)
->>>>>>> Stashed changes

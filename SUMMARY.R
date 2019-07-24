@@ -114,6 +114,10 @@ filtered_data <- filtered_data %>%
                 REAL_GENOTYPE != 31)
 
 
+# Save the filtered data
+save(filtered_data,design_table,data_table,
+     file = "data.RData")
+
 # SUMMARY TABLES ------------------------------------------------
 
 # Print the latex table for the seed weights
