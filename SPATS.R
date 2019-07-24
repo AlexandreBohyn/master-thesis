@@ -10,6 +10,7 @@
 
 library(SpATS)
 library(gridExtra)
+library(ggthemes)
 
 # SPATS PARAMETERS ------------------------------------------------------------
 
@@ -21,8 +22,17 @@ data <- filtered_data%>%
   select(-QR)
 data$POSITION <- ifelse(data$TANK == "A",
                         as.numeric(data$POSITION),
-                        as.numeric(data$POSITION)+5)
+                        as.numeric(data$POSITION)+10)
 
+# Reformat the strips for camera B
+data$STRIP <- ifelse(data$TANK == "A", data$STRIP,
+                     ifelse(data$STRIP<56,
+                            abs(data$STRIP-56),
+                            abs(data$STRIP-155)))
+
+# Re arrange the position
+data$POSITION <- ifelse(data$STRIP < 50, data$POSITION+5,data$POSITION )
+data$STRIP <- ifelse(data$STRIP < 50,data$STRIP, abs(data$STRIP-100))
 # Factor the variables
 data$S <- as.factor(filtered_data$STRIP)
 data$P <- as.factor(filtered_data$POSITION)
@@ -80,10 +90,6 @@ colnames(dim) <- c('Model','Effective_FRESH_LS','Effective_FRESH_RS',
 
 #write.xlsx(t(dim), file = "Tables/dim.xlsx")
 
-# Summary measures
-summary(fit.spats)
-summary(fit.spats, which = "variances")
-
 # Get the heritability
 herit <- c()
 for(i in 1:4){
@@ -118,6 +124,30 @@ print(xtable(t(var), digits = 4,
 
 # PLOTS ---------------------------------------------------------------------------
 
+names(fits) <- vars
+
+SpATS_getPlotData <- function(x){
+  plot(fits[[x]], depict.missing = TRUE, main = x)
+}
+
+SpATS_plotsData <- map(vars, ~SpATS_getPlotData(.x))
+names(SpATS_plotsData) <- vars
+
+SpATS_plots_raw_data_fun <- function(x){
+  ggplot(data = SpATS_plotsData[[x]], aes(x = columns, y = rows, fill = response))+
+    geom_raster(hjust = 0, vjust = 0)+
+    scale_x_continuous(expand = c(0,0))+
+    scale_y_continuous(expand = c(0,0))+
+    scale_fill_continuous(limits = c(0,8), breaks = c(0,2,4,6,8), 
+                          na.value = 'white')+
+    coord_fixed(ratio = 20/50)+
+    guides(fill = guide_colourbar(barwidth = 0.5, barheight = 15,
+                                  title = ""))+
+    theme_bw()+
+    labs(x = "POSITION", y = "STRIP")
+}
+
+residuals_plot <- marrangeGrob(SpATSplots_raw_data, ncol = 4, nrow=2, top=NULL)
 
 # RESIDUALS ------------------------------------------------------------------------
 
