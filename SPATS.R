@@ -78,11 +78,18 @@ for(i in c(1:4)){
 colnames(dim) <- c('Model','Effective_FRESH_LS','Effective_FRESH_RS',
                      'Effective_DRY_LS','Effective_DRY_RS')
 
-write.xlsx(t(dim), file = "Tables/dim.xlsx")
+#write.xlsx(t(dim), file = "Tables/dim.xlsx")
 
 # Summary measures
 summary(fit.spats)
 summary(fit.spats, which = "variances")
+
+# Get the heritability
+herit <- c()
+for(i in 1:4){
+  herit <- append(herit,getHeritability(fits[[i]]))
+}
+names(herit) <- vars
 
 # Extract the residuals
 res <- matrix(nrow = 503, ncol = 0)
@@ -92,7 +99,27 @@ for(i in 1:4){
 colnames(res) <- vars
 res <- as.data.frame(res)
 
-# PLOTS -----------------------------------------------------------------------------
+# Get the variance of all the components
+var <- matrix(nrow = 8, ncol = 0)
+for(i in 1:4){
+  var <- cbind(var,fits[[i]]$var.comp)
+}
+colnames(var) <- vars
+
+print(xtable(t(var), digits = 4,
+             caption = "Variances of all the components of the SpATS model"),
+      file = "Tables/latex_SpATS_variance.txt",
+      append = FALSE,
+      include.rownames = TRUE,
+      caption.placement = "top",
+      booktabs = TRUE,
+      timestamp = NULL,
+      comment = FALSE)
+
+# PLOTS ---------------------------------------------------------------------------
+
+
+# RESIDUALS ------------------------------------------------------------------------
 
 # Residuals analysis plots
 lagplot <- function(colname){
@@ -137,5 +164,3 @@ residuals_plot <- marrangeGrob(plots, ncol = 4, nrow=2, top=NULL)
 ggsave(filename = "Figures/residuals_plot.pdf", plot = residuals_plot,
        height = 3.6, width = 7.5, scale = 1.5)
 
-# Plots
-plot(fit.spats, depict.missing = TRUE)
