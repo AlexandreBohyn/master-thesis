@@ -136,6 +136,9 @@ names(SpATS_plotsData) <- vars
 SpATS_plots_raw_data_fun <- function(x){
   ggplot(data = SpATS_plotsData[[x]], aes(x = columns, y = rows, fill = response))+
     geom_raster(hjust = 0, vjust = 0)+
+    geom_line(aes(x = 10), color = 'black')+
+    geom_line(aes(x = 5), color = 'black', linetype = "dotted", size = 0.7)+
+    geom_line(aes(x = 15), color = 'black', linetype = "dotted", size = 0.7)+
     scale_x_continuous(expand = c(0,0))+
     scale_y_continuous(expand = c(0,0))+
     scale_fill_continuous(limits = c(0,8), breaks = c(0,2,4,6,8), 
