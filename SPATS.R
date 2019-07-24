@@ -9,6 +9,7 @@
 #' - Genotype information table (GENO_INFO.xlsx)
 
 library(SpATS)
+library(gridExtra)
 
 # SPATS PARAMETERS ------------------------------------------------------------
 
@@ -70,18 +71,12 @@ fits <- map(vars, ~fit.spats(.x))
 # SUMMARY ---------------------------------------------------------------------------
 
 # Dimensions table with percentage of total
-dim <- matrix(nrow = 13, ncol = 0)
+dim <- data.frame(Model = c(1,1,1,1,1,30,5,99,6,100,6,100,150))
 for(i in c(1:4)){
   dim <- cbind(dim, fits[[i]]$eff.dim)
 }
-colnames(dim) <- c('Effective_FRESH_LS','Effective_FRESH_RS',
+colnames(dim) <- c('Model','Effective_FRESH_LS','Effective_FRESH_RS',
                      'Effective_DRY_LS','Effective_DRY_RS')
-perc <- function(x)(x/sum(x)*100)
-dim <- dim%>%
-  as_tibble()%>%
-  mutate_all(list(percentage = ~perc))
-
-data.frame(Model = c(1,1,1,1,1,30,5,99,6,100,6,100,150))
 
 write.xlsx(t(dim), file = "Tables/dim.xlsx")
 
@@ -89,8 +84,58 @@ write.xlsx(t(dim), file = "Tables/dim.xlsx")
 summary(fit.spats)
 summary(fit.spats, which = "variances")
 
+# Extract the residuals
+res <- matrix(nrow = 503, ncol = 0)
+for(i in 1:4){
+  res <- cbind(res,fits[[i]]$residuals)
+}
+colnames(res) <- vars
+res <- as.data.frame(res)
 
 # PLOTS -----------------------------------------------------------------------------
+
+# Residuals analysis plots
+lagplot <- function(colname){
+  forecast::gglagchull(res[[colname]], lags = 10, diag = TRUE, do.lines = FALSE,
+                       diag.col = "black") +
+    coord_fixed()+
+    theme_bw()+
+    labs(x = "Original residuals", y = "Lagged residuals",
+         title = colname)+
+    theme(legend.position = "none")
+}
+lag_plots <- map(vars, ~lagplot(.x))
+
+# Residuals normal distribution plot
+n = 503
+mean = 0
+
+normal_res_plot <- function(colname){
+  sd = sd(res[[colname]])
+  binwidth = (max(res[[colname]])-min(res[[colname]]))/50
+  set.seed(1)
+  df <- data.frame(x = rnorm(n, mean, sd))
+  var <- enquo(colname)
+  ggplot(res, aes(x = eval(parse_expr(!!var)), mean = mean, sd = sd,
+                  binwidth = binwidth, n = n))+
+    theme_bw() +
+    geom_histogram(binwidth = binwidth, 
+                   colour = "white", fill = "cornflowerblue", size = 0.1) +
+    stat_function(fun = function(x) dnorm(x, mean = mean, sd = sd) * n * binwidth,
+                  color = "darkred", size = 1)+
+    labs(title = colname,
+         x = "Residuals",
+         y = "Count")
+}
+
+norm_plots <- map(vars, ~normal_res_plot(.x))
+plots <- c(lag_plots,norm_plots)
+names(plots) <- c('lag1','lag2','lag3','lag4','norm1','norm2','norm3','norm4')
+plots <- plots[c('lag1','norm1','lag2','norm2','lag3','norm3','lag4','norm4')]
+residuals_plot <- marrangeGrob(plots, ncol = 4, nrow=2, top=NULL)
+
+ggsave(filename = "Figures/residuals_plot.pdf", plot = residuals_plot,
+       height = 3.6, width = 7.5, scale = 1.5)
 
 # Plots
 plot(fit.spats, depict.missing = TRUE)
