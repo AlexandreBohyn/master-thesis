@@ -10,7 +10,7 @@
 
 library(SpATS)
 library(gridExtra)
-library(ggthemes)
+
 
 # SPATS PARAMETERS ------------------------------------------------------------
 
@@ -33,6 +33,7 @@ data$STRIP <- ifelse(data$TANK == "A", data$STRIP,
 # Re arrange the position
 data$POSITION <- ifelse(data$STRIP < 50, data$POSITION+5,data$POSITION )
 data$STRIP <- ifelse(data$STRIP < 50,data$STRIP, abs(data$STRIP-100))
+
 # Factor the variables
 data$S <- as.factor(filtered_data$STRIP)
 data$P <- as.factor(filtered_data$POSITION)
@@ -97,6 +98,7 @@ for(i in 1:4){
 }
 names(herit) <- vars
 
+
 # Extract the residuals
 res <- matrix(nrow = 503, ncol = 0)
 for(i in 1:4){
@@ -126,31 +128,50 @@ print(xtable(t(var), digits = 4,
 
 names(fits) <- vars
 
-SpATS_getPlotData <- function(x){
+SpATS_getPlotData_fun <- function(x){
   plot(fits[[x]], depict.missing = TRUE, main = x)
 }
 
-SpATS_plotsData <- map(vars, ~SpATS_getPlotData(.x))
+SpATS_plotsData <- map(vars, ~SpATS_getPlotData_fun(.x))
 names(SpATS_plotsData) <- vars
 
-SpATS_plots_raw_data_fun <- function(x){
-  ggplot(data = SpATS_plotsData[[x]], aes(x = columns, y = rows, fill = response))+
-    geom_raster(hjust = 0, vjust = 0)+
+SpATS_plotRawData_fun <- function(x,var,interp=FALSE){
+  response <- enquo(var)
+  ggplot(data = SpATS_plotsData[[x]], aes(x = columns, y = rows, fill = !!response))+
+    geom_raster(hjust = 0, vjust = 0, interpolate = interp)+
     geom_line(aes(x = 10), color = 'black')+
-    geom_line(aes(x = 5), color = 'black', linetype = "dotted", size = 0.7)+
-    geom_line(aes(x = 15), color = 'black', linetype = "dotted", size = 0.7)+
+    geom_line(aes(x = 5), color = 'black', linetype = "dotted", size = 0.2)+
+    geom_line(aes(x = 15), color = 'black', linetype = "dotted", size = 0.2)+
     scale_x_continuous(expand = c(0,0))+
     scale_y_continuous(expand = c(0,0))+
-    scale_fill_continuous(limits = c(0,8), breaks = c(0,2,4,6,8), 
-                          na.value = 'white')+
+    scale_fill_gradientn(na.value = 'white',
+                        colours = grDevices::topo.colors(100))+
     coord_fixed(ratio = 20/50)+
-    guides(fill = guide_colourbar(barwidth = 0.5, barheight = 15,
-                                  title = ""))+
+    guides(fill = guide_colourbar(barwidth = 0.5, barheight = 9,
+                                  title = "", frame.colour = "black", 
+                                  ticks.colour = "black"))+
     theme_bw()+
-    labs(x = "POSITION", y = "STRIP")
+    labs(x = "POSITION", y = "STRIP",
+         title = x)
 }
 
-residuals_plot <- marrangeGrob(SpATSplots_raw_data, ncol = 4, nrow=2, top=NULL)
+# Raw data plot
+raw_data_plots_list <- map(vars, ~SpATS_plotRawData_fun(.x,response,FALSE))
+rawData_plot <- marrangeGrob(raw_data_plots_list, ncol = 4, nrow=1, top=NULL)
+ggsave(filename = "Figures/rawData_plot.pdf", plot = rawData_plot,
+       height = 2, width = 7.5, scale = 1.5)
+
+# Residuals plot
+residuals_plots_list <- map(vars, ~SpATS_plotRawData_fun(.x,residuals,FALSE))
+residuals_plot <- marrangeGrob(residuals_plots_list, ncol = 4, nrow=1, top=NULL)
+ggsave(filename = "Figures/residuals_plot.pdf", plot = residuals_plot,
+       height = 2, width = 7.5, scale = 1.5)
+
+# Fitted values plot
+raw_data_plots_list <- map(vars, ~SpATS_plotRawData_fun(.x,response,FALSE))
+rawData_plot <- marrangeGrob(raw_data_plots_list, ncol = 4, nrow=1, top=NULL)
+ggsave(filename = "Figures/rawData_plot.pdf", plot = rawData_plot,
+       height = 2, width = 7.5, scale = 1.5)
 
 # RESIDUALS ------------------------------------------------------------------------
 
@@ -192,8 +213,9 @@ norm_plots <- map(vars, ~normal_res_plot(.x))
 plots <- c(lag_plots,norm_plots)
 names(plots) <- c('lag1','lag2','lag3','lag4','norm1','norm2','norm3','norm4')
 plots <- plots[c('lag1','norm1','lag2','norm2','lag3','norm3','lag4','norm4')]
-residuals_plot <- marrangeGrob(plots, ncol = 4, nrow=2, top=NULL)
+residuals_analysis_plot <- marrangeGrob(plots, ncol = 4, nrow=2, top=NULL)
 
-ggsave(filename = "Figures/residuals_plot.pdf", plot = residuals_plot,
+ggsave(filename = "Figures/residuals_analysis_plot.pdf", 
+       plot = residuals_analysis_plot,
        height = 3.6, width = 7.5, scale = 1.5)
 
