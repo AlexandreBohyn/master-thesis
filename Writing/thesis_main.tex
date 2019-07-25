@@ -4,6 +4,7 @@
 %% Glossary and abreviations %%
 \input{extra/glossary_and_abreviations} %contains the glossary and abreviations
 
+
 \begin{document}
 
 %%  Front Cover %%
@@ -11,24 +12,22 @@
 
 \pagenumbering{roman} %roman numerals
 
-%%% Preface %%
-%\chapter*{Preface}
-%\addcontentsline{toc}{chapter}{Preface} %adds it to the table of contents
-%\input{chapters/1preface}
-%\newpage
+%% Preface %%
+\chapter*{Preface}
+\addcontentsline{toc}{chapter}{Preface} %adds it to the table of contents
+\input{chapters/1preface}
+\newpage
 
-%%% Summary %%
-%\chapter*{Summary}
-%\addcontentsline{toc}{chapter}{Summary}
-%\input{chapters/2summary}
+%% Summary %%
+\chapter*{Summary}
+\addcontentsline{toc}{chapter}{Summary}
+\input{chapters/2summary}
 
 %% List of acronyms %%
-%\printglossary[type=\acronymtype] 
+\printglossary[type=\acronymtype] 
 
 %% Glossary	%%
-%\printglossary
-
-
+\printglossary
 
 %% Table of contents %%
 \tableofcontents
