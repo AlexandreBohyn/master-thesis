@@ -1,22 +1,23 @@
 %Material and methods
 
 \section{Optimal experimental designs}
-\begin{formal}
-Say how custom designs are more efficient because they fit to the problem rather than having to the change the problem to fit a design.
-The main principle in custom design is to maximize an optimality criterion to get the best design possible.
-\end{formal}
+In the context of design of experiments (DOE), optimal designs are the holy grail that every experimenter want. However, researcher often use pre-made designs that fit a large amount of experiments instead of creating an optimal one. Since experimentations exist in all sizes and forms, not all pre-made designs are ideal. Therefore, creating an optimal design is a great choice to ensure that the design fits the experiment and not the other way around. In this section, we explain how and why we created a custom, optimal, design to fit our experiments.
 
 \subsection{Orthogonal designs}
 In design of experiments, orthogonal designs are interesting because they guarantees that each main effect and interaction can 
-be estimated independently. Meaning that the effect of one factor or interaction can be estimated separately from the effect of other factors
+be estimated independently. Meaning that the effect of one factor or interaction can be estimated separately from the effect of 
+other factors
 and that the addition or subtraction of terms in the model does not affect the estimates.
-In a regression or ANOVA-type model, the best linear unbiased predictor (or BLUE) of the regression coefficients is obtained by using 
+In a regression or ANOVA-type model, the best linear unbiased predictor (or BLUE) of the regression coefficients is obtained by 
+using 
 the ordinary least squares (OLS) method, because it minimizes the variance of the estimators. 
 These variances are often represented in variance-covariance (VCOV) matrix, 
-where the diagonal is the variance of the estimators and the non-diagonal elements are the pairwise covariances between estimators. 
+where the diagonal is the variance of the estimators and the non-diagonal elements are the pairwise covariances between 
+estimators. 
 The inverse of this matrix is the information matrix, 
-because it summarizes the available information  on the model's coefficients (a low variance means a lot of information, and inversely).
-As detailed in \textcite{goos2011optimal}, when the information matrix is diagonal, then the design is said to be orthogonal.
+because it summarizes the available information  on the model's coefficients (a low variance means a lot of information, and 
+inversely).
+As detailed in \textcite{goos_optimal_2011}, when the information matrix is diagonal, then the design is said to be orthogonal.
 
 \subsection{Optimality criteria}
 In order to generate optimal designs, one needs to use an optimality criterion to compare different designs. 
@@ -25,10 +26,12 @@ The first one aims at minimizing the variance of the factors effects estimates a
 D-optimal designs are therefore more appropriate for screening experiments. 
 The second one aims at minimizing the average relative prediction variance over the experimental region. 
 I-optimal designs are focused on prediction and thus are more suited to response surface experiments.
-There also exists a G-optimality criterion that is similar to the I-optimality criterion but minimizes the maximum prediction variance. 
-Recent work \parencite{rodriguez2010generating} has shown that I-optimal designs are often better choices than the G-optimal ones. 
+There also exists a G-optimality criterion that is similar to the I-optimality criterion but minimizes the maximum prediction 
+variance. 
+Recent work \parencite{rodriguez_generating_2010} has shown that I-optimal designs are often better choices than the G-optimal 
+ones. 
 Since this is a screening experiment, only the D-optimality is detailed here. 
-For more information about I-optimal and G-optimal design, refer to \textcite{goos2011optimal,atkinson2014optimal}.
+For more information about I-optimal and G-optimal design, refer to \textcite{goos_optimal_2011,atkinson2014optimal}.
 
 \subsubsection{D-optimality}
 As said previously, for an orthogonal design all the non-diagonal elements of the VCOV matrix are null,
@@ -51,55 +54,23 @@ Therefore there exist non-orthogonal designs that still maximize the information
 The D-optimal designs may not be unique. For a specified number of runs,
  several designs might have the maximal value for the determinant of the information matrix.\\
 
-%%\paragraph{D-efficiency}
-%%The D-efficiency of a given design compares the determinant of the information matrix of that design to an ideal determinant corresponding to an orthogonal design. Since orthogonal design do not always exist, the ideal determinant is defined as $n^p$ for a design with $n$ runs and $p$ parameters in the vector $\boldsymbol{\beta}$.  The D-efficiency is therefore computed as
-%%\begin{equation}
-%%   \text{D-efficiency} = \left(\dfrac{\vert\mathbf{X}^{\prime}\mathbf{X}\vert}{n^{p}} \right)^{1/p}=
-%%    \dfrac{\vert\mathbf{X}^{\prime}\mathbf{X}\vert^{1/p}}{n}
-%%    \text{,}
-%%\end{equation}
-%%where the $p$th root is taken to provide a measure that can be interpreted as a per-parameter measure. The two main problems of the D-efficiency is that it depends on the coding scale of the parameters and that the ideal determinant cannot always be achieved, therefore biasing the measure. The D-efficiency is then only useful to compare design that have the coding for the experimental factors and the same number of runs. For this reason, it is more useful to compare the relative efficiency of two designs
-%%it's better to use the relative D-efficiency, defined as
-%%\begin{equation}
-%%    \text{Relative D-efficiency of Design 1 vs Design 2}=
-%%    \left( \dfrac{D_1}{D_2} \right)^{1/p}
-%%    \text{.}
-%%\end{equation}
-
-%%\subsubsection{I-optimality}
-%%\paragraph{Variance of prediction}
-%%The variance of the prediction's expectation at the setting $\mathbf{x}$ (a vector of factor levels that corresponds to one of the runs of the design) is 
-%%\begin{equation}
-%%    var(\Hat{Y}\vert\mathbf{x}) = \sigma_{\epsilon}^2\mathbf{f}^{\prime}(\mathbf{x})(\mathbf{X}^{\prime}\mathbf{X})^{-1}\mathbf{f}(\mathbf{x})
-%%    \text{,}
-%%\end{equation}
-%%where $\mathbf{f}(\mathbf{x})$ is a function that takes a vector of factor settings and expands it to its corresponding model terms. The variance expressed relatively to the error variance $\sigma^2_{\epsilon}$, is
-%%\begin{equation}
-%%    \text{Relative variance of prediction}=
-%%    \dfrac{var(\Hat{Y}\vert\mathbf{x})}{\sigma^2_{\epsilon}}=
-%%    \mathbf{f}^{\prime}(\mathbf{x})(\mathbf{X}^{\prime}\mathbf{X})^{-1}\mathbf{f}(\mathbf{x})
-%%    \text{.}
-%%    \label{eq:relative_var_prediction}
-%%\end{equation}
-%%Since the prediction's variance depends on the factor settings, $\mathbf{x}$, it is interesting to calculate the averaged variance of prediction over the design space. The average is computed by integrating the relative variance of prediction (\ref{eq:relative_var_prediction}) over the experimental region $\chi$, and dividing it by the volume of the region:
-%%\begin{equation}
-%%    \text{Average variance}=
-%%    \dfrac{\int_{\chi}\mathbf{f}^{\prime}(\mathbf{x})(\mathbf{X}^{\prime}\mathbf{X})^{-1}\mathbf{f}(\mathbf{x}) d\mathbf{x}}
-%%    {\int_{\chi}d\mathbf{x}}
-%%    \text{.}
-%%\end{equation}
-%%A design that minimizes the average relative variance of prediction is called a "I-optimal" design. The "I" in "I-optimal" stresses out the fact that an I-optimal design minimizes an integrated variance\footnote{Some authors prefer the term IV-optimal or V-optimal over I-optimal.}.
-%%
-%%\paragraph{I-efficiency}
-%%Similar to the relative D-efficiency, the relative I-efficiency allows for the comparison of two designs in term of average relative variance of prediction. If $P_1$ and $P_2$ are the average relative variance of prediction for two different design, then the relative I-efficiency of the first design to the other is computed as 
-%%\begin{equation}
-%%    \text{Relative I-efficiency of Design 1 vs Design 2} = 
-%%    \dfrac{P_1}{P_2}
-%%    \text{.}
-%%\end{equation}
 
 \subsection{Generating optimal designs}
-In order to generate an optimal design, the determinant of the $\mathbf{X}^{\prime}\mathbf{X}$ matrix needs to be computed multiple times. Therefore algorithms are used to gain time and avoid errors. Several algorithms exist but the most common one is the coordinate exchange algorithm, created by \textcite{meyer1995coordinate}. It has the advantage to run in polynomial time, which means that the time needed to find an optimal design does not explode when the size of the design increases. Another similar algorithm is the point-exchange algorithm, created by \textcite{fedorov2013theory} and modified several times to speed it up \parencite{johnson1983some,atkinson1989construction}. The main drawback of this algorithm is that it needs a list of possible design points as input, which can be quite tedious to do for large designs. In recent years, other types of algorithm such as genetic algorithms \parencite{heredia2003genetic,heredia2004model}, simulating annealing algorithms \parencite{bohachevsky1986generalized,meyer1988constructing} and tabu search algorithms \parencite{jung1996construction} have been used in experimental designs. While these algorithms maintain a level of performance comparable to more traditional design construction techniques, they are not as popular because they are either far more complex, only feasible in some specific cases or better for some specific models and do not lead to designs that make a significant difference in practice.
+In order to generate an optimal design, the determinant of the $\mathbf{X}^{\prime}\mathbf{X}$ matrix needs to be computed 
+multiple times. 
+Therefore algorithms are used to gain time and avoid errors. 
+Several algorithms exist but the most common one is 
+the coordinate exchange algorithm, created by \textcite{meyer_coordinate-exchange_1995}. 
+It has the advantage to run in polynomial time, which means that the time needed to find an optimal design does not explode when 
+the size of the design increases. 
+Another similar algorithm is the point-exchange algorithm, created by \textcite{fedorov_theory_1972} and modified several times to speed 
+it up \parencite{johnson_guidelines_1983,atkinson_construction_1989}. The main drawback of this algorithm is that it needs a list of 
+possible design points as input, which can be quite tedious to do for large designs. In recent years, other types of algorithm 
+such as genetic algorithms \parencite{heredia-langner_genetic_2003,heredia-langner_model-robust_2004}, simulating annealing algorithms 
+\parencite{bohachevsky_generalized_1986,meyer_constructing_1988} and tabu search algorithms \parencite{jung_construction_1996} have 
+been used in experimental designs. While these algorithms maintain a level of performance comparable to more traditional design 
+construction techniques, they are not as popular because they are either far more complex, only feasible in some specific cases 
+or better for some specific models and do not lead to designs that make a significant difference in practice.
 
 
 \subsubsection{Coordinate-exchange algorithm}
@@ -115,14 +86,31 @@ The coordinate-exchange algorithm proceeds by iterating through the rows of the 
     \text{,}
     \label{mat:design_matrix}
 \end{equation}
-called the design matrix, of an experiment with $n$ runs and $k$ factors. The lines of this matrix essentially represent the coordinates of the runs in the experimental space, where each factor of the experiment is a dimension. This algorithm is called the coordinate-exchange algorithm, because in each iteration of the algorithm, possible changes for every element of the design matrix are considered. \\
-It is straightforward to see that the design matrix $\mathbf{D}$ is a submatrix of the model matrix $\mathbf{X}$. It can happen the D-optimality criterion is zero. In those cases, the design is called singular and the inverse of the $\mathbf{X}^{\prime}\mathbf{X}$ matrix does not exist. To avoid singularity, the number of design points (different rows in the design matrix $\mathbf{D}$) must be greater than or equal to the number of model parameters.\\
+called the design matrix, of an experiment with $n$ runs and $k$ factors. The lines of this matrix essentially represent the 
+coordinates of the runs in the experimental space, where each factor of the experiment is a dimension. This algorithm is called 
+the coordinate-exchange algorithm, because in each iteration of the algorithm, possible changes for every element of the design 
+matrix are considered. \\
+It is straightforward to see that the design matrix $\mathbf{D}$ is a submatrix of the model matrix $\mathbf{X}$. It can happen 
+the D-optimality criterion is zero. In those cases, the design is called singular and the inverse of the $\mathbf{X}^{\prime}
+\mathbf{X}$ matrix does not exist. To avoid singularity, the number of design points (different rows in the design matrix $
+\mathbf{D}$) must be greater than or equal to the number of model parameters.\\
 
-The algorithm starts by generating a random design. For all continuous factors, the algorithm generates random values on the interval $[-1,+1]$. For all factors that are categorical, the algorithm randomly chooses a value in a discrete set of levels. This random starting design is almost always non-singular. If the design happens to be singular, then another new random starting design is computed.\\
-In the next step, the algorithm improves the design on an element-by-element basis. For each element of the starting design, $x_{ij}$, a change to either $-1$ or $+1$ is considered, and its impact on the D-optimality criterion is evaluated. The change that increases the value of the D-optimality criterion the most, is kept. After investigating changes in each element of the design, the process is repeated until no element changes within an entire iteration through the factor settings or until a prespecified maximum number of iterations is reached. The obtained design is the best among a set of neighbouring designs but it is often a locally optimal design that is different for each random starting design. To select the best among all locally optimal designs, the algorithm is repeated a large number of times. The globally optimal design is then selected among all the locally optimal ones, as the one that yields the highest D-optimality criterion.
+The algorithm starts by generating a random design. For all continuous factors, the algorithm generates random values on the 
+interval $[-1,+1]$. For all factors that are categorical, the algorithm randomly chooses a value in a discrete set of levels. 
+This random starting design is almost always non-singular. If the design happens to be singular, then another new random 
+starting design is computed.\\
+In the next step, the algorithm improves the design on an element-by-element basis. For each element of the starting design, 
+$x_{ij}$, a change to either $-1$ or $+1$ is considered, and its impact on the D-optimality criterion is evaluated. The change 
+that increases the value of the D-optimality criterion the most, is kept. After investigating changes in each element of the 
+design, the process is repeated until no element changes within an entire iteration through the factor settings or until a 
+prespecified maximum number of iterations is reached. The obtained design is the best among a set of neighbouring designs but it 
+is often a locally optimal design that is different for each random starting design. To select the best among all locally 
+optimal designs, the algorithm is repeated a large number of times. The globally optimal design is then selected among all the 
+locally optimal ones, as the one that yields the highest D-optimality criterion.
 
 \subsection{Generating the design}
-A custom design was created for the experimental set-up of the phenotyping platform, where the goal was to quantify the genotype and tank effect. Four factors were considered:
+A custom design was created for the experimental set-up of the phenotyping platform, where the goal was to quantify the genotype 
+and tank effect. Four factors were considered:
 
 \begin{description}[align=left]
 \item [Tank] In which tank was the plant situated (moving or still).
@@ -131,19 +119,33 @@ A custom design was created for the experimental set-up of the phenotyping platf
 \item [Genotype] Which one of the 30 genotypes was used (1 to 30).
 \end{description}
 
-To fit the design, the design of experiment (DOE) tool was used in JMP. The four categorical factors were specified and \textit{Tank} and \textit{Strip} were set to "very hard to change" and "hard to change", respectively. Two whole plots of 99 sub-plots each were specified to match the tanks and the strips. With 99 strips of five positions inside two tanks, 990 experimental runs were available.\\
-Initially the design was supposed to take into account the 99 different strips individually but the program couldn't converge to an optimal design because of its complexity. Instead only 33 strips were considered and the design was replicated 3 times to match the number of runs. Figures \ref{fig:moving_layout_30_geno} and \ref{fig:still_layout_30_geno}, display a schematic view of the design for the moving and still tank respectively.\\
-The seeds were provided by the national institute of agronomic research (INRA) in Montpellier, France, as part of their own research on these historical series\footnote{Historical series correspond to varieties that have been cultivated and bred for some time, mainly due to their physiological specificities.}. They sent a total of 30 seeds per genotype and besides that, an extra 150 seeds of another genotype, called the "border genotype", was sent by the provider. The main utility of the border genotype is to fill the gaps left by non germinated seeds. Since, in this experiment, only 900 runs (30 genotypes x 30 seeds) were occupied, the border genotype was also be used to fill the 90 empty runs. Since this genotype is not part of the historical series, it was not considered in the design of the experiment.
+To fit the design, the design of experiment (DOE) tool was used in JMP. The four categorical factors were specified and 
+\textit{Tank} and \textit{Strip} were set to "very hard to change" and "hard to change", respectively. Two whole plots of 99 
+sub-plots each were specified to match the tanks and the strips. With 99 strips of five positions inside two tanks, 990 
+experimental runs were available.\\
+Initially the design was supposed to take into account the 99 different strips individually but the program couldn't converge to 
+an optimal design because of its complexity. Instead only 33 strips were considered and the design was replicated 3 times to 
+match the number of runs. Figures \ref{fig:moving_layout_30_geno} and \ref{fig:still_layout_30_geno}, display a schematic view 
+of the design for the moving and still tank respectively.\\
+The seeds were provided by the national institute of agronomic research (INRA) in Montpellier, France, as part of their own 
+research on these historical series\footnote{Historical series correspond to varieties that have been cultivated and bred for 
+some time, mainly due to their physiological specificities.}. They sent a total of 30 seeds per genotype and besides that, an 
+extra 150 seeds of another genotype, called the "border genotype", was sent by the provider. The main utility of the border 
+genotype is to fill the gaps left by non germinated seeds. Since, in this experiment, only 900 runs (30 genotypes x 30 seeds) 
+were occupied, the border genotype was also be used to fill the 90 empty runs. Since this genotype is not part of the historical 
+series, it was not considered in the design of the experiment.
 
 \begin{sidewaysfigure}[ht]
-    \includegraphics[width=\textwidth]{figures/moving_layout_30_genotypes.pdf} 
-    \caption{2D schematic representation of the experimental design for 33 individual strips and 30 genotypes in the moving tank.}
+    \includegraphics[width=\textwidth]{../../Figures/design_layout_moving.pdf} 
+    \caption{2D schematic representation of the experimental design for 33 individual strips and 30 genotypes in the moving 
+    tank.}
     \label{fig:moving_layout_30_geno}
 \end{sidewaysfigure}
 
 \begin{sidewaysfigure}[ht]
-    \includegraphics[width=\textwidth]{figures/still_layout_30_genotypes.pdf} 
-    \caption{2D schematic representation of the experimental design for 33 individual strips and 30 genotypes in the still tank.}
+    \includegraphics[width=\textwidth]{../../Figures/design_layout_still.pdf} 
+    \caption{2D schematic representation of the experimental design for 33 individual strips and 30 genotypes in the still 
+    tank.}
     \label{fig:still_layout_30_geno}
 \end{sidewaysfigure}
 
@@ -151,17 +153,18 @@ The seeds were provided by the national institute of agronomic research (INRA) i
 
 
 \section{Phenotyping experiment}
-The phenotyping experiment took place between February 25th and March 13th. The seeds were first germinated and then transferred onto the platform. After the end of the experiment the plants were weighted, dried and weighted again to obtain dry and fresh weight.
+The phenotyping experiment took place between February 25th and March 13th. The seeds were first germinated and then transferred 
+onto the platform. After the end of the experiment the plants were weighted, dried and weighted again to obtain dry and fresh 
+weight.
 
 \subsection{Germination}
-Previous experiments in the greenhouses showed that germination of maize seeds on the platform often lead to asphyxiation of the seeds. 
-Because of this, the seeds were germinated in an outside germination chamber and were only transferred onto the platform once germinated.
-
-%%A previous germination experiment was conducted in the greenhouse, in a smaller version of the phenotyping platform, to compare seed germination in different type of substrate. In this experiment, 60 maize seeds were set on 6 strips of 5 positions in 2 small reproductions of the aeroponic tanks of the platform. In each tank, a different kind of cork was used to see which one allowed a better germination. It showed that germination rates were fairly low (around 6\%) for both type of cork, mainly because the seeds were asphyxiated in the corks. This lead to the choice of an outside germination to avoid low germination and seed asphyxiation problems.\\
-%%The seeds were germinated in a germination chamber outside of the platform and were transferred onto the platform once they were germinated.
+Previous experiments in the greenhouses showed that germination of maize seeds on the platform often lead to asphyxiation of the 
+seeds. 
+Because of this, the seeds were germinated in an outside germination chamber and were only transferred onto the platform once 
+germinated.
 
 The seeds were placed in a temperature-controlled room at 20$^{\circ}$C for 3 days, inside a germination chamber. The chamber consisted of 2 PVC trays to which an air-fog machine was connected, to keep the seeds moist. 
-Inside each tray, PVC plates were disposed diagonally and evenly spaced (fig. \ref{fig:germination_chamber_diagram}). On those plates, the seeds were arranged on a filtering paper sheet with ledges to support the weight of the seeds (figure \ref{fig:germiantion_ledge} and figure \ref{fig:photo_germination_plate}). The bottom of the trays was filled with water to keep the filtering paper moist. 
+Inside each tray, PVC plates were disposed diagonally and evenly spaced (fig. \ref{fig:germination_chamber_diagram}). On those plates, the seeds were arranged on a filtering paper sheet with ledges to support the weight of the seeds (figure \ref{fig:germiantion_ledge} and figure \ref{fig:photo_germination_plate}). The bottom of the trays were filled with water to keep the filtering paper moist. 
 There were 17 plates in total, 15 for the 30 genotypes and 2 for the border genotype (150 seeds dispatched on 2 plates). 
 
     \begin{figure}[!htb]
@@ -170,7 +173,9 @@ There were 17 plates in total, 15 for the 30 genotypes and 2 for the border geno
             \centering
             \includegraphics[width=\textwidth]{figures/germination_chamber_diagram.png}
             \caption[]%
-            {Global schematic view of the germination chamber: a fog machine assure constant humidity in the germination chambers by creating fog at regular intervals (the blue arrows represent the path of the fog). The plates are placed at a 60$^{\circ}$ angle and 5 cm apart}    
+            {Global schematic view of the germination chamber: a fog machine assure constant humidity in the germination 
+            chambers by creating fog at regular intervals (the blue arrows represent the path of the fog). The plates are placed 
+            at a 60$^{\circ}$ angle and 5 cm apart}    
             \label{fig:germination_chamber_diagram}
         \end{subfigure}
         \vskip\baselineskip
@@ -178,7 +183,8 @@ There were 17 plates in total, 15 for the 30 genotypes and 2 for the border geno
             \centering 
             \includegraphics[width=\textwidth]{figures/germination_ledge.png}
             \caption[]%
-            {Schematic view of a germination ledge on a PVC plate: each seed is fixed in position on the ledge by an additional drop of agar solution to avoid any fall-off}    
+            {Schematic view of a germination ledge on a PVC plate: each seed is fixed in position on the ledge by an additional 
+            drop of agar solution to avoid any fall-off}    
             \label{fig:germiantion_ledge}
         \end{subfigure}
         \quad
@@ -186,19 +192,24 @@ There were 17 plates in total, 15 for the 30 genotypes and 2 for the border geno
             \centering 
             \includegraphics[width=\textwidth]{figures/photo_germination_plate.jpg}
             \caption[]%
-            {30 cm by 40 cm PVC plate with seeds on filtering paper (the black line represents the separation between the two genotypes on the plate). Each sheet had 6 rows of 10 seeds with one genotype on the left and one genotype on the right.}    
+            {30 cm by 40 cm PVC plate with seeds on filtering paper (the black line represents the separation between the two 
+           genotypes on the plate). Each sheet had 6 rows of 10 seeds with one genotype on the left and one genotype on the 
+           right.}    
             \label{fig:photo_germination_plate}
         \end{subfigure}
         \caption{Germination chamber diagram with detailed view and pictures}
     \end{figure}
 
-After 3 days into the chamber, not all seeds were germinated, table \ref{tab:germination_percentage} presents the germination rates and mean seed weights for all the genotypes used (including the border genotype). The non-germination was mainly due to the fact that seeds fell into the water bed and because mold grew on some filtering paper.
+After 3 days into the chamber, not all seeds were germinated, table \ref{tab:germination_percentage} presents the germination 
+rates and mean seed weights for all the genotypes used (including the border genotype). The non-germination was mainly due to 
+the fact that seeds fell into the water bed and because mold grew on some filtering paper.
 
 %table for the germination rates after the outside germination process
 
 \begin{table}[ht]
 \centering
-\caption{Germination rate and mean seed weight for each genotype used. (there is no data concerning the germination rate of the border genotype because it was not measured).}
+\caption[Germination rates and seed weights]{Germination rate and mean seed weight for each genotype used. (there is no data concerning the germination rate of the 
+border genotype because it was not measured).}
 
 \rowcolors{2}{gray!25}{white}
 
@@ -245,16 +256,21 @@ Genotype & Germination rate (\%) & Mean seed weight (g) \\
 
 \subsection{Phenotyping platform}
 The phenotyping platform is located inside a greenhouse in the facilities of the UCLouvain (Louvain-la-Neuve, Belgium). 
-It consists of two aeroponic tanks on which are arranged 99 styrofoam strips, each with five holes ($\diameter$ 2.5 cm). 
-At the end of each tank is a high definition camera that scans the root system of each plant individually, when it passes in front of it (fig. \ref{fig:tank}). 
+It consists of two aeroponic tanks on which are arranged 99 styrofoam strips, each with five holes. 
+At the end of each tank is a high definition camera that scans the root system of each plant individually, when it passes in 
+front of it (fig. \ref{fig:tank}). 
 The strips rotate in a clockwise fashion in the tank and a full rotation is completed in 2 hours. 
 Three sprinklers are placed regularly at the bottom of each side of the tank (fig. \ref{fig:tank_transversal_view}). 
-The sprinklers spray nutrient solution\footnote{The precise concentration of the Hoagland solution is presented in appendix \ref{appendix:hoagland}} at regular intervals, set by the operator. 
-The spraying pattern (interval and duration) can be differentiated between day and night and can be modified at any moment of the experiment.
+The sprinklers spray nutrient solution\footnote{The precise concentration of the Hoagland solution is presented in appendix 
+\ref{appendix:hoagland}} at regular intervals, set by the operator. 
+The spraying pattern (interval and duration) can be differentiated between day and night and can be modified at any moment of 
+the experiment.
 In this case the patterns were 5 seconds of spraying ever 295 seconds all the time.
-During the experiment, the temperature of the greenhouse was set to 20$^{\circ}$C at day and 18$^{\circ}$C at night and the lights were on from 6 AM to 10 PM. 
-At the start of the experiment seeds are placed inside a foam cork and then placed inside a hole on a strip (fig \ref{fig:seed_platform_close_up}). 
-They are placed at the bottom to allow the root system to grow freely. 
+During the experiment, the temperature of the greenhouse was set to 20$^{\circ}$C at day and 18$^{\circ}$C at night and the 
+lights were on from 6 AM to 10 PM. 
+At the start of the experiment seeds were placed inside a foam cork and then placed inside a hole on a strip (fig 
+\ref{fig:seed_platform_close_up}). 
+They were placed at the bottom to allow the root system to grow freely. 
 The corks are drilled vertically to let the leaf system develop with less resistance and allow a direct access to sunlight. 
 More information about the platform is available in appendix \ref{appendix:platform_info}.
 
@@ -287,9 +303,8 @@ After 3 days in the germination chamber, the germinated seeds were transferred o
 
 
 \section{Data processing}
-After 15 days, the plants were considered fully grown and the experiment was stopped. The leaf and root systems were separated and weighted individually on scales precise to 0.001 g. They were then stored in individual envelopes and put in a stove at 70$^{\circ}$C for 3 days to dry. After the drying process, they were weighted again. For each plant, the remaining of the seed was consistently kept on the root system.
-
-Two kind of data were obtained from the experiment: weight data (dry and fresh) of the fully grown plants and root scan data. Five variables were kept for the analysis:
+After 15 days, the plants were considered fully grown and the experiment was stopped. The leaf and root systems were separated and weighted individually on scales precise to 0.001 g. They were then dried for 3 days in a 70$^{\circ}$C oven. After the drying process, they were weighted again. For each plant, the remaining of the seed was consistently kept on the root system.
+Two kind of data were obtained from the experiment: weight data (dry and fresh) of the fully grown plants and root scan data. Five variables were kept for the spatial analysis:
 
 \begin{itemize}
 \item $FRESH\_RS$: fresh weight of the root system
@@ -307,7 +322,7 @@ For some plants, the germinated seeds placed on the platform did not fully grow 
 \begin{itemize}
 \item $NO\_RS$: no additional root to the primary root
 \item $NO\_LS$: no visible leaf system 
-\item $BAD\_LS$: leaf system grew under the strip
+\item $BAD\_LS$: leaf system grew under the strip (or abnormally in general)
 \item  $NO\_SEED$: no seed (or an empty cork) present on this position
 \item $NOT\_FG$: plant not fully grown
 \item $OVERLAP$: leaf (or root) system of another plant overlaps on the root scan
@@ -317,21 +332,23 @@ For some plants, the germinated seeds placed on the platform did not fully grow 
 An visualization of those factors with example pictures is presented in figure \ref{fig:example_influential_factors}. Some plants were attributed several influential factors, but $OK$, $NO\_SEED$ and $NOT\_FG$ were considered as exclusive. The factor attribution was ambiguous for some pictures, in those cases the plant were considered $OK$ to avoid losing any data points.
 Following the determination of the factors, weights were attributed to each variable according to the weight matrix, presented in table \ref{tab:weight_attribution_matrix}.
 
+
 % Table generated by Excel2LaTeX from sheet 'weights'
 \begin{table}[htbp]
   \centering
-  \caption{Weight attribution matrix for the different factors and variables. LS weight is both the fresh and dry weight for leaf system and RS weight is the same for the root system}
+  \caption[Weight attribution matrix]{Weight attribution matrix for the different factors and variables. LS weight is both the fresh and dry weight for leaf system and RS weight is the same for the root system}
+  	\rowcolors{2}{gray!25}{white}
     \begin{tabular}{lrrr}
     \toprule
-    CODE  & \multicolumn{1}{l}{LS weight} & \multicolumn{1}{l}{RS weight} & \multicolumn{1}{l}{Area} \\
+    CODE  & LS weight & RS weight & Area \\
     \midrule
     NO\_RS & 1     & 1     & 1 \\
     NO\_LS & 2     & 2     & 2 \\
     BAD\_LS & 3     & 3     & 3 \\
     NOT\_FG & 4     & 4     & 4 \\
-    \textcolor[rgb]{ 1,  0,  0}{NO\_SEED} & \textcolor[rgb]{ 1,  0,  0}{0} & \textcolor[rgb]{ 1,  0,  0}{0} & \textcolor[rgb]{ 1,  0,  0}{0} \\
-    \textcolor[rgb]{ 0,  .69,  .314}{OK} & \textcolor[rgb]{ 0,  .69,  .314}{5} & \textcolor[rgb]{ 0,  .69,  .314}{5} & \textcolor[rgb]{ 0,  .69,  .314}{5} \\
-    OVERLAP & 1     & 1     & 0 \\
+    NO\_SEED & 0	& 0		& 0 \\
+    OK 		& 5 	& 5 	& 5 \\
+    OVERLAP & 5     & 5     & 0 \\
     \bottomrule
     \end{tabular}%
   \label{tab:weight_attribution_matrix}%
@@ -398,226 +415,287 @@ The area of the root system was computed using the final root scan of each plant
 
 
 \section{SpATS model}
-In this section, the SpATS model is introduced. For a more thorough treatment of the model and all its components, see \textcite{rodriguez2016spatial}.\\
+In this section, the SpATS model is introduced. For a more thorough treatment of the model and all its components, see \textcite{rodriguez-alvarez_spatial_2016}.\\
 Consider a field trial of $n$ plots arranged in a rectangular grid, where the plot positions are collected in vectors of row $(\mathbf{r})$ and column $(\mathbf{c})$ coordinates. If $\mathbf{y}$ is the vector of plot data in field order, a common model for $\mathbf{y}$, to use as a starting point is
-\begin{equation}
-    \boldsymbol{y}=\mathbf{1}_{n} \beta_{0}+\boldsymbol{Z}_{r} \boldsymbol{c}_{r}+\boldsymbol{Z}_{c} \boldsymbol{c}_{c}+\varepsilon
-\end{equation}
+	\begin{equation}
+	    \boldsymbol{y}=\mathbf{1}_{n} \beta_{0}+\boldsymbol{Z}_{r} \boldsymbol{c}_{r}+\boldsymbol{Z}_{c} \boldsymbol{c}_{c}
+	    +\varepsilon
+	\end{equation}
 were $\mathbf{1}_{n}$ is a column-vector of ones of length $n$, $\boldsymbol{c}_{r}$ and $\boldsymbol{c}_{c}$ are, respectively, the random effect coefficients for the rows and columns and associated matrix $\boldsymbol{Z}_{r}$ and $\boldsymbol{Z}_{c}$. To fully capture complex spatial patterns, a smooth bivariate surface jointly defined over the row and column positions is added to the model, which becomes
-\begin{equation}
-    \boldsymbol{y}=f(\boldsymbol{u}, \boldsymbol{v})+\boldsymbol{Z}_{r} \boldsymbol{c}_{r}+\boldsymbol{Z}_{c} \boldsymbol{c}_{c}+\boldsymbol{\varepsilon}
-    \label{eq:base_model_bismooth_surface}
-\end{equation}
+	\begin{equation}
+	    \boldsymbol{y}=f(\boldsymbol{u}, \boldsymbol{v})+\boldsymbol{Z}_{r} \boldsymbol{c}_{r}+\boldsymbol{Z}_{c} \boldsymbol{c}
+	    _{c}+\boldsymbol{\varepsilon}
+	    \label{eq:base_model_bismooth_surface}
+	\end{equation}
 where $\mathbf{u}$ and $\mathbf{v}$ are, respectively, the vector of row and columns positions and where $f(.,.)$ represents the smooth bivariate function. Note that the intercept term, $\beta_0$ is embedded into $f(u,v)$. To better understand this function, let us decompose it in a nested-ANOVA structure
-\begin{align}
-f ( \boldsymbol { u } , \boldsymbol { v } ) & = \underbrace { \mathbf { 1 } _ { n } \beta _ { 0 } + \boldsymbol { u } \beta _ { 1 } + \boldsymbol { v } \beta _ { 2 } + \boldsymbol { u } \odot \boldsymbol { v } \beta _ { 3 } } _ { \text { Bilinear polynomial } } \nonumber \\
- & + \underbrace { f _ { u } ( \boldsymbol { u } ) + f _ { v } ( \boldsymbol { v } ) + \boldsymbol { u } \odot h _ { v } ( \boldsymbol { v } ) + \boldsymbol { v } \odot h _ { u } ( \boldsymbol { u } ) + f _ { u , v } ( \boldsymbol { u } , \boldsymbol { v } ) }_{\text{Smooth part}}
- \label{eq:full_bivariate_smooth_surface_model}
-\end{align}
-where $\odot$ denotes the element-wise matrix product\footnote{See Appendix A for details about the element-wise matrix product.}. There are now two components to the model: a bilinear polynomial part(parametric) and a smooth part (non-parametric). The parametric part includes the linear trends along rows ($\beta_1$) and columns ($\beta_2$) as well as a linear interaction trend ($\beta_3$). The smooth part models the deviation from the compound linear trend, and can be decomposed in the following elements:
-\begin{itemize}
-\item $f _ { u } ( \boldsymbol { u } )$  is a smooth trend along the rows, identical for all columns (i.e., a main smooth effect).
-\item $f _ {v} ( \boldsymbol { v} )$ is a smooth trend along the columns, identical for all rows.
-\item $\boldsymbol { v } \odot h _ { u } ( \boldsymbol { u } ))$ and $\boldsymbol { u } \odot h _ { v } ( \boldsymbol { v } )$ are linear-by-smooth interaction trends. For instance, $\boldsymbol { u }h_\boldsymbol { v}(\boldsymbol { v})$ is a varying coefficient surface trend, consisting of functions, linear in the rows, for each column, but with slopes that change smoothly along the columns, $h_\boldsymbol { v}(\boldsymbol { v})$.
-\item $f _ { u , v } ( \boldsymbol { u } , \boldsymbol { v } )$ is a smooth-by-smooth interaction trend jointly defined over the row and column directions.
-\end{itemize}
-In total, six components are used to model the surface $f$. This may seem like a lot but this allows the translation of model \ref{eq:base_model_bismooth_surface} into a standard mixed model. An interesting property of this proposal is that since $u$ and $v$ are row and column position, it allows depicting the spatial trend in a grid finer than the number of rows and columns.
+	\begin{align}
+	f ( \boldsymbol { u } , \boldsymbol { v } ) & = \underbrace { \mathbf { 1 } _ { n } \beta _ { 0 } + \boldsymbol { u } \beta
+	 _ { 1 } + \boldsymbol { v } \beta _ { 2 } + \boldsymbol { u } \odot \boldsymbol { v } \beta _ { 3 } } _ { \text { Bilinear
+	  polynomial } } \nonumber \\
+	 & + \underbrace { f _ { u } ( \boldsymbol { u } ) + f _ { v } ( \boldsymbol { v } ) + \boldsymbol { u } \odot h _ { v } (
+	  \boldsymbol { v } ) + \boldsymbol { v } \odot h _ { u } ( \boldsymbol { u } ) + f _ { u , v } ( \boldsymbol { u } ,
+	   \boldsymbol { v } ) }_{\text{Smooth part}}
+	 \label{eq:full_bivariate_smooth_surface_model}
+	\end{align}
+where $\odot$ denotes the element-wise matrix product\footnote{See appendix \ref{appendix:add_info} for details about the element-wise matrix product.}. There are now two components to the model: a bilinear polynomial part(parametric) and a smooth part (non-parametric). The parametric part includes the linear trends along rows ($\beta_1$) and columns ($\beta_2$) as well as a linear interaction trend ($\beta_3$). The smooth part models the deviation from the compound linear trend, and can be decomposed in the following elements:
+	\begin{itemize}
+		\item $f_{u}(\boldsymbol{u})$  is a smooth trend along the rows, identical for all columns (i.e., a main smooth effect).
+		\item $f_{v}(\boldsymbol{v})$ is a smooth trend along the columns, identical for all rows.
+		\item $\boldsymbol{v} \odot h_{u} (\boldsymbol{u})$ and $\boldsymbol{u} \odot h_{v} (\boldsymbol{v})$ are linear-by-
+		smooth interaction trends. For instance, $\boldsymbol{u} \odot h_{v}(\boldsymbol{v})$ is a varying coefficient surface 
+		trend, consisting of functions, linear in the rows, for each column, but with slopes that change smoothly along the 
+		columns, $h_{v}boldsymbol{v})$.
+		\item $f_{u,v}(\boldsymbol{u},\boldsymbol{v})$ is a smooth-by-smooth interaction trend jointly defined over the row and 
+		column directions.
+	\end{itemize}
+In total, six components are used to model the surface $f$. This may seem like a lot but this allows the translation of model \ref{eq:base_model_bismooth_surface} into a standard mixed model. An interesting property of this proposal is that since $u$ and $v$ are row and column position, it allows depicting the spatial trend in a grid finer than the number of rows and columns. Figure \ref{fig:bilinear_and_smooth_decomposition} shows an example of those six components in the context of a barley uniformity performed by \textcite{williams1988contemporary}. It shows clearly how the additional components, help to capture small variations in the spatial data.
+
+\begin{figure}[hbtp]
+\centering
+\includegraphics[width=\textwidth]{../figures/bilinear_polynomial.PNG}
+\caption[Bilinear and smooth components of the PS-ANOVA decomposition]{Bilinear and smooth components of the PS-ANOVA decomposition of the estimated spatial trend for the barley uniformity
+data from \textcite{rodriguez-alvarez_correcting_2018}.}
+\label{fig:bilinear_and_smooth_decomposition}
+\end{figure}
+
 
 \subsection{Modelling using P-splines}
 The functions $f_u$, $f_v$, $h_u$ and $h_v$ are constructed  with variations on one-dimensional P-splines, while $f_{u,v}$ is based on tensor products P-splines.\\
 For clarity's sake, let us consider a model only containing a smooth bivariate surface and an error term
-\begin{equation}
-    y _ { i } = f \left( u _ { i } , v _ { i } \right) + \varepsilon _ { i } , \text { with } \varepsilon _ { i } \sim N \left( 0 , \sigma ^ { 2 } \right) \text{.}
-\label{eq:smooth_part_only_model}
-\end{equation}
-\textcite{lee_efficient_2013} show that it can be represented using B-splines\footnote{See Appendix A for details about B-splines and P-splines.}. Let us form two B-splines basis:
+	\begin{equation}
+	    y _ { i } = f \left( u _ { i } , v _ { i } \right) + \varepsilon _ { i } , \text { with } \varepsilon _ { i } \sim N 
+	    \left( 0 , \sigma ^ { 2 } \right) \text{.}
+		\label{eq:smooth_part_only_model}
+	\end{equation}
+\textcite{lee_efficient_2013} show that it can be represented using B-splines\footnote{See appendix \ref{appendix:add_info} for details about B-splines and P-splines.}. Let us form two B-splines basis:
 \begin{enumerate}
 \item one for the columns, $\boldsymbol{\invbreve{B}}$ with $ b_{il}= \invbreve{B}_l(u_i)$, where $\invbreve{B}_l(u_i)$ is the $l$th B-spline of the basis, evaluated at $u_i$
 \item and one for the rows, $\boldsymbol{\breve{B}}$ with $ b_{ip}= \breve{B}_p(v_i)$, where $\breve{B}_l(v_i)$ is the $p$th B-spline of the basis, evaluated at $v_i$.
 \end{enumerate}
 Then, the smooth-by-smooth interaction can be written using those basis
 \begin{equation}
-f \left( u _ { i } , v _ { i } \right) = \sum _ { l = 1 } ^ { L } \sum _ { p = 1 } ^ { P } \invbreve { B } _ { l } \left( u _ { i } \right) \breve { B } _ { p } \left( v _ { i } \right) \alpha _ { l p }  \text{,}
+	f \left(u_{i},v_{i}\right)=\sum_{l=1}^{L}\sum_{p=1}^{P}\invbreve{B}_{l}\left(u_{i}\right)\breve{B}_{p}\left(v_{i}\right) 
+	\alpha_{lp}\text{,}
 \end{equation}
 where $\boldsymbol{\alpha} = (\alpha_{11},\ldots,\alpha_{1P},\ldots,\alpha_{LP})^t$ is a vector of unknown regression coefficients of dimension $(LP \times 1)$. Note that $\boldsymbol{\invbreve{B}}$ and $\boldsymbol{\breve{B}}$ are matrices of order $n \times L$ and $n\times P$ respectively, where $L$ and $P$ are the number of the B-spline basis functions. \textcite{dierckx_curve_1995} shows that, in the P-spline framework, the smooth-by-smooth interaction $f(u_i,v_i)$ is modelled by the tensor product of B-splines bases. Then, we can write, in matrix notation,
 \begin{equation}
-    \boldsymbol{B} = \boldsymbol{\invbreve{B}} \square \boldsymbol{\breve{B}} = \left( \boldsymbol{\invbreve{ B }} \otimes \boldsymbol{1} _ { L } ^ { t } \right) \odot \left( \mathbf { 1 } _ { P } ^ { t } \otimes \boldsymbol{\breve{B}} \right) \text{,}
+    \boldsymbol{B} = \boldsymbol{\invbreve{B}} \boxdot \boldsymbol{\breve{B}} = \left( \boldsymbol{\invbreve{B}} \otimes
+    \boldsymbol{1} _ { L } ^ { t } \right) \odot \left( \mathbf { 1 } _ { P } ^ { t } \otimes \boldsymbol{\breve{B}} \right)
+    \text{,}
 \end{equation}
-where the operation $\square$ is defined in terms of the Kronecker product of two matrices (denoted by $\otimes$) and the element-by-element multiplication of two matrices (denoted by $\odot$)\footnote{See Appendix A for details about the Kronecker product}. Therefore model (\ref{eq:smooth_part_only_model}) can be written in matrix notation
+where the operation $\boxdot$ is defined in terms of the Kronecker product of two matrices (denoted by $\otimes$) and the 
+element-by-element multiplication of two matrices (denoted by $\odot$)\footnote{See appendix \ref{appendix:add_info} for details 
+about the Kronecker, and the element-wise products}. Therefore model (\ref{eq:smooth_part_only_model}) can be written in matrix 
+notation:
+
 \begin{equation}
     \boldsymbol{y} = \boldsymbol{B}\boldsymbol{\alpha} + \boldsymbol{\epsilon}
     \text{.}
     \label{eq:spline_model_mat_form}
 \end{equation}
-Since the model is purely parametric, it can be estimated by minimizing the residual sum of squares (with explicit solution $\Hat{\boldsymbol{\alpha}} = (\mathbf{B}^t\mathbf{B})^{-1}\mathbf{B}^t\mathbf{y}$). To prevent over-fitting, \textcite{eilers_flexible_1996} propose to incorporate a discrete penalty on the coefficient associated to adjacent B-splines. For the two-dimensional case, the vector $\boldsymbol{\alpha}$ can be seen as an  $(L \times P)$  matrix  of  coefficients, $\mathbf{A}=[\alpha_{lp}]$. Now the rows  and columns of $\mathbf{A}$ correspond to the regression coefficients in the $v$ and  $u$ direction, respectively. In anisotropic (direction-dependant) P-splines, a different amount of smoothing is assumed along the $u$ and $v$ directions. It leads to two penalties:  one on all rows of $\mathbf{A}$,  the other on all of its columns; and the penalized least squares objective function becomes \parencite{eilers_multivariate_2003}
+
+The coefficients of this parametric model can be estimated by minimizing the sum of squares. The explicit solution is then:
 \begin{equation}
-    S^{*}=\|\boldsymbol{y}-\boldsymbol{B} \boldsymbol{\alpha}\|^{2}+\invbreve{\lambda}\|\invbreve{\boldsymbol{D}} A\|_{F}^{2}+\breve{\lambda}\left\|\boldsymbol{A} \breve{D}^{t}\right\|_{F}^{2}=\|\boldsymbol{y}-\boldsymbol{B} \boldsymbol{\alpha}\|^{2}+\boldsymbol{\alpha}^{t} \boldsymbol{P} \boldsymbol{\alpha}
+	\Hat{\boldsymbol{\alpha}} = (\mathbf{B}^t\mathbf{B})^{-1}\mathbf{B}^t\mathbf{y}
+\end{equation}
+To prevent over-fitting, 
+\textcite{eilers_flexible_1996} propose to incorporate a discrete penalty on the coefficient associated to adjacent B-splines.
+As described in details in appendix \ref{appendix:polynomial_splines}, this penalty also determines the smoothness of the 
+splines. The solution of equation \ref{eq:spline_model_mat_form} then becomes 
+\begin{equation}
+    \widehat{\boldsymbol{\alpha}}=\left(\boldsymbol{B}^{t} \boldsymbol{B}+\boldsymbol{P}\right)^{-1} \boldsymbol{B}^{t} 
+    \boldsymbol{y}
     \text{,}
-    \label{eq:least_squares_penalized}
 \end{equation}
-where $\boldsymbol{P}=\invbreve{\lambda}\left(\boldsymbol{I}_{P} \otimes \invbreve{\boldsymbol{D}}^{t} \invbreve{\boldsymbol{D}}\right)+\breve{\lambda}\left(\breve{\boldsymbol{D}}^{t} \breve{\boldsymbol{D}} \otimes \boldsymbol{I}_{L}\right)$ is the penalty matrix, $\invbreve{\lambda}$ and $\breve{\lambda}$ are the smoothing parameters acting, respectively, on the columns and rows of $\mathbf{A}$, and $\invbreve{\mathbf{D}}$ and $\breve{\mathbf{D}}$ are the matrices that form differences of order $d_u$ and $d_v$ respectively\footnote{See appendix A for more information about penalized splines and ordered differences}. The minimizer of \ref{eq:least_squares_penalized} is 
-\begin{equation}
-    \widehat{\boldsymbol{\alpha}}=\left(\boldsymbol{B}^{t} \boldsymbol{B}+\boldsymbol{P}\right)^{-1} \boldsymbol{B}^{t} \boldsymbol{y}
-    \text{.}
-\end{equation}
-The advantage of this decomposition is that the only tuning parameters for the smoothness of the bivariate surface are the smoothing parameters $\invbreve{\lambda}$ and $\breve{\lambda}$.
+where $\boldsymbol{P}$ is the penalty matrix. The details of this solution are presented in appendix 
+\ref{appendix:penalized_solution_form}, but the important point to remember here, is that the smoothness of the bivariate 
+surface is defined by the penalty matrix, which only depend on two tuning parameters  $\invbreve{\lambda}$ (smoothing along the 
+columns) and $\breve{\lambda}$ (smoothing along the rows).
 
 \subsection{Mixed model based smoothing parameter selection}
 
-As explained in \textcite{rodriguez2016spatial}, $\mathbf{P}$ is rank-deficient and this causes numerical instability when applying mixed model estimation techniques. To obtain a full-rank penalty matrix, the key is to write model \ref{eq:spline_model_mat_form} as 
+As explained in \textcite{rodriguez-alvarez_spatial_2016}, $\mathbf{P}$ is rank-deficient, meaning that the rank is smaller than the 
+number of rows and/or columns, and this causes numerical instability when applying mixed model estimation techniques. To obtain 
+a full-rank penalty matrix, the key is to write model \ref{eq:spline_model_mat_form} as 
 \begin{equation}
     \mathbf{B}\boldsymbol{\alpha} = \boldsymbol{X}_{s} \boldsymbol{\beta}_{s}+\boldsymbol{Z}_{s} \boldsymbol{c}_{s}
     \text{.}
 \end{equation}
-There are now two bases: $\mathbf{X}_{s}$, with coefficients that are not penalized at all, and $\mathbf{Z}_{s}$, with a size penalty on its coefficients. This decomposition follows the proposal by \textcite{lee_p-spline_2011}, based on eigenvalue decomposition which gives rise to a diagonal penalty matrix.\\
-Let $\invbreve{D}^{t} \invbreve{D}=U_{u} E_{u} U_{u}^{t}$ and $\breve{D}^{t} \breve{D}=U_{v} E_{v} U_{v}^{t}$ be the eigenvalue decomposition of the marginal penalties, $\invbreve{D}^{t} \invbreve{D}$ and $\breve{D}^{t} \breve{D}$, respectively. Here $\mathbf{U}_{j}$ denotes the matrix of eigenvectors and $\mathbf{E}_j$  the diagonal matrix of eigenvalues $(j=u,v)$. Let us denote $\widetilde{\boldsymbol{U}}_{j}$ and $\widetilde{\boldsymbol{E}}_{j}$ the sub-matrices corresponding to non-zero eigenvalues. Setting
+There are now two bases: $\mathbf{X}_{s}$, with coefficients that are not penalized at all, and $\mathbf{Z}_{s}$, with a size 
+penalty on its coefficients. This decomposition follows the proposal by \textcite{lee_p-spline_2011}, based on eigenvalue 
+decomposition which gives rise to a diagonal penalty matrix.\\
+The two bases have the following structures:
 \begin{equation}
     \boldsymbol{X}_{s}=\left[\mathbf{1}_{n}, \boldsymbol{u}, \boldsymbol{v}, \boldsymbol{u} \odot \boldsymbol{v}\right]
     \quad
     \text{and}
     \quad
-    \mathbf{Z}_{s}=\left[\mathbf{Z}_{v}, \mathbf{Z}_{u}, \mathbf{Z}_{v} \square \mathbf{u}, \mathbf{v} \square \mathbf{Z}_{u}, \mathbf{Z}_{v} \square \mathbf{Z}_{u}\right]
+    \mathbf{Z}_{s}=\left[\mathbf{Z}_{v}, \mathbf{Z}_{u}, \mathbf{Z}_{v} \square \mathbf{u}, \mathbf{v} \square \mathbf{Z}_{u}, 
+    \mathbf{Z}_{v} \square \mathbf{Z}_{u}\right]
     \text{,}
     \label{eq:detail_Xs_Zs_matrices}
 \end{equation}
-where $\mathbf{Z}_u = \breve{\mathbf{B}}\widetilde{\boldsymbol{U}}_{u}$ and $\mathbf{Z}_v = \breve{\mathbf{B}}\widetilde{\boldsymbol{U}}_{v}$, the penalized least problem (\ref{eq:least_squares_penalized}) becomes
-\begin{equation}
-    S^{*}=\left\|\boldsymbol{y}-\boldsymbol{X}_{s} \boldsymbol{\beta}_{s}-\boldsymbol{Z}_{s} \boldsymbol{c}_{s}\right\|^{2}+\boldsymbol{c}_{s}^{t} \widetilde{\boldsymbol{P}} \boldsymbol{c}_{s}
-    \text{,}
-    \label{eq:new_least_squares_penalized}
-\end{equation}
-where
-\begin{equation}
-    \widetilde{\boldsymbol{P}} = \text{blockdiag}\left(\breve{\lambda} \widetilde{\boldsymbol{E}}_{v}, \invbreve{\lambda} \widetilde{\boldsymbol{E}}_{u}, \breve{\lambda} \widetilde{\boldsymbol{E}}_{v}, \invbreve{\lambda} \widetilde{\boldsymbol{E}}_{u}, \breve{\lambda} \widetilde{\boldsymbol{E}}_{v} \otimes \boldsymbol{I}_{L-2}+\invbreve{\lambda} \boldsymbol{I}_{P-2} \otimes \widetilde{\boldsymbol{E}}_{u}\right)
-    \text{,}
-\end{equation}
-is the new penalty matrix. Each block of $\widetilde{\boldsymbol{P}}$ corresponds to a block in $\mathbf{Z}_s$. This reformulation provides the ANOVA type decomposition discussed in the previous section (\ref{eq:full_bivariate_smooth_surface_model}). The block structure of $\mathbf{X}_s$ and $\mathbf{Z}_s$ implies
+where $\boldsymbol{u}$ and $\boldsymbol{v}$ are still, respectively, the vectors of row and column positions. 
+Here $\mathbf{Z}_{u}$ and $\mathbf{Z}_{v}$ are penalized version of the B-splines basis $\breve{\mathbf{B}}$ (rows) and
+$\invbreve{\mathbf{B}}$ (columns). This new way of writing the problem leads to another penalty matrix 
+$ \widetilde{\boldsymbol{P}}$, which is a block diagonal matrix. Each block of $ \widetilde{\boldsymbol{P}}$ corresponds to a 
+block in $\mathbf{Z}_{s}$. Similarly to $\boldsymbol{P}$, the penalty matrix of the previous section, this new penalty matrix 
+only depends on the two tuning parameters $\invbreve{\lambda}$ (smoothing along the columns) and $\breve{\lambda}$ (smoothing 
+along the rows).
+Figure \ref{fig:matrix_diagram} presents a diagram clarifying the structures and relations of the different matrices presented 
+throughout this section.
+
+This reformulation provides the ANOVA type decomposition discussed in the previous section 
+(\ref{eq:full_bivariate_smooth_surface_model}), and explains how the bilinear smooth surface can be modelled using P-splines and 
+tensor products of P-splines.
+The block structure of $\mathbf{X}_s$ and $\mathbf{Z}_s$ implies
 \begin{equation}
     \begin{aligned} 
-        f(\boldsymbol{u}, \boldsymbol{v}) &
-        =\boldsymbol{X}_{s} \boldsymbol{\beta}_{s}+Z_{s} \boldsymbol{c}_{s} \\ 
-        &=\mathbf{1}_{n} \beta_{0}+\boldsymbol{u} \beta_{1}+\boldsymbol{v} \beta_{2}+\boldsymbol{u} \odot \boldsymbol{v} \beta_{3} \\
-        & + \underbrace{f_{v}(\boldsymbol{v})}_{\boldsymbol{Z}_{v} \boldsymbol{c}_{s 1}}+\underbrace{f_{u}(\boldsymbol{u})}_{\boldsymbol{Z}_{u} \boldsymbol{c}_{s 2}} +\underbrace{\boldsymbol{u} \odot h_{v}(\boldsymbol{v})}_{\left[\boldsymbol{Z}_{v} \square \boldsymbol{u}\right] \boldsymbol{c}_{s 3}}+\underbrace{\boldsymbol{v} \odot h_{u}(\boldsymbol{u})}_{\left[\boldsymbol{v} \square \boldsymbol{Z}_{u}\right] \boldsymbol{c}_{s 4}} +\underbrace{f_{u, v}(\boldsymbol{u}, \boldsymbol{v})}_{\left[\boldsymbol{Z}_{v} \square \boldsymbol{Z}_{u}\right] \boldsymbol{c}_{s 5}}
-        \text{,}
+        f(\boldsymbol{u}, \boldsymbol{v}) & =\boldsymbol{X}_{s} \boldsymbol{\beta}_{s}+Z_{s} \boldsymbol{c}_{s} \\ 
+        								  & =\mathbf{1}_{n} \beta_{0}+\boldsymbol{u} \beta_{1}+\boldsymbol{v} \beta_{2}+
+        								  \boldsymbol{u} \odot \boldsymbol{v} \beta_{3} \\
+        								  & + \underbrace{f_{v}(\boldsymbol{v})}_{\boldsymbol{Z}_{v} \boldsymbol{c}_{s 1}}+
+        								  \underbrace{f_{u}(\boldsymbol{u})}_{\boldsymbol{Z}_{u} \boldsymbol{c}_{s 2}} +
+        								  \underbrace{\boldsymbol{u} \odot h_{v}(\boldsymbol{v})}_{\left[\boldsymbol{Z}_{v} 
+        								  \square \boldsymbol{u}\right] \boldsymbol{c}_{s 3}}+\underbrace{\boldsymbol{v} \odot 
+        								  h_{u}(\boldsymbol{u})}_{\left[\boldsymbol{v} \square \boldsymbol{Z}_{u}\right] 
+        								  \boldsymbol{c}_{s 4}} +\underbrace{f_{u, v}(\boldsymbol{u}, \boldsymbol{v})}
+        								  _{\left[\boldsymbol{Z}_{v} \square \boldsymbol{Z}_{u}\right] \boldsymbol{c}_{s 5}}
+        								  \text{,}
     \end{aligned}
 \end{equation}
-where $\boldsymbol{c}_{sk} \ (k = 1,\ldots,5)$ contains the elements of $\boldsymbol{c}_s$ that correspond to the $k$th block of $\boldsymbol{Z}_s$, i.e. $\boldsymbol{c}_s = (\boldsymbol{c}_{s1}^t,\ldots,\boldsymbol{c}_{s5}^t)^t$.\\
-The solution for \ref{eq:new_least_squares_penalized}, given $\breve{\lambda}$ and $\invbreve{\lambda}$, corresponds to the best linear unbiased estimator (BLUE) for the $(4\times1)$ vector $\boldsymbol{\beta}_s$, and the BLUPs for the $((LP - 4) \times 1)$ vector $\boldsymbol{c}_s$ under the linear mixed model
+where $\boldsymbol{c}_{sk} \ (k = 1,\ldots,5)$ contains the elements of $\boldsymbol{c}_s$ that correspond to the $k$th block of $\boldsymbol{Z}_s$, i.e. $\boldsymbol{c}_s = (\boldsymbol{c}_{s1}^t,\ldots,\boldsymbol{c}_{s5}^t)^t$. The details about the specific block component of $\boldsymbol{Z}_s$ and the computation of the new penalty matrix are available in the paper of \textcite{rodriguez-alvarez_correcting_2018} and the appendices therein.
+
+Therefore, using this new notation, model \ref{eq:smooth_part_only_model} that only contains a smooth bivariate surface and an error term can be rewritten in the following way:
+
 \begin{equation}
-    \boldsymbol{y}=\boldsymbol{X}_{s} \boldsymbol{\beta}_{s}+\boldsymbol{Z}_{s} \boldsymbol{c}_{s}+\boldsymbol{\varepsilon}, \text { with } \boldsymbol{\varepsilon} \sim N\left(\mathbf{0}, \sigma^{2} \boldsymbol{I}_{n}\right) \text { and } \boldsymbol{c}_{s} \sim N\left(\mathbf{0}, \boldsymbol{G}_{s}\right)
+    \boldsymbol{y}=\boldsymbol{X}_{s} \boldsymbol{\beta}_{s}+\boldsymbol{Z}_{s} \boldsymbol{c}_{s}+\boldsymbol{\varepsilon}, 	
+    \text { with } 
+    \boldsymbol{\varepsilon} \sim N\left(\mathbf{0}, \sigma^{2} \boldsymbol{I}_{n}\right) 
+    \text { and } 
+    \boldsymbol{c}_{s} \sim N\left(\mathbf{0}, \boldsymbol{G}_{s}\right)
     \text{,}
+\label{eq:smooth_surface_PS_ANOVA_rewritten}
 \end{equation}
-where $\boldsymbol{G}_{s} = \sigma^2\widetilde{\boldsymbol{P}}^{-1}$. Denoting $\breve{\sigma}^2 =\sigma / \breve{\lambda}$ and $\invbreve{\sigma}^2 =\sigma / \invbreve{\lambda}$ the variances parameters involved in $\boldsymbol{G}_{s}$, it follows
+where $\boldsymbol{G}_{s} = \sigma^2\widetilde{\boldsymbol{P}}^{-1}$. It is straightforward to see that $\boldsymbol{G}_{s}$ 
+also has a block diagonal structure, similar to that of $\widetilde{\boldsymbol{P}}$ (this structure is also represented on 
+figure \ref{fig:matrix_diagram}). 
+However, $\boldsymbol{G}_{s}$ depends on two different parameters, $\breve{\sigma}^2 =\sigma / \breve{\lambda}$ and $
+\invbreve{\sigma}^2 =\sigma / \invbreve{\lambda}$, which are variances parameters. 
+As shown in the diagram in figure \ref{fig:matrix_diagram}, the same variance parameters control the smoothness of the both the 
+main effects and interactions terms. 
+This prevents the use of standard mixed models software for estimation since $\mathbf{G}_s$ has its last block depending on both 
+$\breve{\sigma}^2$ and $\invbreve{\sigma}^2$, but in a non-linear way. 
+Even though \textcite{rodriguez-alvarez_fast_2015} presented a specialized algorithm to deal with this issue, 
+here the PS-ANOVA decomposition approach \parencite{lee_efficient_2013} is used to allow the use of standard mixed model estimation procedures.\textcite{lee_efficient_2013} therefore propose to use a different variance component for each smooth component in $\mathbf{G}_s$, thus redefining this matrix as a linear function of variance parameters:
 \begin{equation}
-    \boldsymbol{G}_s^{-1} = \text{blockdiag}\left(\frac{1}{\breve{\sigma}^{2}} \widetilde{\boldsymbol{E}}_{v}, \frac{1}{\invbreve{\sigma}^{2}} \widetilde{\boldsymbol{E}}_{u}, \frac{1}{\breve{\sigma}^{2}} \widetilde{\boldsymbol{E}}_{v}, \frac{1}{\invbreve{\sigma}^{2}} \widetilde{\boldsymbol{E}}_{u}, \frac{1}{\breve{\sigma}^{2}} \widetilde{\boldsymbol{E}}_{v} \otimes \boldsymbol{I}_{L-2}+\frac{1}{\invbreve{\sigma}^{2}} \boldsymbol{I}_{P-2} \otimes \widetilde{\boldsymbol{E}}_{u}\right)
-    \text{.}
-\end{equation}
-Note that besides the five smooth components, $\mathbf{G}_s$ involves only two variance parameters, $\breve{\sigma}^2$ and $\invbreve{\sigma}^2$. In fact, the same variance parameters control the smoothness of the both the main effects and interactions terms. This prevents the use of standard mixed models software for estimation since $\mathbf{G}_s$ has its last block depending on both $\breve{\sigma}^2$ and $\invbreve{\sigma}^2$, but in a non-linear way. Even though \textcite{rodriguez2015fast} presented a specialized algorithm to deal with this issue, here the PS-ANOVA decomposition approach \parencite{lee_efficient_2013} is used to allow the use of standard mixed model estimation procedures. \textcite{lee_efficient_2013} therefore propose to use a different variance component for each smooth component in $\mathbf{G}_s$. Denoting 
-$\mathbf{\Lambda}_{s 1}^{-1}=\mathbf{\Lambda}_{s 3}^{-1}=\widetilde{E}_{v}, \mathbf{\Lambda}_{s 2}^{-1}=\mathbf{\Lambda}_{s 4}^{-1}=\widetilde{\boldsymbol{E}}_{u}, \text { and } \mathbf{\Lambda}_{s 5}^{-1}=\widetilde{\boldsymbol{E}}_{v} \otimes \boldsymbol{I}_{L-2}+\boldsymbol{I}_{P-2} \otimes \widetilde{\boldsymbol{E}}_{u}$
-the precision matrix, $\boldsymbol{G}_s^{-1}$, is then redefined as
-\begin{equation}
-    \mathbf{G}_{s}^{-1}=\text { blockdiag }\left(\frac{1}{\sigma_{s 1}^{2}} \mathbf{\Lambda}_{s 1}^{-1}, \frac{1}{\sigma_{s 2}^{2}} \mathbf{\Lambda}_{s 2}^{-1}, \frac{1}{\sigma_{s 3}^{2}} \mathbf{\Lambda}_{s 3}^{-1}, \frac{1}{\sigma_{s 4}^{2}} \mathbf{\Lambda}_{s 4}^{-1}, \frac{1}{\sigma_{s 5}^{2}} \mathbf{\Lambda}_{s 5}^{-1}\right)
-    \text{,}
-\end{equation}
-and thus the covariance matrix $\mathbf{G}_s$ is a linear function of variance parameters
-\begin{equation}
-    \boldsymbol{G}_{s}=\bigoplus_{k=1}^{5} \sigma_{s k}^{2} \Lambda_{s k}=\bigoplus_{k=1}^{5} \boldsymbol{G}_{s k}=
+    \boldsymbol{G}_{s} = 
+%	\bigoplus_{k=1}^{5} \sigma_{s k}^{2} \Lambda_{s k} =
+    \bigoplus_{k=1}^{5} \boldsymbol{G}_{s k}= 
     \text{ blockdiag }
     \left(\boldsymbol{G}_{s 1}, \boldsymbol{G}_{s 2}, \boldsymbol{G}_{s 3}, \boldsymbol{G}_{s 4}, \boldsymbol{G}_{s 5}\right)
     \text{,}
 \end{equation}
-where $\boldsymbol{G}_{s k} = \sigma_{sk}^2\boldsymbol{\Lambda}_{sk} \ (k=1,\ldots,5)$. In other words, here the tensor product P-splines mixed model is represented as the sum of 5 sets of mutually independent Gaussian random components $\mathbf{c}_{sk}$, each depending on one variance $\sigma_{sk}^2 \ (k=1,\ldots,5)$.
+where $\boldsymbol{G}_{s k}$ %= \sigma_{sk}^2\boldsymbol{\Lambda}_{sk} \ (k=1,\ldots,5)$
+is the $k$th block of the $\mathbf{G}_{s}$ matrix, depending on the specific variance component $\sigma_{sk}^2$. 
+In other words, here the tensor product P-splines mixed model is represented as the sum of 5 sets of mutually independent Gaussian random components $\mathbf{c}_{sk}$, each depending on one variance $\sigma_{sk}^2 \ (k=1,\ldots,5)$.\\
+Within this mixed model framework, the smoothing parameters, defined earlier as the ratio between the residual variance and the
+corresponding variance effect $\lambda_{sk} = \sigma^2_{e} / \sigma^2_{sk}$, are determined by restricted maximum likelihood (REML). Therefore the smoothness of the spatial surface is tuned by five distinct parameters, applying anisotropic (direction-dependant) smoothing. This parametrization provides flexibility to account for both global and local variations in the field. Furthermore, the decomposition of $f(\mathbf{u},\mathbf{v})$ enables a more explicit interpretation of the main patterns of spatial variation \parencite{rodriguez-alvarez_correcting_2018}.
+
+
+\input{extra/TIKZ_matrix_diagram}
+
 
 \subsection{Spatial models for field trials}
-The tensor product P-spline, presented in the previous section, constitutes the base for the analysis of agricultural field trials because it allows the modeling of the random spatial variation typically presented in a field. On top of this spatial field, we need to build up more complex models in order to account for the genetic variation, the presence of blocks effects, or other sources of variation (see section \ref{sec:sources_of_variation}). From now on, we therefore consider the following linear mixed model
+The tensor product P-spline, presented in the previous section, constitutes the base for the analysis of agricultural field trials because it allows the modeling of the random spatial variation typically presented in a field. 
+On top of this spatial field, we need to build up a more complex models in order to account for the genetic variation, the different tanks, strips and positions. From now on, we therefore consider the following linear mixed model
 \begin{equation}
-    \boldsymbol{y}=\underbrace{\boldsymbol{X}_{s} \boldsymbol{\beta}_{s}+Z_{s} \boldsymbol{c}_{s}}_{f(\boldsymbol{u}, \boldsymbol{v})}+\boldsymbol{X}_{d} \boldsymbol{\beta}_{d}+\boldsymbol{Z}_{d} \boldsymbol{c}_{d}+\varepsilon, \text { with } \boldsymbol{c}_{s} \sim N\left(\mathbf{0}, \boldsymbol{G}_{s}\right) \text { and } \boldsymbol{c}_{d} \sim N\left(\mathbf{0}, \boldsymbol{G}_{d}\right)
+    \boldsymbol{y}=
+    \underbrace{
+    	\boldsymbol{X}_{s} \boldsymbol{\beta}_{s}+
+    	\boldsymbol{Z}_{s} \boldsymbol{c}_{s}
+    	}_{f(\boldsymbol{u}, \boldsymbol{v})}+
+    \boldsymbol{X}_{d} \boldsymbol{\beta}_{d}+
+    \boldsymbol{Z}_{d} \boldsymbol{c}_{d}+
+    \varepsilon, 
+    \text { with } 
+    \boldsymbol{c}_{s} \sim N\left(\mathbf{0}, \boldsymbol{G}_{s}\right) 
+    \text { and } 
+    \boldsymbol{c}_{d} \sim N\left(\mathbf{0}, \boldsymbol{G}_{d}\right)
     \text{,}
     \label{eq:full_random_and_additonal_effects_model}
 \end{equation}
-where $\boldsymbol{X}_{s}$, $\boldsymbol{Z}_{s}$ and $\boldsymbol{G}_{s}$ are defined in the previous section and where $\boldsymbol{X}_{d}$ and $\boldsymbol{Z}_{d}$ represent column-partitioned matrices, associated respectively with extra fixed and random components, as for instance, row, column, genotypic effects. We assume that $\boldsymbol{X}_{d}$ has full rank, $\boldsymbol{Z}_{d}=\left[\boldsymbol{Z}_{d 1}, \ldots, \boldsymbol{Z}_{d b}\right]$ and $\boldsymbol{c}_d = \left( \boldsymbol{c}_{d1}^t,\ldots,\boldsymbol{c}_{db}^t\right)^t$. Each $\boldsymbol{Z}_{dk}$ corresponds to the design matrix of the $k$th random component $\boldsymbol{c}_{dk}$, with $\boldsymbol{c}_{dk}$ being a $(m_{dk} \times 1)$ vector $(k=1,\ldots,b)$. We assume further that $\boldsymbol{c}_s$ and $\boldsymbol{c}_d$ are independant, and that $\boldsymbol{G}_{d}=\bigoplus_{k=1}^{b} \boldsymbol{G}_{d k}=\bigoplus_{k=1}^{b} \sigma_{d k}^{2} \mathbf{\Lambda}_{d k}$, where $\boldsymbol{\Lambda}_{dk}$ are diagonal matrices. To keep the notation simple, we rewrite model (\ref{eq:full_random_and_additonal_effects_model}) as
+where $\boldsymbol{X}_{s}$, $\boldsymbol{Z}_{s}$ and $\boldsymbol{G}_{s}$ are defined in the previous section and form the mixed model expression of the smooth spatial surface, and $\boldsymbol{X}_{d}$ and $\boldsymbol{Z}_{d}$ represent column-partitioned matrices, associated respectively with fixed and random components. Since we do not have any check genotypic varieties or resolvable block effect, the only extra fixed effects are: an intercept ($1_n$) and the tank effect ($t$). 
+We assume that the $\boldsymbol{X}_{d}$ matrix has full-rank. 
+The position on the strip ($p$) and strip ($s$) variables are added as random effects in $\mathbf{Z}_{d}$. 
+Therefore $\mathbf{X}_{d} = 
+\left[ 
+	\mathbf{X}_{1_n},\mathbf{X}_{t} 
+\right]$, 
+$\boldsymbol{Z}_{d}=
+\left[
+	\boldsymbol{Z}_{dp}, \boldsymbol{Z}_{ds}
+\right]$ and 
+$\boldsymbol{G}_{d}= 
+\text{ blockdiag }
+\left(
+	\boldsymbol{G}_{dp}, \boldsymbol{G}_{ds}
+\right)$. 
+We further assume that $\boldsymbol{c}_s$ and $\boldsymbol{c}_d$ are independent.
+To keep the notation simple, we rewrite model (\ref{eq:full_random_and_additonal_effects_model}) as
 \begin{equation}
-    \boldsymbol{y}=\boldsymbol{X} \boldsymbol{\beta}+\boldsymbol{Z} \boldsymbol{c}+\boldsymbol{\varepsilon}, \text { with } \boldsymbol{c} \sim N(\mathbf{0}, \boldsymbol{G}) \text { and } \boldsymbol{\varepsilon} \sim N\left(\mathbf{0}, \sigma^{2} \boldsymbol{I}_{n}\right)
+    \boldsymbol{y}=
+    \boldsymbol{X} \boldsymbol{\beta}+
+    \boldsymbol{Z} \boldsymbol{c}+
+    \boldsymbol{\varepsilon}, 
+    \text { with } 
+    \boldsymbol{c} \sim N(\mathbf{0}, \boldsymbol{G}) 
+    \text { and } 
+    \boldsymbol{\varepsilon} \sim N\left(\mathbf{0}, \sigma^{2} \boldsymbol{I}_{n}\right)
 \end{equation}
-where $\boldsymbol{X}=\left[\boldsymbol{X}_{s}, \boldsymbol{X}_{d}\right], \boldsymbol{Z}=\left[\boldsymbol{Z}_{s}, \boldsymbol{Z}_{d}\right]=\left[\boldsymbol{Z}_{1}, \ldots, \boldsymbol{Z}_{q}\right] \ (q=5+b)$, and 
+where $\boldsymbol{X}=
+\left[
+	\boldsymbol{X}_{s}, \boldsymbol{X}_{d_{1}}, \mathbf{X}_{d_{t}} 
+\right], 
+\boldsymbol{Z}=
+\left[
+	\boldsymbol{Z}_{s}, \boldsymbol{Z}_{d_{p}}, \mathbf{Z}_{d_{s}}
+\right]$, and 
 \begin{equation}
-    \boldsymbol{G}=\text { blockdiag }\left(\boldsymbol{G}_{s}, \boldsymbol{G}_{d}\right)=\bigoplus_{k=1}^{q} \boldsymbol{G}_{k}=\bigoplus_{k=1}^{q} \sigma_{k}^{2} \boldsymbol{\Lambda}_{k}
+    \boldsymbol{G}=\text { blockdiag }\left(\boldsymbol{G}_{s}, \boldsymbol{G}_{dp}, \boldsymbol{G}_{ds} \right)
 \end{equation}
 
 \subsection{Model estimation}
-Estimates of the fixed and random effects coefficients in model \ref{eq:final_MM_eq}, for given values of the variance components, follow from standard mixed-mode theory and can be obtained by maximizing the REML log-likelihood function
-\begin{equation}
-    l=-\frac{1}{2} \log |\boldsymbol{V}|-\frac{1}{2} \log \left|\boldsymbol{X}^{t} \boldsymbol{V}^{-\mathbf{1}} \boldsymbol{X}\right|-\frac{1}{2}(\boldsymbol{y}-\boldsymbol{X} \widehat{\boldsymbol{\beta}})^{t} \boldsymbol{V}^{-1}(\boldsymbol{y}-\boldsymbol{X} \widehat{\boldsymbol{\beta}})
-    \text{.}
-\end{equation}
-The implementation of this procedure in the SpATS packages is detailed in the appendix of \textcite{rodriguez2016spatial}. The REML estimates are obtained taking the derivatives of the previous equation, with respect to the variance components $\sigma_k^2 \ (k=1,\ldots,q)$ and equating the obtained expression to zero (see e.g. \cite{rodriguez2015fast,johnson1995restricted}), we obtain that
-\begin{equation}
-    \widehat{\sigma}_{k}^{2}=\frac{\widehat{\mathbf{c}}_{k}^{t} \boldsymbol{\Lambda}_{k}^{-1} \widehat{\mathbf{c}}_{k}}{\mathrm{ED}_{k}}, k=1, \ldots, q
-\end{equation}
-with
-\begin{equation}
-    \mathrm{ED}_{k}=\operatorname{trace}\left(\mathbf{Z}_{k}^{t} \mathbf{Q} \mathbf{Z}_{k} \mathbf{G}_{k}\right)
-\end{equation}
-where $\mathbf{Q}=\boldsymbol{V}^{-1}-\boldsymbol{V}^{-1} \boldsymbol{X}\left(\boldsymbol{X}^{t} \boldsymbol{V}^{-1} \boldsymbol{X}\right)^{-1} \boldsymbol{X}^{t} \boldsymbol{V}^{-1}$ with $\boldsymbol{V}=\boldsymbol{R}+\mathbf{Z}\boldsymbol{G} \mathbf{Z}^{t}$ and $\boldsymbol{R}=\sigma^{2} \boldsymbol{I}_{n}$. An estimate of $\sigma^2$ can also be easily obtained following the same reasoning
-\begin{equation}
-    \widehat{\sigma}^{2}=\frac{\widehat{\boldsymbol{\varepsilon}}^{t} \hat{\boldsymbol{\varepsilon}}}{\mathrm{ED}_{\boldsymbol{\varepsilon}}}
-    \label{eq:var_estimation_SPATS}
-\end{equation}
-where $\widehat{\boldsymbol{\varepsilon}}=\mathbf{y}-\mathbf{X} \widehat{\boldsymbol{\beta}}+\mathbf{Z} \widehat{\mathbf{c}}$ and
-\begin{equation}
-    \mathrm{ED}_{\boldsymbol{\varepsilon}}=\operatorname{trace}(\mathbf{R Q})=n-\operatorname{rank}(\mathbf{X})-\sum_{k=1}^{q} \mathrm{ED}_{k}
-    \text{.}
-    \label{eq:ED_error_term}
-\end{equation}
-In these equations the real values of $\boldsymbol{\beta}$ and $\mathbf{c}$ are not known, so their BLUEs $(\widehat{\boldsymbol{\beta}})$ and BLUP $(\hat{\mathbf{c}})$, respectively are used instead. Their closed form expressions are detailed in the Appendix B of \textcite{rodriguez2016spatial}.
+With all these specifications in mind, the model was fitted using cubic B-splines and second-order penalties. These settings are commonly used and allow flexibility of the model \parencite{rodriguez-alvarez_correcting_2018,rodriguez-alvarez_spatial_2016,rodriguez-alvarez_fast_2015}. We used 99 and 5 equally spaced knots for the the P-splines, corresponding to the strips and positions, respectively. In this way there was approximately one knot for every plot. Then there was a total of 362 model parameters to be estimated for the smooth surface. As \textcite{rodriguez-alvarez_correcting_2018} explains, the number of knot is not critical since the optimization of the fit to the data is essentially dependant on the smoothing parameters.\\
+The estimation procedure was performed using the R-package \texttt{SpATS} \parencite{rodriguez-alvarez_spats:_2016}. This package provides a REML-based estimation of the variances components and computes the best linear unbiased estimators (BLUEs) of the fixed effects and the empirical best linear unbiased predictors (BLUPs) of the random effects. A useful by-product of this computation is the effective dimension associated to each random effect.
 
 \subsubsection{Effective dimensions}
-Denoting the denominator of (\ref{eq:var_estimation_SPATS}) as $\mathrm{ED}_{[.]}$ (for effective dimension) was not done without purpose. In the smoothing context, the effective dimension of a "smooth" model is defined as the trace of the so-called "hat" matrix $\mathbf{H}$, defined as $\Hat{\mathbf{y}}=\mathbf{Hy}$ \parencite{hastie1990generalized}. In this setting the ED can be interpreted as a measure of the complexity of the model: the more complex the model, the larger the ED (see also \cite{eilers2015twenty}).\\
-In recent years, several new definitions and generalizations of the concept of effective dimension that are applicable to (generalized) linear mixed models have been proposed in the statistical literature (see, e.g., \cite{you2016generalized}, and references therein). In almost all cases, the aim has been to provide a complexity measure that allows models' comparison and selection (via, for instance, the AIC). For our application, however, we are more interested in obtaining a separate complexity measure for each component in model (\ref{eq:final_MM_eq}), that can give us insights about the contribution of that effect when explaining the response (phenotypic) variation \parencite{cui2010partitioning}.\\
-As shown in details in the appendix of \parencite{rodriguez-alvarez_correcting_2018}, for model (\ref{eq:final_MM_eq}) we can write
+In P-splines methodology, the effective dimension ($ED$) measures the complexity of the model components \parencite{eilers_twenty_2015}, it is similar to the more common concept of effective degree of freedom \parencite{buja1989linear}. It is computed as the trace of the hat matrix $\mathbf{H}$. If we only take the spatial part of our model (equation \ref{eq:smooth_surface_PS_ANOVA_rewritten}), we can write:
 \begin{equation}
-    \boldsymbol{H} \boldsymbol{y}=\widehat{\boldsymbol{y}}=\boldsymbol{X} \widehat{\boldsymbol{\beta}}+\mathbf{Z} \widehat{\boldsymbol{c}}=\boldsymbol{H}_{F} \boldsymbol{y}+\boldsymbol{H}_{R} \boldsymbol{y} =
-    \boldsymbol{H}_{F} \boldsymbol{y} + \sum_{k=1}^{q} \mathbf{H}_{k}\mathbf{y}
+	\begin{aligned}
+		\tilde{\mathbf{y}} &= \mathbf{Hy} \\
+		\tilde{f}(\mathbf{u},\mathbf{v}) &= \boldsymbol{X}_{s} \hat{\boldsymbol{\beta}}_{s}+
+											\boldsymbol{Z}_{s} \tilde{\boldsymbol{c}}_{s} \\
+			&= \mathbf{H}_{\beta}\mathbf{y} + \mathbf{H}_{s}\mathbf{y}
+	\end{aligned}
+	\text{ ,}
 \end{equation}
-where $\boldsymbol{H}_{F}$ and $\boldsymbol{H}_{R}$ are the hat matrix for the fixed and random parts of the model, and $\mathbf{H}_{k}\mathbf{y}$ is the hat matrix corresponfing to the random $k$th component $\mathbf{c}_k$. Since the effective dimension of $\mathbf{c}_k$ is defined as the trace of $\mathbf{H}_k$ then the total effective dimension of model (\ref{eq:final_MM_eq}) is
+where $\mathbf{H}_{\beta}$ is the hat matrix of the fixed components and $\mathbf{H}_{s}$ is the hat matrix of the random components, also known as the smoother matrix. In this context, the sum of the diagonal elements of $\mathbf{H}_{s}$ expresses the number of parameters effectively involved in the modelling of the spatial surface. This decomposition is allowed from the PS-ANOVA structure of the spatial model. Following this, the smoother matrix can be further decomposed according to the five additive and interaction smooth components of the smooth bivariate surface, giving $\mathbf{H}_{s} = \sum_{k=1}^{5} \mathbf{H}_{s_{k}}$, and we can compute the individual effective dimension for each component ($ED_{s_{k}}$). As explained in \textcite{rodriguez-alvarez_spatial_2016}, the effective dimension varies with the smoothing parameter:
 \begin{equation}
-    \begin{aligned}
-        \mathrm{ED}=\operatorname{trace}(\boldsymbol{H})=\operatorname{trace}\left(\boldsymbol{H}_{F}\right)+\operatorname{trace}\left(\boldsymbol{H}_{R}\right)
-        & = \operatorname{trace}\left(\boldsymbol{H}_{F}\right)+\sum_{k=1}^{q} \operatorname{trace}\left(\boldsymbol{H}_{k}\right) \\
-        & =\operatorname{rank}(\boldsymbol{X})+\sum_{k=1}^{q} \mathrm{ED}_{k}.
-    \end{aligned}
+	\begin{aligned}
+		\lambda_{s_{k}} = \dfrac{\sigma^2_{e}}{\sigma^2_{s_{k}}} & \rightarrow \infty \text{  then  } ED_{s_{k}} \rightarrow 0 \\
+		\lambda_{s_{k}} = \dfrac{\sigma^2_{e}}{\sigma^2_{s_{k}}} & \rightarrow 0 \text{  then  } ED_{s_{k}} \rightarrow 
+			\text{upper bound}\text{ ,}
+	\end{aligned}
 \end{equation}
-Taking this equation and equation (\ref{eq:ED_error_term}) into consideration we note that
-\begin{equation}
-    n=\operatorname{rank}(X)+\sum_{k=1}^{q} E D_{k}+E D_{\varepsilon}
-    \text{.}
-\end{equation}
-Thus, the number of observations $n$ is partitioned into independent effective dimensions for the model's components and error.\\
-For all components $\mathrm{ED}_k \ (k=1,\ldots,q)$ will vary between zero and $\operatorname{rank}\left(\left[\mathbf{X}, \mathbf{Z}_{k}\right]\right)-\operatorname{rank}(\mathbf{X})$. The signal-to-noise ratio $\sigma_{k}^{2} / \sigma^{2}$ modulates the value of $\mathrm{ED}_k$: when $\sigma_{k}^{2} / \sigma^{2} \rightarrow 0$ then $\mathrm{ED}_{k} \rightarrow 0$ and when $\sigma_{k}^{2} / \sigma^{2} \rightarrow \inf$ then $\mathrm{ED}_k$ approaches the maximum value. $\mathrm{ED}_k$ can therefore be interpreted as a measure of the complexity of the corresponding component, which in turn gives a separate measure for its contribution.\\
-For the $\mathrm{ED}_k$ corresponding to smoothing parameters $\lambda_{sk}$, the upper bound is determined by the number of knots used to fit the smooth surface. Therefore $\mathrm{ED}_{sk}$ serves as a reverse indicator of the smoothness of the corresponding components, i.e. the higher the degree of smoothness (larger value of $\lambda_{sk}$) the smaller the number of $\mathrm{ED}_{sk}$, and is indicative of the relative importance of the spatial component in the construction smooth surface.
+where the upper bound is determined by the number of knots.
+\\
 
-\subsubsection{Heritability and effective dimension}
-The standard heritability is defined by \textcite{rodriguez-alvarez_correcting_2018} as the proportion of total (phenotypic) variation that is attributable to the genetic component. It is useful to compare the genetic effects of each genotype in a single trial but also between different models. The effective dimension associated with the genotypic effects $\mathrm{ED}_g = \operatorname{trace}(\mathbf{H}_g)$ is a measure of the degree of shrinkage imposed on genotypic effects, where $\mathbf{H}_g$ is the hat matrix for genotypes. In this case, $\mathbf{H}_g$ depends on the regularization parameter $\lambda_g = \sigma^2_e/\sigma^2_g$ and transforms
-the observations into predicted genotypic values, such
-that $\mathbf{H}_g\mathbf{y} = \mathbf{Z}_g\mathbf{\hat{g}}$. Therefore, $\mathrm{ED}_g$ decreases as shrinkage of genotypic effects increases. Given the properties of the genetic effective dimension, \textcite{rodriguez2016spatial} proposed a novel expression of heritability:
-\begin{equation}
-    H^2 = \dfrac{\mathrm{ED_g}}{n_g-l}
-\end{equation}
-where $n_g$ is the number of genotypes and $l$ is the number of non-zero eigenvalues of $\mathbf{H}_g$. Furthermore, in the specific
-situation when genotypic effects are assumed independent
-(i.e., ignoring pedigree/marker information), and by ignoring
-the zero eigenvalues, the following equivalence can be established:
-\begin{equation}
-    H^{2}=\frac{\mathrm{ED}_{g}}{n_{g}}=1-\frac{\overline{\mathrm{PEV}}}{\sigma_{g}^{2}}
-    \text{,}
-    \label{eq:new_heritability}
-\end{equation}
-where $\overline{\mathrm{PEV}}$ stands for the average prediction error variance of genotype BLUPs. Note that the right-hand term corresponds to the generalized heritability developed by \textcite{welham2010comparison} and is also equivalent to the one given in \textcite{cullis_design_2006}. This generalized heritability is adapted to models with additional fixed and random components in comparison to the standard heritability which only works for a model with a genotypic random component only.
+Consequently, the total effective dimension $ED_{s}$ can be interpreted as a measure of the magnitude of field variations with larger values indicating more intense spatial patterns. In addition, the partial effective dimensions $ED_{s_{k}}$ are indicative of the contribution of each component to the fitted surface, and reflect the complexity of the spatial pattern.
+
+%\subsubsection{Generalized heritability}
 
 
-\begin{formal}
-Do a section explaining which model was chosen and how it was modelled in reality
-\end{formal}
 
 \section{ARXAR model}
 In this section the ARXAR model, and its extension to the linear variance (LV) model, are explained. For more detailed information about the original ARxAR model, consult \textcite{gilmour_accounting_1997}. For information about the extensions of the model, see \textcite{Piepho2010} and \textcite{williams_neighbour_1986}.\\

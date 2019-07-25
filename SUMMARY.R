@@ -166,6 +166,9 @@ print(xtable(summary_latex_table, digits = rep(c(0, 4), times = c(2, 4)),
       timestamp = NULL,
       comment = FALSE)
 
+#Save the filtered data set to .RData
+save(design_table,data_table,filtered_data,
+     file = "data.RData")
 
 # SUMMARY PLOTS --------------------------------------------------
 

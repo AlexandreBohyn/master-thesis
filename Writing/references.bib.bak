@@ -1,4 +1,3 @@
-% Encoding: UTF-8
 @article{williams1988contemporary,
   title={Contemporary Ergonomics 1987: Proceedings of the Ergonomics Society’s 1987 Annual Conference, Swansea, Wales, 6--10 April 1987},
   author={Williams, Karen A},
@@ -944,6 +943,119 @@ present field layout, its use for international trials is
 	file = {Snapshot:C\:\\Users\\alexa\\Zotero\\storage\\SDRMBI59\\221364.html:text/html;Snapshot:C\:\\Users\\alexa\\Zotero\\storage\\CPZWCA4R\\221364.html:text/html}
 }
 
+@article{heredia2003genetic,
+  title={Genetic algorithms for the construction of D-optimal designs},
+  author={Heredia-Langner, Alejandro and Carlyle, W Matthew and Montgomery, Douglas C and Borror, Connie M and Runger, George C},
+  journal={Journal of Quality Technology},
+  volume={35},
+  number={1},
+  pages={28--46},
+  year={2003},
+  publisher={Taylor \& Francis}
+}
+
+@article{heredia2004model,
+  title={Model-robust optimal designs: A genetic algorithm approach},
+  author={Heredia-Langner, Alejandro and Montgomery, Douglas C and Carlyle, W Matthew and Borror, Connie M},
+  journal={Journal of Quality Technology},
+  volume={36},
+  number={3},
+  pages={263--279},
+  year={2004},
+  publisher={Taylor \& Francis}
+}
+
+@article{meyer1995coordinate,
+  title={The coordinate-exchange algorithm for constructing exact optimal experimental designs},
+  author={Meyer, Ruth K and Nachtsheim, Christopher J},
+  journal={Technometrics},
+  volume={37},
+  number={1},
+  pages={60--69},
+  year={1995},
+  publisher={Taylor \& Francis Group}
+}
+
+@book{fedorov2013theory,
+  title={Theory of optimal experiments},
+  author={Fedorov, Valerii Vadimovich},
+  year={1970},
+  publisher={Academic Press, New York}
+}
+
+@book{goos2011optimal,
+  title={Optimal design of experiments: a case study approach},
+  author={Goos, Peter and Jones, Bradley},
+  year={2011},
+  publisher={John Wiley \& Sons}
+}
+
+@article{bohachevsky1986generalized,
+  title={Generalized simulated annealing for function optimization},
+  author={Bohachevsky, Ihor O and Johnson, Mark E and Stein, Myron L},
+  journal={Technometrics},
+  volume={28},
+  number={3},
+  pages={209--217},
+  year={1986},
+  publisher={Taylor \& Francis Group}
+}
+
+@article{johnson1983some,
+  title={Some guidelines for constructing exact D-optimal designs on convex design spaces},
+  author={Johnson, Mark E and Nachtsheim, Christopher J},
+  journal={Technometrics},
+  volume={25},
+  number={3},
+  pages={271--277},
+  year={1983},
+  publisher={Taylor \& Francis}
+}
+
+@article{atkinson1989construction,
+  title={The construction of exact D-optimum experimental designs with application to blocking response surface designs},
+  author={Atkinson, Anthony C and Donev, Alexander N},
+  journal={Biometrika},
+  volume={76},
+  number={3},
+  pages={515--526},
+  year={1989},
+  publisher={Oxford University Press}
+}
+
+@article{jung1996construction,
+  title={Construction of exact D-optimal designs by tabu search},
+  author={Jung, Joo Sung and Yum, Bong Jin},
+  journal={Computational Statistics \& Data Analysis},
+  volume={21},
+  number={2},
+  pages={181--191},
+  year={1996},
+  publisher={Elsevier}
+}
+
+@article{meyer1988constructing,
+  title={Constructing exact D-optimal experimental designs by simulated annealing},
+  author={Meyer, Ruth K and Nachtsheim, Christopher J},
+  journal={American Journal of Mathematical and Management Sciences},
+  volume={8},
+  number={3-4},
+  pages={329--359},
+  year={1988},
+  publisher={Taylor \& Francis}
+}
+
+@article{rodriguez2010generating,
+  title={Generating and assessing exact G-optimal designs},
+  author={Rodriguez, Myrta and Jones, Bradley and Borror, Connie M and Montgomery, Douglas C},
+  journal={Journal of quality technology},
+  volume={42},
+  number={1},
+  pages={3--20},
+  year={2010},
+  publisher={Taylor \& Francis}
+}
+
 
 
 @book{goos_optimal_2011,
@@ -1503,17 +1615,12 @@ plot than in the trial with single plant plots.},
 	pages = {263--279}
 }
 
-@book{fedorov_theory_1972,
-	address = {New York},
+@book{fedorov_theory_2013,
 	title = {Theory of optimal experiments},
-	language = {eng},
-	publisher = {Academic Press},
-	author = {Fedorov, Valeriǐ Vadimovich},
-	year = {1972},
-	note = {Open Library ID: OL18496755M},
-	keywords = {Experimental design, Mathematical optimization, Regression analysis}
+	publisher = {Elsevier},
+	author = {Fedorov, Valerii Vadimovich},
+	year = {2013}
 }
-
 
 @article{bohachevsky_generalized_1986,
 	title = {Generalized simulated annealing for function optimization},
@@ -1602,6 +1709,14 @@ plot than in the trial with single plant plots.},
 	file = {JSTOR Full Text PDF:C\:\\Users\\alexa\\Zotero\\storage\\MTZCB63J\\Zimmerman et Harville - 1991 - A Random Field Approach to the Analysis of Field-P.pdf:application/pdf;JSTOR Full Text PDF:C\:\\Users\\alexa\\Zotero\\storage\\HM4HKAWJ\\Zimmerman et Harville - 1991 - A Random Field Approach to the Analysis of Field-P.pdf:application/pdf}
 }
 
+@article{d._risser_review:_2016,
+	title = {Review: {Nonstationary} {Spatial} {Modeling}, with {Emphasis} on {Process} {Convolution} and {Covariate}-{Driven} {Approaches}},
+	shorttitle = {Review},
+	abstract = {In many environmental applications involving spatially-referenced data, limitations on the number and locations of observations motivate the need for practical and efficient models for spatial interpolation, or kriging. A key component of models for continuously-indexed spatial data is the covariance function, which is traditionally assumed to belong to a parametric class of stationary models. While convenient, the assumption of stationarity is rarely realistic; as a result, there is a rich literature on alternative methodologies which capture and model the nonstationarity present in most environmental processes. This review document provides a rigorous and concise description of the existing literature on nonstationary methods, paying particular attention to process convolution (also called kernel smoothing or moving average) approaches. A summary is also provided of more recent methods which leverage covariate information and yield both interpretational and computational benefits. Note: the article is borrowed from Chapters 1 and 2 of the author's Ph.D. dissertation, joint with Catherine A. Calder.},
+	author = {D. Risser, Mark},
+	month = oct,
+	year = {2016}
+}
 
 @article{williams_neighbour_1986,
 	title = {A neighbour model for field experiments},
@@ -1688,6 +1803,25 @@ plot than in the trial with single plant plots.},
 	year = {1992},
 	pages = {981--982},
 	file = {Snapshot:C\:\\Users\\alexa\\Zotero\\storage\\5ZX8VH2U\\sim.html:text/html}
+}
+
+@article{oakey_joint_2007,
+	title = {Joint modeling of additive and non-additive (genetic line) effects in multi-environment trials},
+	volume = {114},
+	issn = {1432-2242},
+	url = {https://doi.org/10.1007/s00122-007-0515-3},
+	doi = {10.1007/s00122-007-0515-3},
+	abstract = {A statistical approach for the analysis of multi-environment trials (METs) is presented, in which selection of best performing lines, best parents, and best combination of parents can be determined. The genetic effect of a line is partitioned into additive, dominance and residual non-additive effects. The dominance effects are estimated through the incorporation of the dominance relationship matrix, which is presented under varying levels of inbreeding. A computationally efficient way of fitting dominance effects is presented which partitions dominance effects into between family dominance and within family dominance line effects. The overall approach is applicable to inbred lines, hybrid lines and other general population structures where pedigree information is available.},
+	language = {en},
+	number = {8},
+	urldate = {2019-04-25},
+	journal = {Theoretical and Applied Genetics},
+	author = {Oakey, Helena and Verbyla, Arūnas P. and Cullis, Brian R. and Wei, Xianming and Pitchford, Wayne S.},
+	month = may,
+	year = {2007},
+	keywords = {Pedigree Information, Dominance Effect, Dominance Relationship, Relationship Matrix, Selection Index},
+	pages = {1319--1332},
+	file = {Springer Full Text PDF:C\:\\Users\\alexa\\Zotero\\storage\\HNWRLRB4\\Oakey et al. - 2007 - Joint modeling of additive and non-additive (genet.pdf:application/pdf}
 }
 
 @article{stefanova_enhanced_2009,
@@ -1841,6 +1975,1826 @@ plot than in the trial with single plant plots.},
 	year = {1982},
 	pages = {45--50},
 	file = {ScienceDirect Full Text PDF:C\:\\Users\\alexa\\Zotero\\storage\\ZAAPN7FI\\Chan - 1982 - A-optimality for regression designs.pdf:application/pdf;ScienceDirect Snapshot:C\:\\Users\\alexa\\Zotero\\storage\\D5T7Y5R2\\0022247X82901524.html:text/html}
+}
+
+@article{wilkinson1983nearest,
+  title={Nearest neighbour (NN) analysis of field experiments},
+  author={Wilkinson, GN and Eckert, SR and Hancock, TW and Mayo, O},
+  journal={Journal of the Royal Statistical Society: Series B (Methodological)},
+  volume={45},
+  number={2},
+  pages={151--178},
+  year={1983},
+  publisher={Wiley Online Library}
+}
+@article{risser2016nonstationary,
+  title={Nonstationary Spatial Modeling, with Emphasis on Process Convolution and Covariate-Driven Approaches},
+  author={Risser, Mark D},
+  journal={arXiv preprint arXiv:1610.02447},
+  year={2016}
+}
+@article{zimmerman1991random,
+  title={A random field approach to the analysis of field-plot experiments and other spatial experiments},
+  author={Zimmerman, Dale L and Harville, David A},
+  journal={Biometrics},
+  pages={223--239},
+  year={1991},
+  publisher={JSTOR}
+}
+@article{rodriguez2016spatial,
+  title={Spatial models for field trials},
+  author={Rodríguez-Álvarez, María Xosé and Boer, Martin P and van Eeuwijk, Fred A and Eilers, Paul HC},
+  journal={arXiv preprint arXiv:1607.08255},
+  year={2016}
+}
+@article{rodriguez2015fast,
+  title={Fast smoothing parameter separation in multidimensional generalized P-splines: the SAP algorithm},
+  author={Rodríguez-Álvarez, María Xosé and Lee, Dae-Jin and Kneib, Thomas and Durbán, María and Eilers, Paul},
+  journal={Statistics and Computing},
+  volume={25},
+  number={5},
+  pages={941--957},
+  year={2015},
+  publisher={Springer}
+}
+@Article{Piepho2010,
+  author       = {Piepho, H. P. and Williams, E. R.},
+  title        = {Linear variance models for plant breeding trials},
+  journaltitle = {Plant Breeding},
+  date         = {2010-02-01},
+  volume       = {129},
+  number       = {1},
+  pages        = {1--8},
+  issn         = {1439-0523},
+  doi          = {10.1111/j.1439-0523.2009.01654.x},
+  url          = {http://onlinelibrary.wiley.com/doi/abs/10.1111/j.1439-0523.2009.01654.x},
+  urldate      = {2018-11-17},
+  abstract     = {With 4 figures and 6 tables Abstract Most plant breeding trials involve a layout of plots in rows and columns. Resolvable row–column designs have proven effective in obtaining efficient estimates of treatment effects. Further improvement may be possible by postblocking or by inclusion of spatial model components. This study reviews options for augmenting a baseline row–column model by the addition of spatial components. The models considered are different variants of the linear variance model in one and two dimensions. Usefulness of these options is assessed by analysing a number of field trials from plant breeding and variety testing.},
+  file         = {Full Text PDF:C\:\\Users\\alexa\\Zotero\\storage\\6I38ZZQS\\Piepho et Williams - 2010 - Linear variance models for plant breeding trials.pdf:application/pdf;Snapshot:C\:\\Users\\alexa\\Zotero\\storage\\LUMJSQ8L\\j.1439-0523.2009.01654.html:text/html},
+  keywords     = {field trial, linear variance, residual maximum likelihood, resolvable row–column designs, separability, spatial analysis},
+  langid       = {english},
+  rights       = {© 2009 Blackwell Verlag {GmbH}},
+}
+
+
+@article{araus_field_2014,
+	title = {Field high-throughput phenotyping: the new crop breeding frontier},
+	volume = {19},
+	issn = {13601385},
+	shorttitle = {Field high-throughput phenotyping},
+	url = {http://linkinghub.elsevier.com/retrieve/pii/S1360138513001994},
+	doi = {10.1016/j.tplants.2013.09.008},
+	language = {en},
+	number = {1},
+	urldate = {2018-10-09},
+	journal = {Trends in Plant Science},
+	author = {Araus, José Luis and Cairns, Jill E.},
+	month = jan,
+	year = {2014},
+	pages = {52--61},
+	file = {Araus et Cairns - 2014 - Field high-throughput phenotyping the new crop br.pdf:C\:\\Users\\alexa\\Zotero\\storage\\VDV3MLG2\\Araus et Cairns - 2014 - Field high-throughput phenotyping the new crop br.pdf:application/pdf;Araus et Cairns - 2014 - Field high-throughput phenotyping the new crop br.pdf:C\:\\Users\\alexa\\Zotero\\storage\\LMZ3WGBT\\Araus et Cairns - 2014 - Field high-throughput phenotyping the new crop br.pdf:application/pdf}
+}
+
+@article{millet_genome-wide_2016,
+	title = {Genome-wide analysis of yield in {Europe}: allelic effects as functions of drought and heat scenarios},
+	issn = {0032-0889, 1532-2548},
+	shorttitle = {Genome-wide analysis of yield in {Europe}},
+	url = {http://www.plantphysiol.org/lookup/doi/10.1104/pp.16.00621},
+	doi = {10.1104/pp.16.00621},
+	language = {en},
+	urldate = {2018-10-09},
+	journal = {Plant Physiology},
+	author = {Millet, Emilie and Welcker, Claude and Kruijer, Willem and Negro, Sandra and Nicolas, Stephane and Praud, Sebastien and Ranc, Nicolas and Presterl, Thomas and Tuberosa, Roberto and Bedo, Zoltan and Draye, Xavier and Usadel, Bjoern and Charcosset, Alain and van Eeuwijk, Fred and Tardieu, Francois and Coupel-Ledru, Aude and Bauland, Cyril},
+	month = jul,
+	year = {2016},
+	pages = {pp.00621.2016},
+	file = {Millet et al. - 2016 - Genome-wide analysis of yield in Europe allelic e.pdf:C\:\\Users\\alexa\\Zotero\\storage\\VTL4RCP3\\Millet et al. - 2016 - Genome-wide analysis of yield in Europe allelic e.pdf:application/pdf;Millet et al. - 2016 - Genome-wide analysis of yield in Europe allelic e.pdf:C\:\\Users\\alexa\\Zotero\\storage\\L7DJTTFN\\Millet et al. - 2016 - Genome-wide analysis of yield in Europe allelic e.pdf:application/pdf}
+}
+
+@article{malosetti_statistical_2013,
+	title = {The statistical analysis of multi-environment data: modeling genotype-by-environment interaction and its genetic basis},
+	volume = {4},
+	issn = {1664-042X},
+	shorttitle = {The statistical analysis of multi-environment data},
+	url = {http://journal.frontiersin.org/article/10.3389/fphys.2013.00044/abstract},
+	doi = {10.3389/fphys.2013.00044},
+	language = {en},
+	urldate = {2018-10-09},
+	journal = {Frontiers in Physiology},
+	author = {Malosetti, Marcos and Ribaut, Jean-Marcel and van Eeuwijk, Fred A.},
+	year = {2013},
+	file = {Malosetti et al. - 2013 - The statistical analysis of multi-environment data.pdf:C\:\\Users\\alexa\\Zotero\\storage\\RFA9P5IE\\Malosetti et al. - 2013 - The statistical analysis of multi-environment data.pdf:application/pdf;Malosetti et al. - 2013 - The statistical analysis of multi-environment data.pdf:C\:\\Users\\alexa\\Zotero\\storage\\U8Y9ATAU\\Malosetti et al. - 2013 - The statistical analysis of multi-environment data.pdf:application/pdf}
+}
+
+@article{lobet_novel_2011,
+	title = {A {Novel} {Image}-{Analysis} {Toolbox} {Enabling} {Quantitative} {Analysis} of {Root} {System} {Architecture}},
+	volume = {157},
+	issn = {0032-0889, 1532-2548},
+	url = {http://www.plantphysiol.org/lookup/doi/10.1104/pp.111.179895},
+	doi = {10.1104/pp.111.179895},
+	language = {en},
+	number = {1},
+	urldate = {2018-10-09},
+	journal = {Plant Physiology},
+	author = {Lobet, Guillaume and Pagès, Loïc and Draye, Xavier},
+	month = sep,
+	year = {2011},
+	pages = {29--39},
+	file = {Lobet et al. - 2011 - A Novel Image-Analysis Toolbox Enabling Quantitati.pdf:C\:\\Users\\alexa\\Zotero\\storage\\X89YRU4B\\Lobet et al. - 2011 - A Novel Image-Analysis Toolbox Enabling Quantitati.pdf:application/pdf;Lobet et al. - 2011 - A Novel Image-Analysis Toolbox Enabling Quantitati.pdf:C\:\\Users\\alexa\\Zotero\\storage\\VLXFSWTL\\Lobet et al. - 2011 - A Novel Image-Analysis Toolbox Enabling Quantitati.pdf:application/pdf}
+}
+
+@article{li_review_2014,
+	title = {A {Review} of {Imaging} {Techniques} for {Plant} {Phenotyping}},
+	volume = {14},
+	issn = {1424-8220},
+	url = {http://www.mdpi.com/1424-8220/14/11/20078},
+	doi = {10.3390/s141120078},
+	abstract = {Given the rapid development of plant genomic technologies, a lack of access to plant phenotyping capabilities limits our ability to dissect the genetics of quantitative traits. Effective, high-throughput phenotyping platforms have recently been developed to solve this problem. In high-throughput phenotyping platforms, a variety of imaging methodologies are being used to collect data for quantitative studies of complex traits related to the growth, yield and adaptation to biotic or abiotic stress (disease, insects, drought and salinity). These imaging techniques include visible imaging (machine vision), imaging spectroscopy (multispectral and hyperspectral remote sensing), thermal infrared imaging, fluorescence imaging, 3D imaging and tomographic imaging (MRT, PET and CT). This paper presents a brief review on these imaging techniques and their applications in plant phenotyping. The features used to apply these imaging techniques to plant phenotyping are described and discussed in this review.},
+	language = {en},
+	number = {11},
+	urldate = {2018-10-09},
+	journal = {Sensors},
+	author = {Li, Lei and Zhang, Qin and Huang, Danfeng},
+	month = oct,
+	year = {2014},
+	pages = {20078--20111},
+	file = {Li et al. - 2014 - A Review of Imaging Techniques for Plant Phenotypi.pdf:C\:\\Users\\alexa\\Zotero\\storage\\V8SJYA3I\\Li et al. - 2014 - A Review of Imaging Techniques for Plant Phenotypi.pdf:application/pdf;Li et al. - 2014 - A Review of Imaging Techniques for Plant Phenotypi.pdf:C\:\\Users\\alexa\\Zotero\\storage\\Z5EG4SKI\\Li et al. - 2014 - A Review of Imaging Techniques for Plant Phenotypi.pdf:application/pdf}
+}
+
+@article{langridge_making_2011,
+	title = {Making the most of ‘omics’ for crop breeding},
+	volume = {29},
+	issn = {01677799},
+	url = {http://linkinghub.elsevier.com/retrieve/pii/S0167779910001599},
+	doi = {10.1016/j.tibtech.2010.09.006},
+	language = {en},
+	number = {1},
+	urldate = {2018-10-09},
+	journal = {Trends in Biotechnology},
+	author = {Langridge, Peter and Fleury, Delphine},
+	month = jan,
+	year = {2011},
+	pages = {33--40},
+	file = {Langridge et Fleury - 2011 - Making the most of ‘omics’ for crop breeding.pdf:C\:\\Users\\alexa\\Zotero\\storage\\BT57A83H\\Langridge et Fleury - 2011 - Making the most of ‘omics’ for crop breeding.pdf:application/pdf;Langridge et Fleury - 2011 - Making the most of ‘omics’ for crop breeding.pdf:C\:\\Users\\alexa\\Zotero\\storage\\3VHIYJKJ\\Langridge et Fleury - 2011 - Making the most of ‘omics’ for crop breeding.pdf:application/pdf}
+}
+
+@article{houle_phenomics:_2010,
+	title = {Phenomics: the next challenge},
+	volume = {11},
+	issn = {1471-0056, 1471-0064},
+	shorttitle = {Phenomics},
+	url = {http://www.nature.com/articles/nrg2897},
+	doi = {10.1038/nrg2897},
+	abstract = {A key goal of biology is to understand phenotypic characteristics, such as health, disease and evolutionary fitness. Phenotypic variation is produced through a complex web of interactions between genotype and environment, and such a ‘genotype–phenotype’ map is inaccessible without the detailed phenotypic data that allow these interactions to be studied. Despite this need, our ability to characterize phenomes — the full set of phenotypes of an individual — lags behind our ability to characterize genomes. Phenomics should be recognized and pursued as an independent discipline to enable the development and adoption of high-throughput and high-dimensional phenotyping.},
+	language = {en},
+	number = {12},
+	urldate = {2018-10-09},
+	journal = {Nature Reviews Genetics},
+	author = {Houle, David and Govindaraju, Diddahally R. and Omholt, Stig},
+	month = dec,
+	year = {2010},
+	pages = {855--866},
+	file = {Houle et al. - 2010 - Phenomics the next challenge.pdf:C\:\\Users\\alexa\\Zotero\\storage\\IXJUIVLP\\Houle et al. - 2010 - Phenomics the next challenge.pdf:application/pdf;Houle et al. - 2010 - Phenomics the next challenge.pdf:C\:\\Users\\alexa\\Zotero\\storage\\V2G6C56L\\Houle et al. - 2010 - Phenomics the next challenge.pdf:application/pdf}
+}
+
+@article{ghanem_physiological_2015,
+	title = {Physiological phenotyping of plants for crop improvement},
+	volume = {20},
+	issn = {13601385},
+	url = {https://linkinghub.elsevier.com/retrieve/pii/S1360138514002957},
+	doi = {10.1016/j.tplants.2014.11.006},
+	language = {en},
+	number = {3},
+	urldate = {2018-10-09},
+	journal = {Trends in Plant Science},
+	author = {Ghanem, Michel Edmond and Marrou, Hélène and Sinclair, Thomas R.},
+	month = mar,
+	year = {2015},
+	pages = {139--144},
+	file = {Ghanem et al. - 2015 - Physiological phenotyping of plants for crop impro.pdf:C\:\\Users\\alexa\\Zotero\\storage\\XTFD84GJ\\Ghanem et al. - 2015 - Physiological phenotyping of plants for crop impro.pdf:application/pdf;Ghanem et al. - 2015 - Physiological phenotyping of plants for crop impro.pdf:C\:\\Users\\alexa\\Zotero\\storage\\VVT8AZQT\\Ghanem et al. - 2015 - Physiological phenotyping of plants for crop impro.pdf:application/pdf}
+}
+
+@article{fiorani_future_2013,
+	title = {Future {Scenarios} for {Plant} {Phenotyping}},
+	volume = {64},
+	issn = {1543-5008, 1545-2123},
+	url = {http://www.annualreviews.org/doi/10.1146/annurev-arplant-050312-120137},
+	doi = {10.1146/annurev-arplant-050312-120137},
+	abstract = {With increasing demand to support and accelerate progress in breeding for novel traits, the plant research community faces the need to accurately measure increasingly large numbers of plants and plant parameters. The goal is to provide quantitative analyses of plant structure and function relevant for traits that help plants better adapt to lowinput agriculture and resource-limited environments. We provide an overview of the inherently multidisciplinary research in plant phenotyping, focusing on traits that will assist in selecting genotypes with increased resource use efﬁciency. We highlight opportunities and challenges for integrating noninvasive or minimally invasive technologies into screening protocols to characterize plant responses to environmental challenges for both controlled and ﬁeld experimentation. Although technology evolves rapidly, parallel efforts are still required because large-scale phenotyping demands accurate reporting of at least a minimum set of information concerning experimental protocols, data management schemas, and integration with modeling. The journey toward systematic plant phenotyping has only just begun.},
+	language = {en},
+	number = {1},
+	urldate = {2018-10-09},
+	journal = {Annual Review of Plant Biology},
+	author = {Fiorani, Fabio and Schurr, Ulrich},
+	month = apr,
+	year = {2013},
+	pages = {267--291},
+	file = {Fiorani 2013 - Annu. plant review.pdf:C\:\\Users\\alexa\\Zotero\\storage\\5B4ZIMVK\\Fiorani 2013 - Annu. plant review.pdf:application/pdf;Fiorani 2013 - Annu. plant review.pdf:C\:\\Users\\alexa\\Zotero\\storage\\P9ZTHBIY\\Fiorani 2013 - Annu. plant review.pdf:application/pdf;Fiorani et Schurr - 2013 - Future Scenarios for Plant Phenotyping.pdf:C\:\\Users\\alexa\\Zotero\\storage\\5PPSZEVZ\\Fiorani et Schurr - 2013 - Future Scenarios for Plant Phenotyping.pdf:application/pdf;Fiorani et Schurr - 2013 - Future Scenarios for Plant Phenotyping.pdf:C\:\\Users\\alexa\\Zotero\\storage\\NKV35FZ5\\Fiorani et Schurr - 2013 - Future Scenarios for Plant Phenotyping.pdf:application/pdf}
+}
+
+@article{cabrera-bosquet_high-throughput_2016,
+	title = {High-throughput estimation of incident light, light interception and radiation-use efficiency of thousands of plants in a phenotyping platform},
+	volume = {212},
+	issn = {0028646X},
+	url = {http://doi.wiley.com/10.1111/nph.14027},
+	doi = {10.1111/nph.14027},
+	abstract = {Light interception and radiation-use efﬁciency (RUE) are essential components of plant performance. Their genetic dissections require novel high-throughput phenotyping methods.   We have developed a suite of methods to evaluate the spatial distribution of incident light, as experienced by hundreds of plants in a glasshouse, by simulating sunbeam trajectories through glasshouse structures every day of the year; the amount of light intercepted by maize (Zea mays) plants via a functional–structural model using three-dimensional (3D) reconstructions of each plant placed in a virtual scene reproducing the canopy in the glasshouse; and RUE, as the ratio of plant biomass to intercepted light.},
+	language = {en},
+	number = {1},
+	urldate = {2018-10-09},
+	journal = {New Phytologist},
+	author = {Cabrera-Bosquet, Llorenç and Fournier, Christian and Brichet, Nicolas and Welcker, Claude and Suard, Benoît and Tardieu, François},
+	month = oct,
+	year = {2016},
+	pages = {269--281},
+	file = {Cabrera-Bosquet et al. - 2016 - High-throughput estimation of incident light, ligh.pdf:C\:\\Users\\alexa\\Zotero\\storage\\EVS7J5ED\\Cabrera-Bosquet et al. - 2016 - High-throughput estimation of incident light, ligh.pdf:application/pdf;Cabrera-Bosquet et al. - 2016 - High-throughput estimation of incident light, ligh.pdf:C\:\\Users\\alexa\\Zotero\\storage\\7V7TT9VY\\Cabrera-Bosquet et al. - 2016 - High-throughput estimation of incident light, ligh.pdf:application/pdf}
+}
+
+@book{yin_crop_2015,
+	address = {New York, NY},
+	title = {Crop systems biology},
+	isbn = {978-3-319-20561-8},
+	language = {en},
+	publisher = {Springer Berlin Heidelberg},
+	author = {Yin, Xinyou},
+	year = {2015},
+	file = {Yin - 2015 - Crop systems biology.pdf:C\:\\Users\\alexa\\Zotero\\storage\\4BS8H7AB\\Yin - 2015 - Crop systems biology.pdf:application/pdf;Yin - 2015 - Crop systems biology.pdf:C\:\\Users\\alexa\\Zotero\\storage\\KQER27SY\\Yin - 2015 - Crop systems biology.pdf:application/pdf;Yin - 2015 - Crop systems biology.pdf:C\:\\Users\\alexa\\Zotero\\storage\\M9K7MH3D\\Yin - 2015 - Crop systems biology.pdf:application/pdf;Yin - 2015 - Crop systems biology.pdf:C\:\\Users\\alexa\\Zotero\\storage\\WK5EJTKD\\Yin - 2015 - Crop systems biology.pdf:application/pdf}
+}
+
+@article{wang_genotypephenotype_2015,
+	title = {Genotype–phenotype modeling considering intermediate level of biological variation: a case study involving sensory traits, metabolites and {QTLs} in ripe tomatoes},
+	volume = {11},
+	issn = {1742-206X, 1742-2051},
+	shorttitle = {Genotype–phenotype modeling considering intermediate level of biological variation},
+	url = {http://xlink.rsc.org/?DOI=C5MB00477B},
+	doi = {10.1039/C5MB00477B},
+	language = {en},
+	number = {11},
+	urldate = {2018-10-09},
+	journal = {Molecular BioSystems},
+	author = {Wang, Huange and Paulo, Joao and Kruijer, Willem and Boer, Martin and Jansen, Hans and Tikunov, Yury and Usadel, Björn and van Heusden, Sjaak and Bovy, Arnaud and van Eeuwijk, Fred},
+	year = {2015},
+	pages = {3101--3110},
+	file = {Wang et al. - 2015 - Genotype–phenotype modeling considering intermedia.pdf:C\:\\Users\\alexa\\Zotero\\storage\\MIMU5ULC\\Wang et al. - 2015 - Genotype–phenotype modeling considering intermedia.pdf:application/pdf;Wang et al. - 2015 - Genotype–phenotype modeling considering intermedia.pdf:C\:\\Users\\alexa\\Zotero\\storage\\4TZJRLM3\\Wang et al. - 2015 - Genotype–phenotype modeling considering intermedia.pdf:application/pdf}
+}
+
+@article{virlet_field_2017,
+	title = {Field {Scanalyzer}: {An} automated robotic field phenotyping platform for detailed crop monitoring},
+	volume = {44},
+	issn = {1445-4408},
+	shorttitle = {Field {Scanalyzer}},
+	url = {http://www.publish.csiro.au/?paper=FP16163},
+	doi = {10.1071/FP16163},
+	abstract = {Current approaches to ﬁeld phenotyping are laborious or permit the use of only a few sensors at a time. In an effort to overcome this, a fully automated robotic ﬁeld phenotyping platform with a dedicated sensor array that may be accurately positioned in three dimensions and mounted on ﬁxed rails has been established, to facilitate continual and high-throughput monitoring of crop performance. Employed sensors comprise of high-resolution visible, chlorophyll ﬂuorescence and thermal infrared cameras, two hyperspectral imagers and dual 3D laser scanners. The sensor array facilitates speciﬁc growth measurements and identiﬁcation of key growth stages with dense temporal and spectral resolution. Together, this platform produces a detailed description of canopy development across the crops entire lifecycle, with a high-degree of accuracy and reproducibility.},
+	language = {en},
+	number = {1},
+	urldate = {2018-10-09},
+	journal = {Functional Plant Biology},
+	author = {Virlet, Nicolas and Sabermanesh, Kasra and Sadeghi-Tehran, Pouria and Hawkesford, Malcolm J.},
+	year = {2017},
+	pages = {143},
+	file = {Virlet et al. - 2017 - Field Scanalyzer An automated robotic field pheno.pdf:C\:\\Users\\alexa\\Zotero\\storage\\ANGZN79R\\Virlet et al. - 2017 - Field Scanalyzer An automated robotic field pheno.pdf:application/pdf;Virlet et al. - 2017 - Field Scanalyzer An automated robotic field pheno.pdf:C\:\\Users\\alexa\\Zotero\\storage\\623MEG37\\Virlet et al. - 2017 - Field Scanalyzer An automated robotic field pheno.pdf:application/pdf}
+}
+
+@article{velazco_modelling_2017,
+	title = {Modelling spatial trends in sorghum breeding field trials using a two-dimensional {P}-spline mixed model},
+	volume = {130},
+	issn = {0040-5752, 1432-2242},
+	url = {http://link.springer.com/10.1007/s00122-017-2894-4},
+	doi = {10.1007/s00122-017-2894-4},
+	abstract = {Key message  A flexible and user-friendly spatial method called SpATS performed comparably to more elaborate and trial-specific spatial models in a series of sorghum breeding trials.},
+	language = {en},
+	number = {7},
+	urldate = {2018-10-09},
+	journal = {Theoretical and Applied Genetics},
+	author = {Velazco, Julio G. and Rodríguez-Álvarez, María Xosé and Boer, Martin P. and Jordan, David R. and Eilers, Paul H. C. and Malosetti, Marcos and van Eeuwijk, Fred A.},
+	month = jul,
+	year = {2017},
+	keywords = {Local Trend, Spatial Method, Spatial Surface, Spatial Trend, SpATS Model},
+	pages = {1375--1392}
+}
+
+@article{welham2010comparison,
+  title={A comparison of analysis methods for late-stage variety evaluation trials},
+  author={Welham, Sue J and Gogel, Beverley J and Smith, Alison B and Thompson, Robin and Cullis, Brian R},
+  journal={Australian \& New Zealand Journal of Statistics},
+  volume={52},
+  number={2},
+  pages={125--149},
+  year={2010},
+  publisher={Wiley Online Library}
+}
+@article{kenward1997precision,
+  title={The precision of fixed effects estimates from restricted maximum likelihood},
+  author={Kenward, MG and Roger, JH},
+  journal={Biometrics},
+  volume={53},
+  number={3},
+  pages={983--997},
+  year={1997}
+}
+
+
+@article{vargas_mapping_2006,
+	title = {Mapping {QTLs} and {QTL} × environment interaction for {CIMMYT} maize drought stress program using factorial regression and partial least squares methods},
+	volume = {112},
+	issn = {0040-5752, 1432-2242},
+	url = {http://link.springer.com/10.1007/s00122-005-0204-z},
+	doi = {10.1007/s00122-005-0204-z},
+	language = {en},
+	number = {6},
+	urldate = {2018-10-09},
+	journal = {Theoretical and Applied Genetics},
+	author = {Vargas, Mateo and van Eeuwijk, Fred A. and Crossa, Jose and Ribaut, Jean-Marcel},
+	month = apr,
+	year = {2006},
+	pages = {1009--1023},
+	file = {Vargas et al. - 2006 - Mapping QTLs and QTL × environment interaction for.pdf:C\:\\Users\\alexa\\Zotero\\storage\\8P4JTPZW\\Vargas et al. - 2006 - Mapping QTLs and QTL × environment interaction for.pdf:application/pdf;Vargas et al. - 2006 - Mapping QTLs and QTL × environment interaction for.pdf:C\:\\Users\\alexa\\Zotero\\storage\\ZHF3GD82\\Vargas et al. - 2006 - Mapping QTLs and QTL × environment interaction for.pdf:application/pdf}
+}
+
+@article{van_eeuwijk_detection_2010,
+	title = {Detection and use of {QTL} for complex traits in multiple environments},
+	volume = {13},
+	issn = {13695266},
+	url = {http://linkinghub.elsevier.com/retrieve/pii/S136952661000004X},
+	doi = {10.1016/j.pbi.2010.01.001},
+	language = {en},
+	number = {2},
+	urldate = {2018-10-09},
+	journal = {Current Opinion in Plant Biology},
+	author = {van Eeuwijk, Fred A and Bink, Marco CAM and Chenu, Karine and Chapman, Scott C},
+	month = apr,
+	year = {2010},
+	pages = {193--205},
+	file = {van Eeuwijk et al. - 2010 - Detection and use of QTL for complex traits in mul.pdf:C\:\\Users\\alexa\\Zotero\\storage\\L3NGNQS8\\van Eeuwijk et al. - 2010 - Detection and use of QTL for complex traits in mul.pdf:application/pdf;van Eeuwijk et al. - 2010 - Detection and use of QTL for complex traits in mul.pdf:C\:\\Users\\alexa\\Zotero\\storage\\7WGSAG7R\\van Eeuwijk et al. - 2010 - Detection and use of QTL for complex traits in mul.pdf:application/pdf}
+}
+
+@article{technow_integrating_2015,
+	title = {Integrating {Crop} {Growth} {Models} with {Whole} {Genome} {Prediction} through {Approximate} {Bayesian} {Computation}},
+	volume = {10},
+	issn = {1932-6203},
+	url = {http://dx.plos.org/10.1371/journal.pone.0130855},
+	doi = {10.1371/journal.pone.0130855},
+	language = {en},
+	number = {6},
+	urldate = {2018-10-09},
+	journal = {PLOS ONE},
+	author = {Technow, Frank and Messina, Carlos D. and Totir, L. Radu and Cooper, Mark},
+	editor = {De Smet, Ive},
+	month = jun,
+	year = {2015},
+	pages = {e0130855},
+	file = {Technow et al. - 2015 - Integrating Crop Growth Models with Whole Genome P.pdf:C\:\\Users\\alexa\\Zotero\\storage\\SBA69TKD\\Technow et al. - 2015 - Integrating Crop Growth Models with Whole Genome P.pdf:application/pdf;Technow et al. - 2015 - Integrating Crop Growth Models with Whole Genome P.pdf:C\:\\Users\\alexa\\Zotero\\storage\\IGC54RZD\\Technow et al. - 2015 - Integrating Crop Growth Models with Whole Genome P.pdf:application/pdf}
+}
+
+@article{tattaris_direct_2016,
+	title = {A {Direct} {Comparison} of {Remote} {Sensing} {Approaches} for {High}-{Throughput} {Phenotyping} in {Plant} {Breeding}},
+	volume = {7},
+	issn = {1664-462X},
+	url = {http://journal.frontiersin.org/Article/10.3389/fpls.2016.01131/abstract},
+	doi = {10.3389/fpls.2016.01131},
+	abstract = {Remote sensing (RS) of plant canopies permits non-intrusive, high-throughput monitoring of plant physiological characteristics. This study compared three RS approaches using a low ﬂying UAV (unmanned aerial vehicle), with that of proximal sensing, and satellite-based imagery. Two physiological traits were considered, canopy temperature (CT) and a vegetation index (NDVI), to determine the most viable approaches for large scale crop genetic improvement. The UAV-based platform achieves plot-level resolution while measuring several hundred plots in one mission via high-resolution thermal and multispectral imagery measured at altitudes of 30–100 m. The satellite measures multispectral imagery from an altitude of 770 km. Information was compared with proximal measurements using IR thermometers and an NDVI sensor at a distance of 0.5–1 m above plots. For robust comparisons, CT and NDVI were assessed on panels of elite cultivars under irrigated and drought conditions, in different thermal regimes, and on un-adapted genetic resources under water deﬁcit. Correlations between airborne data and yield/biomass at maturity were generally higher than equivalent proximal correlations. NDVI was derived from high-resolution satellite imagery for only larger sized plots (8.5 × 2.4 m) due to restricted pixel density. Results support use of UAV-based RS techniques for high-throughput phenotyping for both precision and efﬁciency.},
+	language = {en},
+	urldate = {2018-10-09},
+	journal = {Frontiers in Plant Science},
+	author = {Tattaris, Maria and Reynolds, Matthew P. and Chapman, Scott C.},
+	month = aug,
+	year = {2016},
+	file = {Tattaris et al. - 2016 - A Direct Comparison of Remote Sensing Approaches f.pdf:C\:\\Users\\alexa\\Zotero\\storage\\5XG4M9F8\\Tattaris et al. - 2016 - A Direct Comparison of Remote Sensing Approaches f.pdf:application/pdf;Tattaris et al. - 2016 - A Direct Comparison of Remote Sensing Approaches f.pdf:C\:\\Users\\alexa\\Zotero\\storage\\SME48UIX\\Tattaris et al. - 2016 - A Direct Comparison of Remote Sensing Approaches f.pdf:application/pdf}
+}
+
+@article{tardieu_plant_2017,
+	title = {Plant {Phenomics}, {From} {Sensors} to {Knowledge}},
+	volume = {27},
+	issn = {09609822},
+	url = {https://linkinghub.elsevier.com/retrieve/pii/S0960982217306218},
+	doi = {10.1016/j.cub.2017.05.055},
+	language = {en},
+	number = {15},
+	urldate = {2018-10-09},
+	journal = {Current Biology},
+	author = {Tardieu, François and Cabrera-Bosquet, Llorenç and Pridmore, Tony and Bennett, Malcolm},
+	month = aug,
+	year = {2017},
+	pages = {R770--R783},
+	file = {Tardieu et al. - 2017 - Plant Phenomics, From Sensors to Knowledge.pdf:C\:\\Users\\alexa\\Zotero\\storage\\7CG7YS4L\\Tardieu et al. - 2017 - Plant Phenomics, From Sensors to Knowledge.pdf:application/pdf;Tardieu et al. - 2017 - Plant Phenomics, From Sensors to Knowledge.pdf:C\:\\Users\\alexa\\Zotero\\storage\\9IPTUF4Q\\Tardieu et al. - 2017 - Plant Phenomics, From Sensors to Knowledge.pdf:application/pdf}
+}
+
+@article{salehi_sensordb:_2015,
+	title = {{SensorDB}: a virtual laboratory for the integration, visualization and analysis of varied biological sensor data},
+	volume = {11},
+	issn = {1746-4811},
+	shorttitle = {{SensorDB}},
+	url = {http://www.plantmethods.com/content/11/1/53},
+	doi = {10.1186/s13007-015-0097-z},
+	abstract = {Background:  To our knowledge, there is no software or database solution that supports large volumes of biological time series sensor data efficiently and enables data visualization and analysis in real time. Existing solutions for manag‑ing data typically use unstructured file systems or relational databases. These systems are not designed to provide instantaneous response to user queries. Furthermore, they do not support rapid data analysis and visualization to enable interactive experiments. In large scale experiments, this behaviour slows research discovery, discourages the widespread sharing and reuse of data that could otherwise inform critical decisions in a timely manner and encour‑age effective collaboration between groups.
+Results:  In this paper we present SensorDB, a web based virtual laboratory that can manage large volumes of biological time series sensor data while supporting rapid data queries and real-time user interaction. SensorDB is sen‑sor agnostic and uses web-based, state-of-the-art cloud and storage technologies to efficiently gather, analyse and visualize data.
+Conclusions:  Collaboration and data sharing between different agencies and groups is thereby facilitated. SensorDB is available online at http://sensordb.csiro.au.},
+	language = {en},
+	number = {1},
+	urldate = {2018-10-09},
+	journal = {Plant Methods},
+	author = {Salehi, Ali and Jimenez-Berni, Jose and Deery, David M. and Palmer, Doug and Holland, Edward and Rozas-Larraondo, Pablo and Chapman, Scott C. and Georgakopoulos, Dimitrios and Furbank, Robert T.},
+	month = dec,
+	year = {2015},
+	file = {Salehi et al. - 2015 - SensorDB a virtual laboratory for the integration.pdf:C\:\\Users\\alexa\\Zotero\\storage\\J6ZADG6V\\Salehi et al. - 2015 - SensorDB a virtual laboratory for the integration.pdf:application/pdf;Salehi et al. - 2015 - SensorDB a virtual laboratory for the integration.pdf:C\:\\Users\\alexa\\Zotero\\storage\\WNA7FT6C\\Salehi et al. - 2015 - SensorDB a virtual laboratory for the integration.pdf:application/pdf}
+}
+
+@misc{rodriguez2016spats,
+  title={SpATS: spatial analysis of field trials with splines. R package version 1.0--4},
+  author={Rodr{\'\i}guez-{\'A}lvarez, MX and Boer, MP and Eilers, PHC and van Eeuwijk, FA},
+  year={2016}
+}
+
+
+@article{rodriguez-alvarez_correcting_2018,
+	title = {Correcting for spatial heterogeneity in plant breeding experiments with {P}-splines},
+	volume = {23},
+	issn = {22116753},
+	url = {https://linkinghub.elsevier.com/retrieve/pii/S2211675317301070},
+	doi = {10.1016/j.spasta.2017.10.003},
+	abstract = {An important aim of the analysis of agricultural field experiments is to obtain good predictions for genotypic performance, by correcting for spatial effects. In practice these corrections turn out to be complicated, since there can be different types of spatial effects; those due to management interventions applied to the field plots and those due to various kinds of erratic spatial trends. This paper explores the use of two-dimensional smooth surfaces to model random spatial variation. We propose the use of anisotropic tensor product P-splines to explicitly model large-scale (global trend) and small-scale (local trend) spatial dependence. On top of this spatial field, effects of genotypes, blocks, replicates, and/or other sources of spatial variation are described by a mixed model in a standard way. Each component in the model is shown to have an effective dimension. They are closely related to variance estimation, and helpful for characterising the importance of model components. An important result of this paper is the formal proof of the relation between several definitions of heritability and the effective dimension associated with the genetic component. The practical value of our approach is illustrated by simulations and analyses of large-scale plant breeding experiments. An R-package, SpATS, is provided.},
+	language = {en},
+	urldate = {2018-10-09},
+	journal = {Spatial Statistics},
+	author = {Rodríguez-Álvarez, María Xosé and Boer, Martin P. and van Eeuwijk, Fred A. and Eilers, Paul H.C.},
+	month = mar,
+	year = {2018},
+	pages = {52--71},
+	file = {Rodriguez 2018 - ADDITIONAL Spat. Stat.pdf:C\:\\Users\\alexa\\Dropbox\\Master Thesis\\Litterature\\Rodriguez 2018 - ADDITIONAL Spat. Stat.pdf:application/pdf;Rodriguez 2018 - ADDITIONAL Spat. Stat.pdf:C\:\\Users\\alexa\\Zotero\\storage\\8W3Z4H5R\\Rodriguez 2018 - ADDITIONAL Spat. Stat.pdf:application/pdf;Rodríguez-Álvarez et al. - 2018 - Correcting for spatial heterogeneity in plant bree.pdf:C\:\\Users\\alexa\\Zotero\\storage\\ZI58A7J4\\Rodríguez-Álvarez et al. - 2018 - Correcting for spatial heterogeneity in plant bree.pdf:application/pdf;Rodríguez-Álvarez et al. - 2018 - Correcting for spatial heterogeneity in plant bree.pdf:C\:\\Users\\alexa\\Zotero\\storage\\N8GYK2DK\\Rodríguez-Álvarez et al. - 2018 - Correcting for spatial heterogeneity in plant bree.pdf:application/pdf;Rodríguez-Álvarez et al. - 2018 - Correcting for spatial heterogeneity in plant bree.pdf:C\:\\Users\\alexa\\Zotero\\storage\\4EUUCSPB\\Rodríguez-Álvarez et al. - 2018 - Correcting for spatial heterogeneity in plant bree.pdf:application/pdf;Rodríguez-Álvarez et al. - 2018 - Correcting for spatial heterogeneity in plant bree.pdf:C\:\\Users\\alexa\\Zotero\\storage\\IABHVBNG\\Rodríguez-Álvarez et al. - 2018 - Correcting for spatial heterogeneity in plant bree.pdf:application/pdf}
+}
+
+@article{reynolds_physiological_2016,
+	title = {Physiological breeding},
+	volume = {31},
+	issn = {13695266},
+	url = {https://linkinghub.elsevier.com/retrieve/pii/S1369526616300620},
+	doi = {10.1016/j.pbi.2016.04.005},
+	language = {en},
+	urldate = {2018-10-09},
+	journal = {Current Opinion in Plant Biology},
+	author = {Reynolds, Matthew and Langridge, Peter},
+	month = jun,
+	year = {2016},
+	pages = {162--171},
+	file = {Reynolds et Langridge - 2016 - Physiological breeding.pdf:C\:\\Users\\alexa\\Zotero\\storage\\H8LKE5MH\\Reynolds et Langridge - 2016 - Physiological breeding.pdf:application/pdf;Reynolds et Langridge - 2016 - Physiological breeding.pdf:C\:\\Users\\alexa\\Zotero\\storage\\NN8PX9KG\\Reynolds et Langridge - 2016 - Physiological breeding.pdf:application/pdf}
+}
+
+@article{poorter_pampered_2016,
+	title = {Pampered inside, pestered outside? {Differences} and similarities between plants growing in controlled conditions and in the field},
+	volume = {212},
+	issn = {0028646X},
+	shorttitle = {Pampered inside, pestered outside?},
+	url = {http://doi.wiley.com/10.1111/nph.14243},
+	doi = {10.1111/nph.14243},
+	language = {en},
+	number = {4},
+	urldate = {2018-10-09},
+	journal = {New Phytologist},
+	author = {Poorter, Hendrik and Fiorani, Fabio and Pieruschka, Roland and Wojciechowski, Tobias and van der Putten, Wim H. and Kleyer, Michael and Schurr, Uli and Postma, Johannes},
+	month = dec,
+	year = {2016},
+	pages = {838--855},
+	file = {Poorter et al. - 2016 - Pampered inside, pestered outside Differences and.pdf:C\:\\Users\\alexa\\Zotero\\storage\\W335UVIG\\Poorter et al. - 2016 - Pampered inside, pestered outside Differences and.pdf:application/pdf;Poorter et al. - 2016 - Pampered inside, pestered outside Differences and.pdf:C\:\\Users\\alexa\\Zotero\\storage\\IYYTLQG6\\Poorter et al. - 2016 - Pampered inside, pestered outside Differences and.pdf:application/pdf}
+}
+
+@misc{european_commission_eppn_nodate,
+	title = {{EPPN} {European} {Plant} {Phenotyping} {Network}},
+	url = {http://www.plant-phenotyping-network.eu/},
+	urldate = {2018-10-15},
+	author = {{European Commission}},
+	file = {EPPN European Plant Phenotyping Network:C\:\\Users\\alexa\\Zotero\\storage\\63BUWK4Q\\www.plant-phenotyping-network.eu.html:text/html;EPPN European Plant Phenotyping Network:C\:\\Users\\alexa\\Zotero\\storage\\LYP4W8PQ\\www.plant-phenotyping-network.eu.html:text/html}
+}
+
+@misc{european_commission_eppn2020_nodate,
+	title = {{EPPN}2020 {Home}},
+	url = {https://eppn2020.plant-phenotyping.eu/EPPN2020_home},
+	urldate = {2018-10-15},
+	author = {{European Commission}},
+	file = {EPPN2020 Home:C\:\\Users\\alexa\\Zotero\\storage\\SKQ7MFCC\\EPPN2020_home.html:text/html;EPPN2020 Home:C\:\\Users\\alexa\\Zotero\\storage\\SVIHJLDV\\EPPN2020_home.html:text/html}
+}
+
+@misc{european_commission_horizon_nodate,
+	title = {Horizon 2020 - {European} {Commission}},
+	url = {https://ec.europa.eu/programmes/horizon2020/},
+	abstract = {The EU Framework Programme for Research and Innovation},
+	language = {en},
+	urldate = {2018-10-15},
+	journal = {Horizon 2020},
+	author = {{European Commission}},
+	file = {Snapshot:C\:\\Users\\alexa\\Zotero\\storage\\PTKXCQ2H\\horizon2020.html:text/html;Snapshot:C\:\\Users\\alexa\\Zotero\\storage\\PBG3CVXH\\horizon2020.html:text/html}
+}
+
+@article{furbank_phenomics_2011,
+	title = {Phenomics – technologies to relieve the phenotyping bottleneck},
+	volume = {16},
+	issn = {13601385},
+	url = {http://linkinghub.elsevier.com/retrieve/pii/S1360138511002093},
+	doi = {10.1016/j.tplants.2011.09.005},
+	language = {en},
+	number = {12},
+	urldate = {2018-10-17},
+	journal = {Trends in Plant Science},
+	author = {Furbank, Robert T. and Tester, Mark},
+	month = dec,
+	year = {2011},
+	pages = {635--644},
+	file = {Furbank et Tester - 2011 - Phenomics – technologies to relieve the phenotypin.pdf:C\:\\Users\\alexa\\Zotero\\storage\\S927SQ38\\Furbank et Tester - 2011 - Phenomics – technologies to relieve the phenotypin.pdf:application/pdf;Furbank et Tester - 2011 - Phenomics – technologies to relieve the phenotypin.pdf:C\:\\Users\\alexa\\Zotero\\storage\\MU5QEBNX\\Furbank et Tester - 2011 - Phenomics – technologies to relieve the phenotypin.pdf:application/pdf}
+}
+
+@article{baret_acceptance_2017,
+	title = {Acceptance of {Innovation} and {Pathways} to {Transition} {Towards} {More} {Sustainable} {Food} {Systems}},
+	volume = {60},
+	issn = {0014-3065, 1871-4528},
+	url = {http://link.springer.com/10.1007/s11540-018-9384-1},
+	doi = {10.1007/s11540-018-9384-1},
+	abstract = {The main driver of agricultural systems of the twentieth century was yield. Awareness of the limits of the planet and the impacts of agriculture triggered the realization that new objectives have to be part of the food systems agenda. The development of new models of agriculture including environmental and sustainability dimensions implies a new view on the process of innovation and a better balance between the paradigms of innovation. Systemic lock-ins are keeping the agricultural and food systems on less relevant pathways. Acknowledgement of the relevance of alternative systems of production such as organic farming and a shift from a linear model of innovation diffusion to the building up of new partnerships of innovation are key enablers of a transition.},
+	language = {en},
+	number = {3-4},
+	urldate = {2018-10-17},
+	journal = {Potato Research},
+	author = {Baret, Philippe V.},
+	month = dec,
+	year = {2017},
+	pages = {383--388},
+	file = {Baret - 2017 - Acceptance of Innovation and Pathways to Transitio.pdf:C\:\\Users\\alexa\\Zotero\\storage\\MB54BNUY\\Baret - 2017 - Acceptance of Innovation and Pathways to Transitio.pdf:application/pdf;Baret - 2017 - Acceptance of Innovation and Pathways to Transitio.pdf:C\:\\Users\\alexa\\Zotero\\storage\\7FMUDYKS\\Baret - 2017 - Acceptance of Innovation and Pathways to Transitio.pdf:application/pdf}
+}
+
+@article{newton_implications_2011,
+	title = {Implications of climate change for diseases, crop yields and food security},
+	volume = {179},
+	issn = {1573-5060},
+	url = {https://doi.org/10.1007/s10681-011-0359-4},
+	doi = {10.1007/s10681-011-0359-4},
+	abstract = {Accelerated climate change affects components of complex biological interactions differentially, often causing changes that are difficult to predict. Crop yield and quality are affected by climate change directly, and indirectly, through diseases that themselves will change but remain important. These effects are difficult to dissect and model as their mechanistic bases are generally poorly understood. A combination of integrated modelling from different disciplines and multi-factorial experimentation is needed to advance our understanding and prioritisation of the challenges. This will help prioritise breeding objectives. Food security brings in additional socio-economic, geographical and political factors. Enhancing resilience to the effects of climate change is important for all these systems and functional diversity, particularly in tolerance traits for abiotic and biotic stress, is one of the most effective targets for improved sustainability.},
+	language = {en},
+	number = {1},
+	urldate = {2018-10-19},
+	journal = {Euphytica},
+	author = {Newton, Adrian C. and Johnson, Scott N. and Gregory, Peter J.},
+	month = may,
+	year = {2011},
+	keywords = {CO2, Complex interactions, Extreme events, Ozone, Quality, Resilience, Temperature},
+	pages = {3--18},
+	file = {Springer Full Text PDF:C\:\\Users\\alexa\\Zotero\\storage\\R4INM4T4\\Newton et al. - 2011 - Implications of climate change for diseases, crop .pdf:application/pdf;Springer Full Text PDF:C\:\\Users\\alexa\\Zotero\\storage\\Z4ZL5KFE\\Newton et al. - 2011 - Implications of climate change for diseases, crop .pdf:application/pdf}
+}
+
+@misc{ippn_-_international_plant_phenotyping_network_emphasis_2015,
+	title = {{EMPHASIS} - {European} {Plant} {Phenotyping} {Infrastructure}},
+	shorttitle = {Plant {Phenotyping}},
+	url = {https://www.plant-phenotyping.org/Root_phenotyping_platform},
+	urldate = {2018-10-19},
+	author = {{IPPN - International Plant Phenotyping Network}},
+	year = {2015},
+	file = {EMPHASIS - European Plant Phenotyping Infrastructure:C\:\\Users\\alexa\\Zotero\\storage\\7T53PSNU\\Root_phenotyping_platform.html:text/html;EMPHASIS - European Plant Phenotyping Infrastructure:C\:\\Users\\alexa\\Zotero\\storage\\7ZRLJBA4\\Root_phenotyping_platform.html:text/html}
+}
+
+@article{lee_efficient_2013,
+	title = {Efficient two-dimensional smoothing with {P}-spline {ANOVA} mixed models and nested bases},
+	volume = {61},
+	issn = {0167-9473},
+	url = {http://www.sciencedirect.com/science/article/pii/S016794731200415X},
+	doi = {10.1016/j.csda.2012.11.013},
+	abstract = {Low-rank smoothing techniques have gained much popularity in non-standard regression modeling. In particular, penalized splines and tensor product smooths are used as flexible tools to study non-parametric relationships among several covariates. The use of standard statistical software facilitates their use for several types of problems and applications. However, when interaction terms are considered in the modeling, and multiple smoothing parameters need to be estimated standard software does not work well when datasets are large or higher-order interactions are included or need to be tested. In this paper, a general approach for constructing and estimating bivariate smooth models for additive and interaction terms using penalized splines is proposed. The formulation is based on the mixed model representation of the smooth-ANOVA model by Lee and Durbán (in press), and several nested models in terms of random effects components are proposed. Each component has a clear interpretation in terms of function shape and model identifiability constraints. The term PS-ANOVA is coined for this type of models. The estimation method is relatively straightforward based on the algorithm by Schall (1991) for generalized linear mixed models. Further, a simplification of the smooth interaction term is used by constructing lower-rank basis (nested basis). Finally, some simulation studies and real data examples are presented to evaluate the new model and the estimation method.},
+	urldate = {2018-11-17},
+	journal = {Computational Statistics \& Data Analysis},
+	author = {Lee, Dae-Jin and Durbán, María and Eilers, Paul},
+	month = may,
+	year = {2013},
+	keywords = {Mixed models, Penalized splines, Schall’s algorithm, Smooth-ANOVA decomposition},
+	pages = {22--37},
+	file = {ScienceDirect Full Text PDF:C\:\\Users\\alexa\\Zotero\\storage\\7PHY4TEU\\Lee et al. - 2013 - Efficient two-dimensional smoothing with P-spline .pdf:application/pdf;ScienceDirect Full Text PDF:C\:\\Users\\alexa\\Zotero\\storage\\37DPBXEK\\Lee et al. - 2013 - Efficient two-dimensional smoothing with P-spline .pdf:application/pdf;ScienceDirect Snapshot:C\:\\Users\\alexa\\Zotero\\storage\\XFDJWG8H\\S016794731200415X.html:text/html;ScienceDirect Snapshot:C\:\\Users\\alexa\\Zotero\\storage\\QJT7V3HT\\S016794731200415X.html:text/html}
+}
+
+@article{verbyla_analysis_1999,
+	title = {The analysis of designed experiments and longitudinal data by using smoothing splines},
+	volume = {48},
+	doi = {10.1111/1467-9876.00154},
+	abstract = {In designed experiments and in particular longitudinal studies, the aim may be to assess the effect of a quantitative variable such as time on treatment effects. Modelling treatment effects can be complex in the presence of other sources of variation. Three examples are presented to illustrate an approach to analysis in such cases. The first example is a longitudinal experiment on the growth of cows under a factorial treatment structure where serial correlation and variance heterogeneity complicate the analysis. The second example involves the calibration of optical density and the concentration of a protein DNase in the presence of sampling variation and variance heterogeneity. The final example is a multienvironment agricultural field experiment in which a yield-seeding rate relationship is required for several varieties of lupins. Spatial variation within environments, heterogeneity between environments and variation between varieties all need to be incorporated in the analysis. In this paper, the cubic smoothing spline is used in conjunction with fixed and random effects, random coefficients and variance modelling to provide simultaneous modelling of trends and covariance structure. The key result that allows coherent and flexible empirical model building in complex situations is the linear mixed model representation of the cubic smoothing spline. An extension is proposed in which trend is partitioned into smooth and non-smooth components. Estimation and inference, the analysis of the three examples and a discussion of extensions and unresolved issues are also presented.},
+	number = {3},
+	journal = {Journal of the Royal Statistical Society. Series C: Applied Statistics},
+	author = {Verbyla, A.P. and Cullis, B.R. and Kenward, M.G. and Welham, S.J.},
+	year = {1999},
+	keywords = {Mixed models, Analysis of variance, Best linear unbiased prediction, Cubic smoothing splines, Longitudinal data, Random coefficient models, Residual maximum likelihood},
+	pages = {269--311},
+	file = {SCOPUS Snapshot:C\:\\Users\\alexa\\Zotero\\storage\\VQ4Z7Y2F\\display.html:text/html;SCOPUS Snapshot:C\:\\Users\\alexa\\Zotero\\storage\\NFP9IE3U\\display.html:text/html}
+}
+
+@article{eilers_multivariate_2003,
+	title = {Multivariate calibration with temperature interaction using two-dimensional penalized signal regression},
+	volume = {66},
+	issn = {0169-7439},
+	url = {http://www.sciencedirect.com/science/article/pii/S0169743903000297},
+	doi = {10.1016/S0169-7439(03)00029-7},
+	abstract = {The Penalized Signal Regression (PSR) approach to multivariate calibration (MVC) assumes a smooth vector of coefficients for weighting a spectrum to predict the unknown concentration of a chemical component. B-splines and roughness penalties, based on differences, are used to estimate the coefficients. In this paper, we extend PSR to incorporate a covariate like temperature. A smooth surface on the wavelength–temperature domain is estimated, using tensor products of B-splines and penalties along the two dimensions. A slice of this surface gives the vector of weights at an arbitrary temperature. We present the theory and apply multi-dimensional PSR to a published data set, showing good performance. We also introduce and apply a simplification based on a varying-coefficient model (VCM).},
+	number = {2},
+	urldate = {2018-11-17},
+	journal = {Chemometrics and Intelligent Laboratory Systems},
+	author = {Eilers, Paul H. C. and Marx, Brian D.},
+	month = jun,
+	year = {2003},
+	keywords = {Calibration transfer, Multivariate calibration, P-splines, Signal regression, Stability, Tensor products, Varying-coefficient models},
+	pages = {159--174},
+	file = {ScienceDirect Full Text PDF:C\:\\Users\\alexa\\Zotero\\storage\\MHSII2B5\\Eilers et Marx - 2003 - Multivariate calibration with temperature interact.pdf:application/pdf;ScienceDirect Full Text PDF:C\:\\Users\\alexa\\Zotero\\storage\\5NA6G79T\\Eilers et Marx - 2003 - Multivariate calibration with temperature interact.pdf:application/pdf;ScienceDirect Snapshot:C\:\\Users\\alexa\\Zotero\\storage\\GXM22A7C\\S0169743903000297.html:text/html;ScienceDirect Snapshot:C\:\\Users\\alexa\\Zotero\\storage\\RCTHIKWQ\\S0169743903000297.html:text/html}
+}
+
+@article{taye_smoothing_2008,
+	title = {Smoothing fertility trends in agricultural field experiments},
+	volume = {42},
+	issn = {0233-1888},
+	url = {https://doi.org/10.1080/02331880701736580},
+	doi = {10.1080/02331880701736580},
+	abstract = {Fertility trend within blocks and local variations are the major obstacles to estimate cultivar contrasts in agricultural field trials. This paper examines methods of smoothing fertility trends in field trials using the P-spline. We begin by smoothing trend within block and for each block, and proceeds to demonstrate how it can be extended to smooth trends in trials with two-dimensional setting. We propose simultaneous modelling of trends and local variation. We use Papadakis [J.S. Papadakis, Comparison de differentes methds d'expermentation phytotechnique, Rev. Argen. Agronom. 7 (1940), pp. 297–362.] and kriged covariate to model local variation. We emphasize on the benefit of using P-spline to compromise between parametric and non-parametric approaches. Data sets from wheat and barley trials, designed as randomized complete block design and row-column, are analyzed. We set out a simple strategy of choosing between additive model and two-dimensional setting. We explore different estimation methods and offer some generalizations. The results show importance of the P-spline in modelling trend and the need to choose between additive and two-dimensional settings.},
+	number = {3},
+	urldate = {2018-11-17},
+	journal = {Statistics},
+	author = {Taye, Girma and Njuho, Peter M.},
+	month = jun,
+	year = {2008},
+	keywords = {additive model, bootstrap F, mixed model, P-spline smoothing, Papadakis covariate, spatial variation},
+	pages = {275--289},
+	file = {Full Text PDF:C\:\\Users\\alexa\\Zotero\\storage\\W8QZ28DQ\\Taye et Njuho - 2008 - Smoothing fertility trends in agricultural field e.pdf:application/pdf;Full Text PDF:C\:\\Users\\alexa\\Zotero\\storage\\9QJ4H8GE\\Taye et Njuho - 2008 - Smoothing fertility trends in agricultural field e.pdf:application/pdf;Snapshot:C\:\\Users\\alexa\\Zotero\\storage\\9R4NMVNM\\02331880701736580.html:text/html;Snapshot:C\:\\Users\\alexa\\Zotero\\storage\\RGCS2YVV\\02331880701736580.html:text/html}
+}
+
+@article{robbins_spatial_2012,
+	title = {Spatial {Corrections} of {Unreplicated} {Trials} using a {Two}-dimensional {Spline}},
+	volume = {52},
+	issn = {0011-183X},
+	url = {http://dl.sciencesocieties.org/publications/cs/abstracts/52/3/1138},
+	doi = {10.2135/cropsci2011.08.0417},
+	language = {en},
+	number = {3},
+	urldate = {2018-11-17},
+	journal = {Crop Science},
+	author = {Robbins, K. R. and Backlund, J. E. and Schnelle, K. D.},
+	month = may,
+	year = {2012},
+	pages = {1138--1144},
+	file = {Snapshot:C\:\\Users\\alexa\\Zotero\\storage\\3EAWNDYM\\1138.html:text/html;Snapshot:C\:\\Users\\alexa\\Zotero\\storage\\RFYHK8TN\\1138.html:text/html}
+}
+
+@article{piepho_linear_2010,
+	title = {Linear variance models for plant breeding trials},
+	volume = {129},
+	copyright = {© 2009 Blackwell Verlag GmbH},
+	issn = {1439-0523},
+	url = {http://onlinelibrary.wiley.com/doi/abs/10.1111/j.1439-0523.2009.01654.x},
+	doi = {10.1111/j.1439-0523.2009.01654.x},
+	abstract = {With 4 figures and 6 tables Abstract Most plant breeding trials involve a layout of plots in rows and columns. Resolvable row–column designs have proven effective in obtaining efficient estimates of treatment effects. Further improvement may be possible by postblocking or by inclusion of spatial model components. This study reviews options for augmenting a baseline row–column model by the addition of spatial components. The models considered are different variants of the linear variance model in one and two dimensions. Usefulness of these options is assessed by analysing a number of field trials from plant breeding and variety testing.},
+	language = {en},
+	number = {1},
+	urldate = {2018-11-17},
+	journal = {Plant Breeding},
+	author = {Piepho, H. P. and Williams, E. R.},
+	month = feb,
+	year = {2010},
+	keywords = {field trial, linear variance, residual maximum likelihood, resolvable row–column designs, separability, spatial analysis},
+	pages = {1--8},
+	file = {Full Text PDF:C\:\\Users\\alexa\\Zotero\\storage\\6I38ZZQS\\Piepho et Williams - 2010 - Linear variance models for plant breeding trials.pdf:application/pdf;Full Text PDF:C\:\\Users\\alexa\\Zotero\\storage\\SXW56H93\\Piepho et Williams - 2010 - Linear variance models for plant breeding trials.pdf:application/pdf;Snapshot:C\:\\Users\\alexa\\Zotero\\storage\\LUMJSQ8L\\j.1439-0523.2009.01654.html:text/html;Snapshot:C\:\\Users\\alexa\\Zotero\\storage\\7FUW78G9\\j.1439-0523.2009.01654.html:text/html}
+}
+
+@article{oakey_joint_2006,
+	title = {Joint modeling of additive and non-additive genetic line effects in single field trials},
+	volume = {113},
+	issn = {1432-2242},
+	url = {https://doi.org/10.1007/s00122-006-0333-z},
+	doi = {10.1007/s00122-006-0333-z},
+	abstract = {A statistical approach is presented for selection of best performing lines for commercial release and best parents for future breeding programs from standard agronomic trials. The method involves the partitioning of the genetic effect of a line into additive and non-additive effects using pedigree based inter-line relationships, in a similar manner to that used in animal breeding. A difference is the ability to estimate non-additive effects. Line performance can be assessed by an overall genetic line effect with greater accuracy than when ignoring pedigree information and the additive effects are predicted breeding values. A generalized definition of heritability is developed to account for the complex models presented.},
+	language = {en},
+	number = {5},
+	urldate = {2018-11-17},
+	journal = {Theoretical and Applied Genetics},
+	author = {Oakey, Helena and Verbyla, Arūnas and Pitchford, Wayne and Cullis, Brian and Kuchel, Haydn},
+	month = sep,
+	year = {2006},
+	keywords = {Best Linear Unbiased Predictor, Epistatic Effect, Narrow Sense Heritability, Pedigree Information, Total Genetic Variation},
+	pages = {809--819},
+	file = {Springer Full Text PDF:C\:\\Users\\alexa\\Zotero\\storage\\SFM3R3G8\\Oakey et al. - 2006 - Joint modeling of additive and non-additive geneti.pdf:application/pdf;Springer Full Text PDF:C\:\\Users\\alexa\\Zotero\\storage\\VUGTQUQB\\Oakey et al. - 2006 - Joint modeling of additive and non-additive geneti.pdf:application/pdf}
+}
+
+@article{patterson_recovery_1971,
+	title = {Recovery of inter-block information when block sizes are unequal},
+	volume = {58},
+	issn = {0006-3444},
+	url = {http://academic.oup.com/biomet/article/58/3/545/233494},
+	doi = {10.1093/biomet/58.3.545},
+	abstract = {AbstractSUMMARY.  A method is proposed for estimating intra-block and inter-blook weights in the analysis of incomplete block designs with block sizes not neces},
+	language = {en},
+	number = {3},
+	urldate = {2018-11-17},
+	journal = {Biometrika},
+	author = {Patterson, H. D. and Thompson, R.},
+	month = dec,
+	year = {1971},
+	pages = {545--554},
+	file = {Snapshot:C\:\\Users\\alexa\\Zotero\\storage\\NEA79Q52\\233494.html:text/html;Snapshot:C\:\\Users\\alexa\\Zotero\\storage\\QCFDHYF9\\233494.html:text/html}
+}
+
+@article{eilers_fast_2006,
+	series = {2nd {Special} issue on {Matrix} {Computations} and {Statistics}},
+	title = {Fast and compact smoothing on large multidimensional grids},
+	volume = {50},
+	issn = {0167-9473},
+	url = {http://www.sciencedirect.com/science/article/pii/S0167947304002270},
+	doi = {10.1016/j.csda.2004.07.008},
+	abstract = {A framework of penalized generalized linear models and tensor products of B-splines with roughness penalties allows effective smoothing of data in multidimensional arrays. A straightforward application of the penalized Fisher scoring algorithm quickly runs into storage and computational difficulties. A novel algorithm takes advantage of the special structure of both the data as an array and the model matrix as a tensor product; the algorithm is fast, uses only a moderate amount of memory and works for any number of dimensions. Examples are given of how the method is used to smooth life tables and image data.},
+	number = {1},
+	urldate = {2018-11-17},
+	journal = {Computational Statistics \& Data Analysis},
+	author = {Eilers, Paul H. C. and Currie, Iain D. and Durbán, Maria},
+	month = jan,
+	year = {2006},
+	keywords = {P-splines, B-splines, Difference penalty, Multidimensional array, Smoothing, Tensor product},
+	pages = {61--76},
+	file = {ScienceDirect Full Text PDF:C\:\\Users\\alexa\\Zotero\\storage\\8TV3MEFP\\Eilers et al. - 2006 - Fast and compact smoothing on large multidimension.pdf:application/pdf;ScienceDirect Full Text PDF:C\:\\Users\\alexa\\Zotero\\storage\\CW99M3N8\\Eilers et al. - 2006 - Fast and compact smoothing on large multidimension.pdf:application/pdf;ScienceDirect Snapshot:C\:\\Users\\alexa\\Zotero\\storage\\4HDGKGEJ\\S0167947304002270.html:text/html;ScienceDirect Snapshot:C\:\\Users\\alexa\\Zotero\\storage\\VVIFKNG5\\S0167947304002270.html:text/html}
+}
+
+@article{cui_partitioning_2010,
+	title = {Partitioning {Degrees} of {Freedom} in {Hierarchical} and {Other} {Richly} {Parameterized} {Models}},
+	volume = {52},
+	issn = {0040-1706},
+	url = {https://doi.org/10.1198/TECH.2009.08161},
+	doi = {10.1198/TECH.2009.08161},
+	abstract = {Hodges and Sargent (2001) have developed a measure of a hierarchical model’s complexity, degrees of freedom (DF), that is consistent with definitions for scatterplot smoothers, is interpretable in terms of simple models, and enables control of a fit’s complexity by means of a prior distribution on complexity. But although DF describes the complexity of the whole fitted model, in general it remains unclear how to allocate DF to individual effects. Here we present a new definition of DF for arbitrary normal-error linear hierarchical models, consistent with that of Hodges and Sargent, that naturally partitions the n observations into DF for individual effects and for error. The new conception of an effect’s DF is the ratio of the effect’s modeled variance matrix to the total variance matrix. This provides a way to describe the sizes of different parts of a model (e.g., spatial clustering vs. heterogeneity), to place DF-based priors on smoothing parameters, and to describe how a smoothed effect competes with other effects. It also avoids difficulties with the most common definition of DF for residuals. We conclude by comparing DF with the effective number of parameters, pD, of Spiegelhalter et al. (2002). Technical appendices and a data set are available online as supplemental materials.},
+	number = {1},
+	urldate = {2018-11-17},
+	journal = {Technometrics},
+	author = {Cui, Yue and Hodges, James S. and Kong, Xiaoxiao and Carlin, Bradley P.},
+	month = feb,
+	year = {2010},
+	keywords = {Degrees of freedom, Hierarchical model, Model complexity, Prior distribution},
+	pages = {124--136},
+	file = {Full Text PDF:C\:\\Users\\alexa\\Zotero\\storage\\SIY97XJB\\Cui et al. - 2010 - Partitioning Degrees of Freedom in Hierarchical an.pdf:application/pdf;Full Text PDF:C\:\\Users\\alexa\\Zotero\\storage\\MASLQP6X\\Cui et al. - 2010 - Partitioning Degrees of Freedom in Hierarchical an.pdf:application/pdf;Snapshot:C\:\\Users\\alexa\\Zotero\\storage\\9Q8WJJ59\\TECH.2009.html:text/html;Snapshot:C\:\\Users\\alexa\\Zotero\\storage\\3QGEBYXB\\TECH.2009.html:text/html}
+}
+
+@article{piepho_problems_2015,
+	title = {Problems in parameter estimation for power and {AR}(1) models of spatial correlation in designed field experiments},
+	volume = {10},
+	abstract = {The AR(1) and power models of spatial correlation are popular in the analysis of field trial data. Numerical difficulties in estimation and interpretation of these models may occur when the autocorrelation parameter ρ tends to either zero or unity. These problems are considered here using three different examples. The first example is based on simulated data for a partially replicated design, where the true underlying variance-covariance structure is known. The other two examples involve real data from a precision farming trial and a plant breeding trial. We suggest four options to deal with the observed numerical problems and illustrate their use with the examples. It is shown in the examples that re-scaling of the spatial coordinates or a re-parameterization of the AR(1) model as an exponential model can be useful to help the model converge. We conclude that individual parameter estimates of the AR(1) model should be interpreted with care, especially when the autocorrelation estimate is close to either zero or unity. © CBCS 2015.},
+	number = {1},
+	journal = {Communications in Biometry and Crop Science},
+	author = {Piepho, H.P. and Möhring, J. and Pflugfelder, M. and Hermann, W. and Williams, E.R.},
+	year = {2015},
+	keywords = {Autocorrelation, Autoregressive model, Convergence problems, Linear variance model, Partially replicated design, Precision farming},
+	pages = {3--16},
+	file = {Piepho et al. - Problems in parameter estimation for power and AR(.pdf:C\:\\Users\\alexa\\Zotero\\storage\\BEDUME9U\\Piepho et al. - Problems in parameter estimation for power and AR(.pdf:application/pdf;Piepho et al. - Problems in parameter estimation for power and AR(.pdf:C\:\\Users\\alexa\\Zotero\\storage\\E22Z4T9Z\\Piepho et al. - Problems in parameter estimation for power and AR(.pdf:application/pdf;SCOPUS Snapshot:C\:\\Users\\alexa\\Zotero\\storage\\FM6X3J6R\\display.html:text/html;SCOPUS Snapshot:C\:\\Users\\alexa\\Zotero\\storage\\L74MHENW\\display.html:text/html;SCOPUS Snapshot:C\:\\Users\\alexa\\Zotero\\storage\\9WGEENE2\\display.html:text/html;SCOPUS Snapshot:C\:\\Users\\alexa\\Zotero\\storage\\RYDVBUAM\\display.html:text/html}
+}
+
+@article{lado_increased_2013,
+	title = {Increased {Genomic} {Prediction} {Accuracy} in {Wheat} {Breeding} {Through} {Spatial} {Adjustment} of {Field} {Trial} {Data}},
+	volume = {3},
+	copyright = {Copyright © 2013 Lado et al.. This is an open-access article distributed under the terms of the Creative Commons Attribution Unported License (http://creativecommons.org/licenses/by/3.0/), which permits unrestricted use, distribution, and reproduction in any medium, provided the original work is properly cited.},
+	issn = {2160-1836},
+	url = {http://www.g3journal.org/content/3/12/2105},
+	doi = {10.1534/g3.113.007807},
+	abstract = {In crop breeding, the interest of predicting the performance of candidate cultivars in the field has increased due to recent advances in molecular breeding technologies. However, the complexity of the wheat genome presents some challenges for applying new technologies in molecular marker identification with next-generation sequencing. We applied genotyping-by-sequencing, a recently developed method to identify single-nucleotide polymorphisms, in the genomes of 384 wheat (Triticum aestivum) genotypes that were field tested under three different water regimes in Mediterranean climatic conditions: rain-fed only, mild water stress, and fully irrigated. We identified 102,324 single-nucleotide polymorphisms in these genotypes, and the phenotypic data were used to train and test genomic selection models intended to predict yield, thousand-kernel weight, number of kernels per spike, and heading date. Phenotypic data showed marked spatial variation. Therefore, different models were tested to correct the trends observed in the field. A mixed-model using moving-means as a covariate was found to best fit the data. When we applied the genomic selection models, the accuracy of predicted traits increased with spatial adjustment. Multiple genomic selection models were tested, and a Gaussian kernel model was determined to give the highest accuracy. The best predictions between environments were obtained when data from different years were used to train the model. Our results confirm that genotyping-by-sequencing is an effective tool to obtain genome-wide information for crops with complex genomes, that these data are efficient for predicting traits, and that correction of spatial variation is a crucial ingredient to increase prediction accuracy in genomic selection models.},
+	language = {en},
+	number = {12},
+	urldate = {2018-11-17},
+	journal = {G3: Genes, Genomes, Genetics},
+	author = {Lado, Bettina and Matus, Ivan and Rodríguez, Alejandra and Inostroza, Luis and Poland, Jesse and Belzile, François and Pozo, Alejandro del and Quincke, Martín and Castro, Marina and Zitzewitz, Jarislav von},
+	month = dec,
+	year = {2013},
+	pmid = {24082033},
+	keywords = {GBLUP, genomic selection, genotyping-by-sequencing, GenPred, quantitative trait locus, Shared data resources, single nucleotide polymorphism, spatial Correction, wheat},
+	pages = {2105--2114},
+	file = {Snapshot:C\:\\Users\\alexa\\Zotero\\storage\\388YNIA5\\2105.html:text/html;Snapshot:C\:\\Users\\alexa\\Zotero\\storage\\Y6PHBH4F\\2105.html:text/html}
+}
+
+@article{butler_asreml-r_nodate,
+	title = {{ASReml}-{R} reference manual},
+	language = {en},
+	author = {Butler, D and Cullis, B R and Gilmour, A R and Gogel, B J},
+	pages = {145},
+	file = {Butler et al. - ASReml-R reference manual.pdf:C\:\\Users\\alexa\\Zotero\\storage\\DRJEQAT3\\Butler et al. - ASReml-R reference manual.pdf:application/pdf;Butler et al. - ASReml-R reference manual.pdf:C\:\\Users\\alexa\\Zotero\\storage\\KDBXHDKD\\Butler et al. - ASReml-R reference manual.pdf:application/pdf}
+}
+
+@book{fahrmeir_regression:_2013,
+	address = {Berlin Heidelberg},
+	title = {Regression: {Models}, {Methods} and {Applications}},
+	isbn = {978-3-642-34332-2},
+	shorttitle = {Regression},
+	url = {//www.springer.com/la/book/9783642343322},
+	abstract = {The aim of this book is an applied and unified introduction into parametric, non- and semiparametric regression that closes the gap between theory and application. The most important models and methods in regression are presented on a solid formal basis, and their appropriate application is shown through many real data examples and case studies. Availability of (user-friendly) software has been a major criterion for the methods selected and presented. Thus, the book primarily targets an audience that includes students, teachers and practitioners in social, economic, and life sciences, as well as students and teachers in statistics programs, and mathematicians and computer scientists with interests in statistical modeling and data analysis. It is written on an intermediate mathematical level and assumes only knowledge of basic probability, calculus, and statistics. The most important definitions and statements are concisely summarized in boxes. Two appendices describe required matrix algebra, as well as elements of probability calculus and statistical inference.},
+	language = {en},
+	urldate = {2018-11-17},
+	publisher = {Springer-Verlag},
+	author = {Fahrmeir, Ludwig and Kneib, Thomas and Lang, Stefan and Marx, Brian},
+	year = {2013},
+	file = {Fahrmeir et al. - 2013 - Regression Models, Methods and Applications.pdf:C\:\\Users\\alexa\\Dropbox\\Master Thesis\\Litterature\\Fahrmeir et al. - 2013 - Regression Models, Methods and Applications.pdf:application/pdf;Fahrmeir et al. - 2013 - Regression Models, Methods and Applications.pdf:C\:\\Users\\alexa\\Zotero\\storage\\C3CC8D25\\Fahrmeir et al. - 2013 - Regression Models, Methods and Applications.pdf:application/pdf;Snapshot:C\:\\Users\\alexa\\Zotero\\storage\\TX3AQ4C3\\9783642343322.html:text/html;Snapshot:C\:\\Users\\alexa\\Zotero\\storage\\K9MWE6UB\\9783642343322.html:text/html}
+}
+
+@article{eilers_flexible_1996,
+	title = {Flexible smoothing with {B}-splines and penalties},
+	volume = {11},
+	issn = {0883-4237, 2168-8745},
+	url = {https://projecteuclid.org/euclid.ss/1038425655},
+	doi = {10.1214/ss/1038425655},
+	abstract = {B-splines are attractive for nonparametric modelling, but choosing the optimal number and positions of knots is a complex task. Equidistant knots can be used, but their small and discrete number allows only limited control over smoothness and fit. We propose to use a relatively large number of knots and a difference penalty on coefficients of adjacent B-splines. We show connections to the familiar spline penalty on the integral of the squared second derivative. A short overview of B-splines, of their construction and of penalized likelihood is presented. We discuss properties of penalized B-splines and propose various criteria for the choice of an optimal penalty parameter. Nonparametric logistic regression, density estimation and scatterplot smoothing are used as examples. Some details of the computations are presented.},
+	language = {en},
+	number = {2},
+	urldate = {2018-11-19},
+	journal = {Statistical Science},
+	author = {Eilers, Paul H. C. and Marx, Brian D.},
+	month = may,
+	year = {1996},
+	mrnumber = {MR1435485},
+	zmnumber = {0955.62562},
+	keywords = {density estimation, Generalized linear models, nonparametric models, smoothing, splines},
+	pages = {89--121},
+	file = {Full Text PDF:C\:\\Users\\alexa\\Zotero\\storage\\PEN7RXRQ\\Eilers et Marx - 1996 - Flexible smoothing with B-splines and penalties.pdf:application/pdf;Full Text PDF:C\:\\Users\\alexa\\Zotero\\storage\\GRUF5NP6\\Eilers et Marx - 1996 - Flexible smoothing with B-splines and penalties.pdf:application/pdf;Snapshot:C\:\\Users\\alexa\\Zotero\\storage\\RI4DH7IS\\1038425655.html:text/html;Snapshot:C\:\\Users\\alexa\\Zotero\\storage\\KFQ28RZ7\\1038425655.html:text/html}
+}
+
+@book{dierckx_curve_1995,
+	title = {Curve and {Surface} {Fitting} with {Splines}},
+	isbn = {978-0-19-853440-2},
+	abstract = {The fitting of a curve or surface through a set of observational data is a very frequent problem in different disciplines (mathematics, engineering, medicine, ...) with many interesting applications. This book describes the algorithms and mathematical fundamentals of a widely used softwarepackage for data fitting with (tensor product) splines. As such it gives a survey of possibilities and benefits but also of the problems to cope with when approximating with this popular type of function. In particular it is demonstrated in detail how the properties of B-splines can be fullyexploited for improving the computational efficiency and for incorporating different boundary or shape preserving constraints. Special attention is also paid to strategies for an automatic and adaptive knot selection with intent to obtain serious data reductions. The practical use of the smoothingsoftware is illustrated with many examples, academic as well as taken from real life.},
+	language = {en},
+	publisher = {Clarendon Press},
+	author = {Dierckx, Paul},
+	year = {1995},
+	keywords = {Computers / Computer Science, Mathematics / Geometry / General, Mathematics / Mathematical Analysis}
+}
+
+@article{williams_use_1988,
+	title = {The use of uniformity data in the design and analysis of cotton and barley variety trials},
+	volume = {39},
+	issn = {1444-9838},
+	url = {http://www.publish.csiro.au/cp/AR9880339},
+	doi = {10.1071/ar9880339},
+	abstract = {The results of two uniformity trials, one in furrow-irrigated cotton, the other in barley, are presented and the yield data analysed. The two data sets, while both showing significant row and column effects, exhibited markedly different types of variation over the test area. The cotton data were more uniform and had stronger trends in columns and rows. There was a strong autocorrelation between plots in the barley data which was not evident in the cotton data. These results support the current preferences of cotton breeders for row and column designs and of barley breeders for neighbour designs when conducting variety trials in the field.},
+	language = {en},
+	number = {3},
+	urldate = {2018-11-20},
+	journal = {Australian Journal of Agricultural Research},
+	author = {Williams, E. R. and Luckett, D. J.},
+	year = {1988},
+	pages = {339--350},
+	file = {Snapshot:C\:\\Users\\alexa\\Zotero\\storage\\JXJWM585\\AR9880339.html:text/html;Snapshot:C\:\\Users\\alexa\\Zotero\\storage\\C5V2MQ6P\\AR9880339.html:text/html}
+}
+
+@article{lee_hwang_smoothing_2010,
+	title = {Smoothing mixed models for spatial and spatio-temporal data},
+	copyright = {Atribución-NoComercial-SinDerivadas 3.0 España},
+	url = {https://e-archivo.uc3m.es/handle/10016/9364},
+	abstract = {El desarrollo de gran parte de los modelos y métodos estadísticos ha ido ligado al deseo de estudiar aplicaciones específicas dentro de diversos ámbitos científicos. El análisis de datos de naturaleza espacial y espacio-temporal es en la actualidad de gran interés para la modelización estadística. Problemas relacionados con la metereología, la contaminación medioambiental, la ecología, la epidemiología o la economía, demandan el uso de modelos estadísticos para el análisis de datos espaciales y espacio-temporales. En el primer capítulo de esta tesis, introducimos los conceptos básicos de la estadística espacial, así como la clasificacióon de los datos espaciales según su tipología y una revisión de los modelos tradicionales en la literatura con sus principales limitaciones. En esta tesis proponemos la modelización de este tipo de datos mediante modelos de regresión no-paramétricos, también denominadas técnicas de suavizado. Nuestra propuesta es considerar la modelización desde una perspectiva común para los diferentes tipos de datos espaciales, mediante el uso de los denominados splines con penalizaciones (P-splines). Estos modelos han adquirido una gran popularidad en los últimos años ya que: (i) se tratan de suavizadores de rango bajo, ya que se construyen a partir de bases para la regresión de (B-splines) menor tamaño que el número de datos, que son computacionalmente más eficientes que otros métodos de suavizado basados en splines; (ii) la formulación como modelos mixtos permite incorporar estructuras más complejas en términos de efectos aleatorios que pueden estimarse simultáneamente al suavizado. El segundo capítulo está enteramente dedicado a introducir los aspectos fundamentales de la metodología de los P-splines, para datos Gaussianos y en el contexto de los modelos lineales generalizados para el caso de datos no-Gaussianos. Para el caso multidimensional, la base para la regresión se define como el producto Tensorial de las bases de B-spline marginales, que en el caso de datos en grids o mallas multidimensionales es el producto de Kronecker de las matrices de B-spline. En esta situación, el uso de los métodos de array permite el ajuste de los modelos de manera computacionalmente eficiente. Presentamos también en detalle la representación como modelo mixto, y los métodos de estimación. Aunque esta representación no es nueva en la literatura de los splines, nuestra reparametrización de las bases y de la penalización del modelo permite la decomposicionn del ajuste en términos de la suma de funciones marginales e interacciones. Por último en este capítulo, adaptamos los algoritmos basados en arrays para la formulación como modelo mixto. En el tercer capítulo, extendemos los modelos de P-splines para el suavizado de datos espaciales. La estructura de los datos espaciales requiere del uso de un nuevo producto Tensorial, el producto de Kronecker por filas. En este caso, los métodos de arrays no son aplicables, y la reparametrización como modelo mixto no es inmediata, sin embargo demostramos cómo se puede llegar a ella mediante resultados matriciales. Ilustraremos la metodología para la tipología de datos y ejemplos de datos espaciales introducidos en el primer capítulo. Como aplicación de la metodología propuesta en este capítulo, abordamos el análisis de datos regionales de conteo. Los datos de conteo se asumen distribuidos según una variable aleatoria Poisson, sin embargo, este supuesto resulta en ocasiones erróneo cuando los datos presentan una variabilidad heterogénea no explicada (sobre-dispersión). Como resultado de este capítulo, en Lee y Durbán (2009), analizamos los datos de cáncer de labio en Escocia. Estos datos han sido muy utilizados en la literatura de los modelos para datos regionales, sobre todo desde el enfoque de los modelos condicionalmente autorregresivos (CAR). En este trabajo proponemos modelos de suavizado híbridos que permiten incorporar diferentes fuentes de variabilidad espacial: (i) una variabilidad espacial a gran escala, capturada por el spline, y (ii) una varibilidad local a pequeña escala dada por la estructura de vecindad de las regiones del estudio, con una estructura tipo CAR. La ventaja de nuestro modelo híbrido, es que ambas fuentes se pueden estimar simultánemente. Los estudios de simulación realizados corroboran que el modelo híbrido permite capturar las diferentes fuentes de variabilidad en los escenarios propuestos. En el cuarto capítulo, consideramos el caso multidimensional mediante la descomposición de los modelos como la suma de funciones de suavizado, en términos de efectos principales o aditivos e interacciones (estos modelos son denominados modelos de suavizado ANOVA, por su analogía a los diseños factoriales y análisis de la varianza). La construcción de estos modelos mediante bases de B-spline, sufre de problemas de identificabilidad dado que no se pueden estimar de manera única. Nuestra solución para evitar estos problemas es la reparametrización como modelos mixto desarrollada en los capítulos anteriores. Esta reparametrización permite identificar cuáles son los elementos que aparecen repetidos, la solución al problema se reduce por tanto a eliminar los componentes repetidos, lo cual permite de manera sencilla construir la nueva base y la penalización para el modelo identificable. Lo interesante de este sencillo procedimiento es su equivalencia a imponer restricciones lineales sobre los coeficientes del modelo original. El estudio de simulación presentado en este capítulo, demuestra que el modelo de suavizado ANOVA actúa bajo los escenarios considerados del mismo modo que el modelo más apropiado para cada caso. En algunas situaciones, resulta de interés considerar tan sólo algunos efectos principales e interacciones e ignorar otros. Estos modelos, reciben el nombre de modelos reducidos de suavizado ANOVA. Un ejemplo es el caso espacio-temporal, donde resulta de interés la decomposición del proceso en términos de la suma de una superficie espacial, una función suave para el componente temporal, y un componente espacio-temporal que recoge la interaccióon espacio-tiempo. Para el caso espacio-temporal, construiremos las bases para la regresión mediante el producto de Kronecker de las bases de B-spline espacial y temporal, lo cual permite para este caso utilizar los métodos de array definidos en los capítulos anteriores. Siguiendo el procedimiento desarrollado en este capítulo, demostramos cómo construir los modelos e identificamos las restricciones sobre los coeficientes en el modelo original. Para ilustrar esta metodología en Lee y Durbán (2010), consideramos el uso de estos modelos para el análisis espacio-temporal de los niveles de ozono en Europa entre los años 1999 y 2005. Por último, en este capítulo, proponemos un método computacionalmente eficiente para el caso de modelos con interacción. En algunas situaciones, el tamaño de la matriz de B-splines para la interaccióon es muy grande, lo que conlleva a que la estimación de los parámetros sea computacionalmente intensiva. En el caso de los modelos de suavizado ANOVA, es posible asumir que la mayor parte de la estructura es recogida por los efectos principales, y por tanto es preferible reducir la complejidad del modelo reduciendo el tamaño de las bases de la interacción. Sin embargo, esta reducción no es arbitraria, puesto que de otro modo los modelos no estarían anidados. Nuestra propuesta es la construcción de bases anidadas de B-spline para las interacciones. En el caso espacio-temporal, esta solución permite modelizar la parte temporal con una base de más tamaño para recoger la estructura temporal de los datos, y una base anidada (mucho más pequeña), para modelizar la interacción espacio-tiempo. Finalmente, en el quinto capítulo resumimos las principales aportaciones realizadas en esta tesis, y proponemos posibles futuras extensiones a los modelos desarrollados y nuevas líneas de investigación.-------------------------------------------------------------------------------------------------------------------------------------------------------},
+	language = {eng},
+	urldate = {2018-11-20},
+	author = {Lee Hwang, Dae-Jin},
+	month = may,
+	year = {2010},
+	file = {Full Text PDF:C\:\\Users\\alexa\\Zotero\\storage\\9Y8AYYXK\\Lee Hwang - 2010 - Smoothing mixed models for spatial and spatio-temp.pdf:application/pdf;Full Text PDF:C\:\\Users\\alexa\\Zotero\\storage\\YRQYL8IX\\Lee Hwang - 2010 - Smoothing mixed models for spatial and spatio-temp.pdf:application/pdf;Full Text PDF:C\:\\Users\\alexa\\Zotero\\storage\\2Y33E6P6\\Lee Hwang - 2010 - Smoothing mixed models for spatial and spatio-temp.pdf:application/pdf;Full Text PDF:C\:\\Users\\alexa\\Zotero\\storage\\WI98DZTJ\\Lee Hwang - 2010 - Smoothing mixed models for spatial and spatio-temp.pdf:application/pdf;Snapshot:C\:\\Users\\alexa\\Zotero\\storage\\4NKH3LR9\\9364.html:text/html;Snapshot:C\:\\Users\\alexa\\Zotero\\storage\\EG8PZI8H\\9364.html:text/html;Snapshot:C\:\\Users\\alexa\\Zotero\\storage\\SIJ4V3RE\\9364.html:text/html;Snapshot:C\:\\Users\\alexa\\Zotero\\storage\\5E4CU5VU\\9364.html:text/html}
+}
+
+@inproceedings{kidula_statistical_2000,
+	title = {Statistical analysis of on-farm trials in soil management project in {South} {West} {Kenya}. {Participatory} technology development for soil management by small holders in {Kenya}},
+	booktitle = {Proceedings of the 2nd {Scientific} {Conference} of the {Soil} {Management} and {Legume} {Research} {Network} {Projects}, {June} {Mombasa}, {Kenya}},
+	author = {Kidula, L. N. and Okoko, E. N. K. and Maobe, S. N. and Makworo, S.},
+	year = {2000}
+}
+
+@article{coe_analyzing_2002,
+	title = {Analyzing data from participatory on-farm trials},
+	journal = {Quantitative analysis of Data from participatory methods in plant breeding},
+	author = {Coe, Richard},
+	year = {2002},
+	pages = {18}
+}
+
+@incollection{parsad_statistical_2009,
+	title = {Statistical tools for farmers’ participatory trials for conservation agriculture},
+	booktitle = {Integrated {Crop} and {Resource} {Management} in the {Rice}–{Wheat} {System} of {South} {Asia}},
+	publisher = {International Rice Research Institute Los Banõs, Philippines},
+	author = {Parsad, Rajender and Crossa, Jose and Gupta, V. K. and Gupta, Raj K. and Ladha, J. K. and Raman, A.},
+	year = {2009},
+	pages = {279--296}
+}
+
+@article{lee_p-spline_2011,
+	title = {P-spline {ANOVA}-type interaction models for spatio-temporal smoothing},
+	volume = {11},
+	issn = {1471-082X},
+	url = {https://doi.org/10.1177/1471082X1001100104},
+	doi = {10.1177/1471082X1001100104},
+	abstract = {In recent years, spatial and spatio-temporal modelling have become an important area of research in many fields (epidemiology, environmental studies, disease mapping, etc.). However, most of the models developed are constrained by the large amounts of data available. We propose the use of penalized splines ( -splines) in a mixed model framework for smoothing spatio-temporal data. Our approach allows the consideration of interaction terms which can be decomposed as a sum of smooth functions similarly as an analysis of variance decomposition. The properties of the bases used for regression allow the use of algorithms that can handle large amount of data. We show that on imposing the same constraints as in a factorial design it is possible to avoid identifiability problems. We illustrate the methodology for Europe ozone levels in the period 1999?2005.},
+	number = {1},
+	urldate = {2018-11-20},
+	journal = {Statistical Modelling},
+	author = {Lee, Dae-Jin and Durbán, María},
+	month = feb,
+	year = {2011},
+	pages = {49--69},
+	file = {Version soumise:C\:\\Users\\alexa\\Zotero\\storage\\WUHPSDXA\\Lee et Durbán - 2011 - P-spline ANOVA-type interaction models for spatio-.pdf:application/pdf;Version soumise:C\:\\Users\\alexa\\Zotero\\storage\\IPZS2C48\\Lee et Durbán - 2011 - P-spline ANOVA-type interaction models for spatio-.pdf:application/pdf}
+}
+
+@article{wand_smoothing_2003,
+	title = {Smoothing and mixed models},
+	volume = {18},
+	issn = {0943-4062},
+	url = {https://doi.org/10.1007/s001800300142},
+	doi = {10.1007/s001800300142},
+	abstract = {SummarySmoothing methods that use basis functions with penalisation can be formulated as maximum likelihood estimators and best predictors in a mixed model framework. Such connections are at least a quarter of a century old but, perhaps with the advent of mixed model software, have led to a paradigm shift in the field of smoothing. The reason is that most, perhaps all, models involving smoothing can be expressed as a mixed model and hence enjoy the benefit of the growing body of methodology and software for general mixed model analysis. The handling of other complications such as clustering, missing data and measurement error is generally quite straightforward with mixed model representations of smoothing.},
+	language = {en},
+	number = {2},
+	urldate = {2018-11-21},
+	journal = {Computational Statistics},
+	author = {Wand, M. P.},
+	month = may,
+	year = {2003},
+	keywords = {Generalised linear mixed models, Keywords: Best prediction, Kriging, Maximum likelihood, Nonparametric regression, Restricted maximum likelihood., Variance components},
+	pages = {223--249}
+}
+
+@article{currie_flexible_2002,
+	title = {Flexible smoothing with {P}-splines: a unified approach},
+	volume = {2},
+	issn = {1471-082X},
+	shorttitle = {Flexible smoothing with {P}-splines},
+	url = {https://doi.org/10.1191/1471082x02st039ob},
+	doi = {10.1191/1471082x02st039ob},
+	abstract = {We consider the application of P-splines (Eilers and Marx, 1996) to three                 classes of models with smooth components: semiparametric models, models with                 serially correlated errors, and models with heteroscedastic errors. We show that                 P-splines provide a common approach to these problems. We set out a simple                 nonparametric strategy for the choice of the P-spline parameters (the                 number of knots, the degree of the P-spline, and the order of the penalty)                 and use mixed model (REML) methods for smoothing parameter selection. We give an                 example of a model in each of the three classes and analyse appropriate data sets.},
+	language = {en},
+	number = {4},
+	urldate = {2018-11-21},
+	journal = {Statistical Modelling},
+	author = {Currie, I D and Durban, M},
+	month = dec,
+	year = {2002},
+	pages = {333--349},
+	file = {SAGE PDF Full Text:C\:\\Users\\alexa\\Zotero\\storage\\RXUA839C\\Currie et Durban - 2002 - Flexible smoothing with P-splines a unified appro.pdf:application/pdf}
+}
+
+@article{durban_adjusting_2001,
+	title = {Adjusting for fertility and competition in variety trials},
+	volume = {136},
+	issn = {1469-5146, 0021-8596},
+	url = {http://www.cambridge.org/core/journals/journal-of-agricultural-science/article/adjusting-for-fertility-and-competition-in-variety-trials/43CD23D483375AD9ED926523BA997544},
+	abstract = {A joint model for plot yield in response to fertility trends and interplot competition is described. The
+model combines the mixed model representation of a cubic smoothing spline to model fertility and
+a regression model with auto-regressive terms to model competition. Estimation is based on a
+generalization of residual maximum likelihood. The methods were applied to a series of 70 sugar beet
+trials conducted by the Plant Breeding Institute, Cambridge, UK, and the results summarized.},
+	language = {en},
+	number = {2},
+	urldate = {2018-11-21},
+	journal = {The Journal of Agricultural Science},
+	author = {Durban, M. and Currie, I. D. and Kempton, R. A.},
+	month = mar,
+	year = {2001},
+	pages = {129--140},
+	file = {Full Text PDF:C\:\\Users\\alexa\\Zotero\\storage\\55RXUTCV\\Durban et al. - 2001 - Adjusting for fertility and competition in variety.pdf:application/pdf;Snapshot:C\:\\Users\\alexa\\Zotero\\storage\\96U2DAYB\\43CD23D483375AD9ED926523BA997544.html:text/html}
+}
+
+@article{yau_efficiency_1997,
+	title = {Efficiency of alpha-lattice designs in international variety yield trials of barley and wheat},
+	volume = {128},
+	issn = {1469-5146, 0021-8596},
+	url = {http://www.cambridge.org/core/journals/journal-of-agricultural-science/article/efficiency-of-alphalattice-designs-in-international-variety-yield-trials-of-barley-and-wheat/2E264528A2CAC52B4EB1388CF671332E},
+	abstract = {Use of an alpha-lattice design in 714 international yield
+trials of barley, durum wheat and bread wheat in 1990/91 to
+1992/93 resulted in an average efficiency 18\% higher than the
+randomized complete block design when average variance was used as
+the comparison criterion. Alpha-lattice was generally most efficient
+when the C.V.s of the trials were high. It was also slightly
+more efficient for low-yielding than for high-yielding trials, and
+for rainfed than for irrigated trials. Since the changeover to
+alpha-lattice designs requires no new major input or changes in
+present field layout, its use for international trials is
+ recommended.},
+	language = {en},
+	number = {1},
+	urldate = {2018-11-21},
+	journal = {The Journal of Agricultural Science},
+	author = {Yau, S. K.},
+	month = feb,
+	year = {1997},
+	pages = {5--9},
+	file = {Full Text PDF:C\:\\Users\\alexa\\Zotero\\storage\\GS3PGJ84\\Yau - 1997 - Efficiency of alpha-lattice designs in internation.pdf:application/pdf;Snapshot:C\:\\Users\\alexa\\Zotero\\storage\\JF4YPMAK\\2E264528A2CAC52B4EB1388CF671332E.html:text/html}
+}
+
+@article{lobet_online_2013,
+	title = {An online database for plant image analysis software tools},
+	volume = {9},
+	issn = {1746-4811},
+	url = {https://doi.org/10.1186/1746-4811-9-38},
+	doi = {10.1186/1746-4811-9-38},
+	abstract = {Recent years have seen an increase in methods for plant phenotyping using image analyses. These methods require new software solutions for data extraction and treatment. These solutions are instrumental in supporting various research pipelines, ranging from the localisation of cellular compounds to the quantification of tree canopies. However, due to the variety of existing tools and the lack of central repository, it is challenging for researchers to identify the software that is best suited for their research.},
+	number = {1},
+	urldate = {2018-11-21},
+	journal = {Plant Methods},
+	author = {Lobet, Guillaume and Draye, Xavier and Périlleux, Claire},
+	month = oct,
+	year = {2013},
+	pages = {38},
+	file = {Full Text PDF:C\:\\Users\\alexa\\Zotero\\storage\\RK9WVU8K\\Lobet et al. - 2013 - An online database for plant image analysis softwa.pdf:application/pdf;Snapshot:C\:\\Users\\alexa\\Zotero\\storage\\P2HMVM6Q\\1746-4811-9-38.html:text/html}
+}
+
+@article{van_es_spatially-balanced_2007,
+	series = {Pedometrics 2005},
+	title = {Spatially-{Balanced} {Complete} {Block} designs for field experiments},
+	volume = {140},
+	issn = {0016-7061},
+	url = {http://www.sciencedirect.com/science/article/pii/S0016706107001140},
+	doi = {10.1016/j.geoderma.2007.04.017},
+	abstract = {Spatial heterogeneity in fields may affect the outcome of experiments. The conventional randomized allocation of treatments to plots may cause bias and variable precision in the presence of trends (including periodicity) and spatial autocorrelation. Agricultural scientists appear to mostly use conventional experimental designs that are susceptible to adverse affects from field variability. The objectives of this research were to (i) quantify the use of different experimental designs in agronomic field experiments, and (ii) develop spatially-balanced designs that are insensitive to the effects of both trends and spatial autocorrelation. A review was performed of all research efforts reported in Volumes 93–95 of the Agronomy Journal and the frequency of various experimental designs was determined. It showed that the vast majority (96.7\%) of agronomic field experiments are implemented through Randomized Complete Block (RCB) designs. The method of simulated annealing was used to develop Spatially-Balanced Complete Block (SBCB) designs based on two objective functions: promoting spatial balance among treatment contrasts, and disallowing treatments to occur in the same position in different blocks, when possible. SBCB designs were successfully developed for designs up to 15 treatments and 15 replications. Square SBCB designs were realized as Latin Squares, and perfect spatial balance was obtained when feasible. SBCB designs are simple to implement, are analyzed through conventional ANOVAs, and provide protection against the adverse effects of spatial heterogeneity, while randomized allocation of treatments still ensures against user bias.},
+	number = {4},
+	urldate = {2018-11-22},
+	journal = {Geoderma},
+	author = {Van Es, H. M. and Gomes, C. P. and Sellmann, M. and van Es, C. L.},
+	month = aug,
+	year = {2007},
+	keywords = {Autocorrelation, Agronomy, Experimental design, Geostatistics, Periodicity, Trend},
+	pages = {346--352},
+	file = {ScienceDirect Full Text PDF:C\:\\Users\\alexa\\Zotero\\storage\\9B49DJNS\\van Es et al. - 2007 - Spatially-Balanced Complete Block designs for fiel.pdf:application/pdf;ScienceDirect Snapshot:C\:\\Users\\alexa\\Zotero\\storage\\TSC95EQ4\\S0016706107001140.html:text/html}
+}
+
+@article{atkinson_one_2001,
+	title = {One hundred years of the design of experiments on and off the pages of {Biometrika}},
+	volume = {88},
+	issn = {0006-3444},
+	url = {https://academic.oup.com/biomet/article/88/1/53/221364},
+	doi = {10.1093/biomet/88.1.53},
+	abstract = {Abstract.  The earliest important papers on planned experiments in Biometrika appeared within a year of each other in 1917 and 1918. Roughly speaking, one was c},
+	language = {en},
+	number = {1},
+	urldate = {2018-11-22},
+	journal = {Biometrika},
+	author = {Atkinson, Anthony C. and Bailey, R. A.},
+	month = feb,
+	year = {2001},
+	pages = {53--97},
+	file = {Snapshot:C\:\\Users\\alexa\\Zotero\\storage\\SDRMBI59\\221364.html:text/html}
+}
+
+@book{goos_optimal_2011,
+	title = {Optimal {Design} of {Experiments}: {A} {Case} {Study} {Approach}},
+	isbn = {978-1-119-97616-5},
+	shorttitle = {Optimal {Design} of {Experiments}},
+	abstract = {"This is an engaging and informative book on the modern practiceof experimental design. The authors' writing style is entertaining,the consulting dialogs are extremely enjoyable, and the technicalmaterial is presented brilliantly but not overwhelmingly. The bookis a joy to read. Everyone who practices or teaches DOE should readthis book." - Douglas C. Montgomery, RegentsProfessor, Department of Industrial Engineering, Arizona StateUniversity "It's been said: 'Design for the experiment, don't experimentfor the design.' This book ably demonstrates this notion by showinghow tailor-made, optimal designs can be effectively employed tomeet a client's actual needs. It should be required reading foranyone interested in using the design of experiments in industrialsettings."—Christopher J. Nachtsheim, Frank A DonaldsonChair in Operations Management, Carlson School of Management,University of Minnesota This book demonstrates the utility of the computer-aided optimaldesign approach using real industrial examples. These examplesaddress questions such as the following:How can I do screening inexpensively if I have dozens offactors to investigate?What can I do if I have day-to-day variability and I can onlyperform 3 runs a day?How can I do RSM cost effectively if I have categoricalfactors?How can I design and analyze experiments when there is a factorthat can only be changed a few times over the study?How can I include both ingredients in a mixture and processingfactors in the same study?How can I design an experiment if there are many factorcombinations that are impossible to run?How can I make sure that a time trend due to warming up ofequipment does not affect the conclusions from a study?How can I take into account batch information in when designingexperiments involving multiple batches?How can I add runs to a botched experiment to resolveambiguities?While answering these questions the book also shows how toevaluate and compare designs. This allows researchers to makesensible trade-offs between the cost of experimentation and theamount of information they obtain.},
+	language = {en},
+	publisher = {John Wiley \& Sons},
+	author = {Goos, Peter and Jones, Bradley},
+	month = jun,
+	year = {2011},
+	note = {Google-Books-ID: EMWYkYd3sPoC},
+	keywords = {Mathematics / Probability \& Statistics / Stochastic Processes, Science / Experiments \& Projects}
+}
+
+@article{kashif_efficiency_2010,
+	title = {Efficiency of {Alpha} {Lattice} {Design} in {Rice} {Field} {Trials} in {Pakistan}},
+	volume = {3},
+	issn = {2070-0245, 2070-0237},
+	url = {http://banglajol.info/index.php/JSR/article/view/4773},
+	doi = {10.3329/jsr.v3i1.4773},
+	abstract = {Two rice trials were conducted from 2005 to 2006 in rice research institute, Kala Shah Kako Pakistan to evaluate the efficiency of alpha lattice design in field experiments. The average standard error of difference between genotypes mean is used to calculate relative efficiency of alpha lattice design. Both experiments clearly identified the advantages of small blocks. The average gain in efficiency was 119\% with maximum 128\%. Mean ranks comparison for both randomized complete block and alpha lattice design were performed. It was observed that the ranks were not constant across the experiments. The results emphasize that the traditional randomized complete block designs (RCBD) should be replaced by alpha lattice in the agricultural field experiments when number of varieties to be tested in an experiment increases to more than five or ten. In such a situation finding a homogeneous block is quite difficult in field experiments.},
+	language = {en},
+	number = {1},
+	urldate = {2018-11-22},
+	journal = {Journal of Scientific Research},
+	author = {Kashif, M. and Khan, M. I. and Arif, M. and Anwer, M. and Ijaz, M.},
+	month = dec,
+	year = {2010},
+	file = {Kashif et al. - 2010 - Efficiency of Alpha Lattice Design in Rice Field T.pdf:C\:\\Users\\alexa\\Zotero\\storage\\28FW7XIH\\Kashif et al. - 2010 - Efficiency of Alpha Lattice Design in Rice Field T.pdf:application/pdf}
+}
+
+@article{van_es_1.2_2002,
+	title = {1.2 {Soil} {Variability}},
+	number = {methodsofsoilan4},
+	journal = {Methods of Soil Analysis: Part 4 Physical Methods},
+	author = {Van Es, H. M.},
+	year = {2002},
+	pages = {1--13}
+}
+
+@article{iqbal_spatial_2005,
+	title = {Spatial {Variability} {Analysis} of {Soil} {Physical} {Properties} of {Alluvial} {Soils}},
+	volume = {69},
+	issn = {1435-0661},
+	url = {https://www.soils.org/publications/sssaj/abstracts/69/4/1338},
+	doi = {10.2136/sssaj2004.0154},
+	abstract = {Analysis and interpretation of spatial variability of soils is a keystone in site-specific farming. Soil survey maps may have up to 0.41ha inclusions of dissimilar soils within a mapping unit. The objectives of this study were to determine the degree of spatial variability of soil physical properties and variance structure, and to model the sampling interval of alluvial floodplain soils. Soil profiles (n ϭ 209) from 18 parallel transects were sampled with a mean separation distance of 79.4 m. Each profile was classified into surface, subsurface, and deep horizons. Structural analysis of soil bulk density (␳b), sand, clay, saturated hydraulic conductivity (Ks), volumetric water content (␪v) at seven pressure potentials (⌿a) (Ϫ1, Ϫ10, Ϫ33, Ϫ67, Ϫ100, Ϫ500, and Ϫ1500 kPa) were modeled for the three horizons. Variance of soil physical properties varied from as low as 0.01\% (␳b) to as high as 1542\% (Ks). The LSD test indicated significant (P Ͻ 0.05) differences in sand, clay, ␳b, Ks, and ␪v at various ⌿a. Geostatistical analyses illustrated that the spatially dependent stochastic component was predominant over the nugget effect. Structured semivariogram functions of each variable were used in generating fine-scale kriged contour maps. Overall autocorrelation, Moran’s I, indicated a 400-m sampling range would be adequate for detection of spatial structure of sand, silt, clay, and a 100-m sampling range for soil hydraulic properties and ␳b. The magnitude and spatial patterns soil physical property variability have implications for variable rate applications and design of soil sampling strategies in alluvial floodplain soils.},
+	language = {en},
+	number = {4},
+	urldate = {2018-11-22},
+	journal = {Soil Science Society of America Journal},
+	author = {Iqbal, Javed and Thomasson, John A. and Jenkins, Johnie N. and Owens, Phillip R. and Whisler, Frank D.},
+	year = {2005},
+	pages = {1338},
+	file = {Iqbal et al. - 2005 - Spatial Variability Analysis of Soil Physical Prop.pdf:C\:\\Users\\alexa\\Zotero\\storage\\WFIC29QL\\Iqbal et al. - 2005 - Spatial Variability Analysis of Soil Physical Prop.pdf:application/pdf}
+}
+
+@article{nielsen_spatial_1973,
+	title = {Spatial variability of field-measured soil-water properties},
+	volume = {42},
+	issn = {0073-2230},
+	url = {http://hilgardia.ucanr.edu/Abstract/?a=hilg.v42n07p215},
+	abstract = {Infiltration and redistribution of water following an irrigation was studied, and the work was replicated at 20 locations on a 150 hectare plot of land. Hydraulic conductivity was measured as a function of soil-water content at 30.5 cm depth intervals to a depth of 182.9 in twenty 6.5-meter-square plots randomly established over a 150-hectare field. Tensiometers installed at 30.5, 61.0, 91.4, 121.9, 152.4, and 182.9 cm were used to measure hydraulic gradients. Soil-water contents were ascertained from soil-water characteristics obtained from six soil cores taken from each of the above depths for each plot. Variations in soil-water content were found to be normally distributed with depth and with horizontal distance throughout the field, while values of the hydraulic conductivity were found to be log-normally distributed. The correlation between hydraulic conductivity during steady-state infiltration and the clay fraction was significant at the 1 per cent level. Several equations for predicting water movement and retention under field conditions are examined.},
+	language = {English},
+	number = {7},
+	urldate = {2018-11-22},
+	journal = {Hilgardia},
+	author = {Nielsen, D. and Biggar, J. and Erh, K.},
+	month = nov,
+	year = {1973},
+	pages = {215--259},
+	file = {Full Text PDF:C\:\\Users\\alexa\\Zotero\\storage\\ZELH746Z\\Nielsen et al. - 1973 - Spatial variability of field-measured soil-water p.pdf:application/pdf;Snapshot:C\:\\Users\\alexa\\Zotero\\storage\\7J4JR2TZ\\Abstract.html:text/html}
+}
+
+@article{davidoff_method_1986,
+	title = {A method to verify the presence of a trend in studying spatial variability of soil temperature},
+	issn = {0361-5995},
+	url = {http://agris.fao.org/agris-search/search.do?recordID=US8708211},
+	language = {English},
+	urldate = {2018-11-22},
+	journal = {Soil Science Society of America journal (USA)},
+	author = {Davidoff, B. and Lewis, J. W. and Selim, H. M.},
+	year = {1986},
+	file = {Snapshot:C\:\\Users\\alexa\\Zotero\\storage\\EF96G6EE\\search.html:text/html}
+}
+
+@article{yates_comparative_1939,
+	title = {{THE} {COMPARATIVE} {ADVANTAGES} {OF} {SYSTEMATIC} {AND} {RANDOMIZED} {ARRANGEMENTS} {IN} {THE} {DESIGN} {OF} {AGRICULTURAL} {AND} {BIOLOGICAL} {EXPERIMENTS}},
+	volume = {30},
+	issn = {0006-3444},
+	url = {https://academic.oup.com/biomet/article/30/3-4/440/227612},
+	doi = {10.1093/biomet/30.3-4.440},
+	abstract = {F. YATES;  THE COMPARATIVE ADVANTAGES OF SYSTEMATIC AND RANDOMIZED ARRANGEMENTS IN THE DESIGN OF AGRICULTURAL AND BIOLOGICAL EXPERIMENTS, Biometrika, Volume 30,},
+	language = {en},
+	number = {3-4},
+	urldate = {2018-11-22},
+	journal = {Biometrika},
+	author = {Yates, F.},
+	month = jan,
+	year = {1939},
+	pages = {440--466},
+	file = {Snapshot:C\:\\Users\\alexa\\Zotero\\storage\\YVL3ZYT6\\227612.html:text/html}
+}
+
+@article{yates_new_1936,
+	title = {A new method of arranging variety trials involving a large number of varieties},
+	volume = {26},
+	issn = {1469-5146, 0021-8596},
+	url = {http://www.cambridge.org/core/journals/journal-of-agricultural-science/article/new-method-of-arranging-variety-trials-involving-a-large-number-of-varieties/9ECD41DE03ADD610F1033C176241C8B7},
+	doi = {10.1017/S0021859600022760},
+	abstract = {A new method of arranging variety trials involving large numbers of varieties is described. This type of arrangement, for which the name pseudo-factorial arrangement is proposed, enables the block size to be kept small without the use of controls.Various possible types of pseudo-factorial arrangement are discussed in detail and the necessary formulae developed. The appropriate methods of computation are illustrated by numerical examples based on the results of a uniformity trial on orange trees. It is shown that pseudofactorial arrangements are likely to be more efficient than arrangements involving the use of controls. In cases where there is considerable soil heterogeneity they are also markedly more efficient than randomized blocks containing all the varieties. In the chosen example gains in efficiency ranging from 26 to 57 per cent, were obtained.},
+	language = {en},
+	number = {3},
+	urldate = {2018-11-22},
+	journal = {The Journal of Agricultural Science},
+	author = {Yates, F.},
+	month = jul,
+	year = {1936},
+	pages = {424--455},
+	file = {Snapshot:C\:\\Users\\alexa\\Zotero\\storage\\VTWLQRGF\\9ECD41DE03ADD610F1033C176241C8B7.html:text/html}
+}
+
+@article{van_es_spatial_1993,
+	title = {Spatial {Nature} of {Randomization} and {Its} {Effect} on the {Outcome} of {Field} {Experiments}},
+	volume = {85},
+	issn = {0002-1962},
+	url = {https://dl.sciencesocieties.org/publications/aj/abstracts/85/2/AJ0850020420?access=0&view=pdf},
+	doi = {10.2134/agronj1993.00021962008500020046x},
+	language = {en},
+	number = {2},
+	urldate = {2018-11-22},
+	journal = {Agronomy Journal},
+	author = {Van Es, H. M. and Van Es, C. L.},
+	year = {1993},
+	pages = {420--428},
+	file = {Snapshot:C\:\\Users\\alexa\\Zotero\\storage\\XMHDP7WR\\AJ0850020420.html:text/html}
+}
+
+@article{watson_spatial_2000,
+	title = {Spatial dependence and block designs in spaced plant herbage trials},
+	volume = {134},
+	issn = {1469-5146, 0021-8596},
+	url = {http://www.cambridge.org/core/journals/journal-of-agricultural-science/article/spatial-dependence-and-block-designs-in-spaced-plant-herbage-trials/6E4FD2F25121E8255CF087469E9D2E72},
+	abstract = {Data from three ryegrass spaced plant variety trials conducted at Crossnacreevy, Co. Down in each
+of 1989, 1990 and 1991 were investigated for evidence of spatial dependence. Spatial dependence was
+most evident in variates measuring the overall dimensions of the plants, especially late season
+variates. However, the ‘date of ear emergence’ variate, which identifies most of the variety
+distinctnesses that the trials are intended to detect, was not spatially dependent. On average, 45\% of
+the residual variation in the plot means of the spatially dependent variates was estimated to be of a
+spatial nature. Consequently, it is likely that the efficiency of analysis of these variates would be
+improved by using spatial analysis instead of non-spatial analysis or by using alpha (incomplete
+block) designs instead of complete block designs. The spatial information was used to determine the
+optimal incomplete block sizes and the likely increase in efficiency due to using alpha designs instead
+of complete block designs. The optimal incomplete block size for a trial with 10 plants per plot was
+compared with the optimal incomplete block size for the same trial with single plant plots at the same
+spacing and was found to be smaller. The gains in efficiency were larger in the trial with 10 plants per
+plot than in the trial with single plant plots.},
+	language = {en},
+	number = {3},
+	urldate = {2018-11-22},
+	journal = {The Journal of Agricultural Science},
+	author = {Watson, S.},
+	month = may,
+	year = {2000},
+	pages = {245--258},
+	file = {Full Text PDF:C\:\\Users\\alexa\\Zotero\\storage\\5QWDVUKW\\Watson - 2000 - Spatial dependence and block designs in spaced pla.pdf:application/pdf;Snapshot:C\:\\Users\\alexa\\Zotero\\storage\\2C2JZW86\\6E4FD2F25121E8255CF087469E9D2E72.html:text/html}
+}
+
+@article{fagroud_accounting_2002,
+	title = {Accounting for {Soil} {Spatial} {Autocorrelation} in the {Design} of {Experimental} {Trials}},
+	volume = {66},
+	issn = {1435-0661},
+	url = {https://dl.sciencesocieties.org/publications/sssaj/abstracts/66/4/1134},
+	doi = {10.2136/sssaj2002.1134},
+	language = {en},
+	number = {4},
+	urldate = {2018-11-22},
+	journal = {Soil Science Society of America Journal},
+	author = {Fagroud, M. and Van Meirvenne, M.},
+	month = jul,
+	year = {2002},
+	pages = {1134--1142},
+	file = {Full Text PDF:C\:\\Users\\alexa\\Zotero\\storage\\TLEQCSIA\\Fagroud et Van Meirvenne - 2002 - Accounting for Soil Spatial Autocorrelation in the.pdf:application/pdf;Snapshot:C\:\\Users\\alexa\\Zotero\\storage\\7A2AHCC9\\1134.html:text/html}
+}
+
+@article{patterson_efficiency_1983,
+	title = {The efficiency of incomplete block designs in {National} {List} and {Recommended} {List} cereal variety trials},
+	volume = {101},
+	issn = {1469-5146, 0021-8596},
+	url = {http://www.cambridge.org/core/journals/journal-of-agricultural-science/article/efficiency-of-incomplete-block-designs-in-national-list-and-recommended-list-cereal-variety-trials/CEAEF87F0AE94EC91130C59E81753B25},
+	doi = {10.1017/S002185960003776X},
+	abstract = {Use of generalized lattice designs instead of complete block designs in 244 cereal variety trials grown in the U.K. since 1975 has resulted in an average reduction of 30\% in variances of varietal yield differences. The lattice designs were most effective when the number of varieties was more than 50 but worthwhile reductions in variance, averaging about 24\%, were obtained in trials with fewer than 20 varieties. The data also provide guidance on the choice of block size and the potential for improvement by neighbour methods.},
+	language = {en},
+	number = {2},
+	urldate = {2018-11-22},
+	journal = {The Journal of Agricultural Science},
+	author = {Patterson, H. D. and Hunter, E. A.},
+	month = oct,
+	year = {1983},
+	pages = {427--433},
+	file = {Snapshot:C\:\\Users\\alexa\\Zotero\\storage\\UUUQNIX4\\CEAEF87F0AE94EC91130C59E81753B25.html:text/html}
+}
+
+@article{patterson_new_1976,
+	title = {A new class of resolvable incomplete block designs},
+	volume = {63},
+	issn = {0006-3444},
+	url = {https://academic.oup.com/biomet/article/63/1/83/237118},
+	doi = {10.1093/biomet/63.1.83},
+	abstract = {Abstract.   This paper describes an algorithm for constructing resolvable incomplete block designs for any number of varieties v and block size k such that v is},
+	language = {en},
+	number = {1},
+	urldate = {2018-11-22},
+	journal = {Biometrika},
+	author = {Patterson, H. D. and Williams, E. R.},
+	month = jan,
+	year = {1976},
+	pages = {83--92},
+	file = {Patterson et Williams - A New Class of Resolvable Incomplete Block Designs.pdf:C\:\\Users\\alexa\\Zotero\\storage\\68839BAL\\Patterson et Williams - A New Class of Resolvable Incomplete Block Designs.pdf:application/pdf;Snapshot:C\:\\Users\\alexa\\Zotero\\storage\\BGULX822\\237118.html:text/html}
+}
+
+@article{yates_recovery_1939,
+	title = {The {Recovery} of {Inter}-{Block} {Information} in {Variety} {Trials} {Arranged} in {Three}-{Dimensional} {Lattices}},
+	volume = {9},
+	copyright = {1939 Blackwell Publishing Ltd/University College London},
+	issn = {2050-1439},
+	url = {https://onlinelibrary.wiley.com/doi/abs/10.1111/j.1469-1809.1939.tb02203.x},
+	doi = {10.1111/j.1469-1809.1939.tb02203.x},
+	abstract = {The articles published by the Annals of Eugenics (1925–1954) have been made available online as an historical archive intended for scholarly use. The work of eugenicists was often pervaded by prejudice against racial, ethnic and disabled groups. The online publication of this material for scholarly research purposes is not an endorsement of those views nor a promotion of eugenics in any way.},
+	language = {en},
+	number = {2},
+	urldate = {2018-11-22},
+	journal = {Annals of Eugenics},
+	author = {Yates, F.},
+	month = jun,
+	year = {1939},
+	pages = {136--156},
+	file = {Full Text PDF:C\:\\Users\\alexa\\Zotero\\storage\\G4GS7R7V\\Yates - 1939 - The Recovery of Inter-Block Information in Variety.pdf:application/pdf;Snapshot:C\:\\Users\\alexa\\Zotero\\storage\\M83D6DJ2\\j.1469-1809.1939.tb02203.html:text/html}
+}
+
+@article{patterson_block_1978,
+	title = {Block designs for variety trials},
+	volume = {90},
+	issn = {1469-5146, 0021-8596},
+	url = {http://www.cambridge.org/core/journals/journal-of-agricultural-science/article/block-designs-for-variety-trials/FDB84494D9928618A5E3FABF06EE9B57},
+	doi = {10.1017/S0021859600055507},
+	abstract = {In this paper we present a series of resolvable incomplete block designs suitable for variety trials with any number of varieties v in the range 20 ≤v ≤ 100. These designs usefully supplement existing square and rectangular lattices. They are not necessarily optimal in the sense of having smallest possible variances but their efficiencies are known to be high.},
+	language = {en},
+	number = {2},
+	urldate = {2018-11-22},
+	journal = {The Journal of Agricultural Science},
+	author = {Patterson, H. D. and Williams, E. R. and Hunter, E. A.},
+	month = apr,
+	year = {1978},
+	pages = {395--400},
+	file = {Snapshot:C\:\\Users\\alexa\\Zotero\\storage\\7QHIIIQ4\\FDB84494D9928618A5E3FABF06EE9B57.html:text/html}
+}
+
+@article{niu_near-balanced_2017,
+	title = {Near-{Balanced} {Incomplete} {Block} {Designs}, {With} an {Application} to {Poster} {Competitions}},
+	issn = {0003-1305},
+	url = {https://amstat.tandfonline.com/doi/abs/10.1080/00031305.2017.1385534},
+	doi = {10.1080/00031305.2017.1385534},
+	abstract = {Judging scholarly posters creates a challenge to assign the judges efficiently. If there are many posters and few reviews per judge, the commonly used balanced incomplete block design is not a feasible option. An additional challenge is an unknown number of judges before the event. We propose two connected near-balanced incomplete block designs that both satisfy the requirements of our setting: one that generates a connected assignment and balances the treatments and another one that further balances pairs of treatments. We describe both fixed and random effects models to estimate the population marginal means of the poster scores and rationalize the use of the random effects model. We evaluate the estimation accuracy and efficiency, especially the winning chance of the truly best posters, of the two designs in comparison with a random assignment via simulation studies. The two proposed designs both demonstrate accuracy and efficiency gain over the random assignment.},
+	urldate = {2018-11-22},
+	journal = {The American Statistician},
+	author = {Niu, Xiaoyue and Rosenberger, James L.},
+	month = sep,
+	year = {2017},
+	pages = {1--6},
+	file = {Niu et Rosenberger - 2017 - Near-Balanced Incomplete Block Designs, With an Ap.pdf:C\:\\Users\\alexa\\Zotero\\storage\\IW6PKVHP\\Niu et Rosenberger - 2017 - Near-Balanced Incomplete Block Designs, With an Ap.pdf:application/pdf;Snapshot:C\:\\Users\\alexa\\Zotero\\storage\\BQ8N4Y45\\00031305.2017.html:text/html;Snapshot:C\:\\Users\\alexa\\Zotero\\storage\\YBRAG5HH\\00031305.2017.html:text/html}
+}
+
+@article{bate_identifying_2016,
+	title = {Identifying the {Structure} of the {Experimental} {Design}},
+	volume = {48},
+	issn = {0022-4065},
+	url = {https://doi.org/10.1080/00224065.2016.11918173},
+	doi = {10.1080/00224065.2016.11918173},
+	abstract = {In many areas of scientific research, complex experimental designs are now routinely employed. The statistical analysis of data generated when using these designs may be carried out by a statistician; however, modern statistical software packages allow such analyses to be performed by non-statisticians. For the non-statistician, failing to correctly identify the structure of the experimental design can lead to incorrect model selection and misleading inferences. A procedure, which does not require expert statistical knowledge, is described that focuses the non-statistician's attention on the relationship between the experimental material and design, identifies the underlying structure of the selected design, and highlights any potential weaknesses it may have. These are important precursors to the randomization and subsequent statistical analysis and can be easily overlooked by a non-statistician. The process is illustrated using a generalization of the Hasse diagram and has been implemented in a program written in R.},
+	number = {4},
+	urldate = {2018-11-22},
+	journal = {Journal of Quality Technology},
+	author = {Bate, Simon T. and Chatfield, Marion J.},
+	month = oct,
+	year = {2016},
+	keywords = {Crossed Factors, Hasse Diagram, Nested Factors},
+	pages = {343--364},
+	file = {Snapshot:C\:\\Users\\alexa\\Zotero\\storage\\CDDQR48W\\00224065.2016.html:text/html}
+}
+
+@article{lobet_novel_2013,
+	title = {Novel scanning procedure enabling the vectorization of entire rhizotron-grown root systems},
+	volume = {9},
+	issn = {1746-4811},
+	url = {http://plantmethods.biomedcentral.com/articles/10.1186/1746-4811-9-1},
+	doi = {10.1186/1746-4811-9-1},
+	abstract = {This paper presents an original spit-and-combine imaging procedure that enables the complete vectorization of complex root systems grown in rhizotrons. The general principle of the method is to (1) separate the root system into a small number of large pieces to reduce root overlap, (2) scan these pieces one by one, (3) analyze separate images with a root tracing software and (4) combine all tracings into a single vectorized root system. This method generates a rich dataset containing morphological, topological and geometrical information of entire root systems grown in rhizotrons. The utility of the method is illustrated with a detailed architectural analysis of a 20-day old maize root system, coupled with a spatial analysis of water uptake patterns.},
+	language = {en},
+	number = {1},
+	urldate = {2018-11-23},
+	journal = {Plant Methods},
+	author = {Lobet, Guillaume and Draye, Xavier},
+	year = {2013},
+	pages = {1},
+	file = {Lobet et Draye - 2013 - Novel scanning procedure enabling the vectorizatio.pdf:C\:\\Users\\alexa\\Zotero\\storage\\9BM58UFN\\Lobet et Draye - 2013 - Novel scanning procedure enabling the vectorizatio.pdf:application/pdf}
+}
+
+@article{pound_rootnav:_2013,
+	title = {{RootNav}: {Navigating} {Images} of {Complex} {Root} {Architectures}},
+	volume = {162},
+	issn = {0032-0889, 1532-2548},
+	shorttitle = {{RootNav}},
+	url = {http://www.plantphysiol.org/cgi/doi/10.1104/pp.113.221531},
+	doi = {10.1104/pp.113.221531},
+	language = {en},
+	number = {4},
+	urldate = {2018-11-23},
+	journal = {PLANT PHYSIOLOGY},
+	author = {Pound, M. P. and French, A. P. and Atkinson, J. A. and Wells, D. M. and Bennett, M. J. and Pridmore, T.},
+	month = aug,
+	year = {2013},
+	pages = {1802--1814},
+	file = {Pound et al. - 2013 - RootNav Navigating Images of Complex Root Archite.pdf:C\:\\Users\\alexa\\Zotero\\storage\\9UR3XWKU\\Pound et al. - 2013 - RootNav Navigating Images of Complex Root Archite.pdf:application/pdf}
+}
+
+@article{mooney_developing_2012,
+	title = {Developing {X}-ray {Computed} {Tomography} to non-invasively image 3-{D} root systems architecture in soil},
+	volume = {352},
+	issn = {1573-5036},
+	url = {https://doi.org/10.1007/s11104-011-1039-9},
+	doi = {10.1007/s11104-011-1039-9},
+	abstract = {BackgroundThe need to observe roots in their natural undisturbed state within soil, both spatially and temporally, is a challenge that continues to occupy researchers studying the rhizosphere.ScopeThis paper reviews how over the last 30 years the application of X-ray Computed Tomography (CT) has demonstrated considerable promise for root visualisation studies. We describe how early CT work demonstrated that roots could be visualised within soils, but was limited by resolution (ca. 1 mm). Subsequent work, utilising newer micro CT scanners, has been able to achieve higher resolutions (ca. 50 μm) and enhance imaging capability in terms of detecting finer root material. However the overlap in the attenuation density of root material and soil pore space has been a major impediment to the uptake of the technology. We then outline how sophisticated image processing techniques, frequently based on object tracking methods, have demonstrated great promise in overcoming these obstacles. This, along with the concurrent advances in scan and reconstruction times, image quality and resolution (ca. 0.5 μm) have opened up new opportunities for the application of X-ray CT in experimental studies of root and soil interactions.ConclusionsWe conclude that CT is well placed to contribute significantly to unravelling the complex interactions between roots and soil.},
+	language = {en},
+	number = {1},
+	urldate = {2018-11-23},
+	journal = {Plant and Soil},
+	author = {Mooney, S. J. and Pridmore, T. P. and Helliwell, J. and Bennett, M. J.},
+	month = mar,
+	year = {2012},
+	keywords = {Image analysis, Rhizosphere, Roots, Soil, X-ray Computed Tomography},
+	pages = {1--22},
+	file = {Springer Full Text PDF:C\:\\Users\\alexa\\Zotero\\storage\\5C9SY7RS\\Mooney et al. - 2012 - Developing X-ray Computed Tomography to non-invasi.pdf:application/pdf}
+}
+
+@book{hinkelmann_design_2012,
+	address = {Hoboken, N.J.},
+	title = {Design and analysis of experiments},
+	isbn = {978-0-471-72756-9 978-0-470-53068-9},
+	language = {en},
+	publisher = {Wiley-Interscience},
+	author = {Hinkelmann, Klaus},
+	year = {2012},
+	note = {OCLC: 872330714},
+	file = {Hinkelmann - 2012 - Design and analysis of experiments.pdf:C\:\\Users\\alexa\\Zotero\\storage\\JUWESBNI\\Hinkelmann - 2012 - Design and analysis of experiments.pdf:application/pdf}
+}
+
+@article{brien_accounting_2013,
+	title = {Accounting for variation in designing greenhouse experiments with special reference to greenhouses containing plants on conveyor systems},
+	volume = {9},
+	issn = {1746-4811},
+	url = {https://doi.org/10.1186/1746-4811-9-5},
+	doi = {10.1186/1746-4811-9-5},
+	abstract = {There are a number of unresolved issues in the design of experiments in greenhouses. They include whether statistical designs should be used and, if so, which designs should be used. Also, are there thigmomorphogenic or other effects arising from the movement of plants on conveyor belts within a greenhouse? A two-phase, single-line wheat experiment involving four tactics was conducted in a conventional greenhouse and a fully-automated phenotyping greenhouse (Smarthouse) to investigate these issues.},
+	number = {1},
+	urldate = {2018-11-23},
+	journal = {Plant Methods},
+	author = {Brien, Chris J. and Berger, Bettina and Rabie, Huwaida and Tester, Mark},
+	month = feb,
+	year = {2013},
+	pages = {5},
+	file = {Full Text PDF:C\:\\Users\\alexa\\Zotero\\storage\\TKB4MTTH\\Brien et al. - 2013 - Accounting for variation in designing greenhouse e.pdf:application/pdf;Snapshot:C\:\\Users\\alexa\\Zotero\\storage\\UXMPF29T\\1746-4811-9-5.html:text/html}
+}
+
+@article{cullis_design_2006,
+	title = {On the design of early generation variety trials with correlated data},
+	volume = {11},
+	issn = {1537-2693},
+	url = {https://doi.org/10.1198/108571106X154443},
+	doi = {10.1198/108571106X154443},
+	abstract = {This article considers the design of early generation variety trials with a prespecified spatial correlation structure and introduces a new class of partially replicated designs called p-rep designs in which the plots of standard varieties are replaced by additional plots of test lines. We show how efficient p-rep designs can be readily generated using the modified Reactive TABU search algorithm. The expected and realized genetic gain of p-rep and grid plot designs is compared in a simulation study.},
+	language = {en},
+	number = {4},
+	urldate = {2018-11-29},
+	journal = {Journal of Agricultural, Biological, and Environmental Statistics},
+	author = {Cullis, B. R. and Smith, A. B. and Coombes, N. E.},
+	month = dec,
+	year = {2006},
+	keywords = {Genetic gain, Grid plot design, REML, Spatial correlation},
+	pages = {381},
+	file = {Springer Full Text PDF:C\:\\Users\\alexa\\Zotero\\storage\\RJC585HM\\Cullis et al. - 2006 - On the design of early generation variety trials w.pdf:application/pdf}
+}
+
+@article{cullis_spatial_1991,
+	title = {Spatial {Analysis} of {Field} {Experiments}-{An} {Extension} to {Two} {Dimensions}},
+	volume = {47},
+	issn = {0006-341X},
+	url = {http://www.jstor.org/stable/2532398},
+	doi = {10.2307/2532398},
+	abstract = {[The one-dimensional spatial analysis procedure proposed by Gleeson and Cullis (1987, Biometrics 43, 277-288) is extended to two dimensions using the subclass of separable lattice processes to model the errors. Residual maximum likelihood estimation of the models is described and diagnostics for testing model adequacy are derived. Results from the analysis of 24 sets of uniformity data indicate the frequent need for a two-dimensional analysis even when the plot shape is highly rectangular. These results also indicate the potential gain from using a two-dimensional spatial analysis rather than a row + column analysis. An example is presented of the analysis of a field experiment on tobacco.]},
+	number = {4},
+	urldate = {2018-11-29},
+	journal = {Biometrics},
+	author = {Cullis, B. R. and Gleeson, A. C.},
+	year = {1991},
+	pages = {1449--1460}
+}
+
+@article{meyer_coordinate-exchange_1995,
+	title = {The coordinate-exchange algorithm for constructing exact optimal experimental designs},
+	volume = {37},
+	issn = {0040-1706},
+	url = {https://experts.umn.edu/en/publications/the-coordinate-exchange-algorithm-for-constructing-exact-optimal-},
+	doi = {10.1080/00401706.1995.10485889},
+	language = {English (US)},
+	number = {1},
+	urldate = {2019-02-01},
+	journal = {Technometrics},
+	author = {Meyer, Ruth K. and Nachtsheim, Christopher J.},
+	month = jan,
+	year = {1995},
+	pages = {60--69},
+	file = {Snapshot:C\:\\Users\\alexa\\Zotero\\storage\\BNVGPP6Y\\the-coordinate-exchange-algorithm-for-constructing-exact-optimal-.html:text/html}
+}
+
+@book{fedorov_theory_1972,
+	address = {New York},
+	title = {Theory of optimal experiments [by] {V}.{V}. {Fedorov}.: {Translated} and edited by {W}.{J}. {Studden} and {E}.{M}. {Klimko}.},
+	shorttitle = {Theory of optimal experiments [by] {V}.{V}. {Fedorov}.},
+	language = {eng},
+	publisher = {Academic Press},
+	author = {Fedorov, Valeriǐ Vadimovich},
+	year = {1972},
+	note = {Open Library ID: OL18496755M},
+	keywords = {Experimental design, Mathematical optimization, Regression analysis}
+}
+
+@article{preece_cyclic_1996,
+	title = {Cyclic and {Computer} {Generated} {Designs}, 2nd {Edition} ({Monographs} on {Statistics} and {Applied} {Probability} 38), by {J}. {A}. {John} \& {E}. {R}. {Williams}, xii + 255 pp. {London}: {Chapman} \& {Hall} (1995). £30.00 (hardback). {ISBN} 0 412 57580 9.},
+	volume = {126},
+	issn = {1469-5146, 0021-8596},
+	shorttitle = {Cyclic and {Computer} {Generated} {Designs}, 2nd {Edition} ({Monographs} on {Statistics} and {Applied} {Probability} 38), by {J}. {A}. {John} \& {E}. {R}. {Williams}, xii + 255 pp. {London}},
+	url = {http://www.cambridge.org/core/journals/journal-of-agricultural-science/article/cyclic-and-computer-generated-designs-2nd-edition-monographs-on-statistics-and-applied-probability-38-by-john-j-a-williams-e-r-xii-255-pp-london-chapman-hall-1995-3000-hardback-isbn-0-412-57580-9/FA7B877D749564DA739E13B0A2B889F8},
+	doi = {10.1017/S0021859600088936},
+	abstract = {//static.cambridge.org/content/id/urn\%3Acambridge.org\%3Aid\%3Aarticle\%3AS0021859600088936/resource/name/firstPage-S0021859600088936a.jpg},
+	language = {en},
+	number = {1},
+	urldate = {2019-02-03},
+	journal = {The Journal of Agricultural Science},
+	author = {Preece, Donald A.},
+	month = feb,
+	year = {1996},
+	pages = {126--126},
+	file = {Snapshot:C\:\\Users\\alexa\\Zotero\\storage\\WWEB57BH\\FA7B877D749564DA739E13B0A2B889F8.html:text/html}
+}
+
+@article{gilmour_accounting_1997,
+	title = {Accounting for {Natural} and {Extraneous} {Variation} in the {Analysis} of {Field} {Experiments}},
+	volume = {2},
+	issn = {1085-7117},
+	url = {http://www.jstor.org/stable/1400446},
+	doi = {10.2307/1400446},
+	abstract = {[We identify three major components of spatial variation in plot errors from field experiments and extend the two-dimensional spatial procedures of Cullis and Gleeson (1991) to account for them. The components are nonstationary, large-scale (global) variation across the field, stationary variation within the trial (natural variation or local trend), and extraneous variation that is often induced by experimental procedures and is predominantly aligned with rows and columns. We present a strategy for identifying a model for the plot errors that uses a trellis plot of residuals, a perspective plot of the sample variogram and, where possible, likelihood ratio tests to identify which components are present. We demonstrate the strategy using two illustrative examples. We conclude that although there is no one model that adequately fits all field experiments, the separable autoregressive model is dominant. However, there is often additional identifiable variation present.]},
+	number = {3},
+	urldate = {2019-03-17},
+	journal = {Journal of Agricultural, Biological, and Environmental Statistics},
+	author = {Gilmour, Arthur R. and Cullis, Brian R. and Verbyla, Arūnas P.},
+	year = {1997},
+	pages = {269--293},
+	file = {JSTOR Full Text PDF:C\:\\Users\\alexa\\Zotero\\storage\\6UDBGMFD\\Gilmour et al. - 1997 - Accounting for Natural and Extraneous Variation in.pdf:application/pdf}
+}
+
+@article{gilmour_average_1995,
+	title = {Average {Information} {REML}: {An} {Efficient} {Algorithm} for {Variance} {Parameter} {Estimation} in {Linear} {Mixed} {Models}},
+	volume = {51},
+	issn = {0006-341X},
+	shorttitle = {Average {Information} {REML}},
+	url = {http://www.jstor.org/stable/2533274},
+	doi = {10.2307/2533274},
+	abstract = {[A strategy of using an average information matrix is shown to be computationally convenient and efficient for estimating variance components by restricted maximum likelihood (REML) in the mixed linear model. Three applications are described. The motivation for the algorithm was the estimation of variance components in the analysis of wheat variety means from 1,071 experiments representing 10 years and 60 locations in New South Wales. We also apply the algorithm to the analysis of designed experiments by incomplete block analysis and spatial analysis of field experiments.]},
+	number = {4},
+	urldate = {2019-03-17},
+	journal = {Biometrics},
+	author = {Gilmour, Arthur R. and Thompson, Robin and Cullis, Brian R.},
+	year = {1995},
+	pages = {1440--1450},
+	file = {JSTOR Full Text PDF:C\:\\Users\\alexa\\Zotero\\storage\\73ARTIN6\\Gilmour et al. - 1995 - Average Information REML An Efficient Algorithm f.pdf:application/pdf}
+}
+
+@article{cullis_spatial_1998,
+	title = {Spatial {Analysis} of {Multi}-{Environment} {Early} {Generation} {Variety} {Trials}},
+	volume = {54},
+	issn = {0006-341X},
+	url = {http://www.jstor.org/stable/2533991},
+	doi = {10.2307/2533991},
+	abstract = {[A fully efficient approach for the analysis of multi-environment early stage variety trials is considered that accommodates a general spatial covariance structure for the errors of each trial. The analysis simultaneously produces best linear unbiased predictors of the genotype and genotype by environment interaction effects and residual maximum likelihood estimates of the spatial parameters and variance components. Two motivating examples are presented and analyzed, and the results suggest that the previous approximate analyses can seriously affect estimation of the genetic merit of breeding lines, particularly for models with more complex variance structures.]},
+	number = {1},
+	urldate = {2019-03-17},
+	journal = {Biometrics},
+	author = {Cullis, Brian and Gogel, Bev and Verbyla, Arūnas and Thompson, Robin},
+	year = {1998},
+	pages = {1--18},
+	file = {Cullis et al. - 1998 - Spatial Analysis of Multi-Environment Early Genera.pdf:C\:\\Users\\alexa\\Zotero\\storage\\YY5F7744\\Cullis et al. - 1998 - Spatial Analysis of Multi-Environment Early Genera.pdf:application/pdf}
+}
+
+@article{meyer_constructing_1988,
+	title = {Constructing {Exact} {D}-{Optimal} {Experimental} {Designs} by {Simulated} {Annealing}},
+	volume = {8},
+	issn = {0196-6324},
+	url = {https://doi.org/10.1080/01966324.1988.10737244},
+	doi = {10.1080/01966324.1988.10737244},
+	abstract = {SYNOPTIC ABSTRACTExact optimal designs have generally been constructed using a finite design space and various exchange algorithms, which are subject to premature convergence. Branch-and-bound methods guarantee optimal designs, but are only computationally feasible for small problems. We apply the generalized simulated annealing algorithm to the construction of exact optimal designs, and evaluate its effectiveness on both finite and continuous design spaces.},
+	number = {3-4},
+	urldate = {2019-04-09},
+	journal = {American Journal of Mathematical and Management Sciences},
+	author = {Meyer, Ruth K. and Nachtsheim, Christopher J.},
+	month = feb,
+	year = {1988},
+	keywords = {D-optimality, exchange algorithms, nonlinear optimization, optimal designs},
+	pages = {329--359}
+}
+
+@article{rodriguez_generating_2010,
+	title = {Generating and {Assessing} {Exact} {G}-{Optimal} {Designs}},
+	volume = {42},
+	issn = {0022-4065},
+	url = {https://doi.org/10.1080/00224065.2010.11917803},
+	doi = {10.1080/00224065.2010.11917803},
+	abstract = {We introduce a new algorithm for generating near G-optimal designs for second-order models over cuboidal regions. The algorithm involves the use of Brent's minimization algorithm with coordinate exchange to create designs for 2 to 5 factors. Designs created using this new method either match or exceed the G-efficiency of previously reported designs. We also introduce a new graphical tool, the variance ratio fraction of design space (VRFDS) plot, which is useful for easy comparison of the prediction variance for competing designs over a given region of interest. Using the VRFDS plot to compare G-optimal designs to I-optimal designs shows that the G-optimal designs have higher prediction variance over the vast majority of the design region. This suggests that, for many response surface studies, G-optimal designs may not be the best choice.},
+	number = {1},
+	urldate = {2019-04-09},
+	journal = {Journal of Quality Technology},
+	author = {Rodríguez, Myrta and Jones, Bradley and Borror, Connie M. and Montgomery, Douglas C.},
+	month = jan,
+	year = {2010},
+	keywords = {Computer-Generated Designs, D-Efficiency, Fraction of Design Space Plots, G-Efficiency, I-Efficiency, Optimality Criteria, Prediction Variance},
+	pages = {3--20},
+	file = {Snapshot:C\:\\Users\\alexa\\Zotero\\storage\\7ZFYEN2I\\00224065.2010.html:text/html}
+}
+
+@book{r_core_team_r:_2018,
+	address = {Vienna, Austria},
+	title = {R: {A} {Language} and {Environment} for {Statistical} {Computing}},
+	url = {https://www.R-project.org/},
+	publisher = {R Foundation for Statistical Computing},
+	author = {{R Core Team}},
+	year = {2018}
+}
+
+@article{heredia-langner_genetic_2003,
+	title = {Genetic algorithms for the construction of {D}-optimal designs},
+	volume = {35},
+	number = {1},
+	journal = {Journal of Quality Technology},
+	author = {Heredia-Langner, Alejandro and Carlyle, W Matthew and Montgomery, Douglas C and Borror, Connie M and Runger, George C},
+	year = {2003},
+	pages = {28--46}
+}
+
+@article{heredia-langner_model-robust_2004,
+	title = {Model-robust optimal designs: {A} genetic algorithm approach},
+	volume = {36},
+	number = {3},
+	journal = {Journal of Quality Technology},
+	author = {Heredia-Langner, Alejandro and Montgomery, Douglas C and Carlyle, W Matthew and Borror, Connie M},
+	year = {2004},
+	pages = {263--279}
+}
+
+@book{fedorov_theory_2013,
+	title = {Theory of optimal experiments},
+	publisher = {Elsevier},
+	author = {Fedorov, Valerii Vadimovich},
+	year = {2013}
+}
+
+@article{bohachevsky_generalized_1986,
+	title = {Generalized simulated annealing for function optimization},
+	volume = {28},
+	number = {3},
+	journal = {Technometrics},
+	author = {Bohachevsky, Ihor O and Johnson, Mark E and Stein, Myron L},
+	year = {1986},
+	pages = {209--217}
+}
+
+@article{johnson_guidelines_1983,
+	title = {Some guidelines for constructing exact {D}-optimal designs on convex design spaces},
+	volume = {25},
+	number = {3},
+	journal = {Technometrics},
+	author = {Johnson, Mark E and Nachtsheim, Christopher J},
+	year = {1983},
+	pages = {271--277}
+}
+
+@article{atkinson_construction_1989,
+	title = {The construction of exact {D}-optimum experimental designs with application to blocking response surface designs},
+	volume = {76},
+	number = {3},
+	journal = {Biometrika},
+	author = {Atkinson, Anthony C and Donev, Alexander N},
+	year = {1989},
+	pages = {515--526}
+}
+
+@article{jung_construction_1996,
+	title = {Construction of exact {D}-optimal designs by tabu search},
+	volume = {21},
+	number = {2},
+	journal = {Computational Statistics \& Data Analysis},
+	author = {Jung, Joo Sung and Yum, Bong Jin},
+	year = {1996},
+	pages = {181--191}
+}
+
+@article{wilkinson_nearest_1983,
+	title = {Nearest {Neighbour} ({NN}) {Analysis} of {Field} {Experiments}},
+	volume = {45},
+	issn = {0035-9246},
+	url = {http://www.jstor.org/stable/2345523},
+	abstract = {[The paper is in two parts. Part I presents results of a Monte Carlo randomization study of Papadakis's covariance method of NN analysis which show that (i) a non-iterated Papadakis analysis tends to be conservatively biassed; (ii) iteration of the analysis as suggested by Bartlett (1978) leads to substantial positive bias in the treatment F ratio; (iii) the method is very inefficient when there are substantial trend effects in the data. A theoretical explanation of these results is given. Part II describes a new method of NN analysis discovered by the first author and developed in collaboration with the co-authors. The method is essentially a "moving-block" analogue of classical forms of analysis for "fixed" blocks (or rows, columns). It avoids the defects of Papadakis's method and leads to approximately unbiased analyses. It is nearly always and often substantially more efficient on average than classical analyses of complete or incomplete block experiments, and also more efficient than standard analyses of Latin or lattice square designs if there are appreciable row × column interactions in the data. New criteria of design for NN balance are described. Validity of the new method under randomization is demonstrated empirically with Monte Carlo studies.]},
+	number = {2},
+	urldate = {2019-04-16},
+	journal = {Journal of the Royal Statistical Society. Series B (Methodological)},
+	author = {Wilkinson, G. N. and Eckert, S. R. and Hancock, T. W. and Mayo, O.},
+	year = {1983},
+	pages = {151--211},
+	file = {JSTOR Full Text PDF:C\:\\Users\\alexa\\Zotero\\storage\\SLJY9IVT\\Wilkinson et al. - 1983 - Nearest Neighbour (NN) Analysis of Field Experimen.pdf:application/pdf}
+}
+
+@article{gleeson_residual_1987,
+	title = {Residual {Maximum} {Likelihood} ({REML}) {Estimation} of a {Neighbour} {Model} for {Field} {Experiments}},
+	volume = {43},
+	issn = {0006-341X},
+	url = {http://www.jstor.org/stable/2531812},
+	doi = {10.2307/2531812},
+	abstract = {[A spatial analysis of field experiments is proposed which takes account of association between neighbouring plots. The residual maximum likelihood (REML) method of Patterson and Thompson (1971, Biometrika 58, 545-554) is used to estimate parameters of a general neighbour model, which can be expressed as an autoregressive moving average (ARMA) model. Three data sets are analysed to (i) highlight the need for a model selection procedure, (ii) illustrate the differing results between incomplete block and neighbour analysis and the effect of including treated border plots in the design, and (iii) illustrate the environmental variation within an experiment using prediction of trend.]},
+	number = {2},
+	urldate = {2019-04-16},
+	journal = {Biometrics},
+	author = {Gleeson, Alan C. and Cullis, Brian R.},
+	year = {1987},
+	pages = {277--287},
+	file = {JSTOR Full Text PDF:C\:\\Users\\alexa\\Zotero\\storage\\TLLTDY6Q\\Gleeson et Cullis - 1987 - Residual Maximum Likelihood (REML) Estimation of a.pdf:application/pdf}
+}
+
+@article{zimmerman_random_1991,
+	title = {A {Random} {Field} {Approach} to the {Analysis} of {Field}-{Plot} {Experiments} and {Other} {Spatial} {Experiments}},
+	volume = {47},
+	issn = {0006-341X},
+	url = {http://www.jstor.org/stable/2532508},
+	doi = {10.2307/2532508},
+	abstract = {[Several "nearest-neighbor" methods for the analysis of data from spatial experiments (e.g., agricultural field experiments) have recently been proposed. These methods attempt to account for the effect of spatial heterogeneity on the estimation of treatment contrasts; typically, this is accomplished indirectly by differencing or by using residuals from neighboring plots to construct covariates. We examine an alternative approach in which the spatial heterogeneity is modeled directly. The model underlying our approach is similar to the model underlying a geostatistical kriging analysis and, as in the latter model, the observations are regarded collectively as a partial realization of a random field. A randomization study of uniformity trial data suggests that the random field approach often provides more accurate estimates of treatment contrasts than nearest-neighbor approaches. In addition, the random field approach is devoid of ambiguities as to the handling of border plots and is generally more flexible than nearest-neighbor approaches.]},
+	number = {1},
+	urldate = {2019-04-16},
+	journal = {Biometrics},
+	author = {Zimmerman, Dale L. and Harville, David A.},
+	year = {1991},
+	pages = {223--239},
+	file = {JSTOR Full Text PDF:C\:\\Users\\alexa\\Zotero\\storage\\MTZCB63J\\Zimmerman et Harville - 1991 - A Random Field Approach to the Analysis of Field-P.pdf:application/pdf}
+}
+
+@article{d._risser_review:_2016,
+	title = {Review: {Nonstationary} {Spatial} {Modeling}, with {Emphasis} on {Process} {Convolution} and {Covariate}-{Driven} {Approaches}},
+	shorttitle = {Review},
+	abstract = {In many environmental applications involving spatially-referenced data, limitations on the number and locations of observations motivate the need for practical and efficient models for spatial interpolation, or kriging. A key component of models for continuously-indexed spatial data is the covariance function, which is traditionally assumed to belong to a parametric class of stationary models. While convenient, the assumption of stationarity is rarely realistic; as a result, there is a rich literature on alternative methodologies which capture and model the nonstationarity present in most environmental processes. This review document provides a rigorous and concise description of the existing literature on nonstationary methods, paying particular attention to process convolution (also called kernel smoothing or moving average) approaches. A summary is also provided of more recent methods which leverage covariate information and yield both interpretational and computational benefits. Note: the article is borrowed from Chapters 1 and 2 of the author's Ph.D. dissertation, joint with Catherine A. Calder.},
+	author = {D. Risser, Mark},
+	month = oct,
+	year = {2016}
+}
+
+@article{williams_neighbour_1986,
+	title = {A neighbour model for field experiments},
+	volume = {73},
+	issn = {0006-3444},
+	url = {http://academic.oup.com/biomet/article/73/2/279/338918},
+	doi = {10.1093/biomet/73.2.279},
+	abstract = {Abstract.  A neighbour-type model is proposed as an alternative to that of Wilkinson et al. (1983) for the analysis of field variety trials. The model assumes t},
+	language = {en},
+	number = {2},
+	urldate = {2019-04-18},
+	journal = {Biometrika},
+	author = {Williams, E. R.},
+	month = aug,
+	year = {1986},
+	pages = {279--287},
+	file = {Full Text PDF:C\:\\Users\\alexa\\Zotero\\storage\\4DALTYR5\\Williams - 1986 - A neighbour model for field experiments.pdf:application/pdf;Snapshot:C\:\\Users\\alexa\\Zotero\\storage\\M39ZIWUN\\338918.html:text/html}
+}
+
+@article{williams_construction_2006,
+	title = {Construction of {Resolvable} {Spatial} {Row}–{Column} {Designs}},
+	volume = {62},
+	issn = {1541-0420},
+	url = {http://onlinelibrary.wiley.com/doi/abs/10.1111/j.1541-0420.2005.00393.x},
+	doi = {10.1111/j.1541-0420.2005.00393.x},
+	abstract = {Resolvable row–column designs are widely used in field trials to control variation and improve the precision of treatment comparisons. Further gains can often be made by using a spatial model or a combination of spatial and incomplete blocking components. Martin, Eccleston, and Gleeson (1993, Journal of Statistical Planning and Inference34, 433–450) presented some general principles for the construction of robust spatial block designs which were addressed by spatial designs based on the linear variance (LV) model. In this article we define the two-dimensional form of the LV model and investigate extensions of the Martin et al. principles for the construction of resolvable spatial row–column designs. The computer construction of efficient spatial designs is discussed and some comparisons made with designs constructed assuming an autoregressive variance structure.},
+	language = {en},
+	number = {1},
+	urldate = {2019-04-18},
+	journal = {Biometrics},
+	author = {Williams, E. R. and John, J. A. and Whitaker, D.},
+	year = {2006},
+	keywords = {Residual maximum likelihood, Average efficiency factor, Deviance, Latinized designs, Linear variance, Resolvable designs, Row–column designs, Spatial designs},
+	pages = {103--108},
+	file = {Full Text PDF:C\:\\Users\\alexa\\Zotero\\storage\\SH2ZVJ6R\\Williams et al. - 2006 - Construction of Resolvable Spatial Row–Column Desi.pdf:application/pdf;Full Text PDF:C\:\\Users\\alexa\\Zotero\\storage\\YAKKS5YY\\Williams et al. - 2006 - Construction of Resolvable Spatial Row–Column Desi.pdf:application/pdf;Snapshot:C\:\\Users\\alexa\\Zotero\\storage\\S53USDWP\\j.1541-0420.2005.00393.html:text/html;Snapshot:C\:\\Users\\alexa\\Zotero\\storage\\HH4RIXYU\\login.html:text/html;Snapshot:C\:\\Users\\alexa\\Zotero\\storage\\WA5GQY8I\\j.1541-0420.2005.00393.html:text/html}
+}
+
+@article{cressie1992statistics,
+  title={Statistics for spatial data},
+  author={Cressie, Noel},
+  journal={Terra Nova},
+  volume={4},
+  number={5},
+  pages={613--617},
+  year={1992},
+  publisher={Wiley Online Library}
+}
+
+@article{johnson1995restricted,
+  title={Restricted maximum likelihood estimation of variance components for univariate animal models using sparse matrix techniques and average information},
+  author={Johnson, DL and Thompson, Robin},
+  journal={Journal of dairy science},
+  volume={78},
+  number={2},
+  pages={449--456},
+  year={1995},
+  publisher={Elsevier}
+}
+
+@article{hastie1990generalized,
+  title={Generalized additive models, volume 43 of},
+  author={Hastie, TJ and Tibshirani, RJ},
+  journal={Monographs on statistics and applied probability},
+  pages={15},
+  year={1990}
+}
+
+
+@article{eilers2015twenty,
+  title={Twenty years of P-splines},
+  author={Eilers, Paul HC and Marx, Brian D and Durb{\'a}n, Maria},
+  journal={SORT: statistics and operations research transactions},
+  volume={39},
+  number={2},
+  pages={0149--186},
+  year={2015}
+}
+
+@article{you2016generalized,
+  title={On generalized degrees of freedom with application in linear mixed models selection},
+  author={You, Chong and M{\"u}ller, Samuel and Ormerod, John T},
+  journal={Statistics and Computing},
+  volume={26},
+  number={1-2},
+  pages={199--210},
+  year={2016},
+  publisher={Springer}
+}
+
+@article{cui2010partitioning,
+  title={Partitioning degrees of freedom in hierarchical and other richly parameterized models},
+  author={Cui, Yue and Hodges, James S and Kong, Xiaoxiao and Carlin, Bradley P},
+  journal={Technometrics},
+  volume={52},
+  number={1},
+  pages={124--136},
+  year={2010},
+  publisher={Taylor \& Francis}
 }
 
 @article{pieruschka2019plant,
@@ -2078,15 +4032,3 @@ plot than in the trial with single plant plots.},
   publisher={Oxford University Press on Demand}
 }
 
-@article{buja1989linear,
-  title={Linear smoothers and additive models},
-  author={Buja, Andreas and Hastie, Trevor and Tibshirani, Robert and others},
-  journal={The Annals of Statistics},
-  volume={17},
-  number={2},
-  pages={453--510},
-  year={1989},
-  publisher={Institute of Mathematical Statistics}
-}
-
-@Comment{jabref-meta: databaseType:bibtex;}

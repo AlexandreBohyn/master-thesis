@@ -1,0 +1,165 @@
+% Redefine the main unit
+\newcommand{\myunit}{1 cm}
+
+\begin{figure}[hbtp]
+\centering
+\resizebox{\columnwidth}{!}{%
+\begin{tikzpicture}[>=latex]
+
+% Matrix
+\matrix (xs) [matrix of math nodes,%
+             left delimiter  = (,%
+             right delimiter = )] at (-0.5,5*\myunit)
+{%
+  1_n   \\
+  \mathbf{u}    \\
+  \mathbf{v}    \\
+  \mathbf{u} \odot \mathbf{v} \\
+};
+\node [draw,below=10pt] at (xs.south) 
+    {$\mathbf{X}_{s}$};
+
+% Matrix annotations
+\node [anchor=west] at (0.5,5.8) {\textit{Intercept}};
+\node [anchor=west] at (0.5,5.3) {\textit{Cols}};
+\node [anchor=west] at (0.5,4.8) {\textit{Rows}};
+\node [anchor=west] at (0.5,4.3) {\textit{Cols $\times$ Rows}};
+
+
+% Matrix
+\matrix (bs) [matrix of math nodes,%
+             left delimiter  = (,%
+             right delimiter = )] at (4.5*\myunit,5*\myunit)
+{%
+  \beta_{1} \\
+  \beta_{2} \\
+  \beta_{3} \\
+  \beta_{4} \\
+};
+\node [draw,below=10pt] at (bs.south) 
+    {$\boldsymbol{\beta}_{s}$}; 
+
+
+% Matrix
+\matrix (zs) [matrix of math nodes,%
+             left delimiter  = (,%
+             right delimiter = )] at (7*\myunit,5*\myunit)
+{%
+  Z_{v} \\
+  Z_{u} \\
+  \mathbf{u} \boxdot Z_{v} \\
+  \mathbf{v} \boxdot Z_{u} \\
+  Z_{u} \boxdot Z_{v} \\
+};
+\node [draw,below=10pt] at (zs.south) 
+    {$\mathbf{Z}_{s}$};
+
+% Matrix annotation
+\node [anchor=west] at (8.2,6.2) {\textit{Smooth cols trend}};
+\node [anchor=west] at (8.2,5.6) {\textit{Smooth rows trend}};
+\node [anchor=west] at (8.2,5) {\textit{Linear-by-smooth cols trend}};
+\node [anchor=west] at (8.2,4.4) {\textit{Linear-by-smooth rows trend}};
+\node [anchor=west] at (8.2,3.8) {\textit{Smooth-by-smooth trend}};
+
+% Matrix
+\matrix (cs) [matrix of math nodes,%
+             left delimiter  = (,%
+             right delimiter = )] at (15*\myunit,5*\myunit)
+{%
+  \mathbf{c}_{s1} \\
+  \mathbf{c}_{s2} \\
+  \mathbf{c}_{s3} \\
+  \mathbf{c}_{s4} \\
+  \mathbf{c}_{s5} \\
+};
+\node [draw,below=10pt] at (cs.south) 
+    {$\mathbf{c}_{s}$};
+
+% matrix
+\matrix (P) [matrix of math nodes,%
+             left delimiter  = (,%
+             right delimiter = )] at (0*\myunit,-1*\myunit)
+{%
+  \widetilde{\mathbf{P}}_{1} \propto \breve{\lambda} \\
+  \widetilde{\mathbf{P}}_{2} \propto \invbreve{\lambda} \\
+  \widetilde{\mathbf{P}}_{3} \propto \breve{\lambda} \\
+  \widetilde{\mathbf{P}}_{4} \propto \invbreve{\lambda} \\
+  \widetilde{\mathbf{P}}_{5} \propto \left(\breve{\lambda};
+  \invbreve{\lambda}\right) \\
+};
+\node [draw,above=10pt] at (P.north) 
+    {$\widetilde{\mathbf{P}}$};
+
+% Matrix annotations
+\node [below = 10pt, text width=3cm, align = center] at (P.south)
+{Penalty term for each corresponding term in $\mathbf{Z}_{s}$};
+
+% matrix
+\matrix (gs) [matrix of math nodes,%
+             left delimiter  = (,%
+             right delimiter = )] at (7*\myunit,-1*\myunit)
+{%
+  \mathbf{G}_{s1} \propto \breve{\sigma}^{2} \\
+  \mathbf{G}_{s2} \propto \invbreve{\sigma}^{2} \\
+  \mathbf{G}_{s3} \propto \breve{\sigma}^{2} \\
+  \mathbf{G}_{s4} \propto \invbreve{\sigma}^{2} \\
+  \mathbf{G}_{s5} \propto \left(\breve{\sigma}^{2}; 
+  \invbreve{\sigma}^{2}\right) \\
+};
+\node [draw,above=10pt] at (gs.north) 
+    {$\mathbf{G}_{s}$};
+
+% Matrix annotations
+\node [below = 10pt, text width=4cm, align = center] at (gs.south){Variance terms for each corresponding term in $\mathbf{Z}_{s}$};
+
+% Matrix
+\matrix (gs2) [matrix of math nodes,%
+             left delimiter  = (,%
+             right delimiter = )] at (14*\myunit,-1*\myunit)
+{%
+  \mathbf{G}_{s1} \propto \breve{\sigma}^{2}_{s1} \\
+  \mathbf{G}_{s2} \propto \invbreve{\sigma}^{2}_{s2} \\
+  \mathbf{G}_{s3} \propto \breve{\sigma}^{2}_{s3} \\
+  \mathbf{G}_{s4} \propto \invbreve{\sigma}^{2}_{s4} \\
+  \mathbf{G}_{s5} \propto \left(\breve{\sigma}^{2}_{s5};
+  \invbreve{\sigma}^{2}_{s5}\right) \\
+};
+\node [draw,above=10pt] at (gs2.north) 
+    {$\mathbf{G}_{s} = \bigoplus_{k=1}^{5} \mathbf{G}_{sk}$};
+
+% Matrix annotations
+\node [below = 10pt, text width=4cm, align = center] at (gs2.south)
+{Independent variance term for each corresponding term in $\mathbf{Z}_{s}$};
+
+% Equation
+\node at (7,9) {\large $\mathbf{y} = f(\mathbf{u},\mathbf{v}) + 
+\boldsymbol{\epsilon} = \mathbf{B}\boldsymbol{\alpha} 
++\boldsymbol{\epsilon} = $};
+\node at (6.15, 8.3) (XS) {\large $\mathbf{X}_{s}$};
+\node  at (6.8, 8.3) (BS){\large $\boldsymbol{\beta}_{s}$};
+\node at (7.2,8.3) (plus) {\large $+$};
+\node at (7.65, 8.3) (ZS) {\large $\mathbf{Z}_{s}$};
+\node at (8.05,8.3) (CS) {\large $\mathbf{c}_{s}$};
+\node at (8.6,8.3) (epsilon) {\large $+ \boldsymbol{\epsilon}$};
+
+% Arrows 
+\draw [->] (XS.south) -- (xs.north);
+\draw [->] (BS.south) -- (bs.north);
+\draw [->] (ZS.south) -- (zs.north);
+\draw [->] (CS.south) -- (cs.north);
+
+% Relations
+\draw [double, ->] ($(P.east) + (0.5,0)$) -- ($(gs.west) - (0.5,0)$) ;
+\node [draw] at ($(P.east) + (2,0.5)$) {$\mathbf{G}_{s} = 
+\sigma_{s}^{2}\widetilde{\mathbf{P}}^{-1}$};
+
+\draw [double,->] ($(gs.east) + (0.5,0)$) -- ($(gs2.west) - (0.5,0)$);
+\node [text width = 3cm, align = center, anchor = center] at ($(gs.east) + (1.8,1)$) {independent variance components};
+%\node at (9,0.3) {components};
+%\node at (9,0.7) {variance};
+%\node at (9,1) {independent};
+
+\end{tikzpicture}}
+\caption[Diagram detailing the structure of the matrices used in this section]{Diagram detailing the structure of the matrices used in this section. All matrices are block diagonal matrix with each element represented on the diagram, being an individual block. The symbol $\propto$ shows how each block of the $\widetilde{\mathbf{P}}$/$\mathbf{G}_{s}$ matrix relates to the tuning/variance parameters. The last block of both the  $\widetilde{\mathbf{P}}$ and $\mathbf{G}_{s}$ matrices depends on both parameters but in a non-linear way.}
+\label{fig:matrix_diagram}
+\end{figure}

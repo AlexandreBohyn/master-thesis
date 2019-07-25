@@ -10,17 +10,32 @@
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    width="200mm"
-   height="70mm"
-   viewBox="0 0 200 70"
+   height="72mm"
+   viewBox="0 0 200 72"
    version="1.1"
    id="svg8"
    inkscape:version="0.92.4 (5da689c313, 2019-01-14)"
    sodipodi:docname="seed_platform_close_up.svg"
-   inkscape:export-filename="C:\Users\alexa\Dropbox\Master Thesis\Writing\Inkscape Figures\seed_platform_close_up.png"
+   inkscape:export-filename="C:\Users\alexa\Documents\KUL\Master thesis\Writing\Inkscape_Figures\seed_platform_close_up.png"
    inkscape:export-xdpi="96"
    inkscape:export-ydpi="96">
   <defs
      id="defs2">
+    <marker
+       inkscape:stockid="Arrow2Lend"
+       orient="auto"
+       refY="0"
+       refX="0"
+       id="Arrow2Lend"
+       style="overflow:visible"
+       inkscape:isstock="true">
+      <path
+         id="path1171"
+         style="fill:#000000;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:0.625;stroke-linejoin:round;stroke-opacity:1"
+         d="M 8.7185878,4.0337352 -2.2072895,0.01601326 8.7185884,-4.0017078 c -1.7454984,2.3720609 -1.7354408,5.6174519 -6e-7,8.035443 z"
+         transform="matrix(-1.1,0,0,-1.1,-1.1,0)"
+         inkscape:connector-curvature="0" />
+    </marker>
     <marker
        inkscape:stockid="Arrow2Lstart"
        orient="auto"
@@ -58,6 +73,21 @@
          d="M 8.7185878,4.0337352 -2.2072895,0.01601326 8.7185884,-4.0017078 c -1.7454984,2.3720609 -1.7354408,5.6174519 -6e-7,8.035443 z"
          transform="matrix(1.1,0,0,1.1,1.1,0)" />
     </marker>
+    <marker
+       inkscape:stockid="Arrow2Lstart"
+       orient="auto"
+       refY="0"
+       refX="0"
+       id="Arrow2Lstart-9"
+       style="overflow:visible"
+       inkscape:isstock="true">
+      <path
+         id="path4731-4"
+         style="fill:#000000;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:0.625;stroke-linejoin:round;stroke-opacity:1"
+         d="M 8.7185878,4.0337352 -2.2072895,0.01601326 8.7185884,-4.0017078 c -1.7454984,2.3720609 -1.7354408,5.6174519 -6e-7,8.035443 z"
+         transform="matrix(1.1,0,0,1.1,1.1,0)"
+         inkscape:connector-curvature="0" />
+    </marker>
   </defs>
   <sodipodi:namedview
      id="base"
@@ -67,8 +97,8 @@
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
      inkscape:zoom="0.7"
-     inkscape:cx="405.0282"
-     inkscape:cy="142.88158"
+     inkscape:cx="323.73717"
+     inkscape:cy="81.907291"
      inkscape:document-units="mm"
      inkscape:current-layer="layer1"
      showgrid="true"
@@ -106,7 +136,7 @@
      inkscape:label="Platform"
      inkscape:groupmode="layer"
      id="layer1"
-     transform="translate(-11.086963,-97.604172)"
+     transform="translate(-11.086963,-95.604172)"
      style="display:inline">
     <rect
        style="fill:#ffa837;fill-opacity:0.48979594;stroke:none;stroke-width:0.5;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
@@ -204,13 +234,30 @@
          y="155.94865"
          style="font-size:6.3499999px;stroke-width:0.26458332"
          id="tspan5756">Maize seed</tspan></text>
+    <path
+       style="display:inline;fill:none;stroke:#000000;stroke-width:0.30000001;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;marker-start:url(#Arrow2Lstart-9);marker-end:url(#Arrow2Lend)"
+       d="m 95.779054,103.85394 25.929276,2.3e-4"
+       id="path4711-2"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="cc" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:10.58333302px;line-height:0;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;display:inline;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332"
+       x="98.098785"
+       y="102.00232"
+       id="text5063-31"><tspan
+         sodipodi:role="line"
+         id="tspan5061-0"
+         x="98.098785"
+         y="102.00232"
+         style="font-size:6.3499999px;stroke-width:0.26458332">2.5 cm</tspan></text>
   </g>
   <g
      inkscape:groupmode="layer"
      id="layer2"
      inkscape:label="root_system"
      style="display:none"
-     transform="translate(-11.086963,-10.604172)">
+     transform="translate(-11.086963,-8.604172)">
     <path
        style="display:inline;fill:#8d5c06;fill-opacity:1;stroke:none;stroke-width:0.25;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
        d="m 104.51042,79.031255 h 2.64583 v 48.947915 h -2.64583 z"
@@ -223,7 +270,7 @@
      id="layer3"
      inkscape:label="aerial_system"
      style="display:none"
-     transform="translate(-11.086963,-10.604172)">
+     transform="translate(-11.086963,-8.604172)">
     <path
        style="display:inline;fill:#26ff3c;fill-opacity:1;stroke:none;stroke-width:0.25;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
        d="m 104.51042,20.822919 h 2.64583 v 48.947919 h -2.64583 z"

@@ -1,21 +1,38 @@
 \RequirePackage{fix-cm}
-\documentclass[12pt,a4paper,twoside]{report}
+\documentclass[12pt,a4paper,twoside,table]{report}
 \usepackage[utf8]{inputenc}
 \usepackage[T3,T1]{fontenc}
 %\usepackage[english]{babel}
-\usepackage{csquotes} %to avoid probelms with babel in quotes
 
-% Create the inverted breve in math mode
-\DeclareSymbolFont{tipa}{T3}{cmr}{m}{n}
-\DeclareMathAccent{\invbreve}{\mathalpha}{tipa}{16}
+%% FORMAT %%
 
-% Fonts
+%Page settings
+\topmargin -10mm
+\textwidth 160truemm
+\textheight 240truemm
+\oddsidemargin 0mm
+\evensidemargin 0mm
+
+%Header and footer settings
+\usepackage{fancyhdr} %Header package
+\pagestyle{fancy}
+\fancyhead{}
+\fancyhead[LE]{\leftmark}
+\fancyhead[RO]{\rightmark}
+\fancyfoot{}
+\fancyfoot[LE,RO]{\textbf{\thepage}}
+\renewcommand{\headrulewidth}{0.3pt} %Set header rule width 
+
+%% FONTS %%
+
 \usepackage{textcomp} % nice greek alphabet
 \usepackage{pifont}   % Dingbats
 \usepackage{booktabs}
 \renewcommand\familydefault{\sfdefault} %Define the font
+\usepackage{csquotes} %to avoid probelms with babel in quotes
 
-% Math and equations
+%% MATH & EQUATIONS %%
+
 \usepackage{amssymb,amsthm}
 \usepackage{amsmath}
 \usepackage{bm} % bold math
@@ -24,57 +41,38 @@
 \numberwithin{equation}{subsection} %allow equation numbering to be divided by ubsection numbering
 \renewcommand{\theequation}{\thesubsection\arabic{equation}} %avoid double dot in the numbering of equation using subsection numbering
 
-% Figures placement
+%% FIGURES %%
+
 \usepackage{float}
-\usepackage[section]{placeins}
-
-% Appendix 
-\usepackage[toc,page]{appendix}
-
-%Packages for the cover
-\usepackage[table]{xcolor} %the table option allows us to alternate coloring in table rows
-\usepackage{graphicx,textpos}
-\usepackage{helvet}
-
-%Extra packages
-\usepackage{afterpage} %To get a blank page
-\usepackage{lipsum} %To test display
+\usepackage[section]{placeins} 
 \usepackage[font=small,labelfont={bf}]{caption} %To get caption on subfigures
 \usepackage{subcaption} %To get subfigures
-\usepackage[breaklinks,hidelinks]{hyperref} %For url in bibliography
-\usepackage{todonotes} %To add to-do notes in the text
 \usepackage{rotating} %To have landscape figures
-\usepackage{enumitem} %To have descriptive lists
-\usepackage{chemformula} %To write chemical formulas more easily
-\usepackage{pdfpages} % to include pdf as whole pages in the appendix
-
-
-%New command to get a clear page (for the cover page)
-\newcommand\blankpage{%
-    \null
-    \thispagestyle{empty}%
-    \addtocounter{page}{-1}%
-    \newpage} 
-
 \graphicspath{ {figures/} } %Where the figures are stored
+\usepackage{tikz}
+\usetikzlibrary{matrix,arrows,decorations.pathmorphing}
+\usetikzlibrary{automata,positioning,calc}
+\usetikzlibrary{arrows.meta, quotes}
 
-%Bibliography
-\usepackage[backend=biber,
-style=nature,
-citestyle=authoryear-comp,
-doi=false,
-isbn=false,
-url=false,
-uniquename=init,
-giveninits]{biblatex}
-\addbibresource{references.bib}
+%% TABLES %%
+%Command and package for tables
+\usepackage{multirow}
+\usepackage{array}
+\usepackage{threeparttable} % footnotes in tables
+\usepackage{cellspace}
+    \setlength\cellspacetoplimit{4pt}
+    \setlength\cellspacebottomlimit{4pt}
+\newcolumntype{C}[1]{>{\centering\arraybackslash}p{#1}} %new type of column
 
-%page settings
-\topmargin -10mm
-\textwidth 160truemm
-\textheight 240truemm
-\oddsidemargin 0mm
-\evensidemargin 0mm
+%% APPENDIX %% 
+
+\usepackage[toc,page]{appendix}
+
+%% COVER %%
+
+\usepackage{xcolor} %the table option allows us to alternate coloring in table rows
+\usepackage{graphicx,textpos}
+\usepackage{helvet}
 
 %Colors for the title page
 \definecolor{green}{RGB}{172,196,0}
@@ -84,32 +82,60 @@ giveninits]{biblatex}
 \setlength{\TPHorizModule}{1mm}
 \setlength{\TPVertModule}{1mm}
 
-%Header and footer settings
-\usepackage{fancyhdr} %Header package
-\pagestyle{fancy}
-\fancyhead{}
-\fancyhead[LE]{\leftmark}
-\fancyhead[RO]{\rightmark}
-\fancyfoot{}
-\fancyfoot[LE,RO]{\thepage}
-\renewcommand{\headrulewidth}{0.3pt} %Set header rule width 
+%% BIBLIOGRAPHY %%
+\usepackage[backend=biber,
+style=nature,
+citestyle=authoryear-comp,
+doi=false,
+isbn=false,
+url=false,
+uniquename=init,
+giveninits]{biblatex}
+\addbibresource{references.bib}
+\usepackage[breaklinks,hidelinks]{hyperref} %For url in bibliography
 
-%Command and package for tables
-\usepackage{multirow}
-\usepackage{tikz}
-\usetikzlibrary{arrows.meta, quotes}
-\usepackage{array}
-\usepackage{threeparttable} % footnotes in tables
-\usepackage{cellspace}
-    \setlength\cellspacetoplimit{4pt}
-    \setlength\cellspacebottomlimit{4pt}
-\newcolumntype{C}[1]{>{\centering\arraybackslash}p{#1}} %new type of column
+%% EXTRA PACKAGES %%
+\usepackage{afterpage} %To get a blank page
+\usepackage{lipsum} %To test display
+\usepackage{todonotes} %To add to-do notes in the text
+\usepackage{enumitem} %To have descriptive lists
+\usepackage{chemformula} %To write chemical formulas more easily
+\usepackage{pdfpages} % to include pdf as whole pages in the appendix
 
-% Command and package to make a "formal" environment 
-%to have note inside the text.
+
+%% NEW COMMANDS/SYMBOLS %%
+
+%% Marker symbols for the caption
+\usetikzlibrary{shapes}
+% Empty square
+\newcommand{\emptysquare}{\raisebox{0.5pt}{\tikz{\node[draw,scale=0.4,regular polygon, regular polygon sides=4,fill=none](){};}}}
+
+% Blackline
+\newcommand{\blackline}{\raisebox{2pt}{\tikz{\draw[-,black,solid,line width = 0.9pt](0,0) -- (5mm,0);}}}
+
+%% New command for horizontal lines in matrices in TikZ diagrams
+% \mhline[<style>]{<matrix name>}{<column number below of the line>}{<number of columns in a row>}
+\newcommand\mhline[4][]{%
+  \node[fit=(#2-#3-1),inner sep=0pt,outer sep=0pt](R){};
+  \foreach \i in {1,...,#4}\node[fit=(R) (#2-#3-\i),inner sep=0pt,outer sep=0pt](R){};
+  \draw[#1] (R.north -| #2.west) -- (R.north -| #2.east);
+}
+
+%% Create the inverted breve in math mode %%
+\DeclareSymbolFont{tipa}{T3}{cmr}{m}{n}
+\DeclareMathAccent{\invbreve}{\mathalpha}{tipa}{16}
+
+%% Command and package to make a "formal" environment to have note inside the text.
 \usepackage{framed} % for defining framed environment
 \newenvironment{formal}{
     \def\FrameCommand{{\color{red}\vrule width 2pt}\hspace{2pt}}
     \MakeFramed{\advance\hsize-\width}
     \vspace{2pt}\noindent\hspace{-7pt}\vspace{3pt}
     }{\vspace{3pt}\endMakeFramed}
+
+%% Get a clear page (for the cover page) %%
+\newcommand\blankpage{%
+    \null
+    \thispagestyle{empty}%
+    \addtocounter{page}{-1}%
+    \newpage} 
