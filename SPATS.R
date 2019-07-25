@@ -22,7 +22,6 @@ data <- filtered_data%>%
   select(-QR)
 data$POSITION <- ifelse(data$TANK == "A",
                         as.numeric(data$POSITION),
-<<<<<<< HEAD
                         as.numeric(data$POSITION)+10)
 
 # Reformat the strips for camera B
@@ -34,9 +33,6 @@ data$STRIP <- ifelse(data$TANK == "A", data$STRIP,
 # Re arrange the position
 data$POSITION <- ifelse(data$STRIP < 50, data$POSITION+5,data$POSITION )
 data$STRIP <- ifelse(data$STRIP < 50,data$STRIP, abs(data$STRIP-100))
-=======
-                        as.numeric(data$POSITION)+5)
->>>>>>> writing-change
 
 # Factor the variables
 data$S <- as.factor(filtered_data$STRIP)
@@ -50,10 +46,7 @@ nseg2 <- 99
 
 # Additional SpATS parameters
 vars <- c('FRESH_LS','FRESH_RS','DRY_LS','DRY_RS')
-<<<<<<< HEAD
 weights <- filtered_data$w_WEIGHT
-=======
->>>>>>> writing-change
 
 # SPATS MODEL -----------------------------------------------------------------
 
@@ -65,7 +58,6 @@ spatial.SpATS <- as.formula(
            nest.div = 2)
 )
 
-<<<<<<< HEAD
 # Create the SpATS model as a function 
 fit.spats <- function(x){
   return(
@@ -95,7 +87,7 @@ for(i in c(1:4)){
   dim <- cbind(dim, fits[[i]]$eff.dim)
 }
 colnames(dim) <- c('Model','Effective_FRESH_LS','Effective_FRESH_RS',
-                     'Effective_DRY_LS','Effective_DRY_RS')
+                   'Effective_DRY_LS','Effective_DRY_RS')
 
 #write.xlsx(t(dim), file = "Tables/dim.xlsx")
 
@@ -153,7 +145,7 @@ SpATS_plotRawData_fun <- function(x,var,interp=FALSE){
     scale_x_continuous(expand = c(0,0))+
     scale_y_continuous(expand = c(0,0))+
     scale_fill_gradientn(na.value = 'white',
-                        colours = grDevices::topo.colors(100))+
+                         colours = grDevices::topo.colors(100))+
     coord_fixed(ratio = 20/50)+
     guides(fill = guide_colourbar(barwidth = 0.5, barheight = 9,
                                   title = "", frame.colour = "black", 
@@ -227,38 +219,3 @@ ggsave(filename = "Figures/residuals_analysis_plot.pdf",
        plot = residuals_analysis_plot,
        height = 3.6, width = 7.5, scale = 1.5)
 
-=======
-# Fit the SpATS model
-fit.spats <- SpATS(response = "FRESH_RS", 
-                   genotype = "geno",
-                   geno.decomp = NULL,
-                   genotype.as.random = TRUE, 
-                   spatial = spatial.SpATS, 
-                   fixed = ~ 1 + T, 
-                   random = ~ P + S,
-                   data = data,
-                   family = gaussian(),
-                   offset = 0,
-                   #weights = "w_WEIGHT",
-                   control =  list(tolerance = 1e-03))
-
-fit.spats$deviance
-
-fir.spats <- SpATS(response = "FRESH_RS", 
-                   genotype = "geno",
-                   geno.decomp = NULL,
-                   genotype.as.random = TRUE, 
-                   spatial = spatial.SpATS, 
-                   fixed = ~ 1 , 
-                   random = ~ P + S + T,
-                   data = data,
-                   family = gaussian(),
-                   offset = 0,
-                   #weights = "w_WEIGHT",
-                   control =  list(tolerance = 1e-03))
-
-fir.spats$deviance
-
-#summary(fit.spats)
-#plot(fit.spats, depict.missing = TRUE)
->>>>>>> writing-change
