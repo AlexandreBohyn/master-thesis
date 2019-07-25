@@ -10,7 +10,7 @@
 
 library(SpATS)
 library(gridExtra)
-
+library(rlang)
 
 # SPATS PARAMETERS ------------------------------------------------------------
 
