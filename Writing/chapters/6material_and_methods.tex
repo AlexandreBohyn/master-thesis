@@ -702,8 +702,27 @@ H_{g}^2 = \dfrac{ED_{g}}{n_{g}} = 1 - \dfrac{\overline{PEV}}{\sigma^2_{g}}
 where $n_{g}$ is the number of genotypes and $\overline{PEV}$ is the prediction error variance for the genotype BLUPs. Since $n_{g}$ is also the upper bound of the effective genetic dimension, $H^2_{g}$ can be seen as a shrinkage factor. Given that our experiment does not incorporate a genetic relationship matrix, we'll use this definition to properly interpret the genetic effect in our model. The right-hand term of the equation, is equivalent to the concept of generalized heritability developed by \textcite{welham2010comparison}. We can profit from that to compare the heritability between the spats model and the $AR \times AR$ model.
 
 \section{$AR \times AR$ model}
-\ref{sec:arxar_model}
-In this section the $AR \times AR$ model, and its extension to the linear variance (LV) model, are presented. For more detailed information about the original $AR \times AR$ model, consult \textcite{gilmour_accounting_1997}. For information about the extensions of the model, see \textcite{piepho_linear_2010} and \textcite{williams_neighbour_1986}.\\
+\label{sec:arxar_model}
+In this section the $AR \times AR$ model, and its extension to the linear variance ($LV$) model, are presented. For more detailed information about the original $AR \times AR$ model, consult \textcite{gilmour_accounting_1997}. For information about the extensions of the model, see \textcite{piepho_linear_2010} and \textcite{williams_neighbour_1986}.\\
+
+As explained in the literature review chapter, the standard spatial models (SS models), such as the $AR\timesAR$ model, use a spatially dependant error term to adjust for the local trends, whereas the SpATS model encompasses them in the smooth surface. To estimate the spatial covariance structure of this error process, \textcite{gilmour_accounting_1997} advocate the use of variograms and more precisely, the use of auto-regressive processes ($AR(1)$) to model those variograms. The general representation of the SS model is very to the SpATS model:
+\begin{equation}
+	y = \mathbf{X}\boldsymbol{\beta} + \mathbf{X}_{s}\boldsymbol{\beta}_{s} + \mathbf{Zc} +  \mathbf{Z}_{s}\mathbf{c}_{s} + 
+	\boldsymbol{\xi} + \bolsymbol{\varepsilon}
+	\text{,}
+	\label{eq:standard_spatial_model}
+\end{equation}
+where $\mathbf{X}\boldsymbol{\beta}$ contains the fixed terms of the model, $\mathbf{Zc}$ contains the random terms, $\bolsymbol{\varepsilon}$ is the vector of the residuals and $\boldsymbol{\xi}$ is the vector of spatially dependant residuals modelling the local trend. However, unlike the SpATS model, $\mathbf{X}_{s}\boldsymbol{\beta}_{s}$ and $\mathbf{Z}_{s}\mathbf{c}_{s}$ do not model a smooth bivariate surface, but contain linear and one-dimensional cubic splines terms that account for the global variations in the data (see \textcite{verbyla_analysis_1999} for details).\\
+
+\subsection{Variogram and $AR(1)$ process}
+The term of interest in equation \ref{eq:standard_spatial_model} is the spatially dependant error term $\boldsymbol{\xi}$.
+talk aout:  variogram and how an AR process is used to  model it
+
+\subsection{Linear variance structure}
+brifly how the LV component can be used to model it (+ representation from sas https://documentation.sas.com/?docsetId=statug&docsetVersion=14.3&docsetTarget=statug_mixed_syntax14.htm&locale=en)
+
+\subsection{Best standard spatial model}
+how to choose the best model
 %%Let us consider a similar starting point as for the SpATS model, a field trial of $n$ plots arranged in a rectangular grid, where the plot positions are collected in vectors of row $(\mathbf{r})$ and column $(\mathbf{c})$ coordinates, and $\mathbf{y}$ is the vector of plot data in field order. Here the starting model for $\mathbf{y}$ is
 %%\begin{equation}
 %%    \mathbf{y}=\mathbf{X} \boldsymbol{\beta}+\mathbf{Z c}+\boldsymbol{\xi}+\boldsymbol{\eta}
@@ -824,11 +843,11 @@ In this section the $AR \times AR$ model, and its extension to the linear varian
 %%Explain how the model were fitted
 %%\end{formal}
 
-%%\section{Model comparison}
-%%The SpATS model was compared with the BSS models in terms of meaningful parameters for plant breeding application. The estimates considered for comparison are similar to those used by \textcite{velazco_modelling_2017}. The following estimates are:
-%%\begin{itemize}
-%%    \item Genetic variance $(\sigma_g^2)$ and spatially independent residual variance $(\sigma_e^2)$. The goal being having a minimal variance in both cases.
-%%    \item Generalized heritability. Estimated as described previously for the SpATS model and as described by \textcite{cullis_design_2006} for the BSS model. In this case, the heritability is interpreted as the measure of the precision of a trial, i.e. the ability to detect genotypic differences among test-cross means. Given that our study does not incorporate a genetic relationship matrix, we can use equation \ref{eq:new_heritability} to perform a straightforward comparison between the heritability estimated by SpATS and that obtained from the BSS model \parencite{velazco_modelling_2017}.
-%%    \item Spearman rank correlation between predicted genotypic values for the different models in the same environment. This will allow us to compare the ranking of genotypes from the SpATS model and from the BSS model.
-%%\end{itemize}
-%%It is interesting to note that \textcite{rodriguez-alvarez_correcting_2018} also use the Pearson correlations of predicted genotypes values between environments (i.e. field trials) as a way of comparing models. Since only one trial was studied in this thesis, this correlation cannot be used.
+\section{Model comparison}
+The SpATS model was compared with the BSS models in terms of meaningful parameters for plant breeding application. The estimates considered for comparison are similar to those used by \textcite{velazco_modelling_2017}. The following estimates are:
+\begin{itemize}
+    \item Genetic variance $(\sigma_g^2)$ and spatially independent residual variance $(\sigma_e^2)$. The goal being having a minimal variance in both cases.
+    \item Generalized heritability. Estimated as described previously for the SpATS model and as described by \textcite{cullis_design_2006} for the BSS model. In this case, the heritability is interpreted as the measure of the precision of a trial, i.e. the ability to detect genotypic differences among test-cross means. Given that our study does not incorporate a genetic relationship matrix, we can use equation \ref{eq:new_heritability} to perform a straightforward comparison between the heritability estimated by SpATS and that obtained from the BSS model \parencite{velazco_modelling_2017}.
+    \item Spearman rank correlation between predicted genotypic values for the different models in the same environment. This will allow us to compare the ranking of genotypes from the SpATS model and from the BSS model.
+\end{itemize}
+It is interesting to note that \textcite{rodriguez-alvarez_correcting_2018} also use the Pearson correlations of predicted genotypes values between environments (i.e. field trials) as a way of comparing models. Since only one trial was studied in this thesis, this correlation cannot be used.
