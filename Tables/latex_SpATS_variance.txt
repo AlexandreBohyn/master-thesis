@@ -1,14 +1,18 @@
 \begin{table}[ht]
 \centering
 \caption{Variances of all the components of the SpATS model} 
-\begin{tabular}{rrrrrrrrr}
+\begin{tabular}{rrrrr}
   \toprule
- & geno & P & S & f(POSITION) & f(STRIP) & f(POSITION):STRIP & POSITION:f(STRIP) & f(POSITION):f(STRIP) \\ 
+ & FRESH\_LS & FRESH\_RS & DRY\_LS & DRY\_RS \\ 
   \midrule
-FRESH\_LS & 0.1709 & 0.0032 & 0.0002 & 22.0160 & 0.0000 & 0.0000 & 0.0000 & 0.3979 \\ 
-  FRESH\_RS & 0.2618 & 0.0051 & 0.0000 & 109.7217 & 0.0001 & 0.0000 & 0.0005 & 0.2515 \\ 
-  DRY\_LS & 0.0013 & 0.0000 & 0.0000 & 0.0001 & 0.0000 & 0.0000 & 0.0000 & 0.0001 \\ 
-  DRY\_RS & 0.0007 & 0.0000 & 0.0000 & 0.2654 & 0.0000 & 0.0000 & 0.0000 & 0.0007 \\ 
+geno & 1.71E-01 & 2.62E-01 & 1.27E-03 & 6.90E-04 \\ 
+  P & 3.24E-03 & 5.08E-03 & 1.95E-07 & 8.47E-17 \\ 
+  S & 1.86E-04 & 2.25E-05 & 2.42E-07 & 3.93E-08 \\ 
+  f(POSITION) & 2.20E+01 & 1.10E+02 & 1.06E-04 & 2.65E-01 \\ 
+  f(STRIP) & 2.75E-05 & 5.36E-05 & 5.40E-08 & 1.55E-08 \\ 
+  f(POSITION):STRIP & 5.60E-52 & 1.76E-38 & 1.51E-52 & 1.44E-13 \\ 
+  POSITION:f(STRIP) & 1.81E-09 & 4.83E-04 & 6.75E-10 & 1.43E-06 \\ 
+  f(POSITION):f(STRIP) & 3.98E-01 & 2.52E-01 & 6.13E-05 & 7.13E-04 \\ 
    \bottomrule
 \end{tabular}
 \end{table}
