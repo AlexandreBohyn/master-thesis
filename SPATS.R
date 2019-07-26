@@ -114,7 +114,7 @@ for(i in 1:4){
 }
 colnames(var) <- vars
 
-print(xtable(t(var), digits = 4,
+print(xtable(var, digits = -2,
              caption = "Variances of all the components of the SpATS model"),
       file = "Tables/latex_SpATS_variance.txt",
       append = FALSE,
