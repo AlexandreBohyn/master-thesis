@@ -705,21 +705,82 @@ where $n_{g}$ is the number of genotypes and $\overline{PEV}$ is the prediction 
 \label{sec:arxar_model}
 In this section the $AR \times AR$ model, and its extension to the linear variance ($LV$) model, are presented. For more detailed information about the original $AR \times AR$ model, consult \textcite{gilmour_accounting_1997}. For information about the extensions of the model, see \textcite{piepho_linear_2010} and \textcite{williams_neighbour_1986}.\\
 
-As explained in the literature review chapter, the standard spatial models (SS models), such as the $AR\timesAR$ model, use a spatially dependant error term to adjust for the local trends, whereas the SpATS model encompasses them in the smooth surface. To estimate the spatial covariance structure of this error process, \textcite{gilmour_accounting_1997} advocate the use of variograms and more precisely, the use of auto-regressive processes ($AR(1)$) to model those variograms. The general representation of the SS model is very to the SpATS model:
+As explained in the literature review chapter, the standard spatial models (SS models), such as the $AR \times AR$ model, use a spatially dependant error term to adjust for the local trends, whereas the SpATS model encompasses them in the smooth surface. 
+To estimate the spatial covariance structure of this error process, \textcite{gilmour_accounting_1997} advocate the use of variograms and more precisely, the use of auto-regressive processes ($AR(1)$) to model those variograms. 
+The general representation of the SS model is very similar to the SpATS model:
 \begin{equation}
 	y = \mathbf{X}\boldsymbol{\beta} + \mathbf{X}_{s}\boldsymbol{\beta}_{s} + \mathbf{Zc} +  \mathbf{Z}_{s}\mathbf{c}_{s} + 
-	\boldsymbol{\xi} + \bolsymbol{\varepsilon}
+	\boldsymbol{\xi} + \boldsymbol{\varepsilon}
 	\text{,}
 	\label{eq:standard_spatial_model}
 \end{equation}
-where $\mathbf{X}\boldsymbol{\beta}$ contains the fixed terms of the model, $\mathbf{Zc}$ contains the random terms, $\bolsymbol{\varepsilon}$ is the vector of the residuals and $\boldsymbol{\xi}$ is the vector of spatially dependant residuals modelling the local trend. However, unlike the SpATS model, $\mathbf{X}_{s}\boldsymbol{\beta}_{s}$ and $\mathbf{Z}_{s}\mathbf{c}_{s}$ do not model a smooth bivariate surface, but contain linear and one-dimensional cubic splines terms that account for the global variations in the data (see \textcite{verbyla_analysis_1999} for details).\\
+where $\mathbf{X}\boldsymbol{\beta}$ contains the fixed terms of the model, $\mathbf{Zc}$ contains the random terms, $\boldsymbol{\varepsilon}$ is the vector of the residuals and $\boldsymbol{\xi}$ is a vector of spatially dependant residuals modelling the local trends. However, unlike the SpATS model, $\mathbf{X}_{s}\boldsymbol{\beta}_{s}$ and $\mathbf{Z}_{s}\mathbf{c}_{s}$ do not model a smooth bivariate surface, but contain linear and one-dimensional cubic splines terms that account for the global variations in the data (see \textcite{verbyla_analysis_1999} for details).\\
 
 \subsection{Variogram and $AR(1)$ process}
-The term of interest in equation \ref{eq:standard_spatial_model} is the spatially dependant error term $\boldsymbol{\xi}$.
-talk aout:  variogram and how an AR process is used to  model it
+As \textcite{gilmour_accounting_1997} explain in their paper, they model an error process using a variogram. The error process is defined as the sum of the independent and spatially-dependent residuals: $\mathbf{e} = \mathbf{\xi} + \mathbf{\varepsilon}$, where the term of interest is the spatially dependant error term $\boldsymbol{\xi}$.\\
+
+The variogram is a function that computes the evolution of the covariance of a spatially-dependent variable over the distance. In our case, let us consider the error process $\mathbf{e}$, being a stationary (direction-dependent) process over the rows (strips) $\mathbf{u}$ and the columns (positions) $\mathbf{v}$. For two distinct points in space $x$ and $y$, the covariance structure between these two points is modelled by the theoretical variogram (also called the semi-variogram) as:
+\begin{equation}
+    \omega(\mathbf{x}, \mathbf{y})=\frac{1}{2} \operatorname{var}[\mathbf{e}(\mathbf{x})-\mathbf{e}(\mathbf{y})]=\frac{1}{2}
+    [\mathrm{V}(\mathbf{x}, \mathbf{x})+\mathrm{V}(\mathbf{y}, \mathbf{y})-2 \mathrm{V}(\mathbf{x}, \mathbf{y})]
+    \text{,}
+\end{equation}
+where $\mathrm{V}$ is the covariance function of our error process $\mathbf{e}$. We can define the distance between the pair of points $(\mathbf{x},\mathbf{y})$ as:
+\begin{equation*}
+    \mathbf{l}=\left[ \begin{array}{l}{l_{1}} \\ {l_{2}}\end{array}\right]=\left[ \begin{array}{l}{\left|x_{1}-y_{1}\right|} \\ 
+    {\left|x_{2}-y_{2}\right|}\end{array}\right]
+    \text{,}
+\end{equation*}
+then \textcite{zimmerman_random_1991} show that the covariance function of the error process can be rewritten a directional exponential covariance (DEC) structure:
+\begin{equation}
+	\mathrm{V}(\mathbf{x},\mathbf{y}) = \operatorname{exp}(-\alpha_{1}l_{1} - \alpha_{2}l_{2})
+	\text{.}
+\end{equation}
+For most field experiments, plots are arranged in regular grids and thus separated by equivalent distances. Therefore the distance between plots is expressed using the displacement vector, which takes values for $l_1$ of $0,d_1,2d_1,\ldots,(r-1)d_1$ and for $l_2$ of $0,d_2,2d_2,\ldots,(c-1)d_2$, where $d_1$ and $d_2$ are the plot dimensions. 
+From that we can create an indexed displacement vector $\mathbf{l}^{*}$ with values for $l_1^*$ of $0,1,2,\ldots,(r-1)$ and values for $l_2^*$ of $0,1,2,\ldots,(c-1)$.
+The semi-variogram can then be rewritten as:
+\begin{equation}
+    \begin{aligned}
+        \omega\left(\mathbf{l}^{*}\right) & = \sigma_{\varepsilon}^{2}+\sigma_{\xi}^{2}\left[1-\exp \left(-\alpha_{1} d_{1} 
+        l_{1}^{*} - \alpha_{2} d_{2} l_{2}^{*} \right) \right] 
+        &  \mathbf{l}^* \neq 0 \\
+        & = 0
+        & \mathbf{l}^* = 0 
+    \end{aligned}
+    \label{eq:variogram_DEC}
+\end{equation}
+
+A first order auto-regressive process, is a process in which the term at time $t$ only depends on the value of the process at time $(t-1)$ and on a stochastic term (white noise): $X_{t} = c + \rho X_{t-1} + \varepsilon_{t}$. 
+The only parameter in the model (if the intercept is ignored) is $\rho$. 
+Therefore \textcite{cullis_spatial_1991} show that by setting $\rho_1 = \operatorname{exp}(-\alpha_{1}d_{1})$ and $\rho_{2} = \operatorname{exp}(-\alpha_{2}d_{2})$, the variogram (equation \ref{eq:variogram_DEC}) becomes
+
+\begin{equation}
+    \begin{aligned}
+        \omega\left(\mathbf{l}^{*}\right)
+        & = \sigma_{\eta}^{2}+\sigma^{2}\left(1-\rho_{1}^{l_{1}^{*}} \rho_{2}^{l_{2}^{*}}\right) 
+        & \mathbf{l}^* \neq 0 \\
+        & = 0
+        & \mathbf{l}^* = 0 
+    \end{aligned}
+	\text{.}    
+\end{equation}
+This formulation demonstrates the equivalence between the semi-variogram, the DEC model and the $AR(1) \times AR(1)$ process for field experiments. Figure \ref{} show an example of a simulated variogram using an $AR(1) \times AR(1)$ process and actual variogram fitted using the same process.
+
+\begin{figure}[hbtp]
+	\centering
+	\begin{subfigure}[t]{0.45\textwidth}
+		\centering
+		\includegraphics[width = \textwidth]{figures/Variogram-for-a-standardised-AR1AR1-process.png}
+	\end{subfigure}
+	\begin{subfigure}[t]{0.45\textwidth}
+		\centering
+		\includegraphics[width = \textwidth]{figures/AR1AR1-process-variogram-fit.png}
+	\end{subfigure}
+\end{figure}
+
 
 \subsection{Linear variance structure}
-brifly how the LV component can be used to model it (+ representation from sas https://documentation.sas.com/?docsetId=statug&docsetVersion=14.3&docsetTarget=statug_mixed_syntax14.htm&locale=en)
+%brifly how the LV component can be used to model it (+ representation from sas https://documentation.sas.com/?docsetId=statug&docsetVersion=14.3&docsetTarget=statug_mixed_syntax14.htm&locale=en)
 
 \subsection{Best standard spatial model}
 how to choose the best model
