@@ -719,7 +719,8 @@ where $\mathbf{X}\boldsymbol{\beta}$ contains the fixed terms of the model, $\ma
 \subsection{Variogram and $AR(1)$ process}
 As \textcite{gilmour_accounting_1997} explain in their paper, they model an error process using a variogram. The error process is defined as the sum of the independent and spatially-dependent residuals: $\mathbf{e} = \mathbf{\xi} + \mathbf{\varepsilon}$, where the term of interest is the spatially dependant error term $\boldsymbol{\xi}$.\\
 
-The variogram is a function that computes the evolution of the covariance of a spatially-dependent variable over the distance. In our case, let us consider the error process $\mathbf{e}$, being a stationary (direction-dependent) process over the rows (strips) $\mathbf{u}$ and the columns (positions) $\mathbf{v}$. For two distinct points in space $x$ and $y$, the covariance structure between these two points is modelled by the theoretical variogram (also called the semi-variogram) as:
+The variogram is a function that computes the evolution of the covariance of a spatially-dependent variable over the distance.
+It enables the visualization of the covariance structure of a variable as a function of spatial displacement. They exist both in one and two dimensions. An example of variograms is presented in figure \ref{fig:variogram_example}. In our case, let us consider the error process $\mathbf{e}$, being a stationary (direction-dependent) process over the rows (strips) $\mathbf{u}$ and the columns (positions) $\mathbf{v}$. For two distinct points in space $x$ and $y$, the covariance structure between these two points is modelled by the theoretical variogram (also called the semi-variogram) as:
 \begin{equation}
     \omega(\mathbf{x}, \mathbf{y})=\frac{1}{2} \operatorname{var}[\mathbf{e}(\mathbf{x})-\mathbf{e}(\mathbf{y})]=\frac{1}{2}
     [\mathrm{V}(\mathbf{x}, \mathbf{x})+\mathrm{V}(\mathbf{y}, \mathbf{y})-2 \mathrm{V}(\mathbf{x}, \mathbf{y})]
@@ -757,14 +758,14 @@ Therefore \textcite{cullis_spatial_1991} show that by setting $\rho_1 = \operato
 \begin{equation}
     \begin{aligned}
         \omega\left(\mathbf{l}^{*}\right)
-        & = \sigma_{\eta}^{2}+\sigma^{2}\left(1-\rho_{1}^{l_{1}^{*}} \rho_{2}^{l_{2}^{*}}\right) 
+        & = \sigma_{\varepsilon}^{2}+\sigma^{2}\left(1-\rho_{1}^{l_{1}^{*}} \rho_{2}^{l_{2}^{*}}\right) 
         & \mathbf{l}^* \neq 0 \\
         & = 0
         & \mathbf{l}^* = 0 
     \end{aligned}
 	\text{.}    
 \end{equation}
-This formulation demonstrates the equivalence between the semi-variogram, the DEC model and the $AR(1) \times AR(1)$ process for field experiments. Figure \ref{} show an example of a simulated variogram using an $AR(1) \times AR(1)$ process and actual variogram fitted using the same process.
+This formulation demonstrates the equivalence between the semi-variogram, the DEC model and the $AR(1) \times AR(1)$ process for field experiments. Figure \ref{fig:variogram_example} shows an example of a simulated variogram using an $AR(1) \times AR(1)$ process and actual variogram fitted using the same process.
 
 \begin{figure}[hbtp]
 	\centering
@@ -774,16 +775,45 @@ This formulation demonstrates the equivalence between the semi-variogram, the DE
 	\end{subfigure}
 	\begin{subfigure}[t]{0.45\textwidth}
 		\centering
-		\includegraphics[width = \textwidth]{figures/AR1AR1-process-variogram-fit.png}
+		\includegraphics[width = \textwidth]{figures/AR1AR1-process-variogram-fit.PNG}
 	\end{subfigure}
+	\caption[Examples of variogram using $AR(1) \times AR(1)$ processes]{Examples of variogram using $AR(1) \times AR(1)$ processes.(Leftmost panel) Variogram for a standardized $AR(1) \times AR(1)$ process, with $\rho_{x} = 0.9$, $\rho_{y} = 0.4$ and $\sigma^2=0.3$ from \textcite{gilmour_accounting_1997}. (Rightmost panel) Variogram fitted to wheat data of \textcite{gilmour_accounting_1997} with the one-dimensional associated variograms in the rows and columns direction \parencite{piepho_linear_2010}. }
+	\label{fig:variogram_example}
 \end{figure}
 
 
 \subsection{Linear variance structure}
-%brifly how the LV component can be used to model it (+ representation from sas https://documentation.sas.com/?docsetId=statug&docsetVersion=14.3&docsetTarget=statug_mixed_syntax14.htm&locale=en)
+The modification of the $AR(1) \times AR(1)$ model to include the linear variance (LV) structure, is based on the one-dimensional LV structure proposed by \textcite{williams_neighbour_1986} and its elevation to two dimensions by \textcite{piepho_linear_2010}.
+Let us first conside the case of LV in one dimension (a single position over several strips in our case) for n=99 plots. The baseline covariance structure is written as:
+\begin{equation}
+	V_{0}=\sigma^{2} I_{n}+\eta J_{n}
+	\text{,}
+\end{equation}
+where $I_{n}$ is the n-dimensional identity matrix and $J_{n}$ is a $n$ by $n$ matrix of ones everywhere, $\sigma^2$ is the residual variance and $\eta$ is the block variance. 
+\textcite{williams_neighbour_1986} propose to elevate this baseline covariance model by a spatial component $V_{s}$ such that plots within the same block obey a correlation structure that decays linearly with distance. 
+For two plots $x$ and $y$, they define the matrix $L_n$ as a $n\times n$ matrix where the $(x,y)$-th element is equal to $|x-y|$. 
+From that statement, the decaying correlation structure can be expressed in matrix form as $V_{S}=\kappa\left(J_{n}-\tilde{\phi} L_{n}\right)$, where $\tilde{\phi}$ is a slope parameter determining the decaying process and $\kappa$ is a spatial variance. 
+To avoid cofounding effects, \textcite{williams_neighbour_1986} rewrite the complete, elevated model as a linear structure:
+\begin{equation}
+	V=V_{0}+V_{S}=\sigma^{2} I_{n}+\eta J_{n}+\phi M_{n}
+	\text{,}
+\end{equation}
+where $M_n = (n-1)J_n - L_n$ and $\phi = \kappa\tilde{\phi}$. The components of the model have the following interpretation: (i) $\sigma^{2} I_{n}$ is the residual error (or nugget effect in variogram-specific terms); (ii) the block effect, $\eta J_n$, captures extraneous variations on the field; and (iii) $\phi M_n$ models a spatial correlation within a block by a LV–covariance structure where correlation decays linearly with distance.\\
+
+\textcite{piepho_linear_2010} present two main ways to extend the model to two dimensions. The first ones is superimposition of two structure: a LV structure along the columns but independent between the rows  and a LV structure along the columns but independent between the rows ($\mathrm{LV} \otimes I$). The second one is a product of the two LV structure: $LV \otimes LV$. In a desire of clarity, the full notation of these structure is not presented here, but are detailed in the paper of \textcite{piepho_linear_2010}.\\
+
+The similarity between the LV structure and the $AR(1)$ process comes from the fact that when the spatial correlation $\rho^{l} \approx 1$ then 
+$\rho^{\left| x-y \right|}=\exp \left[\log (\rho)\left| x-y \right|\right] \approx 1-\tilde{\phi}\left| x -y \right|$ with 
+$\tilde{\phi} = -\log(\rho)$. 
+Thus, when the correlation is close to one (which is quite common in practice \parencite{pilarczyk2007extent}) and when block sizes, hence distances $\left| x-y \right|$, are not large $AR(1)$ and LV models are expected to yield similar results. The main advantages of the LV model is that it is more robust to convergence issues when correlation is close to unity and also that it has one parameter instead of two, for the spatial component. To visualize more clearly the different spatial covariance structures of the different models, figure \ref{fig:Spatial_cov_structure} shows examples of those structures. 
+
+\input{extra/TikZ_spatial_covariance_structures}
 
 \subsection{Best standard spatial model}
 how to choose the best model
+
+\subsection{Model estimation}
+The models were implemented using the \verb|proc mixed| of the SAS software (SAS Institute, Cary, NC, USA). The spatial covariance structure was specified in the \verb|type| option of the \verb|random| statement of the procedure. The $AR(1)$ models were fitted using \verb|type = AR(1)|, the $AR(1)\times AR(1)$ were fitted using \verb|type = sp(POWA)| and the LV models were fitted using \verb|type = lin(q)|.
 %%Let us consider a similar starting point as for the SpATS model, a field trial of $n$ plots arranged in a rectangular grid, where the plot positions are collected in vectors of row $(\mathbf{r})$ and column $(\mathbf{c})$ coordinates, and $\mathbf{y}$ is the vector of plot data in field order. Here the starting model for $\mathbf{y}$ is
 %%\begin{equation}
 %%    \mathbf{y}=\mathbf{X} \boldsymbol{\beta}+\mathbf{Z c}+\boldsymbol{\xi}+\boldsymbol{\eta}

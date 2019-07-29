@@ -1,0 +1,82 @@
+\begin{figure}[hbtp]
+\centering
+	\begin{tikzpicture}
+        \centering
+		% Matrix
+		\matrix (ar) [matrix of math nodes,%
+             left delimiter  = (,%
+             right delimiter = ),
+             anchor = center] at (0,1)
+		{%
+		{1} & {\rho} & {\rho^{2}} & {\rho^{3}} \\ 
+		{\rho} & {1} & {\rho} & {\rho^{2}} \\ 
+		{\rho^{2}} & {\rho} & {1} & {\rho} \\ 
+		{\rho^{3}} & {\rho^{2}} & {\rho} & {1}\\		
+		};
+		\node [draw,below=10pt] at (ar.south){$AR(1)$};
+		\node [left=10pt] at (ar.west){$\sigma^{2}$};
+		
+		\matrix (arxar) [matrix of math nodes,%
+             left delimiter  = (,%
+             right delimiter = ),
+             anchor = center] at (0,-4)
+		{%
+		{1} & { \rho_{r}^{d(1, 2, r)} \rho_{c}^{d(1, 2, c)}} & 
+		{\rho_{r}^{d(1, 3, r)} \rho_{c}^{d(1, 3, c)}} & 
+		{\rho_{r}^{d(1, 4, r)} \rho_{c}^{d(1, 4, c)}} \\
+		{\rho_{r}^{d(2,1, r)} \rho_{c}^{d(2,1, c)}} & {1} &  
+		{\rho_{r}^{d(2, 3, r)} \rho_{c}^{d(2, 3, c)}} & 
+		{\rho_{r}^{d(2, 4, r)} \rho_{c}^{d(2, 4, c)}}\\
+		{\rho_{r}^{d(3,1, r)} \rho_{c}^{d(3,1, c)}} &  
+		{\rho_{r}^{d(3, 2, r)} \rho_{c}^{d(3, 2, c)}} & {1} &  
+		{\rho_{r}^{d(3, 4, r)} \rho_{c}^{d(3, 4, c)}}\\ 
+		{\rho_{r}^{d(4,1, r)} \rho_{c}^{d(4,1, c)}} &  
+		{\rho_{r}^{d(4, 2, r)} \rho_{c}^{d(4, 2, c)}} &  
+		{\rho_{r}^{d(4,3, r)} \rho_{c}^{d(4,3, c)}} & {1} \\
+		};
+		\node [draw,below=10pt] at (arxar.south){$AR(1)\times AR(1)$};
+		\node [left=10pt] at (arxar.west){$\sigma^{2}$};
+		
+		\matrix (I) [matrix of math nodes,%
+             left delimiter  = (,%
+             right delimiter = ),
+             anchor = center] at (-2,-9)
+		{%
+		1 & 0 & 0 & 0 \\
+		0 & 1 & 0 & 0 \\
+		0 & 0 & 1 & 0 \\
+		0 & 0 & 0 & 1 \\
+		};
+		\node [left=10pt] at (I.west){$\sigma^{2}$};
+		\node [right=18pt] at (I.east){$+$};
+		
+		\matrix (J) [matrix of math nodes,%
+             left delimiter  = (,%
+             right delimiter = ),
+             anchor = center] at (2,-9)
+        {%
+		1 & 1 & 1 & 1 \\
+		1 & 1 & 1 & 1 \\
+		1 & 1 & 1 & 1 \\
+		1 & 1 & 1 & 1 \\
+		};
+		\node [left=10pt] at (J.west){$\eta$};
+		\node [right=10pt] at (J.east){$+$};
+		
+		\matrix (M) [matrix of math nodes,%
+             left delimiter  = (,%
+             right delimiter = ),
+             anchor = center] at (0,-12)
+        {%
+		1 & {1-d(1,2)} & {1-d(1,3)} & {1-d(1,4)} \\
+		{1-d(2,1)} & 1 & {1-d(2,3)} & {1-d(2,4)} \\
+		{1-d(3,1)} & {1-d(3,2)} & 1 & {1-d(3,4)} \\
+		{1-d(4,1)} & {1-d(4,2)} & {1-d(4,3)} & 1 \\
+		};
+		\node [left=10pt] at (M.west){$(n-1)\phi$};
+		\node [draw,below=10pt] at (M.south){LV};
+		
+	\end{tikzpicture}
+	\caption[Spatial covariance structures of the standard spatial models]{Spatial covariance structures of the standard spatial models. The $AR(1)\times AR(1)$ model is presented as anisotropic. In isotropic conditions, the correlation value would be the same along the rows and the columns ($\rho_{c} = \rho_{r}$). The distance is represented in units, as the indexed displacement.}
+	\label{fig:Spatial_cov_structure}
+\end{figure}
