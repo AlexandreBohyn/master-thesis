@@ -2,8 +2,9 @@
 \input{extra/preamble} %Contains all the packages and specifications
 
 %% Glossary and abreviations %%
-\input{extra/glossary_and_abreviations} %contains the glossary and abreviations
+\newglossaryentry{utc}{name=utc,description={Coordinated Universal Time}}
 
+\makeglossaries
 
 \begin{document}
 
@@ -23,12 +24,6 @@
 %%\addcontentsline{toc}{chapter}{Summary}
 %%\input{chapters/2summary}
 
-%%%% List of acronyms %%
-%%\printglossary[type=\acronymtype] 
-%%
-%%%% Glossary	%%
-%%\printglossary
-
 %% Table of contents %%
 \tableofcontents
 \addcontentsline{toc}{chapter}{Contents} %adds it to the table of contents
@@ -40,6 +35,10 @@
 %% List of tables %%
 \listoftables 
 \addcontentsline{toc}{chapter}{List of Tables} %adds it to the table of contents
+
+%% List of acronyms %%
+\glsadd{utc}
+\printglossaries
 
 %% Introduction %%
 \chapter{Introduction}
@@ -69,7 +68,7 @@
 
 %% Appendix %%
 \begin{appendices}
-\addcontentsline{toc}{chapter}{Appendix} %adds it to the table of contents
+%\addcontentsline{toc}{chapter}{Appendix} %adds it to the table of contents
 \input{extra/appendix}
 \end{appendices}
 

@@ -810,135 +810,23 @@ Thus, when the correlation is close to one (which is quite common in practice \p
 \input{extra/TikZ_spatial_covariance_structures}
 
 \subsection{Best standard spatial model}
-how to choose the best model
+As explained in the previous section, several spatial covariance structures can be used in the standard spatial (SS) model to account for the spatial variations. Comparing the fit to the data of all the different models, would be a tedious and unnecessary process. Instead, all the SS models will be compared in term of AIC and deviance. Those two goodness-of-fit statistics are commonly used to compare statistical models \parencite{piepho_linear_2010,gilmour_accounting_1997,velazco_modelling_2017}. Those two statistics are based on the value of the likelihood function, $\mathcal{L}$:
+\begin{equation}
+	AIC = 2k - 2ln(\mathcal{L}) \qquad \text{and} \qquad Deviance = -2\log(\mathcal{L})+C
+	\text{.}
+\end{equation}
+The main advantage of the AIC is that it takes into account the number of parameters of the model $k$, to avoid overfitting. The best standard spatial model (BSS) was retained as the one with the lowest AIC and Deviance. This model was used with the data from the platform and its results were compared to the one from the SpATS model.
 
 \subsection{Model estimation}
 The models were implemented using the \verb|proc mixed| of the SAS software (SAS Institute, Cary, NC, USA). The spatial covariance structure was specified in the \verb|type| option of the \verb|random| statement of the procedure. The $AR(1)$ models were fitted using \verb|type = AR(1)|, the $AR(1)\times AR(1)$ were fitted using \verb|type = sp(POWA)| and the LV models were fitted using \verb|type = lin(q)|.
-%%Let us consider a similar starting point as for the SpATS model, a field trial of $n$ plots arranged in a rectangular grid, where the plot positions are collected in vectors of row $(\mathbf{r})$ and column $(\mathbf{c})$ coordinates, and $\mathbf{y}$ is the vector of plot data in field order. Here the starting model for $\mathbf{y}$ is
-%%\begin{equation}
-%%    \mathbf{y}=\mathbf{X} \boldsymbol{\beta}+\mathbf{Z c}+\boldsymbol{\xi}+\boldsymbol{\eta}
-%%    \label{eq:AR_AR_base_model}
-%%\end{equation}
-%%where $\boldsymbol{\beta}^{(t \times 1)}$ is the vector of fixed effects with design matrix $\mathbf{X}^{(n \times t)}$, $\mathbf{c}^{(b \times 1)}$ is the vector of random effects with design matrix $\mathbf{Z}^{(n \times b)}$, $\boldsymbol{\xi}^{(n \times 1)}$ is a spatially dependent random error vector and $\boldsymbol{\eta}^{(n \times 1)}$ is a zero mean random error vector whose elements are pairwise independent. 
-%%It is also assumed that $(\mathbf{c}, \boldsymbol{\xi}, \boldsymbol{\eta})$ are pairwise independent and that their joint distribution is Gaussian with zero mean and variance
-%%\begin{equation}
-%%    \sigma^{2} \left[ 
-%%        \begin{array}{ccc}{\mathbf{G}(\boldsymbol{\gamma})} & {\mathbf{0}} & {\mathbf{0}} \\ {\mathbf{0}} & {\Sigma(\boldsymbol{\alpha})} & {\mathbf{0}} \\ {\mathbf{0}} & {\mathbf{0}} & {\psi \mathbf{I}}
-%%        \end{array}
-%%    \right]
-%%    \text{,}
-%%\end{equation}
-%%where $\psi = \sigma^2_{\eta}/\sigma^2$, $\boldsymbol{\gamma}$ is the vector of variance components ratios corresponding to possible subvectors in $\mathbf{c}$, and $\boldsymbol{\alpha}$ is a vector of spatial covariance parameters. The marginal distribution of $\mathbf{y}$ is then 
-%%\begin{equation}
-%%    \mathbf{y} \sim \mathbf{N}\left(\mathbf{X} \boldsymbol{\beta}, \sigma^{2}\left(\mathbf{Z} \mathbf{G} \mathbf{Z}^{t}+\mathbf{R}\right)\right)
-%%    \text{,}
-%%    \label{eq:y_distribtuion_AR}
-%%\end{equation}
-%%where $\mathbf{R}=\mathbf{R}(\phi)=\Sigma+\psi \mathbf{I}, \phi=\left(\boldsymbol{\alpha}^{t}, \psi\right)^{t}$.
-%%As said in previous sections, the goal of the ARXAR model is to use a variogram to estimate the errors terms of model \ref{eq:AR_AR_base_model} and therefore produce better estimates of the fixed effects of the model.\\
-%%
-%%\subsection{The variogram}
-%%Given a spatially correlated error process $\mathcal{E}(.)$ at point $\mathbf{s}$ and $\mathbf{t}$, the theoretical variogram (also called the semi-variogram) of $\mathcal{E}(.)$ is the function
-%%\begin{equation}
-%%    \omega(\mathbf{s}, \mathbf{t})=\frac{1}{2} \operatorname{var}[\mathcal{E}(\mathbf{s})-\mathcal{E}(\mathbf{t})]=\frac{1}{2}[\mathrm{V}(\mathbf{s}, \mathbf{s})+\mathrm{V}(\mathbf{t}, \mathbf{t})-2 \mathrm{V}(\mathbf{s}, \mathbf{t})]
-%%    \text{,}
-%%\end{equation}
-%%where $\mathbf{s,t} \in \Re^{2}$ and $\mathbf{V}(.,.)$ is the covariance function of $\mathcal{E}(.)$. Here, $\mathcal{E}(.)$ is assumed to be second-order stationary.
-%%To illustrate these concepts, we consider $\mathbf{e}=\boldsymbol{\xi}+\boldsymbol{\eta}$ where $\mathbf{e}$ is a zero mean spatially correlated process with a directional exponential covariance (DEC) structure distributed independently of $\boldsymbol{\eta}$, which is a zero mean white-noise process \parencite{cressie1992statistics}. Let
-%%\begin{equation*}
-%%    \mathbf{l}=\left[ \begin{array}{l}{l_{1}} \\ {l_{2}}\end{array}\right]=\left[ \begin{array}{l}{\left|s_{1}-t_{1}\right|} \\ {\left|s_{2}-t_{2}\right|}\end{array}\right]
-%%\end{equation*}
-%%be the "distance" between points $\mathbf{s}$ and $\mathbf{t}$. Then
-%%\begin{equation}
-%%    \begin{array}{llr}
-%%    {\omega(\mathbf{s}, \mathbf{t})=\omega(\mathbf{l})} & {=\sigma_{\eta}^{2}+\sigma^{2}\left[1-\exp \left(-\alpha_{1} l_{1}-\alpha_{2} l_{2}\right)\right]} & 
-%%    {\mathbf{l} \neq 0} \\ 
-%%    {} & 
-%%    {=0} & 
-%%    {\mathbf{l}=0}
-%%    \end{array}
-%%    \text{.}
-%%\end{equation}
-%%The measurement error term induces a jump discontinuity at $\mathbf{l}=0$. For most field experiments, where plots are arranged in regular arrays and therefore separated by equivalent distances, the displacement vector takes values for $l_1$ of $0,d_1,2d_1,\ldots,(r-1)d_1$ and for $l_2$ of $0,d_2,2d_2,\ldots,(c-1)d_2$, where $d_1$ and $d_2$ are the plot dimensions. Then the previous equation can be rewritten as a function of an indexed displacement vector $\mathbf{l}^{*}$ with values for $l_1^*$ of $0,1,2,\ldots,(r-1)$ and values for $l_2^*$ of $0,1,2,\ldots,(c-1)$, and becomes
-%%\begin{equation}
-%%    \begin{aligned}
-%%        \omega\left(\mathbf{l}^{*}\right) & = \sigma_{\eta}^{2}+\sigma^{2}\left[1-\exp \left(-\alpha_{1} d_{1} l_{1}^{*}-\alpha_{2} d_{2} l_{2}^{*}\right)\right] 
-%%        &  \\
-%%        & = \sigma_{\eta}^{2}+\sigma^{2}\left(1-\rho_{1}^{l_{1}^{*}} \rho_{2}^{l_{2}^{*}}\right) 
-%%        & \mathbf{l}^* \neq 0 \\
-%%        & = 0
-%%        & \mathbf{l}^* = 0 
-%%    \end{aligned}
-%%\end{equation}
-%%where $\rho_{1}=\exp \left(-\alpha_{1} d_{1}\right)$ and $\rho_{2}=\exp \left(-\alpha_{2} d_{2}\right)$. This formulation demonstrates the equivalence between the DEC model and the AR1 x AR1 model for field experiments.\\
-%%Considering the model given in equation \ref{eq:AR_AR_base_model}, the variogram ordinates for the data vector $\mathbf{y}$ are 
-%%\begin{equation}
-%%    v_{i j}=\frac{1}{2}\left[e_{i}\left(\mathbf{s}_{i}\right)-e_{j}\left(\mathbf{s}_{j}\right)\right]^{2} \quad \forall i, j=1, \ldots, n ; i \neq j
-%%    \label{eq:sample_vario_ordinates}
-%%\end{equation}
-%%where $\mathbf{e}=\{e_i(\mathbf{s}_i)\} = \mathbf{y} - \mathbf{X}\boldsymbol{\beta} - \mathbf{Zc}$. When $\boldsymbol{\beta}$ and $\mathbf{c}$ are known and under the assumption that $\mathbf{y}$ is Gaussian, the sampling distribution of $v_{i j}$ is 
-%%\begin{equation}
-%%    \frac{v_{i j}}{\omega\left(\mathbf{s}_{i}, \mathbf{s}_{j}\right)} \sim \chi_{1}^{2}
-%%\end{equation}
-%%so that $v_{i j}$ is unbiased for $\omega\left(\mathbf{s}_{i}, \mathbf{s}_{j}\right)$. As implied previously, many $v_{ij}$ will have the same absolute displacement since the plots are arranged in a regular array. Therefore the sample variogram is presented as the triplet $\left(l_{i j 1}, l_{i j 2}, \overline{v}_{i j}\right)$, where $l_{i j 1}=\left|s_{i 1}-s_{j 1}\right|$ and $l_{i j 2}=\left|s_{i 2}-s_{j 2}\right|$ are the absolute displacements and $\overline{v}_{ij}$ is the sample mean of the $v_{ij}$ with the same absolute displacements.
-%%
-%%\subsection{Model estimation}
-%%The result that $v_{i j}$ is unbiased for $\omega\left(\mathbf{s}_{i}, \mathbf{s}_{j}\right)$ is based on the assumptions that $\boldsymbol{\beta}$ and $\mathbf{c}$ are known. In practice, we replace $\boldsymbol{\beta}$ and $\mathbf{c}$ by their GLS estimates $( \widehat{\boldsymbol{\beta}})$ and BLUP $\left( \Hat{\mathbf{c}}\right)$ respectively, so that the BLUP of the residual vector is given by
-%%\begin{equation}
-%%    \Hat{\mathbf{e}} \quad=\quad \mathbf{y}-\mathbf{X} \widehat{\boldsymbol{\beta}}-\mathbf{Z} \widehat{\mathbf{c}}=\mathbf{RP} \mathbf{y}
-%%\end{equation} 
-%%where $\mathbf{P}=\mathbf{R}^{-1}-\mathbf{R}^{-1} \mathbf{W} \mathbf{C}^{-1} \mathbf{W}^{t} \mathbf{R}^{-1}$ with $\boldsymbol{W}=[\boldsymbol{X} \mathbf{Z}]$ and $\mathbf{C}=\mathbf{W}^{t} \mathbf{R}^{-1} \mathbf{W}+\mathbf{G}^{*}$ is the coefficient matrix from the mixed model equation and it partitioned in the same way as $\mathbf{W}$. $\mathbf{G}^*$ is a square matrix of order $t+b$, partitioned similarly to  $\mathbf{W}^{t} \mathbf{R}^{-1} \mathbf{W}$ and is 0 expect in the lower diagonal block corresponding to $\mathbf{Z}^{t} \mathbf{R}^{-1} \mathbf{Z}$, where it equals $\mathbf{G}^{-1}$.\\
-%%Under the assumption of a Gaussian distribution for $\mathbf{y}$, $\Hat{\mathbf{e}} \sim \mathrm{N}\left(\mathbf{0}, \sigma^{2}\left(\mathbf{R}-\mathbf{W} \mathbf{C}^{-1} \mathbf{W}^{t}\right)\right)$ assuming $(\gamma, \phi)$ is known. Following the decomposition of (\ref{eq:sample_vario_ordinates}), variogram ordinates $v_{ij}$ can be expressed as a quadratic form in $\mathbf{y}$, that is
-%%\begin{equation}
-%%    v_{i j}=\left(\mathbf{a}_{i j}^{t} \mathbf{e}\right)\left(\mathbf{a}_{i j}^{t} \mathbf{e}\right)=\mathbf{e}^{t} \mathbf{a}_{i j} \mathbf{a}_{i j}^{t} \mathbf{e}=\mathbf{e}^{t} \mathbf{A}_{i j} \mathbf{e}
-%%\end{equation}
-%%and similarly
-%%\begin{equation}
-%%    \Hat{v}_{i j}=\left(\mathbf{a}_{i j}^{t} \Hat{\mathbf{e}}\right)\left(\mathbf{a}_{i j}^{t} \Hat{\mathbf{e}}\right)=\Hat{\mathbf{e}}^{t} \mathbf{a}_{i j} \mathbf{a}_{i j}^{t} \Hat{\mathbf{e}}=\Hat{\mathbf{e}}^{t} \mathbf{A}_{i j} \Hat{\mathbf{e}}
-%%\end{equation}
-%%where $\mathbf{A}_{i j}^{(n \times n)}$ has a $1/2$ value in positions $\{i,i\}$ and $\{j,j\}$, a $-1/2$ value in positions $\{i,j\}$ and $\{j,i\}$ and $0$ elsewhere.\\
-%%Taking the expectation
-%%\begin{equation}
-%%    \begin{aligned}
-%%        \mathrm{E}\left(\Hat{v}_{i j}\right) 
-%%        & = \sigma^{2} \operatorname{trace}\left[\mathbf{A}_{i j}\left(\mathbf{R} - \mathbf{W} \mathbf{C}^{-1} \mathbf{W}^{t}\right)\right]   \\
-%%        & = \sigma^{2} \operatorname{trace}\left[\mathbf{A}_{i j} \mathbf{R}\right]-\sigma^{2} \text { trace }\left[\mathbf{A}_{i j} \mathbf{W} \mathbf{C}^{-1} \mathbf{W}^{t}\right] \\
-%%        & =\sigma^{2} \mathbf{a}_{i j}^{t} \mathbf{R} \mathbf{a}_{i j}-\sigma^{2} \mathbf{a}_{i j}^{t} \mathbf{W} \mathbf{C}^{-1} \mathbf{W}^{t} \mathbf{a}_{i j} \\
-%%        & =\quad \mathrm{E}\left(v_{i j}\right)-\sigma^{2} \mathbf{a}_{i j}^{t} \mathbf{W} \mathbf{C}^{-1} \mathbf{W}^{t} \mathbf{a}_{i j}
-%%    \end{aligned}
-%%\end{equation}
-%%Thus $\tilde{v}_{ij}$ is biased. However the bias can be removed by considering the spectral decomposition of $\mathbf{Z}\boldsymbol{G} \mathbf{Z}^{t}$ which has $t+b$ non-zero eigenvalues. Let
-%%\begin{equation}
-%%    \mathbf{W C}^{-1} \mathbf{W}^{\prime}=\sum_{k=1}^{t+b} \lambda_{k} \mathbf{w}_{k} \mathbf{w}_{k}^{\prime}
-%%    \text{,}
-%%\end{equation}
-%%then
-%%\begin{equation}
-%%    \begin{aligned}
-%%        \mathrm{E}\left(\Hat{v}_{i j}\right)
-%%        & =\mathrm{E}\left(v_{i j}\right)-\sigma^{2} \mathbf{a}_{i j}^{\prime}\left(\sum_{k} \lambda_{k} \mathbf{w}_{k} \mathbf{w}_{k}^{\prime}\right) \mathbf{a}_{i j} \\
-%%        & = \mathrm{E}\left(v_{i j}\right)-\sigma^{2} \sum_{h} \lambda_{k}\left(\mathbf{a}_{i j}^{\prime} \mathbf{w}_{k}\right)^{2} \\
-%%        & = \mathrm{E}\left(v_{i j}\right)-\sigma^{2} \sum_{k} \lambda_{k} \mathbf{w}_{k}^{\prime} \mathbf{A}_{i j} \mathbf{w}_{k}
-%%    \end{aligned}
-%%    \label{eq:estimation_v_ij_hat}
-%%\end{equation}
-%%Thus, the bias in  $\tilde{v}_{ij}$ is easily calculated as the weighted sum of the variogram ordinates for each of the $t + b$ eigenvectors $\mathbf{w}_k$. In practice, we are concerned with the general shape of the variogram, so it is often sufficient to use only the largest $r$ eigenvalues and their corresponding eigenvectors, where $r$ is much smaller than $t + b$. This derivation assumes $(\gamma,\phi)$ are known. In practice these are replaced by their REML estimates, so \ref{eq:estimation_v_ij_hat} is approximate. The effect of the estimation of $(\gamma,\phi)$ on the distribution of $\hat{\mathbf{e}}$ (and functions of $\hat{\mathbf{e}}$) is an important problem. \textcite{kenward1997precision} have examined this issue for the testing of fixed effects in REML.
-%%
-%%\subsection{Base model selection}
-%%"Do a section explaining model selection and which one was retained for our dataset. "
-%%See velazco ang gilmour for selection.
-%%
-%%\subsection{Extension to the linear variance (LV) model}
-%%
-%%\begin{formal}
-%%Explain how the model were fitted
-%%\end{formal}
 
 \section{Model comparison}
-The SpATS model was compared with the BSS models in terms of meaningful parameters for plant breeding application. The estimates considered for comparison are similar to those used by \textcite{velazco_modelling_2017}. The following estimates are:
+The SpATS model was compared with the BSS model in terms of quality of fit to the data and aility to detect genotype differences. Similar parameters to those used by \textcite{velazco_modelling_2017}, were considered for the comparison:
 \begin{itemize}
-    \item Genetic variance $(\sigma_g^2)$ and spatially independent residual variance $(\sigma_e^2)$. The goal being having a minimal variance in both cases.
-    \item Generalized heritability. Estimated as described previously for the SpATS model and as described by \textcite{cullis_design_2006} for the BSS model. In this case, the heritability is interpreted as the measure of the precision of a trial, i.e. the ability to detect genotypic differences among test-cross means. Given that our study does not incorporate a genetic relationship matrix, we can use equation \ref{eq:new_heritability} to perform a straightforward comparison between the heritability estimated by SpATS and that obtained from the BSS model \parencite{velazco_modelling_2017}.
-    \item Spearman rank correlation between predicted genotypic values for the different models in the same environment. This will allow us to compare the ranking of genotypes from the SpATS model and from the BSS model.
+    \item Genetic variance $(\sigma_g^2)$: precision of the genotype effect estimation. The generalized heritability will also
+    be used to asses the same parameter.
+    \item Spatially independent residual variance $(\sigma_e^2)$: precision of the overall fit to the data and ability to 
+    capture the spatial trends.
+    \item BLUPs of the genotypes: similarity between the estimates of the effect of each genotype for the two models.
 \end{itemize}
 It is interesting to note that \textcite{rodriguez-alvarez_correcting_2018} also use the Pearson correlations of predicted genotypes values between environments (i.e. field trials) as a way of comparing models. Since only one trial was studied in this thesis, this correlation cannot be used.
