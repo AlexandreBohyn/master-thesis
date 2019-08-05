@@ -40,6 +40,9 @@ data$P <- as.factor(filtered_data$POSITION)
 data$T <- as.factor(filtered_data$TANK)
 data$geno <- as.factor(filtered_data$REAL_GENOTYPE)
 
+# Export the model formatted data as csv (for SAS)
+write_csv(data, path = "SAS_data.csv")
+
 # Specify plot layout
 nseg1 <- 5
 nseg2 <- 99
