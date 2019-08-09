@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (MiKTeX 2.9.6960 64-bit) (preloaded format=pdflatex 2019.3.17)  6 AUG 2019 11:15
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (MiKTeX 2.9.6960 64-bit) (preloaded format=pdflatex 2019.3.17)  9 AUG 2019 12:07
 entering extended mode
 **./thesis_main.tex
 (thesis_main.tex
@@ -1978,6 +1978,16 @@ Underfull \hbox (badness 10000) in paragraph at lines 3--8
 
  []
 
+
+Underfull \hbox (badness 10000) in paragraph at lines 9--10
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 11--13
+
+ []
+
 pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has 
 been already used, duplicate ignored
 <to be read again> 
@@ -2043,7 +2053,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 88--97
 Underfull \vbox (badness 2343) has occurred while \output is active []
 
  [10]
-<figures/../../Figures/design_layout_moving.pdf, id=574, 542.025pt x 273.02pt>
+<figures/../../Figures/design_layout_moving.pdf, id=578, 542.025pt x 273.02pt>
 File: figures/../../Figures/design_layout_moving.pdf Graphic file (type pdf)
 <use figures/../../Figures/design_layout_moving.pdf>
 Package pdftex.def Info: figures/../../Figures/design_layout_moving.pdf  used o
@@ -2051,7 +2061,7 @@ n input line 139.
 (pdftex.def)             Requested size: 682.86613pt x 343.9737pt.
 LaTeX Font Info:    Font shape `T1/phv/bx/n' in size <10.95> not available
 (Font)              Font shape `T1/phv/b/n' tried instead on input line 141.
-<figures/../../Figures/design_layout_still.pdf, id=575, 542.025pt x 273.02pt>
+<figures/../../Figures/design_layout_still.pdf, id=579, 542.025pt x 273.02pt>
 File: figures/../../Figures/design_layout_still.pdf Graphic file (type pdf)
 <use figures/../../Figures/design_layout_still.pdf>
 Package pdftex.def Info: figures/../../Figures/design_layout_still.pdf  used on
@@ -2060,7 +2070,7 @@ Package pdftex.def Info: figures/../../Figures/design_layout_still.pdf  used on
 
 [11] [12 <./figures/../../Figures/design_layout_moving.pdf>] [13 <./figures/../
 ../Figures/design_layout_still.pdf>]
-<figures/germination_chamber_diagram.png, id=603, 751.30687pt x 377.91188pt>
+<figures/germination_chamber_diagram.png, id=607, 751.30687pt x 377.91188pt>
 File: figures/germination_chamber_diagram.png Graphic file (type png)
 <use figures/germination_chamber_diagram.png>
 Package pdftex.def Info: figures/germination_chamber_diagram.png  used on input
@@ -2068,13 +2078,13 @@ Package pdftex.def Info: figures/germination_chamber_diagram.png  used on input
 (pdftex.def)             Requested size: 432.48048pt x 217.5456pt.
 LaTeX Font Info:    Font shape `T1/phv/bx/n' in size <10> not available
 (Font)              Font shape `T1/phv/b/n' tried instead on input line 178.
-<figures/germination_ledge.png, id=604, 258.21469pt x 209.28188pt>
+<figures/germination_ledge.png, id=608, 258.21469pt x 209.28188pt>
 File: figures/germination_ledge.png Graphic file (type png)
 <use figures/germination_ledge.png>
 Package pdftex.def Info: figures/germination_ledge.png  used on input line 184.
 
 (pdftex.def)             Requested size: 216.24371pt x 175.27184pt.
-<figures/photo_germination_plate.jpg, id=605, 1758.57pt x 2168.1pt>
+<figures/photo_germination_plate.jpg, id=609, 1758.57pt x 2168.1pt>
 File: figures/photo_germination_plate.jpg Graphic file (type jpg)
 <use figures/photo_germination_plate.jpg>
 Package pdftex.def Info: figures/photo_germination_plate.jpg  used on input lin
@@ -2091,18 +2101,18 @@ Underfull \vbox (badness 5563) has occurred while \output is active []
 
  [15 <./figures/germination_chamber_diagram.png> <./figures/germination_ledge.p
 ng> <./figures/photo_germination_plate.jpg>]
-<figures/tank.jpg, id=625, 834.11626pt x 301.125pt>
+<figures/tank.jpg, id=629, 834.11626pt x 301.125pt>
 File: figures/tank.jpg Graphic file (type jpg)
 <use figures/tank.jpg>
 Package pdftex.def Info: figures/tank.jpg  used on input line 283.
 (pdftex.def)             Requested size: 432.48048pt x 156.13101pt.
-<figures/tank_transversal_view.png, id=626, 207.6558pt x 119.4864pt>
+<figures/tank_transversal_view.png, id=630, 207.6558pt x 119.4864pt>
 File: figures/tank_transversal_view.png Graphic file (type png)
 <use figures/tank_transversal_view.png>
 Package pdftex.def Info: figures/tank_transversal_view.png  used on input line 
 290.
 (pdftex.def)             Requested size: 216.24371pt x 124.43611pt.
-<figures/seed_platform_close_up.png, id=627, 569.12625pt x 204.765pt>
+<figures/seed_platform_close_up.png, id=631, 569.12625pt x 204.765pt>
 File: figures/seed_platform_close_up.png Graphic file (type png)
 <use figures/seed_platform_close_up.png>
 Package pdftex.def Info: figures/seed_platform_close_up.png  used on input line
@@ -2119,7 +2129,7 @@ n/12 and $\OML/cmm/m/it/12 NOT[]FG$
 [18
 
 ]
-<figures/NO_RS.jpg, id=645, 3083.52pt x 11442.75pt>
+<figures/NO_RS.jpg, id=649, 3083.52pt x 11442.75pt>
 File: figures/NO_RS.jpg Graphic file (type jpg)
 <use figures/NO_RS.jpg>
 Package pdftex.def Info: figures/NO_RS.jpg  used on input line 362.
@@ -2129,12 +2139,12 @@ Underfull \hbox (badness 1275) in paragraph at lines 363--363
 \T1/phv/m/n/10 di-tional root, other
  []
 
-<figures/NO_LS.jpg, id=646, 4111.36pt x 15257.0pt>
+<figures/NO_LS.jpg, id=650, 4111.36pt x 15257.0pt>
 File: figures/NO_LS.jpg Graphic file (type jpg)
 <use figures/NO_LS.jpg>
 Package pdftex.def Info: figures/NO_LS.jpg  used on input line 369.
 (pdftex.def)             Requested size: 88.77592pt x 329.41592pt.
-<figures/BAD_LS.jpg, id=647, 4111.36pt x 15257.0pt>
+<figures/BAD_LS.jpg, id=651, 4111.36pt x 15257.0pt>
 File: figures/BAD_LS.jpg Graphic file (type jpg)
 <use figures/BAD_LS.jpg>
 Package pdftex.def Info: figures/BAD_LS.jpg  used on input line 376.
@@ -2149,12 +2159,12 @@ Underfull \hbox (badness 1418) in paragraph at lines 377--377
 \T1/phv/m/n/10 (ob-struc-tion of an-
  []
 
-<figures/NO_SEED.jpg, id=648, 4111.36pt x 15257.0pt>
+<figures/NO_SEED.jpg, id=652, 4111.36pt x 15257.0pt>
 File: figures/NO_SEED.jpg Graphic file (type jpg)
 <use figures/NO_SEED.jpg>
 Package pdftex.def Info: figures/NO_SEED.jpg  used on input line 383.
 (pdftex.def)             Requested size: 88.77592pt x 329.41592pt.
-<figures/NOT_FG.jpg, id=649, 4111.36pt x 15257.0pt>
+<figures/NOT_FG.jpg, id=653, 4111.36pt x 15257.0pt>
 File: figures/NOT_FG.jpg Graphic file (type jpg)
 <use figures/NOT_FG.jpg>
 Package pdftex.def Info: figures/NOT_FG.jpg  used on input line 390.
@@ -2164,12 +2174,12 @@ Underfull \hbox (badness 1210) in paragraph at lines 391--391
 \T1/phv/m/n/10 com-pared to other
  []
 
-<figures/OVERLAP.jpg, id=650, 3083.52pt x 11442.75pt>
+<figures/OVERLAP.jpg, id=654, 3083.52pt x 11442.75pt>
 File: figures/OVERLAP.jpg Graphic file (type jpg)
 <use figures/OVERLAP.jpg>
 Package pdftex.def Info: figures/OVERLAP.jpg  used on input line 397.
 (pdftex.def)             Requested size: 88.77592pt x 329.29953pt.
-<figures/OK.jpg, id=651, 4111.36pt x 15257.0pt>
+<figures/OK.jpg, id=655, 4111.36pt x 15257.0pt>
 File: figures/OK.jpg Graphic file (type jpg)
 <use figures/OK.jpg>
 Package pdftex.def Info: figures/OK.jpg  used on input line 404.
@@ -2184,7 +2194,7 @@ figures/NO_SEED.jpg> <./figures/NOT_FG.jpg> <./figures/OVERLAP.jpg> <./figures/
 OK.jpg>] [21
 
 ]
-<figures/../figures/bilinear_polynomial.PNG, id=677, 869.49844pt x 532.23843pt>
+<figures/../figures/bilinear_polynomial.PNG, id=681, 869.49844pt x 532.23843pt>
 
 File: figures/../figures/bilinear_polynomial.PNG Graphic file (type png)
 <use figures/../figures/bilinear_polynomial.PNG>
@@ -2481,19 +2491,6 @@ er (name{equation.3.4.3}) has been already used, duplicate ignored
                    \relax 
 l.698 \begin{equation}
                       
-
-Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 704.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\times' on input line 704.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 704.
-
-
 Underfull \hbox (badness 10000) in paragraph at lines 706--707
 
  []
@@ -2538,7 +2535,7 @@ er (name{equation.3.5.1}) has been already used, duplicate ignored
                    \relax 
 l.724 \begin{equation}
                        [29]
-<figures/Variogram-for-a-standardised-AR1AR1-process.png, id=789, 853.1875pt x 
+<figures/Variogram-for-a-standardised-AR1AR1-process.png, id=793, 853.1875pt x 
 527.9725pt>
 File: figures/Variogram-for-a-standardised-AR1AR1-process.png Graphic file (typ
 e png)
@@ -2546,7 +2543,7 @@ e png)
 Package pdftex.def Info: figures/Variogram-for-a-standardised-AR1AR1-process.pn
 g  used on input line 774.
 (pdftex.def)             Requested size: 204.85844pt x 126.77237pt.
-<figures/AR1AR1-process-variogram-fit.PNG, id=790, 398.23781pt x 399.74344pt>
+<figures/AR1AR1-process-variogram-fit.PNG, id=794, 398.23781pt x 399.74344pt>
 File: figures/AR1AR1-process-variogram-fit.PNG Graphic file (type png)
 <use figures/AR1AR1-process-variogram-fit.PNG>
 Package pdftex.def Info: figures/AR1AR1-process-variogram-fit.PNG  used on inpu
@@ -2632,26 +2629,26 @@ Underfull \hbox (badness 10000) in paragraph at lines 3--5
 
  []
 
-<figures/../../Figures/DRY_LS_summary_plot.pdf, id=835, 542.025pt x 273.02pt>
+<figures/../../Figures/DRY_LS_summary_plot.pdf, id=839, 542.025pt x 273.02pt>
 File: figures/../../Figures/DRY_LS_summary_plot.pdf Graphic file (type pdf)
 <use figures/../../Figures/DRY_LS_summary_plot.pdf>
 Package pdftex.def Info: figures/../../Figures/DRY_LS_summary_plot.pdf  used on
  input line 12.
 (pdftex.def)             Requested size: 455.24408pt x 229.3144pt.
-<figures/../../Figures/DRY_RS_summary_plot.pdf, id=836, 542.025pt x 273.02pt>
+<figures/../../Figures/DRY_RS_summary_plot.pdf, id=840, 542.025pt x 273.02pt>
 File: figures/../../Figures/DRY_RS_summary_plot.pdf Graphic file (type pdf)
 <use figures/../../Figures/DRY_RS_summary_plot.pdf>
 Package pdftex.def Info: figures/../../Figures/DRY_RS_summary_plot.pdf  used on
  input line 18.
 (pdftex.def)             Requested size: 455.24408pt x 229.3144pt.
-<figures/../../Figures/FRESH_LS_summary_plot.pdf, id=837, 542.025pt x 273.02pt>
+<figures/../../Figures/FRESH_LS_summary_plot.pdf, id=841, 542.025pt x 273.02pt>
 
 File: figures/../../Figures/FRESH_LS_summary_plot.pdf Graphic file (type pdf)
 <use figures/../../Figures/FRESH_LS_summary_plot.pdf>
 Package pdftex.def Info: figures/../../Figures/FRESH_LS_summary_plot.pdf  used 
 on input line 27.
 (pdftex.def)             Requested size: 455.24408pt x 229.3144pt.
-<figures/../../Figures/FRESH_RS_summary_plot.pdf, id=838, 542.025pt x 273.02pt>
+<figures/../../Figures/FRESH_RS_summary_plot.pdf, id=842, 542.025pt x 273.02pt>
 
 File: figures/../../Figures/FRESH_RS_summary_plot.pdf Graphic file (type pdf)
 <use figures/../../Figures/FRESH_RS_summary_plot.pdf>
@@ -2663,7 +2660,7 @@ on input line 33.
 ] [35 <./figures/../../Figures/DRY_LS_summary_plot.pdf> <./figures/../../Figure
 s/DRY_RS_summary_plot.pdf>] [36 <./figures/../../Figures/FRESH_LS_summary_plot.
 pdf> <./figures/../../Figures/FRESH_RS_summary_plot.pdf>]
-<figures/TANK_repartition.pdf, id=877, 290.0436pt x 204.765pt>
+<figures/TANK_repartition.pdf, id=881, 290.0436pt x 204.765pt>
 File: figures/TANK_repartition.pdf Graphic file (type pdf)
 <use figures/TANK_repartition.pdf>
 Package pdftex.def Info: figures/TANK_repartition.pdf  used on input line 45.
@@ -2702,19 +2699,19 @@ Underfull \hbox (badness 10000) in paragraph at lines 88--90
 Underfull \vbox (badness 1997) has occurred while \output is active []
 
  [38]
-<figures/../../Figures/rawData_plot.pdf, id=910, 813.0375pt x 216.81pt>
+<figures/../../Figures/rawData_plot.pdf, id=914, 813.0375pt x 216.81pt>
 File: figures/../../Figures/rawData_plot.pdf Graphic file (type pdf)
 <use figures/../../Figures/rawData_plot.pdf>
 Package pdftex.def Info: figures/../../Figures/rawData_plot.pdf  used on input 
 line 118.
 (pdftex.def)             Requested size: 455.24408pt x 121.39622pt.
-<figures/../../Figures/fitted.png, id=911, 1734.48pt x 408.02437pt>
+<figures/../../Figures/fitted.png, id=915, 1734.48pt x 408.02437pt>
 File: figures/../../Figures/fitted.png Graphic file (type png)
 <use figures/../../Figures/fitted.png>
 Package pdftex.def Info: figures/../../Figures/fitted.png  used on input line 1
 24.
 (pdftex.def)             Requested size: 455.24408pt x 107.09244pt.
-<figures/../../Figures/residuals_plot.pdf, id=912, 813.0375pt x 216.81pt>
+<figures/../../Figures/residuals_plot.pdf, id=916, 813.0375pt x 216.81pt>
 File: figures/../../Figures/residuals_plot.pdf Graphic file (type pdf)
 <use figures/../../Figures/residuals_plot.pdf>
 Package pdftex.def Info: figures/../../Figures/residuals_plot.pdf  used on inpu
@@ -2722,11 +2719,16 @@ t line 130.
 (pdftex.def)             Requested size: 455.24408pt x 121.39622pt.
 
 [39] [40 <./figures/../../Figures/rawData_plot.pdf> <./figures/../../Figures/fi
-tted.png> <./figures/../../Figures/residuals_plot.pdf>]) [41]
-Chapter 5.
-(chapters/8conclusion.tex) [42
+tted.png> <./figures/../../Figures/residuals_plot.pdf>]
 
-] [43
+LaTeX Warning: Reference `fig:BSS_variograms' on page 41 undefined on input lin
+e 147.
+
+) [41] [42]
+Chapter 5.
+(chapters/8conclusion.tex) [43
+
+] [44
 
 
 ]
@@ -2741,24 +2743,24 @@ Overfull \hbox (4.50563pt too wide) in paragraph at lines 68--68
 omic Pre-dic-tion Ac-cu-racy in Wheat Breed-ing Through
  []
 
-[44]
+[45]
 Overfull \hbox (10.55583pt too wide) in paragraph at lines 68--68
 []\T1/phv/m/n/12 Lee, D.[]J. & Dur-bán, M. P-spline ANOVA-type in-ter-ac-tion m
 od-els for spatio-temporal
  []
 
-[45]
+[46]
 Overfull \hbox (5.86765pt too wide) in paragraph at lines 68--68
 []\T1/phv/m/n/12 Rodríguez-Álvarez, M. X., Lee, D.[]J., Kneib, T., Dur-bán, M. 
 & Eil-ers, P. Fast smooth-
  []
 
-[46] [47] [48
+[47] [48] [49
 
 
 ] (extra/appendix.tex
 Appendix A.
-[49
+[50
 
 ]
 
@@ -2769,9 +2771,9 @@ LaTeX Font Warning: Font shape `U/wasy/b/n' in size <8> not available
 LaTeX Font Warning: Font shape `U/wasy/b/n' in size <6> not available
 (Font)              Font shape `U/wasy/m/n' tried instead on input line 42.
 
-[50] [51] [52]
+[51] [52] [53]
 Appendix B.
-<figures/../../Figures/residuals_analysis_plot.pdf, id=1016, 813.0375pt x 389.4
+<figures/../../Figures/residuals_analysis_plot.pdf, id=1027, 813.0375pt x 389.4
 55pt>
 File: figures/../../Figures/residuals_analysis_plot.pdf Graphic file (type pdf)
 
@@ -2779,15 +2781,15 @@ File: figures/../../Figures/residuals_analysis_plot.pdf Graphic file (type pdf)
 Package pdftex.def Info: figures/../../Figures/residuals_analysis_plot.pdf  use
 d on input line 96.
 (pdftex.def)             Requested size: 614.57535pt x 294.39626pt.
-[53
+[54
 
 
-] [54 <./figures/../../Figures/residuals_analysis_plot.pdf>]
+] [55 <./figures/../../Figures/residuals_analysis_plot.pdf>]
 Overfull \hbox (14.37157pt too wide) in paragraph at lines 108--145
  [][] 
  []
 
-[55]
+[56]
 Appendix C.
 LaTeX Font Info:    Font shape `T1/phv/bx/n' in size <8> not available
 (Font)              Font shape `T1/phv/b/n' tried instead on input line 162.
@@ -2808,17 +2810,17 @@ Underfull \hbox (badness 1173) in paragraph at lines 184--184
 []|\T1/phv/b/n/12 1M KH[]PO[] (ph to
  []
 
-[56
-
-]
-Appendix D.
 [57
 
 ]
+Appendix D.
+[58
+
+]
 
 pdfTeX warning: pdflatex (file ./extra/platform_info.pdf): PDF inclusion: found
  PDF version <1.7>, but at most version <1.5> allowed
-<extra/platform_info.pdf, id=1048, 597.55246pt x 845.07718pt>
+<extra/platform_info.pdf, id=1058, 597.55246pt x 845.07718pt>
 File: extra/platform_info.pdf Graphic file (type pdf)
 <use extra/platform_info.pdf>
 Package pdftex.def Info: extra/platform_info.pdf  used on input line 199.
@@ -2839,7 +2841,7 @@ pdfTeX warning: pdflatex (file ./extra/platform_info.pdf): PDF inclusion: found
 
 pdfTeX warning: pdflatex (file ./extra/platform_info.pdf): PDF inclusion: found
  PDF version <1.7>, but at most version <1.5> allowed
-<extra/platform_info.pdf, id=1051, page=1, 597.55246pt x 845.07718pt>
+<extra/platform_info.pdf, id=1061, page=1, 597.55246pt x 845.07718pt>
 File: extra/platform_info.pdf Graphic file (type pdf)
 <use extra/platform_info.pdf, page 1>
 Package pdftex.def Info: extra/platform_info.pdf , page1 used on input line 199
@@ -2865,13 +2867,13 @@ File: extra/platform_info.pdf Graphic file (type pdf)
 Package pdftex.def Info: extra/platform_info.pdf , page1 used on input line 199
 .
 (pdftex.def)             Requested size: 784.7051pt x 1109.75424pt.
-[58
+[59
 
  <./extra/platform_info.pdf>]
 
 pdfTeX warning: pdflatex (file ./extra/platform_info.pdf): PDF inclusion: found
  PDF version <1.7>, but at most version <1.5> allowed
-<extra/platform_info.pdf, id=1080, page=2, 597.55246pt x 845.07718pt>
+<extra/platform_info.pdf, id=1091, page=2, 597.55246pt x 845.07718pt>
 File: extra/platform_info.pdf Graphic file (type pdf)
 <use extra/platform_info.pdf, page 2>
 Package pdftex.def Info: extra/platform_info.pdf , page2 used on input line 199
@@ -2885,93 +2887,93 @@ Package pdftex.def Info: extra/platform_info.pdf , page2 used on input line 199
 File: extra/platform_info.pdf Graphic file (type pdf)
 <use extra/platform_info.pdf, page 2>
 Package pdftex.def Info: extra/platform_info.pdf , page2 used on input line 199
-.
-(pdftex.def)             Requested size: 784.7051pt x 1109.75424pt.
-[59 <./extra/platform_info.pdf>]
-
-pdfTeX warning: pdflatex (file ./extra/platform_info.pdf): PDF inclusion: found
- PDF version <1.7>, but at most version <1.5> allowed
-<extra/platform_info.pdf, id=1090, page=3, 597.55246pt x 845.07718pt>
-File: extra/platform_info.pdf Graphic file (type pdf)
-<use extra/platform_info.pdf, page 3>
-Package pdftex.def Info: extra/platform_info.pdf , page3 used on input line 199
-.
-(pdftex.def)             Requested size: 784.7051pt x 1109.75424pt.
-File: extra/platform_info.pdf Graphic file (type pdf)
-<use extra/platform_info.pdf, page 3>
-Package pdftex.def Info: extra/platform_info.pdf , page3 used on input line 199
-.
-(pdftex.def)             Requested size: 784.7051pt x 1109.75424pt.
-File: extra/platform_info.pdf Graphic file (type pdf)
-<use extra/platform_info.pdf, page 3>
-Package pdftex.def Info: extra/platform_info.pdf , page3 used on input line 199
 .
 (pdftex.def)             Requested size: 784.7051pt x 1109.75424pt.
 [60 <./extra/platform_info.pdf>]
 
 pdfTeX warning: pdflatex (file ./extra/platform_info.pdf): PDF inclusion: found
  PDF version <1.7>, but at most version <1.5> allowed
-<extra/platform_info.pdf, id=1098, page=4, 597.55246pt x 845.07718pt>
+<extra/platform_info.pdf, id=1100, page=3, 597.55246pt x 845.07718pt>
 File: extra/platform_info.pdf Graphic file (type pdf)
-<use extra/platform_info.pdf, page 4>
-Package pdftex.def Info: extra/platform_info.pdf , page4 used on input line 199
+<use extra/platform_info.pdf, page 3>
+Package pdftex.def Info: extra/platform_info.pdf , page3 used on input line 199
 .
 (pdftex.def)             Requested size: 784.7051pt x 1109.75424pt.
 File: extra/platform_info.pdf Graphic file (type pdf)
-<use extra/platform_info.pdf, page 4>
-Package pdftex.def Info: extra/platform_info.pdf , page4 used on input line 199
+<use extra/platform_info.pdf, page 3>
+Package pdftex.def Info: extra/platform_info.pdf , page3 used on input line 199
 .
 (pdftex.def)             Requested size: 784.7051pt x 1109.75424pt.
 File: extra/platform_info.pdf Graphic file (type pdf)
-<use extra/platform_info.pdf, page 4>
-Package pdftex.def Info: extra/platform_info.pdf , page4 used on input line 199
+<use extra/platform_info.pdf, page 3>
+Package pdftex.def Info: extra/platform_info.pdf , page3 used on input line 199
 .
 (pdftex.def)             Requested size: 784.7051pt x 1109.75424pt.
 [61 <./extra/platform_info.pdf>]
 
 pdfTeX warning: pdflatex (file ./extra/platform_info.pdf): PDF inclusion: found
  PDF version <1.7>, but at most version <1.5> allowed
-<extra/platform_info.pdf, id=1113, page=5, 597.55246pt x 845.07718pt>
+<extra/platform_info.pdf, id=1108, page=4, 597.55246pt x 845.07718pt>
 File: extra/platform_info.pdf Graphic file (type pdf)
-<use extra/platform_info.pdf, page 5>
-Package pdftex.def Info: extra/platform_info.pdf , page5 used on input line 199
+<use extra/platform_info.pdf, page 4>
+Package pdftex.def Info: extra/platform_info.pdf , page4 used on input line 199
 .
 (pdftex.def)             Requested size: 784.7051pt x 1109.75424pt.
 File: extra/platform_info.pdf Graphic file (type pdf)
-<use extra/platform_info.pdf, page 5>
-Package pdftex.def Info: extra/platform_info.pdf , page5 used on input line 199
+<use extra/platform_info.pdf, page 4>
+Package pdftex.def Info: extra/platform_info.pdf , page4 used on input line 199
 .
 (pdftex.def)             Requested size: 784.7051pt x 1109.75424pt.
 File: extra/platform_info.pdf Graphic file (type pdf)
-<use extra/platform_info.pdf, page 5>
-Package pdftex.def Info: extra/platform_info.pdf , page5 used on input line 199
+<use extra/platform_info.pdf, page 4>
+Package pdftex.def Info: extra/platform_info.pdf , page4 used on input line 199
 .
 (pdftex.def)             Requested size: 784.7051pt x 1109.75424pt.
 [62 <./extra/platform_info.pdf>]
 
 pdfTeX warning: pdflatex (file ./extra/platform_info.pdf): PDF inclusion: found
  PDF version <1.7>, but at most version <1.5> allowed
-<extra/platform_info.pdf, id=1121, page=6, 597.55246pt x 845.07718pt>
+<extra/platform_info.pdf, id=1123, page=5, 597.55246pt x 845.07718pt>
 File: extra/platform_info.pdf Graphic file (type pdf)
-<use extra/platform_info.pdf, page 6>
-Package pdftex.def Info: extra/platform_info.pdf , page6 used on input line 199
+<use extra/platform_info.pdf, page 5>
+Package pdftex.def Info: extra/platform_info.pdf , page5 used on input line 199
 .
 (pdftex.def)             Requested size: 784.7051pt x 1109.75424pt.
 File: extra/platform_info.pdf Graphic file (type pdf)
-<use extra/platform_info.pdf, page 6>
-Package pdftex.def Info: extra/platform_info.pdf , page6 used on input line 199
+<use extra/platform_info.pdf, page 5>
+Package pdftex.def Info: extra/platform_info.pdf , page5 used on input line 199
 .
 (pdftex.def)             Requested size: 784.7051pt x 1109.75424pt.
 File: extra/platform_info.pdf Graphic file (type pdf)
-<use extra/platform_info.pdf, page 6>
-Package pdftex.def Info: extra/platform_info.pdf , page6 used on input line 199
+<use extra/platform_info.pdf, page 5>
+Package pdftex.def Info: extra/platform_info.pdf , page5 used on input line 199
 .
 (pdftex.def)             Requested size: 784.7051pt x 1109.75424pt.
 [63 <./extra/platform_info.pdf>]
 
 pdfTeX warning: pdflatex (file ./extra/platform_info.pdf): PDF inclusion: found
  PDF version <1.7>, but at most version <1.5> allowed
-<extra/platform_info.pdf, id=1136, page=7, 597.55246pt x 845.07718pt>
+<extra/platform_info.pdf, id=1131, page=6, 597.55246pt x 845.07718pt>
+File: extra/platform_info.pdf Graphic file (type pdf)
+<use extra/platform_info.pdf, page 6>
+Package pdftex.def Info: extra/platform_info.pdf , page6 used on input line 199
+.
+(pdftex.def)             Requested size: 784.7051pt x 1109.75424pt.
+File: extra/platform_info.pdf Graphic file (type pdf)
+<use extra/platform_info.pdf, page 6>
+Package pdftex.def Info: extra/platform_info.pdf , page6 used on input line 199
+.
+(pdftex.def)             Requested size: 784.7051pt x 1109.75424pt.
+File: extra/platform_info.pdf Graphic file (type pdf)
+<use extra/platform_info.pdf, page 6>
+Package pdftex.def Info: extra/platform_info.pdf , page6 used on input line 199
+.
+(pdftex.def)             Requested size: 784.7051pt x 1109.75424pt.
+[64 <./extra/platform_info.pdf>]
+
+pdfTeX warning: pdflatex (file ./extra/platform_info.pdf): PDF inclusion: found
+ PDF version <1.7>, but at most version <1.5> allowed
+<extra/platform_info.pdf, id=1146, page=7, 597.55246pt x 845.07718pt>
 File: extra/platform_info.pdf Graphic file (type pdf)
 <use extra/platform_info.pdf, page 7>
 Package pdftex.def Info: extra/platform_info.pdf , page7 used on input line 199
@@ -2987,10 +2989,10 @@ File: extra/platform_info.pdf Graphic file (type pdf)
 Package pdftex.def Info: extra/platform_info.pdf , page7 used on input line 199
 .
 (pdftex.def)             Requested size: 784.7051pt x 1109.75424pt.
-[64 <./extra/platform_info.pdf>]) (extra/back_cover.tex
+[65 <./extra/platform_info.pdf>]) (extra/back_cover.tex
 LaTeX Font Info:    Font shape `T1/phv/bx/n' in size <7> not available
 (Font)              Font shape `T1/phv/b/n' tried instead on input line 19.
-<figures/sedes.png, id=1143, 402.5439pt x 683.6742pt>
+<figures/sedes.png, id=1154, 402.5439pt x 683.6742pt>
 File: figures/sedes.png Graphic file (type png)
 <use figures/sedes.png>
 Package pdftex.def Info: figures/sedes.png  used on input line 28.
@@ -3000,12 +3002,12 @@ Overfull \hbox (18.18004pt too wide) in paragraph at lines 32--33
 [][][] 
  []
 
-) [65 <./figures/sedes.png>]pdfTeX warning (ext4): destination with the same id
-entifier (name{page.65}) has been already used, duplicate ignored
+) [66 <./figures/sedes.png>]pdfTeX warning (ext4): destination with the same id
+entifier (name{page.66}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
 l.77 \end{document}
-                    [65
+                    [66
 
 ]
 
@@ -3022,17 +3024,21 @@ Package atveryend Info: Empty hook `AfterLastShipout' on input line 77.
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 77.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 77.
 Package rerunfilecheck Info: File `thesis_main.out' has not changed.
-(rerunfilecheck)             Checksum: 4850CFC4E38B77EBEACC229ADC36FDCE;3607.
+(rerunfilecheck)             Checksum: B03C43245C897999F0335B0C97E538E8;3630.
+
+
+LaTeX Warning: There were undefined references.
+
 Package logreq Info: Writing requests to 'thesis_main.run.xml'.
 \openout1 = `thesis_main.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 48086 strings out of 492946
- 948393 string characters out of 3135527
- 1519502 words of memory out of 3000000
- 50857 multiletter control sequences out of 15000+200000
- 621208 words of font info for 164 fonts, out of 3000000 for 9000
+ 48079 strings out of 492946
+ 948304 string characters out of 3135527
+ 1519635 words of memory out of 3000000
+ 50849 multiletter control sequences out of 15000+200000
+ 618077 words of font info for 153 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
  57i,20n,81p,8366b,2008s stack positions out of 5000i,500n,10000p,200000b,50000s
  <C:\Users\alexa\AppData\Local\MiKTeX\2.9\fonts/pk/ljfour/jknappen/ec/dpi600\
@@ -3061,9 +3067,9 @@ les/MiKTeX 2.9/fonts/type1/public/tipa/tipa12.pfb><C:/Program Files/MiKTeX 2.9/
 fonts/type1/urw/helvetic/uhvb8a.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/ur
 w/helvetic/uhvr8a.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/urw/helvetic/uhv
 ro8a.pfb>
-Output written on thesis_main.pdf (74 pages, 14291995 bytes).
+Output written on thesis_main.pdf (75 pages, 14297027 bytes).
 PDF statistics:
- 1343 PDF objects out of 1440 (max. 8388607)
- 254 named destinations out of 1000 (max. 500000)
+ 1353 PDF objects out of 1440 (max. 8388607)
+ 257 named destinations out of 1000 (max. 500000)
  732 words of extra memory for PDF output out of 10000 (max. 10000000)
 
