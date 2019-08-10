@@ -11,7 +11,9 @@
 # USER DESIGNED FUNCTIONS -----------------------------------------------------
 library(SpATS)
 library(plot3D)
+library(gridExtra)
 vars <- c('FRESH_LS','FRESH_RS','DRY_LS','DRY_RS')
+load(file="SpATSFits.RData")
 
 # SPATS VARIOGRAMS ------------------------------------------------------------------
 
@@ -171,7 +173,8 @@ GenoMappedPlots <- map(vars, ~GenoComparativePlot(.x))
 
 # Plot in a 2 by 2 matrix
 GenoArrangedPlots <-  marrangeGrob(GenoMappedPlots, ncol = 2, nrow=2, top=NULL)
-ggsave(filename = "Figures/Genotype_Comparative_plots.pdf", plot = GenoArrangedPlots)
+ggsave(filename = "Figures/Genotype_Comparative_plots.pdf", 
+       plot = GenoArrangedPlots, width = 5.5, height = 7)
 
 
 
