@@ -25,31 +25,38 @@ QRreformat <- function(vec) {
 }
 
 summ_plot <- function(var) {
-  #' Creates a standard dot-plot type of plot that can be executed for 
-  #' every variables of interest
-  #' It plots the points, the weighted mean and the weighted sd as error bars
-  meanvar = paste(var, "mean", sep = "_")
-  SDvar = paste(var, "SD", sep = "_")
-  pd = position_dodge(width = 0.7)
-  ggplot(filtered_data, aes(x = factor(REAL_GENOTYPE),
-                            y = .data[[var]], color = TANK)) +
-    geom_point(size = 1, position = pd) +
-    geom_errorbar(data = summary_table,
-                  aes(x = factor(REAL_GENOTYPE),
-                      group = TANK,
-                      ymin = .data[[meanvar]] - .data[[SDvar]],
-                      ymax = .data[[meanvar]] + .data[[SDvar]]),
-                  colour = "black", width = 0.1, position = pd,
-                  inherit.aes = FALSE) +
-    geom_point(data = summary_table,
-               aes(x = factor(REAL_GENOTYPE), y = .data[[meanvar]], fill = TANK),
-               color = "black",
-               shape = 22, size = 1.75, inherit.aes = FALSE,
-               position = pd) +
-    theme_bw() +
-    theme(legend.position = "bottom") +
-    labs(x = "GENOTYPE",
-         y = labels[[var]])
+  summ_plot <- function(varname){
+    var <- enquo(varname)
+    filtered_data%>%
+      dplyr::filter(TANK == "A")%>%
+      mutate(GENO = as.factor(REAL_GENOTYPE))%>%
+      group_by(GENO)%>%
+      summarise(meanA  = mean(eval(parse_expr(!!var))))%>%
+      select(GENO,meanA) -> RM
+    RM <- rbind(RM,RM)
+    pd = position_dodge(width = 0.7)
+    
+    filtered_data%>%
+      mutate(GENO = as.factor(REAL_GENOTYPE))%>%
+      group_by(TANK,GENO)%>%
+      summarise(mean = mean(eval(parse_expr(!!var)), na.rm = T),
+                sd = sd(eval(parse_expr(!!var)), na.rm = T))%>%
+      ggplot(aes(x = fct_reorder(RM$GENO,RM$meanA, .desc = T), 
+                 y = mean, color = TANK))+
+      geom_point(aes(fill = TANK),
+                 color = "black",
+                 shape = 22, size = 1.75,
+                 position = pd)+
+      geom_errorbar(aes(x = fct_reorder(RM$GENO,RM$meanA, .desc = T),
+                        group = TANK,
+                        ymin = mean -0.5*sd,
+                        ymax = mean + 0.5*sd),
+                    colour = "black", width = 0.1, position = pd,
+                    inherit.aes = FALSE)+ 
+      theme_bw()+
+      theme(legend.position = "bottom") +
+      labs(x = "GENOTYPE",
+           y = labels[[varname]])
 }
 
 # Load data table and design table
@@ -107,7 +114,35 @@ filtered_data <- data_table %>%
 filtered_data <- filtered_data %>%
   mutate(REAL_GENOTYPE = ifelse(is.na(REAL_GENOTYPE) & w_WEIGHT > 0,
                                 GENOTYPE, REAL_GENOTYPE)
-  ) %>%
+  )
+
+# Save a side table for updated germination rates
+UPD_germ_rate <- filtered_data%>%
+  mutate(KEPT = ifelse(w_WEIGHT > 0 &
+                       !is.na(DRY_RS) &
+                       DRY_RS > 0 & FRESH_LS > 0 &
+                       REAL_GENOTYPE != 31, 1, 0))%>%
+  group_by(REAL_GENOTYPE)%>%
+  summarise(N_seeds_placed = n(),
+    N_seeds_used = sum(KEPT),
+    UPD_rate = round(sum(KEPT)/n()*100,1))%>%
+  arrange(desc(UPD_rate))
+
+# Output it to xtable and save it as txt file
+
+print(xtable(UPD_germ_rate, digits =c(0,0,0,0,1),
+             caption = "Effective on-platform germination rates (GR) and effective number of
+             seeds kept for data analysis (NS) for each genotype"),
+      file = "Tables/updated_germ_table.txt",
+      append = FALSE,
+      include.rownames = FALSE,
+      caption.placement = "top",
+      sanitize.text.function = identity,
+      booktabs = TRUE,
+      timestamp = NULL,
+      comment = FALSE)
+
+filtered_data <- filtered_data%>%
   dplyr::filter(w_WEIGHT > 0,
                 !is.na(DRY_RS),
                 DRY_RS > 0 & FRESH_LS > 0,
@@ -186,4 +221,5 @@ summary_plots <- map(vars, ~ summ_plot(.x))
 plotnames <- map(vars, ~ paste0("Figures/", .x, "_summary_plot.pdf"))
 walk2(plotnames, summary_plots,
       ~ ggsave(filename = .x, plot = .y, height = 3.78, width = 7.5))
+
 
