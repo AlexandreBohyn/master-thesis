@@ -4,7 +4,7 @@
 In the context of design of experiments (DOE), optimal designs are the holy grail that every experimenter want. However, researcher often use pre-made designs that fit a large amount of experiments instead of creating an optimal one. Since experimentations exist in all sizes and forms, not all pre-made designs are ideal. Therefore, creating an optimal design is a great choice to ensure that the design fits the experiment and not the other way around. In this section, we explain how and why we created a custom, optimal, design to fit our experiments.
 
 \subsection{Orthogonal designs}
-In design of experiments, orthogonal designs are interesting because they guarantees that each main effect and interaction can 
+Orthogonal designs are interesting because they guarantees that each main effect and interaction can 
 be estimated independently. Meaning that the effect of one factor or interaction can be estimated separately from the effect of 
 other factors
 and that the addition or subtraction of terms in the model does not affect the estimates.
@@ -15,15 +15,14 @@ These variances are often represented in variance-covariance (VCOV) matrix,
 where the diagonal is the variance of the estimators and the non-diagonal elements are the pairwise covariances between 
 estimators. 
 The inverse of this matrix is the information matrix, 
-because it summarizes the available information  on the model's coefficients (a low variance means a lot of information, and 
+because it summarizes the available information  on the models coefficients (a low variance means a lot of information, and 
 inversely).
 As detailed in \textcite{goos_optimal_2011}, when the information matrix is diagonal, then the design is said to be orthogonal.
 
 \subsection{Optimality criteria}
-In order to generate optimal designs, one needs to use an optimality criterion to compare different designs. 
-The two main criteria are the D-optimality and the I-optimality. 
+To compare different designs, the two main criteria are the D-optimality and the I-optimality. 
 The first one aims at minimizing the variance of the factors effects estimates and is more useful for significance testing. 
-D-optimal designs are therefore more appropriate for screening experiments. 
+D-optimal designs are therefore more appropriate for screening experiments\footnote{Screening experiments are experiments designed to evaluate the significance of factors and factor-interactions in a model. The factor are usually two-level factor because they are either present in the model or not. They are opposed to response surface (RS) experiments that are designed to find the optimal settings for the factors. In RS experiments, the significant factors of the model are already determined.}. 
 The second one aims at minimizing the average relative prediction variance over the experimental region. 
 I-optimal designs are focused on prediction and thus are more suited to response surface experiments.
 There also exists a G-optimality criterion that is similar to the I-optimality criterion but minimizes the maximum prediction 
@@ -40,7 +39,7 @@ Since the goal is to have the smallest variance of the estimates, the VCOV matri
 estimates with the smallest variance. 
 Minimizing the determinant of the VCOV matrix is similar to maximizing the determinant of the information matrix. 
 Therefore, the design with factor settings that maximize the determinant of information matrix, 
-will maximize the available information about the model's parameters. 
+will maximize the available information about the models parameters. 
 This design is called the "D-optimal design", 
 where the "D" stands for determinant and the value of the determinant itself is called the "D-optimality criterion".
 
@@ -56,7 +55,7 @@ The D-optimal designs may not be unique. For a specified number of runs,
 
 
 \subsection{Generating optimal designs}
-In order to generate an optimal design, the determinant of the $\mathbf{X}^{\prime}\mathbf{X}$ matrix needs to be computed 
+In order to generate an optimal design, the determinant of the variance-covariance matrix needs to be computed 
 multiple times. 
 Therefore algorithms are used to gain time and avoid errors. 
 Several algorithms exist but the most common one is 
@@ -119,21 +118,16 @@ and tank effect. Four factors were considered:
 \item [Genotype] Which one of the 30 genotypes was used (1 to 30).
 \end{description}
 
-To fit the design, the design of experiment (DOE) tool was used in JMP. The four categorical factors were specified and 
+To fit the design, the design of experiment (DOE) tool of JMP was used. The four categorical factors were specified and 
 \textit{Tank} and \textit{Strip} were set to "very hard to change" and "hard to change", respectively. Two whole plots of 99 
 sub-plots each were specified to match the tanks and the strips. With 99 strips of five positions inside two tanks, 990 
-experimental runs were available.\\
+experimental units were available.\\
 Initially the design was supposed to take into account the 99 different strips individually but the program couldn't converge to 
 an optimal design because of its complexity. Instead only 33 strips were considered and the design was replicated 3 times to 
 match the number of runs. Figures \ref{fig:moving_layout_30_geno} and \ref{fig:still_layout_30_geno}, display a schematic view 
 of the design for the moving and still tank respectively.\\
-The seeds were provided by the national institute of agronomic research (INRA) in Montpellier, France, as part of their own 
-research on these historical series\footnote{Historical series correspond to varieties that have been cultivated and bred for 
-some time, mainly due to their physiological specificities.}. They sent a total of 30 seeds per genotype and besides that, an 
-extra 150 seeds of another genotype, called the "border genotype", was sent by the provider. The main utility of the border 
-genotype is to fill the gaps left by non germinated seeds. Since, in this experiment, only 900 runs (30 genotypes x 30 seeds) 
-were occupied, the border genotype was also be used to fill the 90 empty runs. Since this genotype is not part of the historical 
-series, it was not considered in the design of the experiment.
+The seeds were provided by researchers from the french national institute of agronomic research (INRA). A subset of 30 maize hybrids was chosen among an historical series\footnote{Historical series correspond to varieties that have been cultivated and bred for 
+some time, mainly due to their physiological specificities.} of maize hybrids that were characterised by their commercial success at the time of their release. Claude Wlecker (LEPSE, INRA) and Carine Palaffre (SMH Maïs, INRA) prepared and sent a total of 30 seeds per genotype plus an extra 150 seeds of genotype called "border genotype" hereafter, used to fill the gaps in the platform left by non germinated seeds and the 90 empty spots left. This genotype is not part of the historical series and was therefore not considered in the design of the experiment.
 
 \begin{sidewaysfigure}[ht]
     \includegraphics[width=\textwidth]{../../Figures/design_layout_moving.pdf} 
@@ -149,11 +143,11 @@ series, it was not considered in the design of the experiment.
     \label{fig:still_layout_30_geno}
 \end{sidewaysfigure}
 
-\subsection{Design's characteristics}
+\subsection{Design characteristics}
 
 
 \section{Phenotyping experiment}
-The phenotyping experiment took place between February 25th and March 13th. The seeds were first germinated and then transferred 
+The phenotyping experiment took place between February 25th and March 13th 2019. The seeds were first germinated and then transferred 
 onto the platform. After the end of the experiment the plants were weighted, dried and weighted again to obtain dry and fresh 
 weight.
 
@@ -201,7 +195,7 @@ There were 17 plates in total, 15 for the 30 genotypes and 2 for the border geno
     \end{figure}
 
 After 3 days into the chamber, not all seeds were germinated, table \ref{tab:germination_percentage} presents the germination 
-rates and mean seed weights for all the genotypes used (including the border genotype). The non-germination was mainly due to 
+rates and mean seed weights for all the genotypes used (including the border genotype). Here the germination rate is defined as the number of germinated seeds over the total number of seeds used in the chamber. However, the actual germination rate (updated rate where the number of fallen seeds, that did not get the chance germinate, is removed from the total) was not recorded in this experiment. It can be an interesting information since germination rates can be genotypes-related too. The non-germination was mainly due to 
 the fact that seeds fell into the water bed and because mold grew on some filtering paper.
 
 %table for the germination rates after the outside germination process
@@ -304,20 +298,20 @@ After 3 days in the germination chamber, the germinated seeds were transferred o
 
 \section{Data processing}
 After 15 days, the plants were considered fully grown and the experiment was stopped. The leaf and root systems were separated and weighted individually on scales precise to 0.001 g. They were then dried for 3 days in a 70$^{\circ}$C oven. After the drying process, they were weighted again. For each plant, the remaining of the seed was consistently kept on the root system.
-Two kind of data were obtained from the experiment: weight data (dry and fresh) of the fully grown plants and root scan data. Five variables were kept for the spatial analysis:
+From the weighting, four variables were kept for the spatial analysis:
 
 \begin{itemize}
 \item $FRESH\_RS$: fresh weight of the root system
 \item $FRESH\_LS$: fresh weight of the leaf system
 \item $DRY\_RS$: dry weight of the root system
 \item $DRY\_LS$: dry weight of the leaf system
-\item $AREA$: percentage of the total area occupied by the root system
+%\item $AREA$: percentage of the total area occupied by the root system
 \end{itemize} 
 
-To be used as inputs in the models, those data need to be processed. The following sections details this step.
-
-\subsection{Weight data}
-For some plants, the germinated seeds placed on the platform did not fully grow or had an abnormal growth, but all the plants were still weighted to avoid leaving out any data. Therefore some data points need to be handled more carefully, as they do not represent the genotype's growth correctly. However, a correct growth, representative of the genotype, is hard to define because the influence of the conditions on each genotype is unknown. Therefore, instead of choosing which plants are outliers in a binary way, we attributed weights to each plant to express the quality of the data. Those weights were established by reviewing the final root scan of each plant and checking the different factors that could have an influence. The factors chosen are the following:
+%To be used as inputs in the models, those data need to be processed. The following sections details this step.
+%
+%\subsection{Weight data}
+For some plants, the germinated seeds placed on the platform did not fully grow or had an abnormal growth, but all the plants were still weighted to avoid leaving out any data. Therefore some data points need to be handled more carefully, as they do not represent the genotype's growth correctly. However, a  growth representative of the genotype is hard to define because the influence of the conditions on each genotype is unknown. Therefore, instead of choosing which plants are outliers in a binary way, we attributed weights to each plant to express the quality of the data. Those weights were established by reviewing the final root scan of each plant and checking the different factors that could have an influence. The factors chosen are the following:
 
 \begin{itemize}
 \item $NO\_RS$: no additional root to the primary root
@@ -329,7 +323,7 @@ For some plants, the germinated seeds placed on the platform did not fully grow 
 \item $OK$: no influential factors
 \end{itemize} 
 
-An visualization of those factors with example pictures is presented in figure \ref{fig:example_influential_factors}. Some plants were attributed several influential factors, but $OK$, $NO\_SEED$ and $NOT\_FG$ were considered as exclusive. The factor attribution was ambiguous for some pictures, in those cases the plant were considered $OK$ to avoid losing any data points.
+A visualization of those factors with example pictures is presented in figure \ref{fig:example_influential_factors}. Some plants were attributed several influential factors, but $OK$, $NO\_SEED$ and $NOT\_FG$ were considered as exclusive. The factor attribution was ambiguous for some pictures, in those cases the plant were considered $OK$ to avoid losing any data points.
 Following the determination of the factors, weights were attributed to each variable according to the weight matrix, presented in table \ref{tab:weight_attribution_matrix}.
 
 
@@ -338,17 +332,17 @@ Following the determination of the factors, weights were attributed to each vari
   \centering
   \caption[Weight attribution matrix]{Weight attribution matrix for the different factors and variables. LS weight is both the fresh and dry weight for leaf system and RS weight is the same for the root system}
   	\rowcolors{2}{gray!25}{white}
-    \begin{tabular}{lrrr}
+    \begin{tabular}{lr}
     \toprule
-    CODE  & LS weight & RS weight & Area \\
+    Code  & Weight \\
     \midrule
-    NO\_RS & 1     & 1     & 1 \\
-    NO\_LS & 2     & 2     & 2 \\
-    BAD\_LS & 3     & 3     & 3 \\
-    NOT\_FG & 4     & 4     & 4 \\
-    NO\_SEED & 0	& 0		& 0 \\
-    OK 		& 5 	& 5 	& 5 \\
-    OVERLAP & 5     & 5     & 0 \\
+    NO\_RS & 1 \\
+    NO\_LS & 2   \\
+    BAD\_LS & 3  \\
+    NOT\_FG & 4 \\
+    NO\_SEED & 0\\
+    OK 		& 5  \\
+    OVERLAP & 5  \\
     \bottomrule
     \end{tabular}%
   \label{tab:weight_attribution_matrix}%
@@ -402,16 +396,17 @@ Following the determination of the factors, weights were attributed to each vari
 \begin{subfigure}[t]{.13\textwidth}
   \centering
   \includegraphics[width=\linewidth]{figures/OK.jpg}
-  \caption{$OK$, the green box represents the bounding area for the computation of the root area}
+  \caption{$OK$%, the green box represents the bounding area for the computation of the root area
+  			}
   \label{fig:OK}
 \end{subfigure}
 %
 \caption{Example pictures of the influential factors chosen for the weight attribution.}
 \label{fig:example_influential_factors}
 \end{sidewaysfigure}
-
-\subsection{Root pictures}
-The area of the root system was computed using the final root scan of each plant. Each picture was converted to gray-scale, resized to a specific bounding rectangle and binarized. The bounding box is illustrated on figure \ref{fig:OK}. The threshold for the binarization was 140 on a 0 to 255 scale. Since the roots are black on the original picture, the binarization was completed without any issues. The area of the root system was expressed as a percentage of the total area of the bounding box, by counting the black pixels in the image. All the processing was done in python using the opencv package.
+%
+%\subsection{Root pictures}
+%The area of the root system was computed using the final root scan of each plant. Each picture was converted to gray-scale, resized to a specific bounding rectangle and binarized. The bounding box is illustrated on figure \ref{fig:OK}. The threshold for the binarization was 140 on a 0 to 255 scale. Since the roots are black on the original picture, the binarization was completed without any issues. The area of the root system was expressed as a percentage of the total area of the bounding box, by counting the black pixels in the image. All the processing was done in python using the opencv package.
 
 
 \section{SpATS model}
@@ -514,7 +509,7 @@ columns) and $\breve{\lambda}$ (smoothing along the rows).
 
 \subsection{Mixed model based smoothing parameter selection}
 
-As explained in \textcite{rodriguez-alvarez_spatial_2016}, $\mathbf{P}$ is rank-deficient, meaning that the rank is smaller than the 
+As explained in \textcite{rodriguez-alvarez_spatial_2016}, $\mathbf{P}$ is rank-deficient, meaning that the rank\footnote{The rank of a matrix is the maximum number of linearly independent row-vectors.} is smaller than the 
 number of rows and/or columns, and this causes numerical instability when applying mixed model estimation techniques. To obtain 
 a full-rank penalty matrix, the key is to write model \ref{eq:spline_model_mat_form} as 
 \begin{equation}

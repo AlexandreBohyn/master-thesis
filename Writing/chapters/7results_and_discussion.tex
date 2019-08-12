@@ -1,17 +1,81 @@
 %Results
 \section{Descriptive statistics}
 Before the experiment, the seeds were weighted in groups of ten, to see if there was a baseline difference between certain genotypes. Table \ref{tab:germination_percentage}, in the previous section, displays the measured weights.
-After the completion of the experiment, the outliers were identified, and each plant was attributed a specific weight, following the protocol described in material and methods section. Those weights were used to compute the weighted mean and weighted standard deviation of the fresh and dry weight of the root system and the leaf system, as well as the area of the root system, for each plant. Dotplots representing those descritptive statistics as well as the data point are presented in figure \ref{fig:dotplot_all_variables}. The numerical values of these results are presented in table \ref{tab:summary_table_all_variables}, in appendix \ref{appendix:mean_std_table}.\\
+After the completion of the experiment, the outliers were identified, and each plant was attributed a specific weight, following the protocol described in material and methods section. Those weights were used to compute the weighted mean and weighted standard deviation of the fresh and dry weight of the root system and the leaf system for each plant.\\
 
-Even though no clear conclusions can be made from these figures, we can see large variation of mean values between genotypes. Also, for some genotypes, the difference between tanks seem significant (e.g. genotype 15) while it's clearly not the case for some other (e.g. genotype 7). This implies that the tank and genotypes effects are significant. Overall the values of dry weights seem to have less variations than the fresh weights.
+Because of germination problems on the platform and inside the germination chamber, not all genotypes were similarly represented in the experiment. Table \ref{tab:updated_germ_rates} presents the effective germination rates for each genotype, i.e. the number of seed actually kept for the spatial analysis over the number of seeds placed on the platform. This table is interesting because germination rate is a genotypic feature. Since the genotypes are sorted by their effective germination rate, we see clear discrepancies between genotypes, indicating that some may not be well suited to aeroponic growth. Only 6 genotypes have a germination rate lower than 50\% (below the dashed line on table \ref{tab:updated_germ_rates}, even though more than 15 seeds where placed on the platform. Thus, we expect to see a lower yield in all variables for these genotypes.
+
+\begin{table}[hbtp]
+  \rowcolors{2}{gray!25}{white}
+\centering
+\caption[Effective germination rates]{Effective on-platform germination rates (GR) with the number of seeds kept for data analysis (NS kept) and the number 
+of seeds actually placed on the platform (NS placed) for each genotype. The dotted line represents the 50\% germination rate limit.} 
+\begin{tabular}{lrrr}
+  \toprule
+Genotype & NS placed & NS kept & GR \\ 
+  \midrule
+25 & 29 & 27 & 93.1 \\ 
+  23 & 22 & 20 & 90.9 \\ 
+  16 & 27 & 23 & 85.2 \\ 
+  18 & 26 & 22 & 84.6 \\ 
+  3 & 29 & 24 & 82.8 \\ 
+  17 & 27 & 21 & 77.8 \\ 
+  19 & 30 & 23 & 76.7 \\ 
+  1 & 24 & 18 & 75.0 \\ 
+  12 & 28 & 21 & 75.0 \\ 
+  14 & 26 & 19 & 73.1 \\ 
+  28 & 26 & 19 & 73.1 \\ 
+  9 & 29 & 20 & 69.0 \\ 
+  6 & 29 & 19 & 65.5 \\ 
+  7 & 29 & 19 & 65.5 \\ 
+  4 & 23 & 15 & 65.2 \\ 
+  27 & 29 & 18 & 62.1 \\ 
+  21 & 26 & 16 & 61.5 \\ 
+  5 & 30 & 18 & 60.0 \\ 
+  24 & 30 & 18 & 60.0 \\ 
+  10 & 29 & 17 & 58.6 \\ 
+  20 & 26 & 15 & 57.7 \\ 
+  22 & 18 & 10 & 55.6 \\ 
+  29 & 28 & 15 & 53.6 \\ 
+  13 & 27 & 14 & 51.9 \\\hdashline 
+  15 & 18 & 9 & 50.0 \\ 
+  2 & 26 & 12 & 46.2 \\ 
+  11 & 19 & 8 & 42.1 \\ 
+  26 & 29 & 12 & 41.4 \\ 
+  8 & 21 & 8 & 38.1 \\ 
+  30 & 23 & 3 & 13.0 \\ 
+  31 & 127 & 0 & 0.0 \\ 
+   & 80 & 0 & 0.0 \\ 
+   \bottomrule
+\end{tabular}
+\label{tab:updated_germ_rates}
+\end{table}
+
+To verify those assumptions, we created boxplots representing those descritptive statistics as well as the data point are presented in figure \ref{fig:dotplot_all_variables}. The numerical values of these results are presented in table \ref{tab:summary_table_all_variables}, in appendix \ref{appendix:mean_std_table}.
+Even though no clear conclusions can be made from these figures, we can see large variation of mean values between genotypes. Also, for some genotypes, the difference between tanks seem significant (e.g. genotype 15 on figure \ref{desc_stat_DRY_LS}) while it's clearly not the case for some other (e.g. genotype 7 on figure \ref{desc_stat_DRY_LS}). This implies that the tank and genotypes effects are significant. Overall the values of dry weights seem to have less variations than the fresh weights.
+
+\begin{table}[ht]
+\centering
+\begin{tabular}{rrrrr}
+  \hline
+ & DRY\_LS & DRY\_RS & FRESH\_RS & FRESH\_LS \\ 
+  \hline
+DRY\_LS & 1.00 & 0.70 & 0.84 & 0.93 \\ 
+  DRY\_RS & 0.70 & 1.00 & 0.76 & 0.68 \\ 
+  FRESH\_RS & 0.84 & 0.76 & 1.00 & 0.93 \\ 
+  FRESH\_LS & 0.93 & 0.68 & 0.93 & 1.00 \\ 
+   \hline
+\end{tabular}
+\end{table}
 
 \begin{figure}
 \centering
 	\begin{subfigure}[t]{\textwidth}
+	\label{fig:desc_stat_DRY_LS}
 		\centering
 		\includegraphics[width = \textwidth]{../../Figures/DRY_LS_summary_plot.pdf}
 		\caption{Dry leaf weight ($DRY\_LS$)}
-	\end{subfigure}
+			\end{subfigure}
 
 	\begin{subfigure}[t]{\textwidth}
 		\centering
@@ -144,21 +208,23 @@ For the standard spatial model analysis, a baseline model, only considering a fi
 \item Separable process along the rows or columns $LV\otimes J$
 \item Separable process along the rows and columns $LV \times LV$
 \end{itemize}
-At each step, the AIC and the Deviance were computed and the best model was selected using this criterion (a lower value is preferred). Table \ref{tab:selected_BSS_models} gives the structure of the final model for each variable. ...INTERPRETATION OF THOSE MODELS (similar or not ?). Then the variograms of the residuals were analysed to see if any leftover spatial pattern was still there. Figure \ref{fig:BSS_variograms} presents those variograms, ..INTERPRETATION.. + ANALYSIS of the residuals in the same way as the SpATS model.
+At each step, the AIC and the Deviance were computed and the best model was selected using this criterion (a lower value is preferred). Table \ref{tab:selected_BSS_models} gives the structure of the final selected model for each variable. ...INTERPRETATION OF THOSE MODELS (similar or not ?).\\ 
+
+Then the variograms of the residuals were analysed to see if any leftover spatial pattern was still there. Figure \ref{fig:BSS_variograms} presents those variograms, ..INTERPRETATION.. + ANALYSIS of the residuals in the same way as the SpATS model.
 
 \begin{table}[htbp]
   \rowcolors{2}{gray!25}{white}
   \centering
   \caption[Selected BSS models]{Best standard spatial (BSS) model selected for each of the four variables. All the models 
-  contain an intercept and a fixed effect for the tank. $P$ represents a random effect for the positions (columns), $S$ a random effect for the strips (rows) and $n$ represent the spatially independent residuals.}
+  contain an intercept and a fixed effect for the tank and a random effect for the genotypes. $P$ represents a random effect for the positions (columns), $S$ a random effect for the strips (rows) and $n$ represent the spatially independent residuals.}
     \begin{tabular}{lr}
     \toprule
     Variable & \multicolumn{1}{l}{BSS} \\
     \midrule
-    FRESH\_LS & $P + S + AR(1) + n$  \\
-    FRESH\_RS &  \\
-    DRY\_LS &  \\
-    DRY\_RS &  \\
+    FRESH\_LS & $ S + P + AR(1) \times AR(1) + n$  \\
+    FRESH\_RS &  $ S + P  + AR(1) \times AR(1) + n$ \\
+    DRY\_LS & $S + LV\times LV + n$ \\
+    DRY\_RS &  $S + LV+LV+n$\\
     \bottomrule
     \end{tabular}%
 \label{tab:selected_BSS_models}
@@ -208,6 +274,7 @@ Table \ref{tab:BSS_variance_values} gives the value of the variance and correlat
     \multirow{3}[1]{*}{Tank A} & SpATS & 2,9527 & 3,7282 & 0,2164 & 0,2223 \\
           & BSS   & 2,7016 & 3,2975 & 0,2075 & 0,1959 \\
           & $\Delta$ & 0,2511 & 0,4307 & 0,0089 & 0,0264 \\
+    \midrule
     \multirow{3}[1]{*}{Tank B} & SpATS & 1,3343 & 1,1445 & 0,1622 & 0,1523 \\
           & BSS   & 1,3056 & 1,1185 & 0,1660 & 0,1606 \\
           & $\Delta$ & 0,0287 & 0,0260 & 0,0038 & 0,0083 \\
@@ -220,6 +287,7 @@ Table \ref{tab:BSS_variance_values} gives the value of the variance and correlat
 
 % Table generated by Excel2LaTeX from sheet 'Sheet1'
 \begin{table}[htbp]
+\rowcolors{2}{gray!25}{white}
   \centering
   \caption[Comparison of both models in term of genetic variance and residual variance]{Comparison of both models in term of genetic variance and residual variance. $\Delta$ represents the absolute difference between the two variances. }
     \begin{tabular}{clrrrr}
@@ -238,6 +306,13 @@ Table \ref{tab:BSS_variance_values} gives the value of the variance and correlat
 
   \label{tab:sigma_model_comparison}%
 \end{table}%
+
+\begin{figure}
+	\centering
+	\includegraphics[width=\textwidth]{../../Figures/Genotype_Comparative_plots.pdf} 
+	\caption[Comparison of the genotype BLUPs from the SpATS model and the BSS model]{Comparison of the genotype BLUPs from the SpATS model and the BSS model, with the spearman's rank correlation (bottom right corner of each panel).}
+	\label{fig:genotype_comparison_BSS_SPATS}
+\end{figure}
 
 %\subsection{Performances}
 %\subsection{Parametrization}
