@@ -15,6 +15,7 @@
 #' - Genotype information table (GENO_INFO.xlsx)
 #'
 # USER DESIGNED FUNCTIONS -----------------------------------------------------
+library(rlang)
 QRreformat <- function(vec) {
   #' Reformats the QRcode from the weighting data into standard QR format
   return(paste(toupper(str_sub(vec, 1, 1)),
@@ -24,8 +25,7 @@ QRreformat <- function(vec) {
   )
 }
 
-summ_plot <- function(var) {
-  summ_plot <- function(varname){
+summ_plot <- function(varname) {
     var <- enquo(varname)
     filtered_data%>%
       dplyr::filter(TANK == "A")%>%
@@ -43,16 +43,16 @@ summ_plot <- function(var) {
                 sd = sd(eval(parse_expr(!!var)), na.rm = T))%>%
       ggplot(aes(x = fct_reorder(RM$GENO,RM$meanA, .desc = T), 
                  y = mean, color = TANK))+
-      geom_point(aes(fill = TANK),
-                 color = "black",
-                 shape = 22, size = 1.75,
-                 position = pd)+
       geom_errorbar(aes(x = fct_reorder(RM$GENO,RM$meanA, .desc = T),
                         group = TANK,
                         ymin = mean -0.5*sd,
                         ymax = mean + 0.5*sd),
-                    colour = "black", width = 0.1, position = pd,
-                    inherit.aes = FALSE)+ 
+                    size = 0.4, colour = "black", width = 0.2, position = pd,
+                    inherit.aes = FALSE)+
+      geom_point(aes(fill = TANK),
+                 color = "black",
+                 shape = 22, size = 1.75,
+                 position = pd)+
       theme_bw()+
       theme(legend.position = "bottom") +
       labs(x = "GENOTYPE",
