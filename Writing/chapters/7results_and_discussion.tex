@@ -1,15 +1,38 @@
 %Results
 \section{Descriptive statistics}
 Before the experiment, the seeds were weighted in groups of ten, to see if there was a baseline difference between certain genotypes. Table \ref{tab:germination_percentage}, in the previous section, displays the measured weights.
-After the completion of the experiment, the outliers were identified, and each plant was attributed a specific weight, following the protocol described in material and methods section. Those weights were used to compute the weighted mean and weighted standard deviation of the fresh and dry weight of the root system and the leaf system for each plant.\\
+After the completion of the experiment, the outliers were identified, and each plant was attributed a specific weight, following the protocol described in material and methods section. Those weights were used to compute the weighted mean and weighted standard deviation of the fresh and dry weight of the root system and the leaf system for each plant. Even though we have four variables in our analysis, it is important to notice that there is a high correlation between the variables (see table \ref{tab:var_correlation}) and that the analysis of fewer variables or other less-correlated variables (non-measured here) could be more efficient.\\
 
-Because of germination problems on the platform and inside the germination chamber, not all genotypes were similarly represented in the experiment. Table \ref{tab:updated_germ_rates} presents the effective germination rates for each genotype, i.e. the number of seed actually kept for the spatial analysis over the number of seeds placed on the platform. This table is interesting because germination rate is a genotypic feature. Since the genotypes are sorted by their effective germination rate, we see clear discrepancies between genotypes, indicating that some may not be well suited to aeroponic growth. Only 6 genotypes have a germination rate lower than 50\% (below the dashed line on table \ref{tab:updated_germ_rates}, even though more than 15 seeds where placed on the platform. Thus, we expect to see a lower yield in all variables for these genotypes.
+\begin{table}[ht]
+\rowcolors{2}{gray!25}{white}
+\centering
+ \caption{Correlation matrix of the four variables.}
+\begin{tabular}{lrrrr}
+  \hline
+ & DRY\_LS & DRY\_RS & FRESH\_RS & FRESH\_LS \\ 
+  \hline
+DRY\_LS & 1.00 & 0.70 & 0.84 & 0.93 \\ 
+  DRY\_RS & 0.70 & 1.00 & 0.76 & 0.68 \\ 
+  FRESH\_RS & 0.84 & 0.76 & 1.00 & 0.93 \\ 
+  FRESH\_LS & 0.93 & 0.68 & 0.93 & 1.00 \\ 
+   \hline
+\end{tabular}
+\label{tab:var_correlation}
+\end{table}
+
+Because of germination problems on the platform and inside the germination chamber, not all genotypes were similarly represented in the experiment. Table \ref{tab:updated_germ_rates} presents the effective germination rates for each genotype, i.e. the number of seed actually kept for the spatial analysis over the number of seeds placed on the platform. This table is interesting because germination rate is a genotypic feature. Since the genotypes are sorted by their effective germination rate, we see clear discrepancies between genotypes, indicating that some may not be well suited to aeroponic growth. Only 6 genotypes have a germination rate lower than 50\% (below the dashed line on table \ref{tab:updated_germ_rates}, even though more than 15 seeds where placed on the platform. Thus, we expect to see a lower yield in all variables for these genotypes.\\
+
+To verify those assumptions, we created boxplots ordered by descending mean value for tank A, presented in figure \ref{fig:dotplot_all_variables}. The numerical values of these results are presented in table \ref{tab:summary_table_all_variables}, in appendix \ref{appendix:mean_std_table}.
+The mean value for tank A is almost always higher than for tank B expect for some genotypes (21, 30, 22 and 12 on figure a), letting us believe that those genotypes might be more suited to a still growing environment. Apart from those, there is a clear difference in yield between the two tanks, but it is more pronounced for the fresh weights, and overall the values of dry weights seem to have less variations than the fresh weights. Even though the order of the genotypes is not the same for all variables, a few genotypes (e.g. 16,4,6 and 29 on all figures) always show a higher mean value.
+This implies that the tank and genotypes effects might be significant. In order to further test that, an analysis of the mean differences can be useful. 
+
 
 \begin{table}[hbtp]
   \rowcolors{2}{gray!25}{white}
 \centering
 \caption[Effective germination rates]{Effective on-platform germination rates (GR) with the number of seeds kept for data analysis (NS kept) and the number 
 of seeds actually placed on the platform (NS placed) for each genotype. The dotted line represents the 50\% germination rate limit.} 
+\begin{minipage}{0.45\textwidth}
 \begin{tabular}{lrrr}
   \toprule
 Genotype & NS placed & NS kept & GR \\ 
@@ -28,7 +51,18 @@ Genotype & NS placed & NS kept & GR \\
   9 & 29 & 20 & 69.0 \\ 
   6 & 29 & 19 & 65.5 \\ 
   7 & 29 & 19 & 65.5 \\ 
-  4 & 23 & 15 & 65.2 \\ 
+  4 & 23 & 15 & 65.2 \\
+  \vdots & \vdots & \vdots & \vdots \\
+  \bottomrule
+ \end{tabular}
+ 
+\end{minipage} \hfill
+\begin{minipage}{0.45\textwidth}
+ \begin{tabular}{lrrr}
+   \toprule
+Genotype & NS placed & NS kept & GR \\ 
+  \midrule
+    \vdots & \vdots & \vdots & \vdots \\
   27 & 29 & 18 & 62.1 \\ 
   21 & 26 & 16 & 61.5 \\ 
   5 & 30 & 18 & 60.0 \\ 
@@ -44,29 +78,13 @@ Genotype & NS placed & NS kept & GR \\
   26 & 29 & 12 & 41.4 \\ 
   8 & 21 & 8 & 38.1 \\ 
   30 & 23 & 3 & 13.0 \\ 
-  31 & 127 & 0 & 0.0 \\ 
-   & 80 & 0 & 0.0 \\ 
    \bottomrule
 \end{tabular}
+
+ \end{minipage}
 \label{tab:updated_germ_rates}
 \end{table}
 
-To verify those assumptions, we created boxplots representing those descritptive statistics as well as the data point are presented in figure \ref{fig:dotplot_all_variables}. The numerical values of these results are presented in table \ref{tab:summary_table_all_variables}, in appendix \ref{appendix:mean_std_table}.
-Even though no clear conclusions can be made from these figures, we can see large variation of mean values between genotypes. Also, for some genotypes, the difference between tanks seem significant (e.g. genotype 15 on figure \ref{desc_stat_DRY_LS}) while it's clearly not the case for some other (e.g. genotype 7 on figure \ref{desc_stat_DRY_LS}). This implies that the tank and genotypes effects are significant. Overall the values of dry weights seem to have less variations than the fresh weights.
-
-\begin{table}[ht]
-\centering
-\begin{tabular}{rrrrr}
-  \hline
- & DRY\_LS & DRY\_RS & FRESH\_RS & FRESH\_LS \\ 
-  \hline
-DRY\_LS & 1.00 & 0.70 & 0.84 & 0.93 \\ 
-  DRY\_RS & 0.70 & 1.00 & 0.76 & 0.68 \\ 
-  FRESH\_RS & 0.84 & 0.76 & 1.00 & 0.93 \\ 
-  FRESH\_LS & 0.93 & 0.68 & 0.93 & 1.00 \\ 
-   \hline
-\end{tabular}
-\end{table}
 
 \begin{figure}
 \centering
@@ -82,7 +100,7 @@ DRY\_LS & 1.00 & 0.70 & 0.84 & 0.93 \\
 		\includegraphics[width = \textwidth]{../../Figures/DRY_RS_summary_plot.pdf}
 		\caption{Dry root weight ($DRY\_RS$)}
 	\end{subfigure}
-	\caption[Dotplot of the mean weight and associated standard deviation]{Dotplot displaying mean weight (\protect\emptysquare) and associated standard deviation (\protect\blackline), grouped by tanks for each variable.}
+	\caption[Boxplot of the mean weight and associated standard deviation]{Boxplot displaying mean weight (\protect\emptysquare) and associated standard deviation (\protect\blackline), grouped by tanks and ordered by descending mean value for tank A.}
 \end{figure}
 \begin{figure}\ContinuedFloat
 	\captionsetup[figure]{list=no}
@@ -97,18 +115,19 @@ DRY\_LS & 1.00 & 0.70 & 0.84 & 0.93 \\
 		\includegraphics[width = \textwidth]{../../Figures/FRESH_RS_summary_plot.pdf}
 		\caption{Fresh root weight ($FRESH\_RS$)}
 	\end{subfigure}
-	\caption[Dotplot of the mean weight and associated standard deviation]{Dotplot displaying mean weight (\protect\emptysquare) and associated standard deviation (\protect\blackline), grouped by tanks for each variable.}
+	\caption[Boxplot of the mean weight and associated standard deviation]{Boxplot displaying mean weight (\protect\emptysquare) and associated standard deviation (\protect\blackline), grouped by tanks and order by descending mean value for tank A.}
 	\label{fig:dotplot_all_variables}
 \end{figure}
 
 \section{SpATS analysis}
-The SpATS model usually takes rows and columns coordinates as inputs for spatial position. Given that we have tanks (A and B), strips (from 1 to 99) and positions (from 1 to 5), we reshaped the data to give have the tank side by side and the 99 strips divided in two columns (to have a similar disposition to the one in the greenhouse). Figure \ref{fig:tank_disposition} shows the reshaping of the positions. This new display of the data allows us to see the difference between tanks more clearly and to visualize the variables' values as they were in the greenhouse.
+The SpATS model usually takes rows and columns coordinates as inputs for spatial position. To stay consistent with the platform notation, we replaced the rows by the strips and the columns by the positions. Given that we have tanks (A and B), strips (from 1 to 99) and positions (from 1 to 5), this coordinate replacement would have given us a field with 99 rows and 5 columns. In order to match the platform setup, we reshaped the data to have the tank side by side and the 99 strips divided in two columns, so that we would have a field with 50 rows and 20 columns. Figure \ref{fig:tank_disposition} shows the reshaping of the positions. This new display of the data allows us to see the difference between tanks more clearly and to visualize the variables values as they were in the greenhouse.
 
 \begin{figure}[hbtp]
 	\centering
 	\includegraphics[scale = 0.7]{figures/TANK_repartition.pdf}
 	\caption[Reshaping of the data table to fit the disposition of the greenhouse]{Reshaping of the data table to fit the 
-	disposition of the greenhouse. The number indicates the original strip number.}
+	disposition of the greenhouse. The black number indicates the original strip number and the red numbers indicates the new 
+	numbers used in the spatial models.}
 	\label{fig:tank_disposition}	
 \end{figure}
 
@@ -145,9 +164,9 @@ Concerning the dry weights, the variation is more spread between all the compone
   \label{tab:spats_dimensions}%
 \end{table}%
 
-Table \ref{tab:spats_dimensions} also presents the effective dimension of the genetic component ($ED_{g}$) which is quite similar across variables. This is reflected in the heritability values which are all around 75\%. However, it should be noted that the SpATS model tends to overestimate the heritability \parencite{rodriguez-alvarez_spatial_2016}. This means that a good part of the phenotypic variation can be attributed to genotypes.\\
+Table \ref{tab:spats_dimensions} also presents the effective dimension of the genetic component ($ED_{g}$) The effective dimensions of the genetic component were similar across variables with heritability values around 0.75. A large part of the phenotypic variation could be attributed the the genotypes. However, it should be noted that the SpATS model tends to overestimate the heritability \parencite{rodriguez-alvarez_spatial_2016}.
 
-Figure \ref{fig:spats_model_results} shows the raw data ($\mathbf{a}$), a graphical representation of the fitted spatial trend ($f(\boldsymbol{u}, \boldsymbol{v})$) ($\mathbf{b}$) and the spatially independent residuals $\boldsymbol{\epsilon}$ ($\mathbf{c}$) obtained from the SpATS package. While there are a lot of missing data, someone spatial trends still stand out. Just as predicted with the dotplot in the descriptive statistics section, weights in the B tank are lower than in the A tank. This is especially visible for the fresh weight, where the total weight range is greater than for the dry weights.\\
+Figure \ref{fig:spats_model_results} shows the raw data ($\mathbf{a}$), a graphical representation of the fitted spatial trend ($f(\boldsymbol{u}, \boldsymbol{v})$) ($\mathbf{b}$) and the spatially independent residuals $\boldsymbol{\epsilon}$ ($\mathbf{c}$) obtained from the SpATS package. While there are a lot of missing data (only 503 plots were used on the 990 planned), some spatial trends still stand out. Just as predicted with the dotplot in the descriptive statistics section, weights in the B tank are lower than in the A tank. This is especially visible for the fresh weight, where the total weight range is greater than for the dry weights.\\
 
 The inspection of the fitted spatial surfaces shows us that the trends have been captured by the SpATS model. An additional analysis of the residuals suggests that the spatial patterns have effectively been removed in all four variables by the tow-dimensional spline surface. However, some high data points still persists in the residuals, this is mainly due to the high variability of the weights in the raw data. In order to fully analyse the residuals, two additional diagnosis plots have been created: a lagplot to test for spatial independence and a normal distribution to test for the normality assumption. These plots are presented in appendix \ref{appendix:residuals}. Overall, the residuals seem to be independent and normally distributed, which confirms again that the spatial pattern has been well-captured by the model. Another interesting tool to evaluate the spatial independence is the variogram, presented in the previous chapter (section \ref{sec:arxar_model}). 
 As said previously, if the model for spatial trend fits well, the variogram should be a horizontal plane \parencite{piepho_linear_2010}.\\
@@ -199,7 +218,7 @@ Finally, another interesting result from figure \ref{fig:spats_model_results} is
 \end{figure}
 
 \section{Standard spatial model analysis}
-For the standard spatial model analysis, a baseline model, only considering a fixed effect for the tanks and random effects the rows, columns and the genotypes, was fitted for each of the four variables considered. Each model was then augmented by adding linear regression terms on the rows and columns and one of the following covariance structure:
+For the standard spatial model analysis,we fitted a baseline model, only considering a fixed effect for the tanks and random effects the rows, columns and the genotypes, for each variable. Each model was then augmented by adding linear regression terms on the rows and columns and one of the following covariance structure:
 \begin{itemize}
 \item $AR(1)$ process along the rows or columns
 \item $AR(1) \times AR(1)$ process
@@ -208,37 +227,29 @@ For the standard spatial model analysis, a baseline model, only considering a fi
 \item Separable process along the rows or columns $LV\otimes J$
 \item Separable process along the rows and columns $LV \times LV$
 \end{itemize}
-At each step, the AIC and the Deviance were computed and the best model was selected using this criterion (a lower value is preferred). Table \ref{tab:selected_BSS_models} gives the structure of the final selected model for each variable. ...INTERPRETATION OF THOSE MODELS (similar or not ?).\\ 
+At each step, the AIC  was computed and used to select the best model (a lower value is preferred). Table \ref{tab:selected_BSS_models} gives the structure of the final selected model for each variable. All the models contained an intercept, a fixed effect term for the tanks and a random effect term for the genotypes.\\
 
-Then the variograms of the residuals were analysed to see if any leftover spatial pattern was still there. Figure \ref{fig:BSS_variograms} presents those variograms, ..INTERPRETATION.. + ANALYSIS of the residuals in the same way as the SpATS model.
+First let us analyse the difference between the models for the fresh weights and the dry weights. We see that, for the fresh weights, the models only contains a random effect on the strips (rows) and not the positions (columns). This is similar to the interpretation of the effective dimensions of the SpATS model from table \ref{tab:spats_dimensions}, that highlighted the strong strip effect and the almost non-existing position effect. The second difference is the spatial covariance structure. The fresh weights were best represented by an auto-regressive process whereas the dry weights needed a linear covariance structure. \textcite{piepho_linear_2010} explain in their paper that both structures give similar results with large auto-correlation ($\rho$) values, which is the case here (see table \ref{tab:BSS_variance_values}). We encountered some convergence issues when fitting the $AR(1)$ structure on the dry weight models, which might explain the better AIC value of the $LV$ models, since they are less prone to convergence problems when the auto-correlation is close to one \parencite{piepho_linear_2010}. The third difference only concerns the dry weight models. They both use a linear covariance structure but DRY\_LS uses the superimposed structures whereas DRY\_LS uses the separable model. The only difference between those models is the way they model the pairwise variances for plots on different strips (rows) and different positions (columns), but overall they yield similar results in most cases \parencite{piepho_linear_2010}. Finally all variables used a strips-by-positions covariance structure, illustrating the fact that the spatial trends display complex patterns that cannot be accounted for by a one dimensional process only.
 
 \begin{table}[htbp]
   \rowcolors{2}{gray!25}{white}
   \centering
   \caption[Selected BSS models]{Best standard spatial (BSS) model selected for each of the four variables. All the models 
   contain an intercept and a fixed effect for the tank and a random effect for the genotypes. $P$ represents a random effect for the positions (columns), $S$ a random effect for the strips (rows) and $n$ represent the spatially independent residuals.}
-    \begin{tabular}{lr}
+    \begin{tabular}{ll}
     \toprule
     Variable & \multicolumn{1}{l}{BSS} \\
     \midrule
-    FRESH\_LS & $ S + P + AR(1) \times AR(1) + n$  \\
-    FRESH\_RS &  $ S + P  + AR(1) \times AR(1) + n$ \\
-    DRY\_LS & $S + LV\times LV + n$ \\
-    DRY\_RS &  $S + LV+LV+n$\\
+    FRESH\_LS & $ S + AR(1) \times AR(1) + n$  \\
+    FRESH\_RS &  $ S + AR(1) \times AR(1) + n$ \\
+    DRY\_LS & $S + P + LV\times LV + n$ \\
+    DRY\_RS &  $S + P + LV+LV+n$\\
     \bottomrule
     \end{tabular}%
 \label{tab:selected_BSS_models}
 \end{table}%
 
-%\begin{figure}
-%
-%\caption[Variograms for the four variables]{Variograms for the four variables.}
-%	\centering
-%	\includegraphics[width = \textwidth]{}
-%\label{fig:BSS_variograms}
-%\end{figure}
-
-Table \ref{tab:BSS_variance_values} gives the value of the variance and correlation components for each spatial model.
+To evaluate the complexity of the spatial patterns captured by the spatial covariance structure, it is useful to look at the variances of the error terms (both spatially dependent and independent) and the auto-correlation values for the auto-regressive structures (table \ref{tab:BSS_variance_values}). Both fresh weight models exhibit a large auto-correlation value for the strips meaning that there are strong spatial variations along the rows and the columns. They can be seen as a combination of large-scale gradients and small patches. However, \textcite{piepho_problems_2015} suggest that auto-correlation values close to one indicates confounding between the trends and the rows/strips. Concerning the variances, the residuals variances are still very large for all variables, indicating that the spatial patterns are both complex and not well captured by the models. \textcite{dutkowski2002spatial} also suggest analysing the ratio of the spatially-dependant variance over the residual variance, as it represents the intensity of the spatial variations. Here the ratios are all very low (a ratio indicating highly varying pattern is usually larger than two), meaning that the spatial patterns are not very intense. However, this goes against the conclusions from the SpATS model, that indicated highly heterogeneous spatial trends. Therefore, we explain this difference by a relatively bad fit of the standard spatial models.\\
 
 % Table generated by Excel2LaTeX from sheet 'Sheet1'
 \begin{table}[htbp]
@@ -247,17 +258,42 @@ Table \ref{tab:BSS_variance_values} gives the value of the variance and correlat
   \caption{Add caption}
     \begin{tabular}{lrrrrrr}
     \toprule
-    Variable & \multicolumn{1}{l}{$\rho_{s}$} & \multicolumn{1}{l}{$\rho_{p}$} & \multicolumn{1}{l}{$\sigma_{g}^{2}$} & \multicolumn{1}{l}{$\sigma_{\xi}^{2}$} & \multicolumn{1}{l}{$\sigma_{\varepsilon}^{2}$} &  \\
+    Variable & \multicolumn{1}{l}{$\rho_{s}$} & \multicolumn{1}{l}{$\rho_{p}$} & \multicolumn{1}{l}{$\sigma_{g}^{2}$} & \multicolumn{1}{l}{$\sigma_{\xi}^{2}$} & \multicolumn{1}{l}{$\sigma_{\varepsilon}^{2}$} & Ratio $\xi / \varepsilon$ \\
     \midrule
-    FRESH\_LS &       &       &       &       &       &  \\
-    FRESH\_RS &       &       &       &       &       &  \\
-    DRY\_LS &       &       &       &       &       &  \\
-    DRY\_RS &       &       &       &       &       &  \\
+    FRESH\_LS &   0,998    &    0,992   &    0,1828   &    1,659   &    4,560   & 0.0401 \\
+    FRESH\_RS &   0,993    &   0,952    &    0,2644   &    0,7095   &   4,924    & 0,1441 \\
+    DRY\_LS &   .    &     .  &   1,339$\times 10^{-3}$   &    4.521$\times 10^{-5}$   &   3.321$\times 10^{-3}$    & 1.36$ \times 10^{-3}$ \\
+    DRY\_RS &  .   &  .   &    7.351$\times 10^{-4}$   &   3,024$\times 10^{-6}$    &    1.280$\times 10^{-2}$   & 2.36$\times 10^{-4}$ \\
     \bottomrule
     \end{tabular}%
   \label{tab:BSS_variance_values}%
 \end{table}%
 
+To better visualize the fit of the model onto the data, we plotted the raw data, the fitted values and the residuals of each variables, in a similar fashion than for the SpATS model. These graphs are presented on figure \ref{}.
+
+\begin{figure}
+	\begin{subfigure}[t]{\textwidth}
+		\centering
+		\includegraphics[width = \textwidth]{../../Figures/BSS_rawData_plot.pdf}
+		\caption{Raw data}
+	\end{subfigure}
+	
+	\begin{subfigure}[t]{\textwidth}
+		\centering
+		\includegraphics[width = \textwidth]{../../Figures/BSS_FittedData_plot.pdf}
+		\caption{Fitted spatial trend}
+	\end{subfigure}
+	
+	\begin{subfigure}[t]{\textwidth}
+		\centering
+		\includegraphics[width = \textwidth]{../../Figures/BSS_residuals_plot.pdf}
+		\caption{Residuals' spatial plot}
+	\end{subfigure}
+	\caption{Raw data, fitted spatial trend and residuals' plot for each variable.}
+	\label{fig:spats_model_results}
+\end{figure}
+
+%Then the variograms of the residuals were analysed to see if any leftover spatial pattern was still there. Figure \ref{fig:BSS_variograms} presents those variograms, ..INTERPRETATION.. + ANALYSIS of the residuals in the same way as the SpATS model.
 
 
 \section{Model comparison}
