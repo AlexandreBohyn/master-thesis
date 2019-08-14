@@ -15,6 +15,63 @@ library(gridExtra)
 vars <- c('FRESH_LS','FRESH_RS','DRY_LS','DRY_RS')
 load(file="SpATSFits.RData")
 
+# BSS plots --------------------------------------------------------------------
+library(gridExtra)
+
+vars <- c('FRESH_LS','FRESH_RS','DRY_LS','DRY_RS')
+
+# Load the dataset of each variable
+LoadSASData <- function(varname){
+  var <- enquo(varname)
+  path <- paste0("Inputs/SAS datasets/",varname,"_PRED.xlsx")
+  data <- read_xlsx(path)%>%
+    select(STRIP,POSITION,geno,Pred,Resid, 
+           Response = !!var)
+  return(data)
+}
+
+SASDatasets <- map(vars, ~LoadSASData(.x))
+names(SASDatasets) <- vars
+
+BSSPlotData<- function(x,var,interp=FALSE){
+  response <- enquo(var)
+  ggplot(data = SASDatasets[[x]], aes(x = POSITION, y = STRIP, fill = !!response))+
+    geom_raster(hjust = 0, vjust = 0, interpolate = interp)+
+    geom_line(aes(x = 10), color = 'black')+
+    geom_line(aes(x = 5), color = 'black', linetype = "dotted", size = 0.2)+
+    geom_line(aes(x = 15), color = 'black', linetype = "dotted", size = 0.2)+
+    scale_x_continuous(expand = c(0,0))+
+    scale_y_continuous(expand = c(0,0))+
+    scale_fill_gradientn(na.value = 'white',
+                         colours = grDevices::topo.colors(100))+
+    coord_fixed(ratio = 20/50)+
+    guides(fill = guide_colourbar(barwidth = 0.5, barheight = 9,
+                                  title = "", frame.colour = "black", 
+                                  ticks.colour = "black"))+
+    theme_bw()+
+    labs(x = "POSITION", y = "STRIP",
+         title = x)
+}
+
+# Raw data plot
+raw_data_plots_list <- map(vars, ~BSSPlotData(.x,Response,FALSE))
+rawData_plot <- marrangeGrob(raw_data_plots_list, ncol = 4, nrow=1, top=NULL)
+ggsave(filename = "Figures/BSS_rawData_plot.pdf", plot = rawData_plot,
+       height = 2, width = 7.5, scale = 1.5)
+
+# Fitted plot
+FittedPlotsList <- map(vars, ~BSSPlotData(.x,Pred,FALSE))
+ArrangedFittedPlotsList <- marrangeGrob(FittedPlotsList, ncol = 4, nrow=1, top=NULL)
+ggsave(filename = "Figures/BSS_FittedData_plot.pdf", plot = ArrangedFittedPlotsList,
+       height = 2, width = 7.5, scale = 1.5)
+
+# Residuals plot
+residuals_plots_list <- map(vars, ~BSSPlotData(.x,Resid,FALSE))
+residuals_plot <- marrangeGrob(residuals_plots_list, ncol = 4, nrow=1, top=NULL)
+ggsave(filename = "Figures/BSS_residuals_plot.pdf", plot = residuals_plot,
+       height = 2, width = 7.5, scale = 1.5)
+
+
 # SPATS VARIOGRAMS ------------------------------------------------------------------
 
 # Get 3D vario data and plot them
