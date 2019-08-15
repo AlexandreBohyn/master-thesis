@@ -139,6 +139,7 @@ SpATS_plotsData <- map(vars, ~SpATS_getPlotData_fun(.x))
 names(SpATS_plotsData) <- vars
 
 SpATS_plotRawData_fun <- function(x,var,interp=FALSE){
+  SpATS_plotsData[[x]]$residuals = SpATS_plotsData[[x]]$response - SpATS_plotsData[[x]]$fitted
   response <- enquo(var)
   ggplot(data = SpATS_plotsData[[x]], aes(x = columns, y = rows, fill = !!response))+
     geom_raster(hjust = 0, vjust = 0, interpolate = interp)+
@@ -161,19 +162,19 @@ SpATS_plotRawData_fun <- function(x,var,interp=FALSE){
 # Raw data plot
 raw_data_plots_list <- map(vars, ~SpATS_plotRawData_fun(.x,response,FALSE))
 rawData_plot <- marrangeGrob(raw_data_plots_list, ncol = 4, nrow=1, top=NULL)
-ggsave(filename = "Figures/rawData_plot.pdf", plot = rawData_plot,
+ggsave(filename = "Figures/SPATS_rawData_plot.pdf", plot = rawData_plot,
        height = 2, width = 7.5, scale = 1.5)
 
 # Residuals plot
 residuals_plots_list <- map(vars, ~SpATS_plotRawData_fun(.x,residuals,FALSE))
 residuals_plot <- marrangeGrob(residuals_plots_list, ncol = 4, nrow=1, top=NULL)
-ggsave(filename = "Figures/residuals_plot.pdf", plot = residuals_plot,
+ggsave(filename = "Figures/SPATS_residuals_plot.pdf", plot = residuals_plot,
        height = 2, width = 7.5, scale = 1.5)
 
 # Fitted values plot
-raw_data_plots_list <- map(vars, ~SpATS_plotRawData_fun(.x,response,FALSE))
-rawData_plot <- marrangeGrob(raw_data_plots_list, ncol = 4, nrow=1, top=NULL)
-ggsave(filename = "Figures/rawData_plot.pdf", plot = rawData_plot,
+fitted_data_plots_list <- map(vars, ~SpATS_plotRawData_fun(.x,fitted,FALSE))
+FitData_plot <- marrangeGrob(fitted_data_plots_list, ncol = 4, nrow=1, top=NULL)
+ggsave(filename = "Figures/SPATS_Fitted_plot.pdf", plot = FitData_plot,
        height = 2, width = 7.5, scale = 1.5)
 
 # RESIDUALS ------------------------------------------------------------------------

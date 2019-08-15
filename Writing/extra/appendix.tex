@@ -144,6 +144,32 @@ Genotype & $DRY_{LS}$ & $DRY_{RS}$ & $FRESH_{LS}$ & $FRESH_{RS}$ \\
 \label{tab:summary_table_all_variables}
 \end{table}
 
+\section{Variance tables}
+\subsection{SpATS variance table}
+\label{appendix:tab_spats_variances}
+
+\begin{table}[ht]
+\centering
+\rowcolors{2}{gray!25}{white}
+\caption{Individual variances of all the components of the SpATS model.} 
+\begin{tabular}{lrrrr}
+  \toprule
+ & FRESH\_LS & FRESH\_RS & DRY\_LS & DRY\_RS \\ 
+  \midrule
+$\mathbf{c}_{g}$ & 0.171 & 0.262 & 1.27$\times 10^{-3}$ & 6.9$\times 10^{-4}$ \\ 
+  $\mathbf{c}_{v}$ & 3.24$\times 10^{-3}$ & 5.08$\times 10^{-3}$ & 1.95$\times 10^{-7}$ & 8.47$\times 10^{-17}$ \\ 
+  $\mathbf{c}_{u}$ & 1.86$\times 10^{-4}$ & 2.25$\times 10^{-5}$ & 2.42$\times 10^{-7}$ & 3.93$\times 10^{-8}$ \\ 
+  $f_{v}(\mathbf{v})$ & 2.2 & 11 & 1.06$\times 10^{-4}$ & 0.265 \\ 
+  $f_{u}(\mathbf{u})$ & 2.75$\times 10^{-5}$ & 5.36$\times 10^{-5}$ & 5.4$\times 10^{-8}$ & 1.55$\times 10^{-8}$ \\ 
+  $\boldsymbol{u} \odot h_{v}(\boldsymbol{v})$ & 5.60$\times 10^{-52}$ & 1.76$\times 10^{-38}$ & 1.51$\times 10^{-52}$ & 1.44$\times 10^{-13}$ \\ 
+  $\boldsymbol{v} \odot h_{u}(\boldsymbol{u})$ & 1.81$\times 10^{-9}$ & 4.83$\times 10^{-4}$ & 6.75$\times 10^{-10}$ & 1.43$\times 10^{-6}$ \\ 
+  $f_{u, v}(\boldsymbol{u}, \boldsymbol{v})$ & 0.398 & 0.252 & 6.13$\times 10^{-5}$ & 7.13$\times 10^{-4}$ \\ 
+  $\epsilon$ & 4.707 & 5.014 & 0.03364 & 0.01219\\
+   \bottomrule
+\end{tabular}
+\label{tab:spats_variances}
+\end{table}
+
 \chapter{Hoagland solution}
 \label{appendix:hoagland}
 

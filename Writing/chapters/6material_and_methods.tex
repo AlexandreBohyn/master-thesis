@@ -1,13 +1,13 @@
 %Material and methods
 
 \section{Optimal experimental designs}
-In the context of design of experiments (DOE), optimal designs are the holy grail that every experimenter want. However, researcher often use pre-made designs that fit a large amount of experiments instead of creating an optimal one. Since experimentations exist in all sizes and forms, not all pre-made designs are ideal. Therefore, creating an optimal design is a great choice to ensure that the design fits the experiment and not the other way around. In this section, we explain how and why we created a custom, optimal, design to fit our experiments.
+In the context of design of experiments (DOE), optimal designs are an ideal that every experimenter want to reach. However, researchers often use pre-made designs that fit many experiments instead of creating an optimal one for each problem at hand. Since experiments exist in all sizes and forms, not all pre-made designs are ideal. Therefore, creating an optimal design is a great choice to ensure that the design fits the experiment and not the other way around. In this section, we explain how and why we created a custom, optimal, design to fit our experiments.
 
 \subsection{Orthogonal designs}
 Orthogonal designs are interesting because they guarantees that each main effect and interaction can 
 be estimated independently. Meaning that the effect of one factor or interaction can be estimated separately from the effect of 
 other factors
-and that the addition or subtraction of terms in the model does not affect the estimates.
+and that the addition or removal of terms in the model does not affect the estimates.
 In a regression or ANOVA-type model, the best linear unbiased predictor (or BLUE) of the regression coefficients is obtained by 
 using 
 the ordinary least squares (OLS) method, because it minimizes the variance of the estimators. 
@@ -17,7 +17,7 @@ estimators.
 The inverse of this matrix is the information matrix, 
 because it summarizes the available information  on the models coefficients (a low variance means a lot of information, and 
 inversely).
-As detailed in \textcite{goos_optimal_2011}, when the information matrix is diagonal, then the design is said to be orthogonal.
+As detailed in \textcite{goos_optimal_2011}, when the information matrix is diagonal, then the design is said to be orthogonal. Many standard designs are orthogonal but they often do not fit the experiment at hand.
 
 \subsection{Optimality criteria}
 To compare different designs, the two main criteria are the D-optimality and the I-optimality. 
@@ -29,19 +29,19 @@ There also exists a G-optimality criterion that is similar to the I-optimality c
 variance. 
 Recent work \parencite{rodriguez_generating_2010} has shown that I-optimal designs are often better choices than the G-optimal 
 ones. 
-Since this is a screening experiment, only the D-optimality is detailed here. 
-For more information about I-optimal and G-optimal design, refer to \textcite{goos_optimal_2011,atkinson2014optimal}.
+Since the experiment discussed in this thesis is a screening experiment, only the D-optimality is detailed here. 
+For more information about I-optimal and G-optimal design, refer to \textcite{goos_optimal_2011,atkinson2014optimal}.\\
 
-\subsubsection{D-optimality}
-As said previously, for an orthogonal design all the non-diagonal elements of the VCOV matrix are null,
-and thus, the determinant is simply the product of all the diagonal elements, i.e. the estimators variances.
-Since the goal is to have the smallest variance of the estimates, the VCOV matrix with the smallest determinant will have the 
-estimates with the smallest variance. 
-Minimizing the determinant of the VCOV matrix is similar to maximizing the determinant of the information matrix. 
+%As said previously, for an orthogonal design all the non-diagonal elements of the VCOV matrix are null,
+%and thus, the determinant is simply the product of all the diagonal elements, i.e. the estimators variances.
+%Since the goal is to have the smallest variance of the estimates, the VCOV matrix with the smallest determinant will have the 
+%estimates with the smallest variance. 
+%Minimizing the determinant of the VCOV matrix is similar to maximizing the determinant of the information matrix. 
+The elements of the information matrix are inversely proportional to the variances and covariances of the models parameters.
 Therefore, the design with factor settings that maximize the determinant of information matrix, 
 will maximize the available information about the models parameters. 
 This design is called the "D-optimal design", 
-where the "D" stands for determinant and the value of the determinant itself is called the "D-optimality criterion".
+where the "D" stands for determinant and the value of the determinant itself is called the "D-optimality criterion".\\
 
 For any model with two-levels factors and two-factor interaction effects, orthogonal designs will always be D-optimal. 
 However if the number of runs is not a multiple of 4 then there are no orthogonal designs available for two-level factors. 
@@ -55,10 +55,10 @@ The D-optimal designs may not be unique. For a specified number of runs,
 
 
 \subsection{Generating optimal designs}
-In order to generate an optimal design, the determinant of the variance-covariance matrix needs to be computed 
-multiple times. 
-Therefore algorithms are used to gain time and avoid errors. 
-Several algorithms exist but the most common one is 
+%In order to generate an optimal design, the determinant of the variance-covariance matrix needs to be computed 
+%multiple times. 
+%Therefore algorithms are used to gain time and avoid errors. 
+Several algorithms exist to generate optimal designs, but the most common one is 
 the coordinate exchange algorithm, created by \textcite{meyer_coordinate-exchange_1995}. 
 It has the advantage to run in polynomial time, which means that the time needed to find an optimal design does not explode when 
 the size of the design increases. 
@@ -69,10 +69,8 @@ such as genetic algorithms \parencite{heredia-langner_genetic_2003,heredia-langn
 \parencite{bohachevsky_generalized_1986,meyer_constructing_1988} and tabu search algorithms \parencite{jung_construction_1996} have 
 been used in experimental designs. While these algorithms maintain a level of performance comparable to more traditional design 
 construction techniques, they are not as popular because they are either far more complex, only feasible in some specific cases 
-or better for some specific models and do not lead to designs that make a significant difference in practice.
+or better for some specific models and do not lead to designs that make a significant difference in practice.\\
 
-
-\subsubsection{Coordinate-exchange algorithm}
 The coordinate-exchange algorithm proceeds by iterating through the rows of the matrix of factors settings
 \begin{equation}
 \mathbf{D}= 
@@ -85,7 +83,7 @@ The coordinate-exchange algorithm proceeds by iterating through the rows of the 
     \text{,}
     \label{mat:design_matrix}
 \end{equation}
-called the design matrix, of an experiment with $n$ runs and $k$ factors. The lines of this matrix essentially represent the 
+called the design matrix, of an experiment with $n$ runs and $k$ factors. The rows of this matrix essentially represent the 
 coordinates of the runs in the experimental space, where each factor of the experiment is a dimension. This algorithm is called 
 the coordinate-exchange algorithm, because in each iteration of the algorithm, possible changes for every element of the design 
 matrix are considered. \\
@@ -98,6 +96,7 @@ The algorithm starts by generating a random design. For all continuous factors, 
 interval $[-1,+1]$. For all factors that are categorical, the algorithm randomly chooses a value in a discrete set of levels. 
 This random starting design is almost always non-singular. If the design happens to be singular, then another new random 
 starting design is computed.\\
+
 In the next step, the algorithm improves the design on an element-by-element basis. For each element of the starting design, 
 $x_{ij}$, a change to either $-1$ or $+1$ is considered, and its impact on the D-optimality criterion is evaluated. The change 
 that increases the value of the D-optimality criterion the most, is kept. After investigating changes in each element of the 
@@ -108,7 +107,7 @@ optimal designs, the algorithm is repeated a large number of times. The globally
 locally optimal ones, as the one that yields the highest D-optimality criterion.
 
 \subsection{Generating the design}
-A custom design was created for the experimental set-up of the phenotyping platform, where the goal was to quantify the genotype 
+A custom design was created for the experiment with the phenotyping platform, where the goal was to quantify the genotype 
 and tank effect. Four factors were considered:
 
 \begin{description}[align=left]
@@ -118,13 +117,13 @@ and tank effect. Four factors were considered:
 \item [Genotype] Which one of the 30 genotypes was used (1 to 30).
 \end{description}
 
-To fit the design, the design of experiment (DOE) tool of JMP was used. The four categorical factors were specified and 
+To create the design, the design of experiment (DOE) tool of JMP was used. The four categorical factors were specified and 
 \textit{Tank} and \textit{Strip} were set to "very hard to change" and "hard to change", respectively. Two whole plots of 99 
 sub-plots each were specified to match the tanks and the strips. With 99 strips of five positions inside two tanks, 990 
 experimental units were available.\\
 Initially the design was supposed to take into account the 99 different strips individually but the program couldn't converge to 
 an optimal design because of its complexity. Instead only 33 strips were considered and the design was replicated 3 times to 
-match the number of runs. Figures \ref{fig:moving_layout_30_geno} and \ref{fig:still_layout_30_geno}, display a schematic view 
+match the number of strips available. Figures \ref{fig:moving_layout_30_geno} and \ref{fig:still_layout_30_geno}, display a schematic view 
 of the design for the moving and still tank respectively.\\
 The seeds were provided by researchers from the french national institute of agronomic research (INRA). A subset of 30 maize hybrids was chosen among an historical series\footnote{Historical series correspond to varieties that have been cultivated and bred for 
 some time, mainly due to their physiological specificities.} of maize hybrids that were characterised by their commercial success at the time of their release. Claude Wlecker (LEPSE, INRA) and Carine Palaffre (SMH Maïs, INRA) prepared and sent a total of 30 seeds per genotype plus an extra 150 seeds of genotype called "border genotype" hereafter, used to fill the gaps in the platform left by non germinated seeds and the 90 empty spots left. This genotype is not part of the historical series and was therefore not considered in the design of the experiment.
@@ -410,13 +409,14 @@ Following the determination of the factors, weights were attributed to each vari
 
 
 \section{SpATS model}
-In this section, the SpATS model is introduced. For a more thorough treatment of the model and all its components, see \textcite{rodriguez-alvarez_spatial_2016}.\\
+\label{sec:spats_model}
+In this section, the SpATS (Spatila Analysis of field Trials with Splines) model is introduced. For a more thorough treatment of the model and all its components, see \textcite{rodriguez-alvarez_spatial_2016}.\\
 Consider a field trial of $n$ plots arranged in a rectangular grid, where the plot positions are collected in vectors of row $(\mathbf{r})$ and column $(\mathbf{c})$ coordinates. If $\mathbf{y}$ is the vector of plot data in field order, a common model for $\mathbf{y}$, to use as a starting point is
 	\begin{equation}
 	    \boldsymbol{y}=\mathbf{1}_{n} \beta_{0}+\boldsymbol{Z}_{r} \boldsymbol{c}_{r}+\boldsymbol{Z}_{c} \boldsymbol{c}_{c}
 	    +\varepsilon
 	\end{equation}
-were $\mathbf{1}_{n}$ is a column-vector of ones of length $n$, $\boldsymbol{c}_{r}$ and $\boldsymbol{c}_{c}$ are, respectively, the random effect coefficients for the rows and columns and associated matrix $\boldsymbol{Z}_{r}$ and $\boldsymbol{Z}_{c}$. To fully capture complex spatial patterns, a smooth bivariate surface jointly defined over the row and column positions is added to the model, which becomes
+were $\mathbf{1}_{n}$ is a column-vector of ones of length $n$, $\boldsymbol{c}_{r}$ and $\boldsymbol{c}_{c}$ are, respectively, the random effect coefficients for the rows and columns and associated matrices $\boldsymbol{Z}_{r}$ and $\boldsymbol{Z}_{c}$. To fully capture complex spatial patterns, a smooth bivariate surface jointly defined over the row and column positions is added to the model, which becomes
 	\begin{equation}
 	    \boldsymbol{y}=f(\boldsymbol{u}, \boldsymbol{v})+\boldsymbol{Z}_{r} \boldsymbol{c}_{r}+\boldsymbol{Z}_{c} \boldsymbol{c}
 	    _{c}+\boldsymbol{\varepsilon}
@@ -432,47 +432,48 @@ where $\mathbf{u}$ and $\mathbf{v}$ are, respectively, the vector of row and col
 	   \boldsymbol { v } ) }_{\text{Smooth part}}
 	 \label{eq:full_bivariate_smooth_surface_model}
 	\end{align}
-where $\odot$ denotes the element-wise matrix product\footnote{See appendix \ref{appendix:add_info} for details about the element-wise matrix product.}. There are now two components to the model: a bilinear polynomial part(parametric) and a smooth part (non-parametric). The parametric part includes the linear trends along rows ($\beta_1$) and columns ($\beta_2$) as well as a linear interaction trend ($\beta_3$). The smooth part models the deviation from the compound linear trend, and can be decomposed in the following elements:
+where $\odot$ denotes the element-wise matrix product\footnote{See appendix \ref{appendix:add_info} for details about the element-wise matrix product.}. There are now two components to the model: a bilinear polynomial part (parametric) and a smooth part (non-parametric). The parametric part includes the linear trends along rows ($\beta_1$) and columns ($\beta_2$) as well as a linear interaction trend ($\beta_3$). The smooth part models the deviation from the compound linear trend, and can be decomposed in the following elements:
 	\begin{itemize}
 		\item $f_{u}(\boldsymbol{u})$  is a smooth trend along the rows, identical for all columns (i.e., a main smooth effect).
 		\item $f_{v}(\boldsymbol{v})$ is a smooth trend along the columns, identical for all rows.
 		\item $\boldsymbol{v} \odot h_{u} (\boldsymbol{u})$ and $\boldsymbol{u} \odot h_{v} (\boldsymbol{v})$ are linear-by-
 		smooth interaction trends. For instance, $\boldsymbol{u} \odot h_{v}(\boldsymbol{v})$ is a varying coefficient surface 
 		trend, consisting of functions, linear in the rows, for each column, but with slopes that change smoothly along the 
-		columns, $h_{v}boldsymbol{v})$.
+		columns, $h_{v}\boldsymbol{v})$.
 		\item $f_{u,v}(\boldsymbol{u},\boldsymbol{v})$ is a smooth-by-smooth interaction trend jointly defined over the row and 
 		column directions.
 	\end{itemize}
-In total, six components are used to model the surface $f$. This may seem like a lot but this allows the translation of model \ref{eq:base_model_bismooth_surface} into a standard mixed model. An interesting property of this proposal is that since $u$ and $v$ are row and column position, it allows depicting the spatial trend in a grid finer than the number of rows and columns. Figure \ref{fig:bilinear_and_smooth_decomposition} shows an example of those six components in the context of a barley uniformity performed by \textcite{williams1988contemporary}. It shows clearly how the additional components, help to capture small variations in the spatial data.
+In total, six components are used to model the surface $f$. This may seem like a lot but this allows the translation of model \ref{eq:base_model_bismooth_surface} into a standard mixed model. An interesting property of this proposal is that since $\boldsymbol{u}$ and $\boldsymbol{v}$ are row and column position, it allows depicting the spatial trend in a grid finer than the number of rows and columns. Figure \ref{fig:bilinear_and_smooth_decomposition} shows an example of those six components in the context of a barley uniformity performed by \textcite{williams1988contemporary}. It shows clearly how the additional components, help to capture small variations in the spatial data.
 
 \begin{figure}[hbtp]
 \centering
 \includegraphics[width=\textwidth]{../figures/bilinear_polynomial.PNG}
 \caption[Bilinear and smooth components of the PS-ANOVA decomposition]{Bilinear and smooth components of the PS-ANOVA decomposition of the estimated spatial trend for the barley uniformity
-data from \textcite{rodriguez-alvarez_correcting_2018}.}
+data from \textcite{rodriguez-alvarez_correcting_2018}. This trial had 15 rows and 48 columns for a total of 720 data points.}
 \label{fig:bilinear_and_smooth_decomposition}
 \end{figure}
 
 
 \subsection{Modelling using P-splines}
 The functions $f_u$, $f_v$, $h_u$ and $h_v$ are constructed  with variations on one-dimensional P-splines, while $f_{u,v}$ is based on tensor products P-splines.\\
+
 For clarity's sake, let us consider a model only containing a smooth bivariate surface and an error term
 	\begin{equation}
 	    y _ { i } = f \left( u _ { i } , v _ { i } \right) + \varepsilon _ { i } , \text { with } \varepsilon _ { i } \sim N 
 	    \left( 0 , \sigma ^ { 2 } \right) \text{.}
 		\label{eq:smooth_part_only_model}
 	\end{equation}
-\textcite{lee_efficient_2013} show that it can be represented using B-splines\footnote{See appendix \ref{appendix:add_info} for details about B-splines and P-splines.}. Let us form two B-splines basis:
+\textcite{lee_efficient_2013} show that this model can be represented using B-splines\footnote{See appendix \ref{appendix:add_info} for details about B-splines and P-splines.} and applying a penalty term to form P-splines. Let us first form two B-splines bases:
 \begin{enumerate}
-\item one for the columns, $\boldsymbol{\invbreve{B}}$ with $ b_{il}= \invbreve{B}_l(u_i)$, where $\invbreve{B}_l(u_i)$ is the $l$th B-spline of the basis, evaluated at $u_i$
-\item and one for the rows, $\boldsymbol{\breve{B}}$ with $ b_{ip}= \breve{B}_p(v_i)$, where $\breve{B}_l(v_i)$ is the $p$th B-spline of the basis, evaluated at $v_i$.
+\item one for the columns, $\boldsymbol{\invbreve{B}}$ with $ b_{il}= \invbreve{B}_l(u_i)$, where $\invbreve{B}_l(u_i)$ is the $l$th B-spline of the basis, evaluated at the $i$th column, $u_i$
+\item and one for the rows, $\boldsymbol{\breve{B}}$ with $ b_{ip}= \breve{B}_p(v_i)$, where $\breve{B}_l(v_i)$ is the $p$th B-spline of the basis, evaluated at the $i$th row, $v_i$.
 \end{enumerate}
 Then, the smooth-by-smooth interaction can be written using those basis
 \begin{equation}
 	f \left(u_{i},v_{i}\right)=\sum_{l=1}^{L}\sum_{p=1}^{P}\invbreve{B}_{l}\left(u_{i}\right)\breve{B}_{p}\left(v_{i}\right) 
 	\alpha_{lp}\text{,}
 \end{equation}
-where $\boldsymbol{\alpha} = (\alpha_{11},\ldots,\alpha_{1P},\ldots,\alpha_{LP})^t$ is a vector of unknown regression coefficients of dimension $(LP \times 1)$. Note that $\boldsymbol{\invbreve{B}}$ and $\boldsymbol{\breve{B}}$ are matrices of order $n \times L$ and $n\times P$ respectively, where $L$ and $P$ are the number of the B-spline basis functions. \textcite{dierckx_curve_1995} shows that, in the P-spline framework, the smooth-by-smooth interaction $f(u_i,v_i)$ is modelled by the tensor product of B-splines bases. Then, we can write, in matrix notation,
+where $\boldsymbol{\alpha} = (\alpha_{11},\ldots,\alpha_{1P},\ldots,\alpha_{LP})^t$ is a vector of unknown regression coefficients of dimension $(LP \times 1)$. Note that $\boldsymbol{\invbreve{B}}$ and $\boldsymbol{\breve{B}}$ are matrices of order $n \times L$ and $n\times P$ respectively, where $L$ and $P$ are the number of the B-spline basis functions. The values of $L$ and $P$ can be chosen according to the desired definition of the fitted surface $f$. However, they are often set to the number of columns and rows, respectively, to avoid increasing computing time. \textcite{dierckx_curve_1995} shows that, in the P-spline framework, the smooth-by-smooth interaction $f(u_i,v_i)$ is modelled by the tensor product of B-splines bases. Then, we can write, in matrix notation,
 \begin{equation}
     \boldsymbol{B} = \boldsymbol{\invbreve{B}} \boxdot \boldsymbol{\breve{B}} = \left( \boldsymbol{\invbreve{B}} \otimes
     \boldsymbol{1} _ { L } ^ { t } \right) \odot \left( \mathbf { 1 } _ { P } ^ { t } \otimes \boldsymbol{\breve{B}} \right)
@@ -480,7 +481,7 @@ where $\boldsymbol{\alpha} = (\alpha_{11},\ldots,\alpha_{1P},\ldots,\alpha_{LP})
 \end{equation}
 where the operation $\boxdot$ is defined in terms of the Kronecker product of two matrices (denoted by $\otimes$) and the 
 element-by-element multiplication of two matrices (denoted by $\odot$)\footnote{See appendix \ref{appendix:add_info} for details 
-about the Kronecker, and the element-wise products}. Therefore model (\ref{eq:smooth_part_only_model}) can be written in matrix 
+about the Kronecker, and the element-wise products}. Therefore, model (\ref{eq:smooth_part_only_model}) can be written in matrix 
 notation:
 
 \begin{equation}
@@ -495,8 +496,8 @@ The coefficients of this parametric model can be estimated by minimizing the sum
 \end{equation}
 To prevent over-fitting, 
 \textcite{eilers_flexible_1996} propose to incorporate a discrete penalty on the coefficient associated to adjacent B-splines.
-As described in details in appendix \ref{appendix:polynomial_splines}, this penalty also determines the smoothness of the 
-splines. The solution of equation \ref{eq:spline_model_mat_form} then becomes 
+As described in details in Appendix \ref{appendix:polynomial_splines}, this penalty also determines the smoothness of the 
+splines. The solution of equation (\ref{eq:spline_model_mat_form}) then becomes 
 \begin{equation}
     \widehat{\boldsymbol{\alpha}}=\left(\boldsymbol{B}^{t} \boldsymbol{B}+\boldsymbol{P}\right)^{-1} \boldsymbol{B}^{t} 
     \boldsymbol{y}
@@ -519,14 +520,15 @@ a full-rank penalty matrix, the key is to write model \ref{eq:spline_model_mat_f
 There are now two bases: $\mathbf{X}_{s}$, with coefficients that are not penalized at all, and $\mathbf{Z}_{s}$, with a size 
 penalty on its coefficients. This decomposition follows the proposal by \textcite{lee_p-spline_2011}, based on eigenvalue 
 decomposition which gives rise to a diagonal penalty matrix.\\
+
 The two bases have the following structures:
 \begin{equation}
     \boldsymbol{X}_{s}=\left[\mathbf{1}_{n}, \boldsymbol{u}, \boldsymbol{v}, \boldsymbol{u} \odot \boldsymbol{v}\right]
     \quad
     \text{and}
     \quad
-    \mathbf{Z}_{s}=\left[\mathbf{Z}_{v}, \mathbf{Z}_{u}, \mathbf{Z}_{v} \square \mathbf{u}, \mathbf{v} \square \mathbf{Z}_{u}, 
-    \mathbf{Z}_{v} \square \mathbf{Z}_{u}\right]
+    \mathbf{Z}_{s}=\left[\mathbf{Z}_{v}, \mathbf{Z}_{u}, \mathbf{Z}_{v} \boxdot \mathbf{u}, \mathbf{v} \boxdot \mathbf{Z}_{u}, 
+    \mathbf{Z}_{v} \boxdot \mathbf{Z}_{u}\right]
     \text{,}
     \label{eq:detail_Xs_Zs_matrices}
 \end{equation}
@@ -538,7 +540,7 @@ block in $\mathbf{Z}_{s}$. Similarly to $\boldsymbol{P}$, the penalty matrix of 
 only depends on the two tuning parameters $\invbreve{\lambda}$ (smoothing along the columns) and $\breve{\lambda}$ (smoothing 
 along the rows).
 Figure \ref{fig:matrix_diagram} presents a diagram clarifying the structures and relations of the different matrices presented 
-throughout this section.
+throughout this section.\\
 
 This reformulation provides the ANOVA type decomposition discussed in the previous section 
 (\ref{eq:full_bivariate_smooth_surface_model}), and explains how the bilinear smooth surface can be modelled using P-splines and 
@@ -559,9 +561,9 @@ The block structure of $\mathbf{X}_s$ and $\mathbf{Z}_s$ implies
         								  \text{,}
     \end{aligned}
 \end{equation}
-where $\boldsymbol{c}_{sk} \ (k = 1,\ldots,5)$ contains the elements of $\boldsymbol{c}_s$ that correspond to the $k$th block of $\boldsymbol{Z}_s$, i.e. $\boldsymbol{c}_s = (\boldsymbol{c}_{s1}^t,\ldots,\boldsymbol{c}_{s5}^t)^t$. The details about the specific block component of $\boldsymbol{Z}_s$ and the computation of the new penalty matrix are available in the paper of \textcite{rodriguez-alvarez_correcting_2018} and the appendices therein.
+where $\boldsymbol{c}_{sk} \ (k = 1,\ldots,5)$ contains the elements of $\boldsymbol{c}_s$ that correspond to the $k$th block of $\boldsymbol{Z}_s$, i.e. $\boldsymbol{c}_s = (\boldsymbol{c}_{s1}^t,\ldots,\boldsymbol{c}_{s5}^t)^t$. The details about the specific block component of $\boldsymbol{Z}_s$ and the computation of the new penalty matrix are available in  \textcite{rodriguez-alvarez_correcting_2018} and the appendices therein.\\
 
-Therefore, using this new notation, model \ref{eq:smooth_part_only_model} that only contains a smooth bivariate surface and an error term can be rewritten in the following way:
+Therefore, using this new notation, model (\ref{eq:smooth_part_only_model}) that only contains a smooth bivariate surface and an error term can be rewritten in the following way:
 
 \begin{equation}
     \boldsymbol{y}=\boldsymbol{X}_{s} \boldsymbol{\beta}_{s}+\boldsymbol{Z}_{s} \boldsymbol{c}_{s}+\boldsymbol{\varepsilon}, 	
@@ -572,17 +574,16 @@ Therefore, using this new notation, model \ref{eq:smooth_part_only_model} that o
     \text{,}
 \label{eq:smooth_surface_PS_ANOVA_rewritten}
 \end{equation}
-where $\boldsymbol{G}_{s} = \sigma^2\widetilde{\boldsymbol{P}}^{-1}$. It is straightforward to see that $\boldsymbol{G}_{s}$ 
-also has a block diagonal structure, similar to that of $\widetilde{\boldsymbol{P}}$ (this structure is also represented on 
+where $\boldsymbol{G}_{s} = \sigma^2\widetilde{\boldsymbol{P}}^{-1}$ and also has a block diagonal structure, similar to that of $\widetilde{\boldsymbol{P}}$ (this structure is also represented on 
 figure \ref{fig:matrix_diagram}). 
 However, $\boldsymbol{G}_{s}$ depends on two different parameters, $\breve{\sigma}^2 =\sigma / \breve{\lambda}$ and $
-\invbreve{\sigma}^2 =\sigma / \invbreve{\lambda}$, which are variances parameters. 
-As shown in the diagram in figure \ref{fig:matrix_diagram}, the same variance parameters control the smoothness of the both the 
+\invbreve{\sigma}^2 =\sigma / \invbreve{\lambda}$, which are variance parameters. 
+As shown in the diagram in Figure \ref{fig:matrix_diagram}, the same variance parameters control the smoothness of the both the 
 main effects and interactions terms. 
 This prevents the use of standard mixed models software for estimation since $\mathbf{G}_s$ has its last block depending on both 
 $\breve{\sigma}^2$ and $\invbreve{\sigma}^2$, but in a non-linear way. 
 Even though \textcite{rodriguez-alvarez_fast_2015} presented a specialized algorithm to deal with this issue, 
-here the PS-ANOVA decomposition approach \parencite{lee_efficient_2013} is used to allow the use of standard mixed model estimation procedures.\textcite{lee_efficient_2013} therefore propose to use a different variance component for each smooth component in $\mathbf{G}_s$, thus redefining this matrix as a linear function of variance parameters:
+here the PS-ANOVA decomposition approach \parencite{lee_efficient_2013} is used to allow the use of standard mixed model estimation procedures. \textcite{lee_efficient_2013} therefore propose to use a different variance component for each smooth component in $\mathbf{G}_s$, thus redefining this matrix as a linear function of variance parameters:
 \begin{equation}
     \boldsymbol{G}_{s} = 
 %	\bigoplus_{k=1}^{5} \sigma_{s k}^{2} \Lambda_{s k} =
@@ -594,6 +595,7 @@ here the PS-ANOVA decomposition approach \parencite{lee_efficient_2013} is used 
 where $\boldsymbol{G}_{s k}$ %= \sigma_{sk}^2\boldsymbol{\Lambda}_{sk} \ (k=1,\ldots,5)$
 is the $k$th block of the $\mathbf{G}_{s}$ matrix, depending on the specific variance component $\sigma_{sk}^2$. 
 In other words, here the tensor product P-splines mixed model is represented as the sum of 5 sets of mutually independent Gaussian random components $\mathbf{c}_{sk}$, each depending on one variance $\sigma_{sk}^2 \ (k=1,\ldots,5)$.\\
+
 Within this mixed model framework, the smoothing parameters, defined earlier as the ratio between the residual variance and the
 corresponding variance effect $\lambda_{sk} = \sigma^2_{e} / \sigma^2_{sk}$, are determined by restricted maximum likelihood (REML). Therefore the smoothness of the spatial surface is tuned by five distinct parameters, applying anisotropic (direction-dependant) smoothing. This parametrization provides flexibility to account for both global and local variations in the field. Furthermore, the decomposition of $f(\mathbf{u},\mathbf{v})$ enables a more explicit interpretation of the main patterns of spatial variation \parencite{rodriguez-alvarez_correcting_2018}.
 
@@ -620,7 +622,7 @@ On top of this spatial field, we need to build up a more complex models in order
     \text{,}
     \label{eq:full_random_and_additonal_effects_model}
 \end{equation}
-where $\boldsymbol{X}_{s}$, $\boldsymbol{Z}_{s}$ and $\boldsymbol{G}_{s}$ are defined in the previous section and form the mixed model expression of the smooth spatial surface, and $\boldsymbol{X}_{d}$ and $\boldsymbol{Z}_{d}$ represent column-partitioned matrices, associated respectively with fixed and random components. Since we do not have any check genotypic varieties or resolvable block effect, the only extra fixed effects are: an intercept ($1_n$) and the tank effect ($t$). 
+where $\boldsymbol{X}_{s}$, $\boldsymbol{Z}_{s}$ and $\boldsymbol{G}_{s}$ are defined in the previous section and form the mixed model expression of the smooth spatial surface, and $\boldsymbol{X}_{d}$ and $\boldsymbol{Z}_{d}$ represent column-partitioned matrices, associated respectively with fixed and random components. Since we do not have any check genotypic varieties\footnote{Check varieties are genotypes with known characteristics that are put in all the blocks/environments of an experiment to allow an easier comparison.} or resolvable block effect, the only extra fixed effects are: an intercept ($1_n$) and the tank effect ($t$). 
 We assume that the $\boldsymbol{X}_{d}$ matrix has full-rank. 
 The position on the strip ($p$) and strip ($s$) variables are added as random effects in $\mathbf{Z}_{d}$. 
 Therefore $\mathbf{X}_{d} = 
@@ -661,16 +663,16 @@ where $\boldsymbol{X}=
 \end{equation}
 
 \subsection{Model estimation}
-With all these specifications in mind, the model was fitted using cubic B-splines and second-order penalties. These settings are commonly used and allow flexibility of the model \parencite{rodriguez-alvarez_correcting_2018,rodriguez-alvarez_spatial_2016,rodriguez-alvarez_fast_2015}. We used 99 and 5 equally spaced knots for the the P-splines, corresponding to the strips and positions, respectively. In this way there was approximately one knot for every plot. Then there was a total of 362 model parameters to be estimated for the smooth surface (and 501 for the whole model). As \textcite{rodriguez-alvarez_correcting_2018} explains, the number of knot is not critical since the optimization of the fit to the data is essentially dependant on the smoothing parameters.\\
+With all these specifications in mind, the model was fitted using cubic P-splines with second-order penalties. These settings are commonly used and allow flexibility of the model \parencite{rodriguez-alvarez_correcting_2018,rodriguez-alvarez_spatial_2016,rodriguez-alvarez_fast_2015}. We used 99 and 5 equally spaced knots for the P-splines, corresponding to the strips and positions, respectively. In this way there was approximately one knot for every plot. Then there was a total of 362 model parameters to be estimated for the smooth surface (and 501 for the whole model). As \textcite{rodriguez-alvarez_correcting_2018} explains, the number of knots is not critical since the optimization of the fit to the data is essentially dependant on the smoothing parameters.\\
 The estimation procedure was performed using the R-package \texttt{SpATS} \parencite{rodriguez-alvarez_spats:_2016}. This package provides a REML-based estimation of the variances components and computes the best linear unbiased estimators (BLUEs) of the fixed effects and the empirical best linear unbiased predictors (BLUPs) of the random effects. A useful by-product of this computation is the effective dimension associated to each random effect.
 
 \subsubsection{Effective dimensions}
-In P-splines methodology, the effective dimension ($ED$) measures the complexity of the model components \parencite{eilers_twenty_2015}, it is similar to the more common concept of effective degree of freedom \parencite{buja1989linear}. It is computed as the trace of the hat matrix $\mathbf{H}$. If we only take the spatial part of our model (equation \ref{eq:smooth_surface_PS_ANOVA_rewritten}), we can write:
+In the P-splines methodology, the effective dimension ($ED$) measures the complexity of the model components \parencite{eilers_twenty_2015}. It is similar to the more common concept of effective degree of freedom \parencite{buja1989linear}. It is computed as the trace of the hat matrix $\mathbf{H}$. If we only take the spatial part of our model (equation \ref{eq:smooth_surface_PS_ANOVA_rewritten}), we can write:
 \begin{equation}
 	\begin{aligned}
-		\tilde{\mathbf{y}} &= \mathbf{Hy} \\
+		\tilde{\mathbf{y}} &= \mathbf{Hy} \text{,} \\
 		\tilde{f}(\mathbf{u},\mathbf{v}) &= \boldsymbol{X}_{s} \hat{\boldsymbol{\beta}}_{s}+
-											\boldsymbol{Z}_{s} \tilde{\boldsymbol{c}}_{s} \\
+											\boldsymbol{Z}_{s} \tilde{\boldsymbol{c}}_{s} \text{,} \\
 			&= \mathbf{H}_{\beta}\mathbf{y} + \mathbf{H}_{s}\mathbf{y}
 	\end{aligned}
 	\text{ ,}
@@ -694,13 +696,13 @@ As we just said, the effective dimension is a useful tool to measure the relativ
 H_{g}^2 = \dfrac{ED_{g}}{n_{g}} = 1 - \dfrac{\overline{PEV}}{\sigma^2_{g}}
 \text{,}
 \end{equation}
-where $n_{g}$ is the number of genotypes and $\overline{PEV}$ is the prediction error variance for the genotype BLUPs. Since $n_{g}$ is also the upper bound of the effective genetic dimension, $H^2_{g}$ can be seen as a shrinkage factor. Given that our experiment does not incorporate a genetic relationship matrix, we'll use this definition to properly interpret the genetic effect in our model. The right-hand term of the equation, is equivalent to the concept of generalized heritability developed by \textcite{welham2010comparison}. We can profit from that to compare the heritability between the spats model and the $AR \times AR$ model.
+where $n_{g}$ is the number of genotypes and $\overline{PEV}$ is the prediction error variance for the genotype BLUPs. Since $n_{g}$ is also the upper bound of the effective genetic dimension, $H^2_{g}$ can be seen as a shrinkage factor. Given that our experiment does not incorporate a genetic relationship matrix, we'll use this definition to properly interpret the genetic effect in our model. The right-hand term of the equation, is equivalent to the concept of generalized heritability developed by \textcite{welham2010comparison}. We can take advantage from that to compare the heritability between the spats model and the $AR \times AR$ model.
 
 \section{Standard spatial models}
 \label{sec:arxar_model}
 In this section the $AR \times AR$ model, and its extension to the linear variance ($LV$) model, are presented. For more detailed information about the original $AR \times AR$ model, consult \textcite{gilmour_accounting_1997}. For information about the extensions of the model, see \textcite{piepho_linear_2010} and \textcite{williams_neighbour_1986}.\\
 
-As explained in the literature review chapter, the standard spatial models (SS models), such as the $AR \times AR$ model, use a spatially dependant error term to adjust for the local trends, whereas the SpATS model encompasses them in the smooth surface. 
+As explained in the literature review chapter, the standard spatial models (SS models), such as the $AR \times AR$ model, use a spatially dependent error term to adjust for the local trends, whereas the SpATS model encompasses them in the smooth surface. 
 To estimate the spatial covariance structure of this error process, \textcite{gilmour_accounting_1997} advocate the use of variograms and more precisely, the use of auto-regressive processes ($AR(1)$) to model those variograms. 
 The general representation of the SS model is very similar to the SpATS model:
 \begin{equation}
@@ -709,13 +711,13 @@ The general representation of the SS model is very similar to the SpATS model:
 	\text{,}
 	\label{eq:standard_spatial_model}
 \end{equation}
-where $\mathbf{X}\boldsymbol{\beta}$ contains the fixed terms of the model, $\mathbf{Zc}$ contains the random terms, $\boldsymbol{\varepsilon}$ is the vector of the residuals and $\boldsymbol{\xi}$ is a vector of spatially dependant residuals modelling the local trends. However, unlike the SpATS model, $\mathbf{X}_{s}\boldsymbol{\beta}_{s}$ and $\mathbf{Z}_{s}\mathbf{c}_{s}$ do not model a smooth bivariate surface, but contain linear and one-dimensional cubic splines terms that account for the global variations in the data (see \textcite{verbyla_analysis_1999} for details).\\
+where $\mathbf{X}\boldsymbol{\beta}$ contains the fixed terms of the model, $\mathbf{Zc}$ contains the random terms, $\boldsymbol{\varepsilon}$ is the vector of the residuals and $\boldsymbol{\xi}$ is a vector of spatially dependent residuals modelling the local trends. However, unlike in the SpATS model, $\mathbf{X}_{s}\boldsymbol{\beta}_{s}$ and $\mathbf{Z}_{s}\mathbf{c}_{s}$ do not model a smooth bivariate surface, but contain linear and one-dimensional cubic splines terms that account for the global variations in the data (see \textcite{verbyla_analysis_1999} for details).\\
 
 \subsection{Variogram and $AR(1)$ process}
-As \textcite{gilmour_accounting_1997} explain in their paper, they model an error process using a variogram. The error process is defined as the sum of the independent and spatially-dependent residuals: $\mathbf{e} = \mathbf{\xi} + \mathbf{\varepsilon}$, where the term of interest is the spatially dependant error term $\boldsymbol{\xi}$.\\
+As \textcite{gilmour_accounting_1997} explain in their paper, they model an error process using a variogram. The error process is defined as the sum of the independent and spatially-dependent residuals: $\mathbf{e} = \boldsymbol{\xi} + \boldsymbol{\varepsilon}$, where the term of interest is the spatially dependant error term $\boldsymbol{\xi}$.\\
 
 The variogram is a function that computes the evolution of the covariance of a spatially-dependent variable over the distance.
-It enables the visualization of the covariance structure of a variable as a function of spatial displacement. They exist both in one and two dimensions. An example of variograms is presented in figure \ref{fig:variogram_example}. In our case, let us consider the error process $\mathbf{e}$, being a stationary (direction-dependent) process over the rows (strips) $\mathbf{u}$ and the columns (positions) $\mathbf{v}$. For two distinct points in space $x$ and $y$, the covariance structure between these two points is modelled by the theoretical variogram (also called the semi-variogram) as:
+It enables the visualization of the covariance structure of a variable as a function of spatial displacement. They exist both in one and two dimensions. Examples of variograms are presented in figure \ref{fig:variogram_example}. In our case, let us consider the error process $\mathbf{e}$, being a stationary (direction-dependent) process over the rows (strips) $\mathbf{u}$ and the columns (positions) $\mathbf{v}$. For two distinct points in space $x$ and $y$, the covariance structure between these two points is modelled by the theoretical variogram (also called the semi-variogram because of the $1/2$ factor in its equation) as:
 \begin{equation}
     \omega(\mathbf{x}, \mathbf{y})=\frac{1}{2} \operatorname{var}[\mathbf{e}(\mathbf{x})-\mathbf{e}(\mathbf{y})]=\frac{1}{2}
     [\mathrm{V}(\mathbf{x}, \mathbf{x})+\mathrm{V}(\mathbf{y}, \mathbf{y})-2 \mathrm{V}(\mathbf{x}, \mathbf{y})]
@@ -772,51 +774,51 @@ This formulation demonstrates the equivalence between the semi-variogram, the DE
 		\centering
 		\includegraphics[width = \textwidth]{figures/AR1AR1-process-variogram-fit.PNG}
 	\end{subfigure}
-	\caption[Examples of variogram using $AR(1) \times AR(1)$ processes]{Examples of variogram using $AR(1) \times AR(1)$ processes.(Leftmost panel) Variogram for a standardized $AR(1) \times AR(1)$ process, with $\rho_{x} = 0.9$, $\rho_{y} = 0.4$ and $\sigma^2=0.3$ from \textcite{gilmour_accounting_1997}. (Rightmost panel) Variogram fitted to wheat data of \textcite{gilmour_accounting_1997} with the one-dimensional associated variograms in the rows and columns direction \parencite{piepho_linear_2010}. }
+	\caption[Examples of variograms using $AR(1) \times AR(1)$ processes]{Examples of variogram using $AR(1) \times AR(1)$ processes.(Leftmost panel) Variogram for a standardized $AR(1) \times AR(1)$ process, with $\rho_{x} = 0.9$, $\rho_{y} = 0.4$ and $\sigma^2=0.3$ from \textcite{gilmour_accounting_1997}. (Rightmost panel) Variogram fitted to wheat data of \textcite{gilmour_accounting_1997} with the one-dimensional associated variograms in the rows and columns direction \parencite{piepho_linear_2010}. }
 	\label{fig:variogram_example}
 \end{figure}
 
 
 \subsection{Linear variance structure}
 The modification of the $AR(1) \times AR(1)$ model to include the linear variance (LV) structure, is based on the one-dimensional LV structure proposed by \textcite{williams_neighbour_1986} and its elevation to two dimensions by \textcite{piepho_linear_2010}.
-Let us first conside the case of LV in one dimension (a single position over several strips in our case) for n=99 plots. The baseline covariance structure is written as:
+Let us first consider the case of LV in one dimension (a single position over several strips in our case) for n=99 plots. The baseline covariance structure is written as:
 \begin{equation}
 	V_{0}=\sigma^{2} I_{n}+\eta J_{n}
 	\text{,}
 \end{equation}
 where $I_{n}$ is the n-dimensional identity matrix and $J_{n}$ is a $n$ by $n$ matrix of ones everywhere, $\sigma^2$ is the residual variance and $\eta$ is the block variance. 
-\textcite{williams_neighbour_1986} propose to elevate this baseline covariance model by a spatial component $V_{s}$ such that plots within the same block obey a correlation structure that decays linearly with distance. 
+\textcite{williams_neighbour_1986} propose to augment this baseline covariance model by a spatial component $V_{s}$ such that plots within the same block obey a correlation structure that decays linearly with distance. 
 For two plots $x$ and $y$, they define the matrix $L_n$ as a $n\times n$ matrix where the $(x,y)$-th element is equal to $|x-y|$. 
 From that statement, the decaying correlation structure can be expressed in matrix form as $V_{S}=\kappa\left(J_{n}-\tilde{\phi} L_{n}\right)$, where $\tilde{\phi}$ is a slope parameter determining the decaying process and $\kappa$ is a spatial variance. 
-To avoid cofounding effects, \textcite{williams_neighbour_1986} rewrite the complete, elevated model as a linear structure:
+To avoid confounding effects, \textcite{williams_neighbour_1986} rewrite the complete, augmented model as a linear structure:
 \begin{equation}
 	V=V_{0}+V_{S}=\sigma^{2} I_{n}+\eta J_{n}+\phi M_{n}
 	\text{,}
 \end{equation}
 where $M_n = (n-1)J_n - L_n$ and $\phi = \kappa\tilde{\phi}$. The components of the model have the following interpretation: (i) $\sigma^{2} I_{n}$ is the residual error (or nugget effect in variogram-specific terms); (ii) the block effect, $\eta J_n$, captures extraneous variations on the field; and (iii) $\phi M_n$ models a spatial correlation within a block by a LV–covariance structure where correlation decays linearly with distance.\\
 
-\textcite{piepho_linear_2010} present two main ways to extend the model to two dimensions. The first ones is superimposition of two structure: a LV structure along the columns but independent between the rows  and a LV structure along the columns but independent between the rows ($\mathrm{LV} \otimes I$). The second one is a product of the two LV structure: $LV \otimes LV$. In a desire of clarity, the full notation of these structure is not presented here, but are detailed in the paper of \textcite{piepho_linear_2010}.\\
+\textcite{piepho_linear_2010} present two main ways to extend the model to two dimensions. The first one is a superimposition of the two structures: a LV structure along the columns but independent between the rows  and a LV structure along the columns but independent between the rows ($\mathrm{LV} \otimes I$). The second one is a product of the two LV structures: $LV \otimes LV$. In a desire of clarity, the full notation of these structure is not presented here, but are detailed in the paper of \textcite{piepho_linear_2010}.\\
 
 The similarity between the LV structure and the $AR(1)$ process comes from the fact that when the spatial correlation $\rho^{l} \approx 1$ then 
 $\rho^{\left| x-y \right|}=\exp \left[\log (\rho)\left| x-y \right|\right] \approx 1-\tilde{\phi}\left| x -y \right|$ with 
 $\tilde{\phi} = -\log(\rho)$. 
-Thus, when the correlation is close to one (which is quite common in practice \parencite{pilarczyk2007extent}) and when block sizes, hence distances $\left| x-y \right|$, are not large $AR(1)$ and LV models are expected to yield similar results. The main advantages of the LV model is that it is more robust to convergence issues when correlation is close to unity and also that it has one parameter instead of two, for the spatial component. To visualize more clearly the different spatial covariance structures of the different models, figure \ref{fig:Spatial_cov_structure} shows examples of those structures. 
+Thus, when the correlation is close to one (which is quite common in practice \parencite{pilarczyk2007extent}) and when block sizes, hence distances $\left| x-y \right|$, are not large $AR(1)$ and LV models are expected to yield similar results. The main advantages of the LV model is that it is more robust to convergence issues when correlation is close to unity and also that it has one parameter instead of two, for the spatial component. To visualize the different spatial covariance structures of the different models, Figure \ref{fig:Spatial_cov_structure} shows an example of each of those structures. 
 
 \input{extra/TikZ_spatial_covariance_structures}
 
 \subsection{Best standard spatial model}
-As explained in the previous section, several spatial covariance structures can be used in the standard spatial (SS) model to account for the spatial variations. Comparing the fit to the data of all the different models, would be a tedious and unnecessary process. Instead, all the SS models will be compared in term of AIC and deviance. Those two goodness-of-fit statistics are commonly used to compare statistical models \parencite{piepho_linear_2010,gilmour_accounting_1997,velazco_modelling_2017}. Those two statistics are based on the value of the likelihood function, $\mathcal{L}$:
+As explained in the previous section, several spatial covariance structures can be used in the standard spatial (SS) model to account for the spatial variations. Comparing the fit to the data of all the different models, would be a tedious and unnecessary process. Instead, all the SS models will be compared in term of AIC. This goodness-of-fit statistic is commonly used to compare statistical models \parencite{piepho_linear_2010,gilmour_accounting_1997,velazco_modelling_2017}. It is based on the value of the likelihood function, $\mathcal{L}$:
 \begin{equation}
-	AIC = 2k - 2ln(\mathcal{L}) \qquad \text{and} \qquad Deviance = -2\log(\mathcal{L})+C
+	AIC = 2k - 2ln(\mathcal{L})
 	\text{.}
 \end{equation}
-The main advantage of the AIC is that it takes into account the number of parameters of the model $k$, to avoid overfitting. The best standard spatial model (BSS) was retained as the one with the lowest AIC and Deviance. This model was used with the data from the platform and its results were compared to the one from the SpATS model.
+The main advantage of the AIC is that it takes into account the number of parameters of the model $k$, to avoid overfitting. The best standard spatial model (BSS) was retained as the one with the lowest AIC. This model was used with the data from the platform and its results were compared to the one from the SpATS model.
 
 \subsection{Model estimation}
 The models were implemented using the \verb|proc mixed| of the SAS software (SAS Institute, Cary, NC, USA). The spatial covariance structure was specified in the \verb|type| option of the \verb|random| statement of the procedure. The $AR(1)$ models were fitted using \verb|type = AR(1)|, the $AR(1)\times AR(1)$ were fitted using \verb|type = sp(POWA)| and the LV models were fitted using \verb|type = lin(q)|.
 
 \section{Model comparison}
-The SpATS model was compared with the BSS model in terms of quality of fit to the data and aility to detect genotype differences. Similar parameters to those used by \textcite{velazco_modelling_2017}, were considered for the comparison:
+The SpATS model was compared with the BSS model in terms of quality of fit to the data and ability to detect genotype differences. Similar parameters to those used by \textcite{velazco_modelling_2017}, were considered for the comparison:
 \begin{itemize}
     \item Genetic variance $(\sigma_g^2)$: precision of the genotype effect estimation. The generalized heritability will also
     be used to asses the same parameter.
