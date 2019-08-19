@@ -120,18 +120,6 @@ Genotype & NS placed & NS kept & GR \\
 \end{figure}
 
 \section{SpATS analysis}
-The SpATS model usually takes rows and columns coordinates as inputs for spatial position. To stay consistent with the platform notation, we replaced the rows by the strips and the columns by the positions. Given that we have tanks (A and B), strips (from 1 to 99) and positions (from 1 to 5), this coordinate replacement would have given us a field with 99 rows and 5 columns. In order to match the platform setup, we reshaped the data to have the tank side by side and the 99 strips divided in two columns, so that we would have a field with 50 rows and 20 columns. Figure \ref{fig:tank_disposition} shows the reshaping of the positions. This new display of the data allows us to see the difference between tanks more clearly and to visualize the variables values as they were in the greenhouse.
-
-\begin{figure}[hbtp]
-	\centering
-	\includegraphics[scale = 0.7]{figures/TANK_repartition.pdf}
-	\caption[Reshaping of the data table to fit the disposition of the greenhouse]{Reshaping of the data table to fit the 
-	disposition of the greenhouse. The black number indicates the original strip number, the grey numbers show the positions on 
-	the strip and the red numbers indicates the new 
-	numbers used in the spatial models.}
-	\label{fig:tank_disposition}	
-\end{figure}
-
 For the SpATS model, we analysed the four weight variables using the following model:
 \begin{equation}
 	\mathbf{y} =\mathbf{X} \boldsymbol{\beta}_{T} +\mathbf{X}_{s} \boldsymbol{\beta}_{s}+\mathbf{Z}_{s} \mathbf{s}+\mathbf{Z}_{u} \mathbf{u}
@@ -159,7 +147,7 @@ The analysis of the estimated coefficient for the genotypes and for the tanks is
 \subsection{Visual analysis}
 The raw data, the fitted data and the spatial model residuals are presented, for all variables, in Figure \ref{fig:spats_model_results}. The raw data shows us that the difference between tanks is less pronounced for the dry weights than for the fresh weights. However, this difference is well represented in the fitted data, where tank B (on the right in each picture) consistently display lower weight values. A strip effect is also noticeable for tank B, where the last strips have lower values than the first ones. This might be an effect of the still growing environment, since this effect is not present in tank A, which was constantly moving. No clear pattern emerges from the residuals, expect the fact that tank A seems to have more single data point with lower values the were not picked up by the spatial surface. Since those points are different than their local neighbours, it is possible that the model had trouble accounting for these local heterogeneities. A analysis of the residuals distribution revealed no violation to the normality assumption.\\
 
-ratio of scales ! (maybe in varaince section)
+Furthermore, a comparison of the scales of the fitted values and the raw data on Figure \ref{fig:spats_model_results} shows us that the smooth surface could not account for the extreme values present in the raw data. For example the range of the weight values for FRESH\_RS is 8, whereas it only goes to 5 for the fitted surface. However, the scale of the residuals is lower than the one of the fitted values, indicating that the smooth surface accounts for a good amount of the spatial variation.
 
 \begin{figure}
 	\begin{subfigure}[t]{\textwidth}

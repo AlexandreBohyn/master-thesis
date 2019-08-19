@@ -1,12 +1,14 @@
 \chapter{Additional informations on computation}
 \label{appendix:add_info}
 \section{Element-wise product}
+\label{appendix:add_info_element_wise_product}
 The element-wise product between two matrix $\mathbf{A}$ and $\mathbf{B}$ is noted $\mathbf{A} \odot \mathbf{B}$ and is defined in the following way:\\
 For two matrices $\mathbf{A}$, $\mathbf{B}$ of same dimensions $n \times m$, the element-wise product is a $n \times m$ matrix where the elements are defined by:
 \[(\mathbf{A} \odot \mathbf{B})_{i,j} = (\mathbf{A})_{i,j} \cdot (\mathbf{B})_{i,j}\]
 The product is undefined for matrices of different dimensions
 
 \section{Kronecker product}
+\label{appendix:add_info_kronecker_product}
 The Kronecker product of two matrix $\mathbf{A}$ and $\mathbf{B}$ of respective dimensions $n \times m$ and $p \times q$ is a $np \times mq$ block matrix where the elements are defined by:
 \[\mathbf { A } \otimes \mathbf { B } = 
 \left[ 
@@ -62,33 +64,128 @@ The smoothing parameter $\lambda \geq 0$ controls the compromise between fidelit
 \[ \hat { \boldsymbol{\gamma} } = \left(\mathbf{ Z} ^ { \prime } \mathbf {Z} + \lambda \mathbf{K} \right) ^ { - 1 }\mathbf{ Z} ^ { \prime }\mathbf{ y} \text{.}\]
 For more detailed information about polynomials splines, please refer to \textcite{fahrmeir_regression:_2013} and \textcite{eilers_flexible_1996}
 
-\section{Penalized form of the solution}
-\label{appendix:penalized_solution_form}
-Let us consider the following model, representing the bivariate surface:
-\begin{equation}
-	\Hat{\boldsymbol{\alpha}} = (\mathbf{B}^t\mathbf{B})^{-1}\mathbf{B}^t\mathbf{y}
-\end{equation}
+\section{Penalized form of the solution and smoothing parameter selection}
+\label{appendix:SpATS_add_comput_info}
+Let us consider the model only containing a bivariate smooth surface and an error term:
+\[
+	    y _ { i } = f \left( u _ { i } , v _ { i } \right) + \varepsilon _ { i } , \text { with } \varepsilon _ { i } \sim N 
+	    \left( 0 , \sigma ^ { 2 } \right) \text{.} 
+	    \]
+It can be rewritten, in matrix notation, as the tensor product of B-splines:
+\[
+    \boldsymbol{y} = \boldsymbol{B}\boldsymbol{\alpha} + \boldsymbol{\epsilon}
+    \text{.}
+\]
 Since the model is purely parametric, it can be estimated by minimizing the residual sum of squares (with explicit solution $\Hat{\boldsymbol{\alpha}} = (\mathbf{B}^t\mathbf{B})^{-1}\mathbf{B}^t\mathbf{y}$). To prevent over-fitting, \textcite{eilers_flexible_1996} propose to incorporate a discrete penalty on the coefficient associated to adjacent B-splines. For the two-dimensional case, the vector $\boldsymbol{\alpha}$ can be seen as an  $(L \times P)$  matrix  of  coefficients, $\mathbf{A}=[\alpha_{lp}]$. Now the rows  and columns of $\mathbf{A}$ correspond to the regression coefficients in the $v$ and  $u$ direction, respectively. In anisotropic (direction-dependant) P-splines, a different amount of smoothing is assumed along the $u$ and $v$ directions. It leads to two penalties:  one on all rows of $\mathbf{A}$,  the other on all of its columns; and the penalized least squares objective function becomes \parencite{eilers_multivariate_2003}
-\begin{equation}
+\[
 \begin{aligned}
     S^{*} & = \underbrace{\|\boldsymbol{y}-\boldsymbol{B} \boldsymbol{\alpha}\|^{2}}_{\text{Original objective function}} \\
     	  & +\underbrace{\invbreve{\lambda}\|\invbreve{\boldsymbol{D}} A\|_{F}^{2}}_{\text{Penalty along the columns}} \\
     	  & +\underbrace{\breve{\lambda}\left\|\boldsymbol{A} \breve{D}^{t}\right\|_{F}^{2}}_{\text{Penalty along the rows}} \\
     =	  & \|\boldsymbol{y}-\boldsymbol{B} \boldsymbol{\alpha}\|^{2}+\boldsymbol{\alpha}^{t} \boldsymbol{P} \boldsymbol{\alpha}
     \text{,}
-    \label{eq:least_squares_penalized}
 \end{aligned}
-\end{equation}
+\]
 where $\boldsymbol{P}=\invbreve{\lambda}\left(\boldsymbol{I}_{P} \otimes \invbreve{\boldsymbol{D}}^{t} \invbreve{\boldsymbol{D}}\right)+\breve{\lambda}\left(\breve{\boldsymbol{D}}^{t} \breve{\boldsymbol{D}} \otimes \boldsymbol{I}_{L}\right)$ is the penalty matrix, $\invbreve{\lambda}$ and $\breve{\lambda}$ are the smoothing parameters acting, respectively, on the columns and rows of $\mathbf{A}$, and $\invbreve{\mathbf{D}}$ and $\breve{\mathbf{D}}$ are the matrices that form differences of order $d_u$ and $d_v$ respectively. The minimizer of \ref{eq:least_squares_penalized} then becomes 
-\begin{equation}
+\[
     \widehat{\boldsymbol{\alpha}}=\left(\boldsymbol{B}^{t} \boldsymbol{B}+\boldsymbol{P}\right)^{-1} \boldsymbol{B}^{t} 
     \boldsymbol{y}
+    \text{,}
+\]
+which is the penalized form of the solution. However, $\boldsymbol{P}$ is rank-deficient.
+To have a full rank penalty matrix, the key is to rewrite the model and setting
+\[
+    \mathbf{B}\boldsymbol{\alpha} = \boldsymbol{X}_{s} \boldsymbol{\beta}_{s}+\boldsymbol{Z}_{s} \boldsymbol{c}_{s}
     \text{.}
-\end{equation}
+\]
+There are now two bases: $\mathbf{X}_{s}$, with coefficients that are not penalized at all, and $\mathbf{Z}_{s}$, with a size 
+penalty on its coefficients. This decomposition follows the proposal by \textcite{lee_p-spline_2011}, based on eigenvalue 
+decomposition which gives rise to a diagonal penalty matrix.\\
+
+The two bases have the following structures:
+\[
+    \boldsymbol{X}_{s}=\left[\mathbf{1}_{n}, \boldsymbol{u}, \boldsymbol{v}, \boldsymbol{u} \odot \boldsymbol{v}\right]
+    \quad
+    \text{and}
+    \quad
+    \mathbf{Z}_{s}=\left[\mathbf{Z}_{v}, \mathbf{Z}_{u}, \mathbf{Z}_{v} \boxdot \mathbf{u}, \mathbf{v} \boxdot \mathbf{Z}_{u}, 
+    \mathbf{Z}_{v} \boxdot \mathbf{Z}_{u}\right]
+    \text{,}
+
+\]
+where $\boldsymbol{u}$ and $\boldsymbol{v}$ are still, respectively, the vectors of row and column positions. 
+Here $\mathbf{Z}_{u}$ and $\mathbf{Z}_{v}$ are penalized version of the B-splines basis $\breve{\mathbf{B}}$ (rows) and
+$\invbreve{\mathbf{B}}$ (columns). This new way of writing the problem leads to another penalty matrix 
+$ \widetilde{\boldsymbol{P}}$, which is a block diagonal matrix. Each block of $ \widetilde{\boldsymbol{P}}$ corresponds to a 
+block in $\mathbf{Z}_{s}$. Similarly to $\boldsymbol{P}$, the penalty matrix of the previous section, this new penalty matrix 
+only depends on the two tuning parameters $\invbreve{\lambda}$ (smoothing along the columns) and $\breve{\lambda}$ (smoothing 
+along the rows).
+Figure \ref{fig:matrix_diagram} presents a diagram clarifying the structures and relations of the different matrices presented 
+throughout this section.\\
+
+This reformulation provides the ANOVA type decomposition discussed in the previous section 
+(\ref{eq:full_bivariate_smooth_surface_model}), and explains how the bilinear smooth surface can be modelled using P-splines and 
+tensor products of P-splines.
+The block structure of $\mathbf{X}_s$ and $\mathbf{Z}_s$ implies
+\[
+    \begin{aligned} 
+        f(\boldsymbol{u}, \boldsymbol{v}) & =\boldsymbol{X}_{s} \boldsymbol{\beta}_{s}+Z_{s} \boldsymbol{c}_{s} \\ 
+        								  & =\mathbf{1}_{n} \beta_{0}+\boldsymbol{u} \beta_{1}+\boldsymbol{v} \beta_{2}+
+        								  \boldsymbol{u} \odot \boldsymbol{v} \beta_{3} \\
+        								  & + \underbrace{f_{v}(\boldsymbol{v})}_{\boldsymbol{Z}_{v} \boldsymbol{c}_{s 1}}+
+        								  \underbrace{f_{u}(\boldsymbol{u})}_{\boldsymbol{Z}_{u} \boldsymbol{c}_{s 2}} +
+        								  \underbrace{\boldsymbol{u} \odot h_{v}(\boldsymbol{v})}_{\left[\boldsymbol{Z}_{v} 
+        								  \square \boldsymbol{u}\right] \boldsymbol{c}_{s 3}}+\underbrace{\boldsymbol{v} \odot 
+        								  h_{u}(\boldsymbol{u})}_{\left[\boldsymbol{v} \square \boldsymbol{Z}_{u}\right] 
+        								  \boldsymbol{c}_{s 4}} +\underbrace{f_{u, v}(\boldsymbol{u}, \boldsymbol{v})}
+        								  _{\left[\boldsymbol{Z}_{v} \square \boldsymbol{Z}_{u}\right] \boldsymbol{c}_{s 5}}
+        								  \text{,}
+    \end{aligned}
+\]
+where $\boldsymbol{c}_{sk} \ (k = 1,\ldots,5)$ contains the elements of $\boldsymbol{c}_s$ that correspond to the $k$th block of $\boldsymbol{Z}_s$, i.e. $\boldsymbol{c}_s = (\boldsymbol{c}_{s1}^t,\ldots,\boldsymbol{c}_{s5}^t)^t$. The details about the specific block component of $\boldsymbol{Z}_s$ and the computation of the new penalty matrix are available in  \textcite{rodriguez-alvarez_correcting_2018} and the appendices therein.\\
+
+Therefore, using this new notation, model (\ref{eq:smooth_part_only_model}) that only contains a smooth bivariate surface and an error term can be rewritten in the following way:
+
+\[
+    \boldsymbol{y}=\boldsymbol{X}_{s} \boldsymbol{\beta}_{s}+\boldsymbol{Z}_{s} \boldsymbol{c}_{s}+\boldsymbol{\varepsilon}, 	
+    \text { with } 
+    \boldsymbol{\varepsilon} \sim N\left(\mathbf{0}, \sigma^{2} \boldsymbol{I}_{n}\right) 
+    \text { and } 
+    \boldsymbol{c}_{s} \sim N\left(\mathbf{0}, \boldsymbol{G}_{s}\right)
+    \text{,}
+\]
+where $\boldsymbol{G}_{s} = \sigma^2\widetilde{\boldsymbol{P}}^{-1}$ and also has a block diagonal structure, similar to that of $\widetilde{\boldsymbol{P}}$ (this structure is also represented on 
+figure \ref{fig:matrix_diagram}). 
+However, $\boldsymbol{G}_{s}$ depends on two different parameters, $\breve{\sigma}^2 =\sigma / \breve{\lambda}$ and $
+\invbreve{\sigma}^2 =\sigma / \invbreve{\lambda}$, which are variance parameters. 
+As shown in the diagram in Figure \ref{fig:matrix_diagram}, the same variance parameters control the smoothness of the both the 
+main effects and interactions terms. 
+This prevents the use of standard mixed models software for estimation since $\mathbf{G}_s$ has its last block depending on both 
+$\breve{\sigma}^2$ and $\invbreve{\sigma}^2$, but in a non-linear way. 
+Even though \textcite{rodriguez-alvarez_fast_2015} presented a specialized algorithm to deal with this issue, 
+here the PS-ANOVA decomposition approach \parencite{lee_efficient_2013} is used to allow the use of standard mixed model estimation procedures. \textcite{lee_efficient_2013} therefore propose to use a different variance component for each smooth component in $\mathbf{G}_s$, thus redefining this matrix as a linear function of variance parameters:
+\[
+    \boldsymbol{G}_{s} = 
+%	\bigoplus_{k=1}^{5} \sigma_{s k}^{2} \Lambda_{s k} =
+    \bigoplus_{k=1}^{5} \boldsymbol{G}_{s k}= 
+    \text{ blockdiag }
+    \left(\boldsymbol{G}_{s 1}, \boldsymbol{G}_{s 2}, \boldsymbol{G}_{s 3}, \boldsymbol{G}_{s 4}, \boldsymbol{G}_{s 5}\right)
+    \text{,}
+\]
+where $\boldsymbol{G}_{s k}$ %= \sigma_{sk}^2\boldsymbol{\Lambda}_{sk} \ (k=1,\ldots,5)$
+is the $k$th block of the $\mathbf{G}_{s}$ matrix, depending on the specific variance component $\sigma_{sk}^2$. 
+In other words, here the tensor product P-splines mixed model is represented as the sum of 5 sets of mutually independent Gaussian random components $\mathbf{c}_{sk}$, each depending on one variance $\sigma_{sk}^2 \ (k=1,\ldots,5)$.\\
+
+Within this mixed model framework, the smoothing parameters, defined earlier as the ratio between the residual variance and the
+corresponding variance effect $\lambda_{sk} = \sigma^2_{e} / \sigma^2_{sk}$, are determined by restricted maximum likelihood (REML). Therefore the smoothness of the spatial surface is tuned by five distinct parameters, applying anisotropic (direction-dependant) smoothing. This parametrization provides flexibility to account for both global and local variations in the field. Furthermore, the decomposition of $f(\boldsymbol{u},\boldsymbol{v})$ enables a more explicit interpretation of the main patterns of spatial variation \parencite{rodriguez-alvarez_correcting_2018}.
+
+\input{extra/TIKZ_matrix_diagram}
 
 \clearpage
 
 \chapter{Additional figures and tables}
+%\section{Germination table}
+%\label{appendix:germ_table}
 \section{Graphical analysis of the residuals}
 \label{appendix:residuals}
 
@@ -170,54 +267,54 @@ $\mathbf{c}_{g}$ & 0.171 & 0.262 & 1.27$\times 10^{-3}$ & 6.9$\times 10^{-4}$ \\
 \label{tab:spats_variances}
 \end{table}
 
-\chapter{Hoagland solution}
-\label{appendix:hoagland}
-
-\rowcolors{2}{gray!25}{white}
-
-\captionsetup[table]{list=no}
-\begin{table}[hbtp]
-    \centering
-    \caption{Composition of the \textit{Hoagland} nutritive solution. The pH must be adjusted to 5.0 using \ch{HCl} 1\% before using.}
-    \label{tab:my_label}
-    \begin{threeparttable}
-    \begin{tabular}{>{\bfseries}p{4cm} p{4cm} p{4cm}}
-    \toprule
-        Components & \textbf{Concentration (g/L)} & \textbf{ml for 25L of solution}\tnote{1} \\
-    \midrule
-        2M \ch{KNO3} & 202 & 62.5 \\
-        2M \ch{Ca(NO3)2} x \ch{4 H2O}  & 472 & 62.5\\
-        2M \ch{MgSO4} x \ch{7 H2O} & 493 & 25\\
-        1M \ch{NH4NO3} & 80 & 25\\
-        Minors: \newline
-        \ch{H3BO3} \newline
-        \ch{MnCl2} x \ch{4 H2O} \newline
-        \ch{ZnSO4} x \ch{7 H2O} \newline
-        \ch{CuSO4} \newline
-        \ch{H3MoO4} x \ch{H2O} or \newline
-        \ch{Na2MoO4} x \ch{2 H2O} & 
-        ~    \newline
-        2.86 \newline
-        1.81 \newline
-        0.22 \newline
-        0.051 \newline
-        0.09 \newline 
-        0.12 & 
-        ~    \newline
-        ~    \newline
-        ~    \newline
-        25 \tnote{2} \\
-        1M \ch{KH2PO4} (ph to 6.0 with 3M \ch{KOH}) & 136 & 12.5\\
-        Iron (Sprint 138 iron chelate) & 15 & 75\\
-    \bottomrule
-    \end{tabular}
-    \begin{tablenotes}\footnotesize
-        \item[1] For a 1:1 solution to use with 25L of water.
-        \item[2] All the minors elements are grouped, in the right proportions, in a "minor" solution.
-    \end{tablenotes}
-    \end{threeparttable}
-\end{table}
-\captionsetup[table]{list=yes}
+%\chapter{Hoagland solution}
+%\label{appendix:hoagland}
+%
+%\rowcolors{2}{gray!25}{white}
+%
+%\captionsetup[table]{list=no}
+%\begin{table}[hbtp]
+%    \centering
+%    \caption{Composition of the \textit{Hoagland} nutritive solution. The pH must be adjusted to 5.0 using \ch{HCl} 1\% before using.}
+%    \label{tab:my_label}
+%    \begin{threeparttable}
+%    \begin{tabular}{>{\bfseries}p{4cm} p{4cm} p{4cm}}
+%    \toprule
+%        Components & \textbf{Concentration (g/L)} & \textbf{ml for 25L of solution}\tnote{1} \\
+%    \midrule
+%        2M \ch{KNO3} & 202 & 62.5 \\
+%        2M \ch{Ca(NO3)2} x \ch{4 H2O}  & 472 & 62.5\\
+%        2M \ch{MgSO4} x \ch{7 H2O} & 493 & 25\\
+%        1M \ch{NH4NO3} & 80 & 25\\
+%        Minors: \newline
+%        \ch{H3BO3} \newline
+%        \ch{MnCl2} x \ch{4 H2O} \newline
+%        \ch{ZnSO4} x \ch{7 H2O} \newline
+%        \ch{CuSO4} \newline
+%        \ch{H3MoO4} x \ch{H2O} or \newline
+%        \ch{Na2MoO4} x \ch{2 H2O} & 
+%        ~    \newline
+%        2.86 \newline
+%        1.81 \newline
+%        0.22 \newline
+%        0.051 \newline
+%        0.09 \newline 
+%        0.12 & 
+%        ~    \newline
+%        ~    \newline
+%        ~    \newline
+%        25 \tnote{2} \\
+%        1M \ch{KH2PO4} (ph to 6.0 with 3M \ch{KOH}) & 136 & 12.5\\
+%        Iron (Sprint 138 iron chelate) & 15 & 75\\
+%    \bottomrule
+%    \end{tabular}
+%    \begin{tablenotes}\footnotesize
+%        \item[1] For a 1:1 solution to use with 25L of water.
+%        \item[2] All the minors elements are grouped, in the right proportions, in a "minor" solution.
+%    \end{tablenotes}
+%    \end{threeparttable}
+%\end{table}
+%\captionsetup[table]{list=yes}
 
 \chapter{Phenotyping platform information file}
 \label{appendix:platform_info}
