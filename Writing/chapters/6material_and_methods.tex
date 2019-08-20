@@ -600,20 +600,20 @@ Consequently, it can be interpreted as a measure of the magnitude of field varia
 Using the PS-ANOVA structure of the spatial model, the total effective dimension can be decomposed for each components of the smooth surface $f(\boldsymbol{u},\boldsymbol{v})$.  These partial effective dimensions are indicative of the relative contribution of each component to the fitted surface.
 
 \subsubsection{Generalized heritability}
-As we just said, the effective dimension is a useful tool to measure the relative importance of each spatial component, and to compare them. However, the effective dimension of the genetic component can't be compared to the rest easily. This is where the concept of heritability comes in handy. In classical genetic models, the standard heritability is defined as the proportion of the total (phenotypic) variation that is attributable to the genetic component. In their paper, \textcite{rodriguez-alvarez_correcting_2018} show the link between this definition and the genetic effective dimension. They go further by saying that this definition can be extended to the concept of generalized heritability \parencite{oakey_joint_2006}, which is similar to the standard one, except that the genotype are considered independent. This is useful when there are no pedigree/marker information available about the genotypes. They establish the following relationship:
+As we just said, the effective dimension is a useful tool to measure the relative importance of each spatial component, and to compare them. However, the effective dimension of the genetic component is harder to compare to the rest. This is where the concept of heritability comes in handy. In classical genetic models, the standard heritability is defined as the proportion of the total (phenotypic) variation that is attributable to the genetic component. \textcite{rodriguez-alvarez_correcting_2018} show the link between this definition and the genetic effective dimension and establish the following relationship, for experiments where there are no marker\footnote{(Molecular) Markers are fragments of DNA associated with a certain location in the genome. They are widely used in genotyping to identify useful traits and relationship between genotypes.} information available about the the genotypes:
 \begin{equation}
 H_{g}^2 = \dfrac{ED_{g}}{n_{g}} = 1 - \dfrac{\overline{PEV}}{\sigma^2_{g}}
-\text{,}
+\text{.}
 \end{equation}
-where $n_{g}$ is the number of genotypes and $\overline{PEV}$ is the prediction error variance for the genotype BLUPs. Since $n_{g}$ is also the upper bound of the effective genetic dimension, $H^2_{g}$ can be seen as a shrinkage factor. Given that our experiment does not incorporate a genetic relationship matrix, we'll use this definition to properly interpret the genetic effect in our model. The right-hand term of the equation, is equivalent to the concept of generalized heritability developed by \textcite{welham2010comparison}. We can take advantage from that to compare the heritability between the spats model and the $AR \times AR$ model.
+In this equation, $n_{g}$ is the number of genotypes and $\overline{PEV}$ is the prediction error variance for the genotype BLUPs. Given that our experiment does not incorporate a genetic relationship matrix, we'll use this definition to properly interpret the genetic effect in our model. We can take advantage of the right hand term of the equation to compute the heritability for the standard spatial model that does not have effetive dimensions \textcite{welham2010comparison}. Details about the effective dimensions are available in \textcite{rodriguez-alvarez_correcting_2018} and references therein.
 
 \section{Standard spatial models}
 \label{sec:arxar_model}
-In this section the $AR \times AR$ model, and its extension to the linear variance ($LV$) model, are presented. For more detailed information about the original $AR \times AR$ model, consult \textcite{gilmour_accounting_1997}. For information about the extensions of the model, see \textcite{piepho_linear_2010} and \textcite{williams_neighbour_1986}.\\
+In this section the $AR(1) \times AR(1)$ model, and its extension to the linear variance ($LV$) model, are presented. For more detailed information about the original $AR(1) \times AR(1)$ model, consult \textcite{gilmour_accounting_1997}. For information about the extensions of the model, see \textcite{piepho_linear_2010} and \textcite{williams_neighbour_1986}.\\
 
-As explained in the literature review chapter, the standard spatial models (SS models), such as the $AR \times AR$ model, use a spatially dependent error term to adjust for the local trends, whereas the SpATS model encompasses them in the smooth surface. 
-To estimate the spatial covariance structure of this error process, \textcite{gilmour_accounting_1997} advocate the use of variograms and more precisely, the use of auto-regressive processes ($AR(1)$) to model those variograms. 
-The general representation of the SS model is very similar to the SpATS model:
+As explained in the literature review chapter, the standard spatial models (SS models), such as the $AR(1) \times AR(1)$ model, use a spatially dependent error term to adjust for the local trends, whereas the SpATS model encompasses them in the smooth surface. 
+To estimate the spatial covariance structure of this error process, \textcite{gilmour_accounting_1997} advocate the use of variograms and more precisely, the use of first order auto-regressive processes ($AR(1)$) to model those variograms. 
+The general representation of an SS model is very similar to the SpATS model:
 \begin{equation}
 	y = \mathbf{X}\boldsymbol{\beta} + \mathbf{X}_{s}\boldsymbol{\beta}_{s} + \mathbf{Zc} +  \mathbf{Z}_{s}\mathbf{c}_{s} + 
 	\boldsymbol{\xi} + \boldsymbol{\varepsilon}
@@ -626,13 +626,13 @@ where $\mathbf{X}\boldsymbol{\beta}$ contains the fixed terms of the model, $\ma
 As \textcite{gilmour_accounting_1997} explain in their paper, they model an error process using a variogram. The error process is defined as the sum of the independent and spatially-dependent residuals: $\mathbf{e} = \boldsymbol{\xi} + \boldsymbol{\varepsilon}$, where the term of interest is the spatially dependant error term $\boldsymbol{\xi}$.\\
 
 The variogram is a function that computes the evolution of the covariance of a spatially-dependent variable over the distance.
-It enables the visualization of the covariance structure of a variable as a function of spatial displacement. They exist both in one and two dimensions. Examples of variograms are presented in figure \ref{fig:variogram_example}. In our case, let us consider the error process $\mathbf{e}$, being a stationary (direction-dependent) process over the rows (strips) $\mathbf{u}$ and the columns (positions) $\mathbf{v}$. For two distinct points in space $x$ and $y$, the covariance structure between these two points is modelled by the theoretical variogram (also called the semi-variogram because of the $1/2$ factor in its equation) as:
+It enables the visualization of the covariance structure of a variable as a function of spatial displacement. Examples of one- and two-dimensional variograms are presented in figure \ref{fig:variogram_example}. In our case, let us consider the error process $\mathbf{e}$, being a stationary (direction-dependent) process over the rows $\boldsymbol{u}$ and the columns $\boldsymbol{v}$. For two distinct points in space $\boldsymbol{x}$ and $\boldsymbol{y}$, the covariance structure between these two points is modelled by the theoretical variogram (also called the semi-variogram because of the $1/2$ factor in its equation) as:
 \begin{equation}
-    \omega(\mathbf{x}, \mathbf{y})=\frac{1}{2} \operatorname{var}[\mathbf{e}(\mathbf{x})-\mathbf{e}(\mathbf{y})]=\frac{1}{2}
-    [\mathrm{V}(\mathbf{x}, \mathbf{x})+\mathrm{V}(\mathbf{y}, \mathbf{y})-2 \mathrm{V}(\mathbf{x}, \mathbf{y})]
+    \omega(\boldsymbol{x}, \boldsymbol{y})=\frac{1}{2} \operatorname{var}[\mathbf{e}(\boldsymbol{x})-\mathbf{e}(\boldsymbol{y})]=\frac{1}{2}
+    [\mathrm{V}(\boldsymbol{x}, \boldsymbol{x})+\mathrm{V}(\boldsymbol{y}, \boldsymbol{y})-2 \mathrm{V}(\boldsymbol{x}, \boldsymbol{y})]
     \text{,}
 \end{equation}
-where $\mathrm{V}$ is the covariance function of our error process $\mathbf{e}$. We can define the distance between the pair of points $(\mathbf{x},\mathbf{y})$ as:
+where $\mathrm{V}$ is the covariance function of our error process $\mathbf{e}$. If we define the distance between the pair of points $(\mathbf{x},\mathbf{y})$ as:
 \begin{equation*}
     \mathbf{l}=\left[ \begin{array}{l}{l_{1}} \\ {l_{2}}\end{array}\right]=\left[ \begin{array}{l}{\left|x_{1}-y_{1}\right|} \\ 
     {\left|x_{2}-y_{2}\right|}\end{array}\right]
@@ -640,7 +640,7 @@ where $\mathrm{V}$ is the covariance function of our error process $\mathbf{e}$.
 \end{equation*}
 then \textcite{zimmerman_random_1991} show that the covariance function of the error process can be rewritten a directional exponential covariance (DEC) structure:
 \begin{equation}
-	\mathrm{V}(\mathbf{x},\mathbf{y}) = \operatorname{exp}(-\alpha_{1}l_{1} - \alpha_{2}l_{2})
+	\mathrm{V}(\boldsymbol{x},\boldsymbol{y}) = \operatorname{exp}(-\alpha_{1}l_{1} - \alpha_{2}l_{2})
 	\text{.}
 \end{equation}
 For most field experiments, plots are arranged in regular grids and thus separated by equivalent distances. Therefore the distance between plots is expressed using the displacement vector, which takes values for $l_1$ of $0,d_1,2d_1,\ldots,(r-1)d_1$ and for $l_2$ of $0,d_2,2d_2,\ldots,(c-1)d_2$, where $d_1$ and $d_2$ are the plot dimensions. 
@@ -657,14 +657,13 @@ The semi-variogram can then be rewritten as:
     \label{eq:variogram_DEC}
 \end{equation}
 
-A first order auto-regressive process, is a process in which the term at time $t$ only depends on the value of the process at time $(t-1)$ and on a stochastic term (white noise): $X_{t} = c + \rho X_{t-1} + \varepsilon_{t}$. 
-The only parameter in the model (if the intercept is ignored) is $\rho$. 
-Therefore \textcite{cullis_spatial_1991} show that by setting $\rho_1 = \operatorname{exp}(-\alpha_{1}d_{1})$ and $\rho_{2} = \operatorname{exp}(-\alpha_{2}d_{2})$, the variogram (equation \ref{eq:variogram_DEC}) becomes
+A first order auto-regressive process, is a process in which the term at index $i$ only depends on the value of the process at index $(i-1)$ and on a stochastic term (white noise): $X_{i} = c + \rho X_{i-1} + \varepsilon_{i}$. 
+The only parameter in the model (if the intercept is ignored) is $\rho$. \textcite{cullis_spatial_1991,cressie_statistics_1992} show that by setting $\rho_1 = \operatorname{exp}(-\alpha_{1}d_{1})$ and $\rho_{2} = \operatorname{exp}(-\alpha_{2}d_{2})$, the variogram (equation \ref{eq:variogram_DEC}) becomes
 
 \begin{equation}
     \begin{aligned}
         \omega\left(\mathbf{l}^{*}\right)
-        & = \sigma_{\varepsilon}^{2}+\sigma^{2}\left(1-\rho_{1}^{l_{1}^{*}} \rho_{2}^{l_{2}^{*}}\right) 
+        & = \sigma_{\varepsilon}^{2}+\sigma_{\xi}^{2}\left(1-\rho_{1}^{l_{1}^{*}} \rho_{2}^{l_{2}^{*}}\right) 
         & \mathbf{l}^* \neq 0 \\
         & = 0
         & \mathbf{l}^* = 0 
@@ -692,31 +691,36 @@ This formulation demonstrates the equivalence between the semi-variogram, the DE
 The modification of the $AR(1) \times AR(1)$ model to include the linear variance (LV) structure, is based on the one-dimensional LV structure proposed by \textcite{williams_neighbour_1986} and its elevation to two dimensions by \textcite{piepho_linear_2010}.
 Let us first consider the case of LV in one dimension (a single position over several strips in our case) for n=99 plots. The baseline covariance structure is written as:
 \begin{equation}
-	V_{0}=\sigma^{2} I_{n}+\eta J_{n}
+	\boldsymbol{V}_{0}=\sigma^{2} \boldsymbol{I}_{n}+\eta \boldsymbol{J}_{n}
 	\text{,}
 \end{equation}
-where $I_{n}$ is the n-dimensional identity matrix and $J_{n}$ is a $n$ by $n$ matrix of ones everywhere, $\sigma^2$ is the residual variance and $\eta$ is the block variance. 
-\textcite{williams_neighbour_1986} propose to augment this baseline covariance model by a spatial component $V_{s}$ such that plots within the same block obey a correlation structure that decays linearly with distance. 
-For two plots $x$ and $y$, they define the matrix $L_n$ as a $n\times n$ matrix where the $(x,y)$-th element is equal to $|x-y|$. 
-From that statement, the decaying correlation structure can be expressed in matrix form as $V_{S}=\kappa\left(J_{n}-\tilde{\phi} L_{n}\right)$, where $\tilde{\phi}$ is a slope parameter determining the decaying process and $\kappa$ is a spatial variance. 
+where $\boldsymbol{I}_{n}$ is the n-dimensional identity matrix and $\boldsymbol{J}_{n}$ is a $n$ by $n$ matrix of ones everywhere, $\sigma^2$ is the residual variance and $\eta$ is the block variance. 
+\textcite{williams_neighbour_1986} propose to augment this baseline covariance model by a spatial component $\boldsymbol{V}_{s}$ such that plots within the same block obey a correlation structure that decays linearly with distance. 
+For two plots $x$ and $y$, they define the matrix $\boldsymbol{L}_n$ as a $n\times n$ matrix where the $(x,y)$-th element is equal to $|x-y|$. 
+From that statement, the decaying correlation structure can be expressed in matrix form as $\boldsymbol{V}_{S}=\kappa\left(\boldsymbol{J}_{n}-\tilde{\phi} \boldsymbol{L}_{n}\right)$, where $\tilde{\phi}$ is a slope parameter determining the decaying process and $\kappa$ is a spatial variance. 
 To avoid confounding effects, \textcite{williams_neighbour_1986} rewrite the complete, augmented model as a linear structure:
 \begin{equation}
-	V=V_{0}+V_{S}=\sigma^{2} I_{n}+\eta J_{n}+\phi M_{n}
+	\boldsymbol{V}=\boldsymbol{V}_{0}+\boldsymbol{V}_{S}=\sigma^{2} \boldsymbol{I}_{n}+\eta \boldsymbol{J}_{n}+\phi \boldsymbol{M}_{n}
 	\text{,}
 \end{equation}
-where $M_n = (n-1)J_n - L_n$ and $\phi = \kappa\tilde{\phi}$. The components of the model have the following interpretation: (i) $\sigma^{2} I_{n}$ is the residual error (or nugget effect in variogram-specific terms); (ii) the block effect, $\eta J_n$, captures extraneous variations on the field; and (iii) $\phi M_n$ models a spatial correlation within a block by a LV–covariance structure where correlation decays linearly with distance.\\
+where $\boldsymbol{M}_n = (n-1)\boldsymbol{J}_n - \boldsymbol{L}_n$ and $\phi = \kappa\tilde{\phi}$. The components of the model have the following interpretation: 
+\begin{itemize}
+	\item $\sigma^{2} \boldsymbol{I}_{n}$ is the residual error (or nugget effect in variogram-specific terms).
+	\item $\eta \boldsymbol{J}_n$ is the block effect that captures extraneous variations on the field.
+	\item $\phi \boldsymbol{M}_n$ models a spatial correlation within a block by a LV–covariance structure where correlation decays linearly with distance.
+\end{itemize}
 
-\textcite{piepho_linear_2010} present two main ways to extend the model to two dimensions. The first one is a superimposition of the two structures: a LV structure along the columns but independent between the rows  and a LV structure along the columns but independent between the rows ($\mathrm{LV} \otimes I$). The second one is a product of the two LV structures: $LV \otimes LV$. In a desire of clarity, the full notation of these structure is not presented here, but are detailed in the paper of \textcite{piepho_linear_2010}.\\
+\textcite{piepho_linear_2010} present two main ways to extend the model to two dimensions. The first one is a superimposition of the two structures: a LV structure along the columns but independent between the rows ($\boldsymbol{V} \otimes \boldsymbol{I}$) and a LV structure along the columns but independent between the rows ($ \boldsymbol{I} \boldsymbol{V}$). The second one is a product of the two LV structures: $\boldsymbol{V} \otimes \boldsymbol{V}$. In a desire of clarity, the full notation of these structure is not presented here, but are detailed in \textcite{piepho_linear_2010}.~\\
 
 The similarity between the LV structure and the $AR(1)$ process comes from the fact that when the spatial correlation $\rho^{l} \approx 1$ then 
 $\rho^{\left| x-y \right|}=\exp \left[\log (\rho)\left| x-y \right|\right] \approx 1-\tilde{\phi}\left| x -y \right|$ with 
 $\tilde{\phi} = -\log(\rho)$. 
-Thus, when the correlation is close to one (which is quite common in practice \parencite{pilarczyk2007extent}) and when block sizes, hence distances $\left| x-y \right|$, are not large $AR(1)$ and LV models are expected to yield similar results. The main advantages of the LV model is that it is more robust to convergence issues when correlation is close to unity and also that it has one parameter instead of two, for the spatial component. To visualize the different spatial covariance structures of the different models, Figure \ref{fig:Spatial_cov_structure} shows an example of each of those structures. 
+Thus, when the correlation is close to one (which is quite common in practice \parencite{pilarczyk2007extent}) distances $\left| x-y \right|$ are not large, $AR(1)$ and LV models are expected to yield similar results. The main advantages of the LV model is that it is more robust to convergence issues when correlation is close to unity and also that it has one parameter instead of two, for the spatial component. To visualize the different spatial covariance structures of the different models, Figure \ref{fig:Spatial_cov_structure} shows an example of each of those structures. 
 
 \input{extra/TikZ_spatial_covariance_structures}
 
 \subsection{Best standard spatial model}
-As explained in the previous section, several spatial covariance structures can be used in the standard spatial (SS) model to account for the spatial variations. Comparing the fit to the data of all the different models, would be a tedious and unnecessary process. Instead, all the SS models will be compared in term of AIC. This goodness-of-fit statistic is commonly used to compare statistical models \parencite{piepho_linear_2010,gilmour_accounting_1997,velazco_modelling_2017}. It is based on the value of the likelihood function, $\mathcal{L}$:
+As explained in the previous section, several spatial covariance structures can be used in the standard spatial (SS) model to account for the spatial variations. Comparing the fit to the data of all the different models, would be a tedious process. Instead, all the SS models will be compared in term of AIC. This goodness-of-fit statistic is commonly used to compare statistical models \parencite{piepho_linear_2010,gilmour_accounting_1997,velazco_modelling_2017}. It is based on the value of the likelihood function, $\mathcal{L}$:
 \begin{equation}
 	AIC = 2k - 2ln(\mathcal{L})
 	\text{.}
@@ -727,12 +731,13 @@ The main advantage of the AIC is that it takes into account the number of parame
 The models were implemented using the \verb|proc mixed| of the SAS software (SAS Institute, Cary, NC, USA). The spatial covariance structure was specified in the \verb|type| option of the \verb|random| statement of the procedure. The $AR(1)$ models were fitted using \verb|type = AR(1)|, the $AR(1)\times AR(1)$ were fitted using \verb|type = sp(POWA)| and the LV models were fitted using \verb|type = lin(q)|.
 
 \section{Model comparison}
-The SpATS model was compared with the BSS model in terms of quality of fit to the data and ability to detect genotype differences. Similar parameters to those used by \textcite{velazco_modelling_2017}, were considered for the comparison:
+The SpATS model was compared with the BSS model in terms of quality of fit to the data and ability to detect genotype differences, by using plots of the fitted values and residuals. Similar parameters to those used by \textcite{velazco_modelling_2017}, were considered also for the comparison:
 \begin{itemize}
     \item Genetic variance $(\sigma_g^2)$: precision of the genotype effect estimation. The generalized heritability will also
     be used to asses the same parameter.
-    \item Spatially independent residual variance $(\sigma_e^2)$: precision of the overall fit to the data and ability to 
-    capture the spatial trends.
+    %\item Spatially independent residual variance $(\sigma_e^2)$: precision of the overall fit to the data and ability to 
+    %capture the spatial trends.
     \item BLUPs of the genotypes: similarity between the estimates of the effect of each genotype for the two models.
+    \item Estimates of the tank effect: similarity between the estimates of the fixed tank effect for the two models.
 \end{itemize}
 It is interesting to note that \textcite{rodriguez-alvarez_correcting_2018} also use the Pearson correlations of predicted genotypes values between environments (i.e. field trials) as a way of comparing models. Since only one trial was studied in this thesis, this correlation cannot be used.

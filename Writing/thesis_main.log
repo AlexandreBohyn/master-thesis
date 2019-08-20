@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (MiKTeX 2.9.6960 64-bit) (preloaded format=pdflatex 2019.3.17)  19 AUG 2019 14:50
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (MiKTeX 2.9.6960 64-bit) (preloaded format=pdflatex 2019.3.17)  21 AUG 2019 00:50
 entering extended mode
 **./thesis_main.tex
 (thesis_main.tex
@@ -1916,7 +1916,7 @@ Overfull \hbox (26.96355pt too wide) in paragraph at lines 18--19
 [][][][][][][] 
  []
 
-<figures/LogoKULeuven.png, id=246, 401.5pt x 143.53625pt>
+<figures/LogoKULeuven.png, id=250, 401.5pt x 143.53625pt>
 File: figures/LogoKULeuven.png Graphic file (type png)
 <use figures/LogoKULeuven.png>
 Package pdftex.def Info: figures/LogoKULeuven.png  used on input line 23.
@@ -2112,7 +2112,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 119--123
 
  []
 
-<figures/../../Figures/design_layout_moving.pdf, id=593, 542.025pt x 273.02pt>
+<figures/../../Figures/design_layout_moving.pdf, id=602, 542.025pt x 273.02pt>
 File: figures/../../Figures/design_layout_moving.pdf Graphic file (type pdf)
 <use figures/../../Figures/design_layout_moving.pdf>
 Package pdftex.def Info: figures/../../Figures/design_layout_moving.pdf  used o
@@ -2120,13 +2120,13 @@ n input line 128.
 (pdftex.def)             Requested size: 682.86613pt x 343.9737pt.
 LaTeX Font Info:    Font shape `T1/phv/bx/n' in size <10.95> not available
 (Font)              Font shape `T1/phv/b/n' tried instead on input line 130.
-<figures/../../Figures/design_layout_still.pdf, id=594, 542.025pt x 273.02pt>
+<figures/../../Figures/design_layout_still.pdf, id=603, 542.025pt x 273.02pt>
 File: figures/../../Figures/design_layout_still.pdf Graphic file (type pdf)
 <use figures/../../Figures/design_layout_still.pdf>
 Package pdftex.def Info: figures/../../Figures/design_layout_still.pdf  used on
  input line 135.
 (pdftex.def)             Requested size: 682.86613pt x 343.9737pt.
-<figures/../../Figures/repartition_plot.pdf, id=596, 794.97pt x 614.295pt>
+<figures/../../Figures/repartition_plot.pdf, id=605, 794.97pt x 614.295pt>
 File: figures/../../Figures/repartition_plot.pdf Graphic file (type pdf)
 <use figures/../../Figures/repartition_plot.pdf>
 Package pdftex.def Info: figures/../../Figures/repartition_plot.pdf  used on in
@@ -2144,7 +2144,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 163--166
 
  []
 
-<figures/germination_chamber_diagram.png, id=636, 751.30687pt x 377.91188pt>
+<figures/germination_chamber_diagram.png, id=645, 751.30687pt x 377.91188pt>
 File: figures/germination_chamber_diagram.png Graphic file (type png)
 <use figures/germination_chamber_diagram.png>
 Package pdftex.def Info: figures/germination_chamber_diagram.png  used on input
@@ -2152,13 +2152,13 @@ Package pdftex.def Info: figures/germination_chamber_diagram.png  used on input
 (pdftex.def)             Requested size: 432.48048pt x 217.5456pt.
 LaTeX Font Info:    Font shape `T1/phv/bx/n' in size <10> not available
 (Font)              Font shape `T1/phv/b/n' tried instead on input line 175.
-<figures/germination_ledge.png, id=637, 258.21469pt x 209.28188pt>
+<figures/germination_ledge.png, id=646, 258.21469pt x 209.28188pt>
 File: figures/germination_ledge.png Graphic file (type png)
 <use figures/germination_ledge.png>
 Package pdftex.def Info: figures/germination_ledge.png  used on input line 181.
 
 (pdftex.def)             Requested size: 216.24371pt x 175.27184pt.
-<figures/photo_germination_plate.jpg, id=638, 1758.57pt x 2168.1pt>
+<figures/photo_germination_plate.jpg, id=647, 1758.57pt x 2168.1pt>
 File: figures/photo_germination_plate.jpg Graphic file (type jpg)
 <use figures/photo_germination_plate.jpg>
 Package pdftex.def Info: figures/photo_germination_plate.jpg  used on input lin
@@ -2185,18 +2185,18 @@ Underfull \vbox (badness 5563) has occurred while \output is active []
 
  [16 <./figures/germination_chamber_diagram.png> <./figures/germination_ledge.p
 ng> <./figures/photo_germination_plate.jpg>]
-<figures/tank.jpg, id=657, 834.11626pt x 301.125pt>
+<figures/tank.jpg, id=666, 834.11626pt x 301.125pt>
 File: figures/tank.jpg Graphic file (type jpg)
 <use figures/tank.jpg>
 Package pdftex.def Info: figures/tank.jpg  used on input line 278.
 (pdftex.def)             Requested size: 432.48048pt x 156.13101pt.
-<figures/tank_transversal_view.png, id=658, 207.6558pt x 119.4864pt>
+<figures/tank_transversal_view.png, id=667, 207.6558pt x 119.4864pt>
 File: figures/tank_transversal_view.png Graphic file (type png)
 <use figures/tank_transversal_view.png>
 Package pdftex.def Info: figures/tank_transversal_view.png  used on input line 
 285.
 (pdftex.def)             Requested size: 216.24371pt x 124.43611pt.
-<figures/seed_platform_close_up.png, id=659, 569.12625pt x 204.765pt>
+<figures/seed_platform_close_up.png, id=668, 569.12625pt x 204.765pt>
 File: figures/seed_platform_close_up.png Graphic file (type png)
 <use figures/seed_platform_close_up.png>
 Package pdftex.def Info: figures/seed_platform_close_up.png  used on input line
@@ -2204,7 +2204,7 @@ Package pdftex.def Info: figures/seed_platform_close_up.png  used on input line
 (pdftex.def)             Requested size: 216.24371pt x 77.80212pt.
  [17 <./figures/tank.jpg> <./figures/tank_transversal_view.png> <./figures/seed
 _platform_close_up.png>]
-<figures/NO_RS.jpg, id=669, 3083.52pt x 11442.75pt>
+<figures/NO_RS.jpg, id=678, 3083.52pt x 11442.75pt>
 File: figures/NO_RS.jpg Graphic file (type jpg)
 <use figures/NO_RS.jpg>
 Package pdftex.def Info: figures/NO_RS.jpg  used on input line 346.
@@ -2214,12 +2214,12 @@ Underfull \hbox (badness 1275) in paragraph at lines 347--347
 \T1/phv/m/n/10 di-tional root, other
  []
 
-<figures/NO_LS.jpg, id=670, 4111.36pt x 15257.0pt>
+<figures/NO_LS.jpg, id=679, 4111.36pt x 15257.0pt>
 File: figures/NO_LS.jpg Graphic file (type jpg)
 <use figures/NO_LS.jpg>
 Package pdftex.def Info: figures/NO_LS.jpg  used on input line 353.
 (pdftex.def)             Requested size: 88.77592pt x 329.41592pt.
-<figures/BAD_LS.jpg, id=671, 4111.36pt x 15257.0pt>
+<figures/BAD_LS.jpg, id=680, 4111.36pt x 15257.0pt>
 File: figures/BAD_LS.jpg Graphic file (type jpg)
 <use figures/BAD_LS.jpg>
 Package pdftex.def Info: figures/BAD_LS.jpg  used on input line 360.
@@ -2234,12 +2234,12 @@ Underfull \hbox (badness 1418) in paragraph at lines 361--361
 \T1/phv/m/n/10 (ob-struc-tion of an-
  []
 
-<figures/NO_SEED.jpg, id=672, 4111.36pt x 15257.0pt>
+<figures/NO_SEED.jpg, id=681, 4111.36pt x 15257.0pt>
 File: figures/NO_SEED.jpg Graphic file (type jpg)
 <use figures/NO_SEED.jpg>
 Package pdftex.def Info: figures/NO_SEED.jpg  used on input line 367.
 (pdftex.def)             Requested size: 88.77592pt x 329.41592pt.
-<figures/NOT_FG.jpg, id=673, 4111.36pt x 15257.0pt>
+<figures/NOT_FG.jpg, id=682, 4111.36pt x 15257.0pt>
 File: figures/NOT_FG.jpg Graphic file (type jpg)
 <use figures/NOT_FG.jpg>
 Package pdftex.def Info: figures/NOT_FG.jpg  used on input line 374.
@@ -2249,12 +2249,12 @@ Underfull \hbox (badness 1210) in paragraph at lines 375--375
 \T1/phv/m/n/10 com-pared to other
  []
 
-<figures/OVERLAP.jpg, id=674, 3083.52pt x 11442.75pt>
+<figures/OVERLAP.jpg, id=683, 3083.52pt x 11442.75pt>
 File: figures/OVERLAP.jpg Graphic file (type jpg)
 <use figures/OVERLAP.jpg>
 Package pdftex.def Info: figures/OVERLAP.jpg  used on input line 381.
 (pdftex.def)             Requested size: 88.77592pt x 329.29953pt.
-<figures/OK.jpg, id=675, 4111.36pt x 15257.0pt>
+<figures/OK.jpg, id=684, 4111.36pt x 15257.0pt>
 File: figures/OK.jpg Graphic file (type jpg)
 <use figures/OK.jpg>
 Package pdftex.def Info: figures/OK.jpg  used on input line 388.
@@ -2267,7 +2267,7 @@ LaTeX Font Info:    Font shape `T1/phv/m/it' in size <10> not available
  [20
 
 ]
-<figures/../figures/bilinear_polynomial.PNG, id=705, 869.49844pt x 532.23843pt>
+<figures/../figures/bilinear_polynomial.PNG, id=714, 869.49844pt x 532.23843pt>
 
 File: figures/../figures/bilinear_polynomial.PNG Graphic file (type png)
 <use figures/../figures/bilinear_polynomial.PNG>
@@ -2342,10 +2342,6 @@ l.463 \begin{equation}
 LaTeX Warning: Reference `appendix:appendix:add_info_kronecker_product' on page
  22 undefined on input line 468.
 
-
-LaTeX Warning: Reference `appendix:SpATS_add_comput_info' on page 22 undefined 
-on input line 492.
-
 pdfTeX warning (ext4): destination with the same identifier (name{equation.3.4.
 1}) has been already used, duplicate ignored
 <to be read again> 
@@ -2391,261 +2387,183 @@ er (name{equation.3.4.2}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
 l.510 \begin{equation}
+                      pdfTeX warning (ext4): destination with the same identifi
+er (name{equation.3.4.1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.524 \begin{equation}
+                      pdfTeX warning (ext4): destination with the same identifi
+er (name{equation.3.4.1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.524 \begin{equation}
+                      pdfTeX warning (ext4): destination with the same identifi
+er (name{equation.3.4.1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.524 \begin{equation}
+                      pdfTeX warning (ext4): destination with the same identifi
+er (name{equation.3.4.1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.524 \begin{equation}
                       
-
-LaTeX Warning: Reference `appendix:SpATS_add_comput_info' on page 23 undefined 
-on input line 519.
+Overfull \hbox (0.14142pt too wide) in paragraph at lines 539--556
+\T1/phv/m/n/12 partitioned ma-tri-ces, as-so-ci-ated re-spec-tively with fixed 
+and ran-dom com-po-nents. Since
+ []
 
 pdfTeX warning (ext4): destination with the same identifier (name{equation.3.4.
-1}) has been already used, duplicate ignored
+2}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.526 \begin{equation}
-                      pdfTeX warning (ext4): destination with the same identifi
-er (name{equation.3.4.1}) has been already used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.526 \begin{equation}
-                      pdfTeX warning (ext4): destination with the same identifi
-er (name{equation.3.4.1}) has been already used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.526 \begin{equation}
-                      pdfTeX warning (ext4): destination with the same identifi
-er (name{equation.3.4.1}) has been already used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.526 \begin{equation}
+l.559 \begin{equation}
                       pdfTeX warning (ext4): destination with the same identifi
 er (name{equation.3.4.2}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.560 \begin{equation}
+l.559 \begin{equation}
                       pdfTeX warning (ext4): destination with the same identifi
 er (name{equation.3.4.2}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.560 \begin{equation}
+l.559 \begin{equation}
                       pdfTeX warning (ext4): destination with the same identifi
 er (name{equation.3.4.2}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.560 \begin{equation}
-                      pdfTeX warning (ext4): destination with the same identifi
-er (name{equation.3.4.2}) has been already used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.560 \begin{equation}
-                      pdfTeX warning (ext4): destination with the same identifi
-er (name{equation.3.4.3}) has been already used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.578 \begin{equation}
-                      pdfTeX warning (ext4): destination with the same identifi
-er (name{equation.3.4.3}) has been already used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.578 \begin{equation}
-                      pdfTeX warning (ext4): destination with the same identifi
-er (name{equation.3.4.3}) has been already used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.578 \begin{equation}
-                      pdfTeX warning (ext4): destination with the same identifi
-er (name{equation.3.4.3}) has been already used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.578 \begin{equation}
+l.559 \begin{equation}
                        [23]
-Underfull \hbox (badness 10000) in paragraph at lines 583--584
+Underfull \hbox (badness 10000) in paragraph at lines 579--580
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 585--586
+Underfull \hbox (badness 10000) in paragraph at lines 581--582
 
  []
 
-<figures/TANK_repartition.pdf, id=756, 330.27388pt x 239.93639pt>
+<figures/TANK_repartition.pdf, id=767, 330.27388pt x 239.93639pt>
 File: figures/TANK_repartition.pdf Graphic file (type pdf)
 <use figures/TANK_repartition.pdf>
-Package pdftex.def Info: figures/TANK_repartition.pdf  used on input line 589.
+Package pdftex.def Info: figures/TANK_repartition.pdf  used on input line 585.
 (pdftex.def)             Requested size: 231.19012pt x 167.95432pt.
 [24 <./figures/TANK_repartition.pdf
 
 pdfTeX warning: pdflatex (file ./figures/TANK_repartition.pdf): PDF inclusion: 
 invalid other resource which is no dict (key 'ProcSets', type <array>); ignored
 .
->]pdfTeX warning (ext4): destination with the same identifier (name{equation.3.
-4.1}) has been already used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.601 \begin{equation}
-                      pdfTeX warning (ext4): destination with the same identifi
-er (name{equation.3.4.1}) has been already used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.601 \begin{equation}
-                      pdfTeX warning (ext4): destination with the same identifi
-er (name{equation.3.4.1}) has been already used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.601 \begin{equation}
-                      pdfTeX warning (ext4): destination with the same identifi
-er (name{equation.3.4.1}) has been already used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.601 \begin{equation}
-                      pdfTeX warning (ext4): destination with the same identifi
-er (name{equation.3.4.2}) has been already used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.611 \begin{equation}
-                      pdfTeX warning (ext4): destination with the same identifi
-er (name{equation.3.4.2}) has been already used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.611 \begin{equation}
-                      pdfTeX warning (ext4): destination with the same identifi
-er (name{equation.3.4.2}) has been already used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.611 \begin{equation}
-                      pdfTeX warning (ext4): destination with the same identifi
-er (name{equation.3.4.2}) has been already used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.611 \begin{equation}
-                      
-Underfull \hbox (badness 10000) in paragraph at lines 617--620
+>]
+Underfull \hbox (badness 10000) in paragraph at lines 596--597
 
  []
 
-[25]pdfTeX warning (ext4): destination with the same identifier (name{equation.
-3.4.3}) has been already used, duplicate ignored
+pdfTeX warning (ext4): destination with the same identifier (name{equation.3.4.
+1}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.625 \begin{equation}
+l.604 \begin{equation}
                       pdfTeX warning (ext4): destination with the same identifi
-er (name{equation.3.4.3}) has been already used, duplicate ignored
+er (name{equation.3.4.1}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.625 \begin{equation}
+l.604 \begin{equation}
                       pdfTeX warning (ext4): destination with the same identifi
-er (name{equation.3.4.3}) has been already used, duplicate ignored
+er (name{equation.3.4.1}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.625 \begin{equation}
+l.604 \begin{equation}
                       pdfTeX warning (ext4): destination with the same identifi
-er (name{equation.3.4.3}) has been already used, duplicate ignored
+er (name{equation.3.4.1}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.625 \begin{equation}
-                      
-Underfull \hbox (badness 10000) in paragraph at lines 633--634
+l.604 \begin{equation}
+                       [25]
+Underfull \hbox (badness 10000) in paragraph at lines 612--613
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 643--645
+Underfull \hbox (badness 10000) in paragraph at lines 622--624
 
  []
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 646.
+(hyperref)                removing `math shift' on input line 625.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 646.
+(hyperref)                removing `math shift' on input line 625.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 647--648
+Underfull \hbox (badness 10000) in paragraph at lines 626--627
 
  []
 
-[26]pdfTeX warning (ext4): destination with the same identifier (name{equation.
-3.5.1}) has been already used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.651 \begin{equation}
-                      pdfTeX warning (ext4): destination with the same identifi
-er (name{equation.3.5.1}) has been already used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.651 \begin{equation}
-                      pdfTeX warning (ext4): destination with the same identifi
-er (name{equation.3.5.1}) has been already used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.651 \begin{equation}
-                      pdfTeX warning (ext4): destination with the same identifi
-er (name{equation.3.5.1}) has been already used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.651 \begin{equation}
-                      
-<figures/Variogram-for-a-standardised-AR1AR1-process.png, id=815, 853.1875pt x 
+[26pdfTeX warning (ext4): destination with the same identifier (name{equation.3
+.5.1}) has been already used, duplicate ignored
+
+\@EveryShipout@Output ...@Org@Shipout \box \@cclv 
+                                                  
+l.640 \end{equation*}
+                     ]
+<figures/Variogram-for-a-standardised-AR1AR1-process.png, id=831, 853.1875pt x 
 527.9725pt>
 File: figures/Variogram-for-a-standardised-AR1AR1-process.png Graphic file (typ
 e png)
 <use figures/Variogram-for-a-standardised-AR1AR1-process.png>
 Package pdftex.def Info: figures/Variogram-for-a-standardised-AR1AR1-process.pn
-g  used on input line 701.
+g  used on input line 679.
 (pdftex.def)             Requested size: 204.85844pt x 126.77237pt.
-<figures/AR1AR1-process-variogram-fit.PNG, id=816, 398.23781pt x 399.74344pt>
+<figures/AR1AR1-process-variogram-fit.PNG, id=832, 398.23781pt x 399.74344pt>
 File: figures/AR1AR1-process-variogram-fit.PNG Graphic file (type png)
 <use figures/AR1AR1-process-variogram-fit.PNG>
 Package pdftex.def Info: figures/AR1AR1-process-variogram-fit.PNG  used on inpu
-t line 705.
+t line 683.
 (pdftex.def)             Requested size: 204.85844pt x 205.62923pt.
- [27]pdfTeX warning (ext4): destination with the same identifier (name{equation
-.3.5.1}) has been already used, duplicate ignored
+pdfTeX warning (ext4): destination with the same identifier (name{equation.3.5.
+1}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.715 \begin{equation}
+l.693 \begin{equation}
                       pdfTeX warning (ext4): destination with the same identifi
 er (name{equation.3.5.1}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.715 \begin{equation}
+l.693 \begin{equation}
                       pdfTeX warning (ext4): destination with the same identifi
 er (name{equation.3.5.1}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.715 \begin{equation}
+l.693 \begin{equation}
                       pdfTeX warning (ext4): destination with the same identifi
 er (name{equation.3.5.1}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.715 \begin{equation}
+l.693 \begin{equation}
+                       [27]pdfTeX warning (ext4): destination with the same ide
+ntifier (name{equation.3.5.2}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.702 \begin{equation}
                       pdfTeX warning (ext4): destination with the same identifi
 er (name{equation.3.5.2}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.724 \begin{equation}
+l.702 \begin{equation}
                       pdfTeX warning (ext4): destination with the same identifi
 er (name{equation.3.5.2}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.724 \begin{equation}
+l.702 \begin{equation}
                       pdfTeX warning (ext4): destination with the same identifi
 er (name{equation.3.5.2}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.724 \begin{equation}
-                      pdfTeX warning (ext4): destination with the same identifi
-er (name{equation.3.5.2}) has been already used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.724 \begin{equation}
+l.702 \begin{equation}
                       
-Underfull \hbox (badness 10000) in paragraph at lines 727--729
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 730--731
+Underfull \hbox (badness 10000) in paragraph at lines 713--714
 
  []
 
@@ -2655,31 +2573,26 @@ fTeX warning (ext4): destination with the same identifier (name{equation.3.5.1}
 ) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.741 \begin{equation}
+l.724 \begin{equation}
                       pdfTeX warning (ext4): destination with the same identifi
 er (name{equation.3.5.1}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.741 \begin{equation}
+l.724 \begin{equation}
                       pdfTeX warning (ext4): destination with the same identifi
 er (name{equation.3.5.1}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.741 \begin{equation}
+l.724 \begin{equation}
                       pdfTeX warning (ext4): destination with the same identifi
 er (name{equation.3.5.1}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.741 \begin{equation}
+l.724 \begin{equation}
                        [29] [30]) [31]
 Chapter 4.
 (chapters/7results_and_discussion.tex
-
-LaTeX Warning: Reference `tab:germination_percentage' on page 32 undefined on i
-nput line 3.
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 3--5
+Underfull \hbox (badness 10000) in paragraph at lines 4--5
 
  []
 
@@ -2688,147 +2601,228 @@ Underfull \hbox (badness 10000) in paragraph at lines 23--24
 
  []
 
+
+Overfull \hbox (16.32344pt too wide) in paragraph at lines 31--53
+[][] 
+ []
+
+
+Overfull \hbox (16.32344pt too wide) in paragraph at lines 56--78
+[][] 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 83--85
+
+ []
+
 [32
 
 ]
-Overfull \hbox (16.32344pt too wide) in paragraph at lines 36--58
-[][] 
+Underfull \hbox (badness 10000) in paragraph at lines 103--104
+
  []
 
-
-Overfull \hbox (16.32344pt too wide) in paragraph at lines 61--83
-[][] 
- []
-
-<figures/../../Figures/DRY_LS_summary_plot.pdf, id=877, 542.025pt x 273.02pt>
+<figures/../../Figures/DRY_LS_summary_plot.pdf, id=898, 542.025pt x 273.02pt>
 File: figures/../../Figures/DRY_LS_summary_plot.pdf Graphic file (type pdf)
 <use figures/../../Figures/DRY_LS_summary_plot.pdf>
 Package pdftex.def Info: figures/../../Figures/DRY_LS_summary_plot.pdf  used on
- input line 94.
+ input line 110.
 (pdftex.def)             Requested size: 455.24408pt x 229.3144pt.
-<figures/../../Figures/DRY_RS_summary_plot.pdf, id=878, 542.025pt x 273.02pt>
+<figures/../../Figures/DRY_RS_summary_plot.pdf, id=899, 542.025pt x 273.02pt>
 File: figures/../../Figures/DRY_RS_summary_plot.pdf Graphic file (type pdf)
 <use figures/../../Figures/DRY_RS_summary_plot.pdf>
 Package pdftex.def Info: figures/../../Figures/DRY_RS_summary_plot.pdf  used on
- input line 100.
+ input line 116.
 (pdftex.def)             Requested size: 455.24408pt x 229.3144pt.
-<figures/../../Figures/FRESH_LS_summary_plot.pdf, id=879, 542.025pt x 273.02pt>
+[33]
+<figures/../../Figures/FRESH_LS_summary_plot.pdf, id=905, 542.025pt x 273.02pt>
 
 File: figures/../../Figures/FRESH_LS_summary_plot.pdf Graphic file (type pdf)
 <use figures/../../Figures/FRESH_LS_summary_plot.pdf>
 Package pdftex.def Info: figures/../../Figures/FRESH_LS_summary_plot.pdf  used 
-on input line 109.
+on input line 125.
 (pdftex.def)             Requested size: 455.24408pt x 229.3144pt.
-<figures/../../Figures/FRESH_RS_summary_plot.pdf, id=880, 542.025pt x 273.02pt>
+<figures/../../Figures/FRESH_RS_summary_plot.pdf, id=906, 542.025pt x 273.02pt>
 
 File: figures/../../Figures/FRESH_RS_summary_plot.pdf Graphic file (type pdf)
 <use figures/../../Figures/FRESH_RS_summary_plot.pdf>
 Package pdftex.def Info: figures/../../Figures/FRESH_RS_summary_plot.pdf  used 
-on input line 115.
+on input line 131.
 (pdftex.def)             Requested size: 455.24408pt x 229.3144pt.
-[33] [34 <./figures/../../Figures/DRY_LS_summary_plot.pdf> <./figures/../../Fig
-ures/DRY_RS_summary_plot.pdf>] [35 <./figures/../../Figures/FRESH_LS_summary_pl
-ot.pdf> <./figures/../../Figures/FRESH_RS_summary_plot.pdf>]
-Underfull \hbox (badness 10000) in paragraph at lines 148--149
+ [34] [35 <./figures/../../Figures/DRY_LS_summary_plot.pdf> <./figures/../../Fi
+gures/DRY_RS_summary_plot.pdf>] [36 <./figures/../../Figures/FRESH_LS_summary_p
+lot.pdf> <./figures/../../Figures/FRESH_RS_summary_plot.pdf>]
+Underfull \hbox (badness 10000) in paragraph at lines 164--165
 
  []
 
-<figures/../../Figures/SPATS_rawData_plot.pdf, id=916, 813.0375pt x 216.81pt>
+
+Underfull \hbox (badness 10000) in paragraph at lines 166--167
+
+ []
+
+<figures/../../Figures/SPATS_rawData_plot.pdf, id=942, 813.0375pt x 216.81pt>
 File: figures/../../Figures/SPATS_rawData_plot.pdf Graphic file (type pdf)
 <use figures/../../Figures/SPATS_rawData_plot.pdf>
 Package pdftex.def Info: figures/../../Figures/SPATS_rawData_plot.pdf  used on 
-input line 155.
+input line 173.
 (pdftex.def)             Requested size: 455.24408pt x 121.39622pt.
-<figures/../../Figures/SPATS_Fitted_plot.pdf, id=917, 813.0375pt x 216.81pt>
+<figures/../../Figures/SPATS_Fitted_plot.pdf, id=943, 813.0375pt x 216.81pt>
 File: figures/../../Figures/SPATS_Fitted_plot.pdf Graphic file (type pdf)
 <use figures/../../Figures/SPATS_Fitted_plot.pdf>
 Package pdftex.def Info: figures/../../Figures/SPATS_Fitted_plot.pdf  used on i
-nput line 161.
+nput line 179.
 (pdftex.def)             Requested size: 455.24408pt x 121.39622pt.
-<figures/../../Figures/SPATS_residuals_plot.pdf, id=918, 813.0375pt x 216.81pt>
+<figures/../../Figures/SPATS_residuals_plot.pdf, id=944, 813.0375pt x 216.81pt>
 
 File: figures/../../Figures/SPATS_residuals_plot.pdf Graphic file (type pdf)
 <use figures/../../Figures/SPATS_residuals_plot.pdf>
 Package pdftex.def Info: figures/../../Figures/SPATS_residuals_plot.pdf  used o
-n input line 167.
+n input line 185.
 (pdftex.def)             Requested size: 455.24408pt x 121.39622pt.
-[36] [37 <./figures/../../Figures/SPATS_rawData_plot.pdf> <./figures/../../Figu
-res/SPATS_Fitted_plot.pdf> <./figures/../../Figures/SPATS_residuals_plot.pdf>]
-Underfull \hbox (badness 10000) in paragraph at lines 178--180
+[37]pdfTeX warning (ext4): destination with the same identifier (name{equation.
+4.2.1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.194 \begin{equation}
+                      pdfTeX warning (ext4): destination with the same identifi
+er (name{equation.4.2.1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.194 \begin{equation}
+                      pdfTeX warning (ext4): destination with the same identifi
+er (name{equation.4.2.1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.194 \begin{equation}
+                      pdfTeX warning (ext4): destination with the same identifi
+er (name{equation.4.2.1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.194 \begin{equation}
+                      
+Underfull \hbox (badness 10000) in paragraph at lines 196--198
+
+ []
+
+[38 <./figures/../../Figures/SPATS_rawData_plot.pdf> <./figures/../../Figures/S
+PATS_Fitted_plot.pdf> <./figures/../../Figures/SPATS_residuals_plot.pdf>]
+Underfull \hbox (badness 10000) in paragraph at lines 199--200
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 181--182
+Underfull \hbox (badness 10000) in paragraph at lines 201--202
+
+ []
+
+[39]
+Underfull \hbox (badness 10000) in paragraph at lines 249--250
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 183--184
-
- []
-
-[38pdfTeX warning (ext4): destination with the same identifier (name{equation.4
-.2.1}) has been already used, duplicate ignored
-
-\@EveryShipout@Output ...@Org@Shipout \box \@cclv 
-                                                  
-l.219 \begin{equation}
-                      ]
-Underfull \hbox (badness 10000) in paragraph at lines 231--232
+Underfull \hbox (badness 10000) in paragraph at lines 269--270
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 251--252
-
- []
-
-
-Overfull \hbox (9.03065pt too wide) in paragraph at lines 253--254
+Overfull \hbox (9.03065pt too wide) in paragraph at lines 271--272
 \T1/phv/m/n/12 Williams ([]2010[]) ex-plain that both struc-tures give sim-i-la
 r re-sults with large auto-correlation
  []
 
-[39]
-Underfull \hbox (badness 10000) in paragraph at lines 255--256
+
+Underfull \hbox (badness 10000) in paragraph at lines 271--272
 
  []
 
-<figures/../../Figures/BSS_rawData_plot.pdf, id=991, 813.0375pt x 216.81pt>
+
+Underfull \hbox (badness 10000) in paragraph at lines 273--274
+
+ []
+
+[40]
+<figures/../../Figures/BSS_rawData_plot.pdf, id=1018, 813.0375pt x 216.81pt>
 File: figures/../../Figures/BSS_rawData_plot.pdf Graphic file (type pdf)
 <use figures/../../Figures/BSS_rawData_plot.pdf>
 Package pdftex.def Info: figures/../../Figures/BSS_rawData_plot.pdf  used on in
-put line 280.
+put line 298.
 (pdftex.def)             Requested size: 455.24408pt x 121.39622pt.
-<figures/../../Figures/BSS_FittedData_plot.pdf, id=992, 813.0375pt x 216.81pt>
+<figures/../../Figures/BSS_FittedData_plot.pdf, id=1019, 813.0375pt x 216.81pt>
+
 File: figures/../../Figures/BSS_FittedData_plot.pdf Graphic file (type pdf)
 <use figures/../../Figures/BSS_FittedData_plot.pdf>
 Package pdftex.def Info: figures/../../Figures/BSS_FittedData_plot.pdf  used on
- input line 286.
+ input line 304.
 (pdftex.def)             Requested size: 455.24408pt x 121.39622pt.
-<figures/../../Figures/BSS_residuals_plot.pdf, id=993, 813.0375pt x 216.81pt>
+<figures/../../Figures/BSS_residuals_plot.pdf, id=1020, 813.0375pt x 216.81pt>
 File: figures/../../Figures/BSS_residuals_plot.pdf Graphic file (type pdf)
 <use figures/../../Figures/BSS_residuals_plot.pdf>
 Package pdftex.def Info: figures/../../Figures/BSS_residuals_plot.pdf  used on 
-input line 292.
+input line 310.
 (pdftex.def)             Requested size: 455.24408pt x 121.39622pt.
-[40] [41 <./figures/../../Figures/BSS_rawData_plot.pdf> <./figures/../../Figure
-s/BSS_FittedData_plot.pdf> <./figures/../../Figures/BSS_residuals_plot.pdf>]
-<figures/../../Figures/Genotype_Comparative_plots.pdf, id=1057, 397.485pt x 505
+ [41] [42 <./figures/../../Figures/BSS_rawData_plot.pdf> <./figures/../../Figur
+es/BSS_FittedData_plot.pdf> <./figures/../../Figures/BSS_residuals_plot.pdf>]
+Underfull \hbox (badness 10000) in paragraph at lines 324--325
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 345--346
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 367--368
+
+ []
+
+[43]
+Underfull \hbox (badness 10000) in paragraph at lines 369--370
+
+ []
+
+<figures/../../Figures/Genotype_Comparative_plots.pdf, id=1098, 397.485pt x 505
 .89pt>
 File: figures/../../Figures/Genotype_Comparative_plots.pdf Graphic file (type p
 df)
 <use figures/../../Figures/Genotype_Comparative_plots.pdf>
 Package pdftex.def Info: figures/../../Figures/Genotype_Comparative_plots.pdf  
-used on input line 348.
+used on input line 374.
 (pdftex.def)             Requested size: 455.24408pt x 579.42232pt.
-)
-[42] [43 <./figures/../../Figures/Genotype_Comparative_plots.pdf>]
-Chapter 5.
-(chapters/8conclusion.tex) [44
 
-] [45
+Underfull \hbox (badness 10000) in paragraph at lines 379--380
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 381--382
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 383--384
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 385--386
+
+ []
+
+) [44] [45 <./figures/../../Figures/Genotype_Comparative_plots.pdf>] [46]
+Chapter 5.
+(chapters/8conclusion.tex) [47
+
+]
+Overfull \hbox (22.43301pt too wide) in paragraph at lines 68--68
+[]\T1/phv/m/n/12 Cullis, B., Gogel, B., Ver-byla, A. & Thomp-son, R. Spa-tial A
+nal-y-sis of Multi-Environment
+ []
+
+[48
 
 
 ]
@@ -2843,24 +2837,24 @@ Overfull \hbox (4.50563pt too wide) in paragraph at lines 68--68
 omic Pre-dic-tion Ac-cu-racy in Wheat Breed-ing Through
  []
 
-[46]
+[49]
 Overfull \hbox (10.55583pt too wide) in paragraph at lines 68--68
 []\T1/phv/m/n/12 Lee, D.[]J. & Dur-bán, M. P-spline ANOVA-type in-ter-ac-tion m
 od-els for spatio-temporal
  []
 
-[47]
+[50]
 Overfull \hbox (5.86765pt too wide) in paragraph at lines 68--68
 []\T1/phv/m/n/12 Rodríguez-Álvarez, M. X., Lee, D.[]J., Kneib, T., Dur-bán, M. 
 & Eil-ers, P. Fast smooth-
  []
 
-[48] [49] [50
+[51] [52] [53
 
 
 ] (extra/appendix.tex
 Appendix A.
-[51
+[54
 
 ]
 
@@ -2871,69 +2865,73 @@ LaTeX Font Warning: Font shape `U/wasy/b/n' in size <8> not available
 LaTeX Font Warning: Font shape `U/wasy/b/n' in size <6> not available
 (Font)              Font shape `U/wasy/m/n' tried instead on input line 44.
 
-[52]
+[55] [56]
+
+LaTeX Warning: Reference `eq:least_squares_penalized' on page 57 undefined on i
+nput line 89.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 100--104
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 114--124
+
+ []
+
 
 Package Fancyhdr Warning: \headheight is too small (14.49998pt): 
 Make it at least 27.67601pt.
 We now make it that large for the rest of the document.
 This may cause the page layout to be inconsistent, however.
 
-[53]
-Underfull \hbox (badness 10000) in paragraph at lines 101--105
+[57]
+Underfull \hbox (badness 10000) in paragraph at lines 143--145
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 116--126
-
- []
-
-[54]
-Underfull \hbox (badness 10000) in paragraph at lines 145--147
+Underfull \hbox (badness 10000) in paragraph at lines 173--177
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 175--179
-
- []
-
-
-Overfull \hbox (4.78772pt too wide) in paragraph at lines 180--182
+Overfull \hbox (4.78772pt too wide) in paragraph at lines 178--180
 \OML/cmm/m/it/12 []=[]$\T1/phv/m/n/12 , are de-ter-mined by re-stricted max-i
 -mum like-li-hood (REML). There-fore the smooth-
  []
 
-(extra/TIKZ_matrix_diagram.tex) [55] [56]
+(extra/TIKZ_matrix_diagram.tex) [58] [59]
 Appendix B.
-<figures/../../Figures/residuals_analysis_plot.pdf, id=1163, 813.0375pt x 389.4
+<figures/../../Figures/residuals_analysis_plot.pdf, id=1205, 813.0375pt x 389.4
 55pt>
 File: figures/../../Figures/residuals_analysis_plot.pdf Graphic file (type pdf)
 
 <use figures/../../Figures/residuals_analysis_plot.pdf>
 Package pdftex.def Info: figures/../../Figures/residuals_analysis_plot.pdf  use
-d on input line 194.
+d on input line 192.
 (pdftex.def)             Requested size: 614.57535pt x 294.39626pt.
-[57
+[60
 
 
-] [58 <./figures/../../Figures/residuals_analysis_plot.pdf>]
-Overfull \hbox (14.37157pt too wide) in paragraph at lines 206--243
+] [61 <./figures/../../Figures/residuals_analysis_plot.pdf>]
+Overfull \hbox (14.37157pt too wide) in paragraph at lines 204--241
  [][] 
  []
 
-[59] [60]
+[62] [63] [64]
 Appendix C.
-[61
+[65
 
 ]
 
 pdfTeX warning: pdflatex (file ./extra/platform_info.pdf): PDF inclusion: found
  PDF version <1.7>, but at most version <1.5> allowed
-<extra/platform_info.pdf, id=1193, 597.55246pt x 845.07718pt>
+<extra/platform_info.pdf, id=1239, 597.55246pt x 845.07718pt>
 File: extra/platform_info.pdf Graphic file (type pdf)
 <use extra/platform_info.pdf>
-Package pdftex.def Info: extra/platform_info.pdf  used on input line 323.
+Package pdftex.def Info: extra/platform_info.pdf  used on input line 371.
 (pdftex.def)             Requested size: 597.551pt x 845.07512pt.
 
 
@@ -2941,7 +2939,7 @@ pdfTeX warning: pdflatex (file ./extra/platform_info.pdf): PDF inclusion: found
  PDF version <1.7>, but at most version <1.5> allowed
 File: extra/platform_info.pdf Graphic file (type pdf)
 <use extra/platform_info.pdf>
-Package pdftex.def Info: extra/platform_info.pdf  used on input line 323.
+Package pdftex.def Info: extra/platform_info.pdf  used on input line 371.
 (pdftex.def)             Requested size: 597.551pt x 845.07512pt.
 
 
@@ -2951,158 +2949,158 @@ pdfTeX warning: pdflatex (file ./extra/platform_info.pdf): PDF inclusion: found
 
 pdfTeX warning: pdflatex (file ./extra/platform_info.pdf): PDF inclusion: found
  PDF version <1.7>, but at most version <1.5> allowed
-<extra/platform_info.pdf, id=1196, page=1, 597.55246pt x 845.07718pt>
+<extra/platform_info.pdf, id=1242, page=1, 597.55246pt x 845.07718pt>
 File: extra/platform_info.pdf Graphic file (type pdf)
 <use extra/platform_info.pdf, page 1>
-Package pdftex.def Info: extra/platform_info.pdf , page1 used on input line 323
+Package pdftex.def Info: extra/platform_info.pdf , page1 used on input line 371
 .
 (pdftex.def)             Requested size: 455.24408pt x 643.8385pt.
 File: extra/platform_info.pdf Graphic file (type pdf)
 <use extra/platform_info.pdf, page 1>
-Package pdftex.def Info: extra/platform_info.pdf , page1 used on input line 323
+Package pdftex.def Info: extra/platform_info.pdf , page1 used on input line 371
 .
 (pdftex.def)             Requested size: 784.7051pt x 1109.75424pt.
 File: extra/platform_info.pdf Graphic file (type pdf)
 <use extra/platform_info.pdf, page 1>
-Package pdftex.def Info: extra/platform_info.pdf , page1 used on input line 323
+Package pdftex.def Info: extra/platform_info.pdf , page1 used on input line 371
 .
 (pdftex.def)             Requested size: 784.7051pt x 1109.75424pt.
 File: extra/platform_info.pdf Graphic file (type pdf)
 <use extra/platform_info.pdf, page 1>
-Package pdftex.def Info: extra/platform_info.pdf , page1 used on input line 323
+Package pdftex.def Info: extra/platform_info.pdf , page1 used on input line 371
 .
 (pdftex.def)             Requested size: 784.7051pt x 1109.75424pt.
 File: extra/platform_info.pdf Graphic file (type pdf)
 <use extra/platform_info.pdf, page 1>
-Package pdftex.def Info: extra/platform_info.pdf , page1 used on input line 323
+Package pdftex.def Info: extra/platform_info.pdf , page1 used on input line 371
 .
 (pdftex.def)             Requested size: 784.7051pt x 1109.75424pt.
-[62
+[66
 
  <./extra/platform_info.pdf>]
 
 pdfTeX warning: pdflatex (file ./extra/platform_info.pdf): PDF inclusion: found
  PDF version <1.7>, but at most version <1.5> allowed
-<extra/platform_info.pdf, id=1225, page=2, 597.55246pt x 845.07718pt>
+<extra/platform_info.pdf, id=1271, page=2, 597.55246pt x 845.07718pt>
 File: extra/platform_info.pdf Graphic file (type pdf)
 <use extra/platform_info.pdf, page 2>
-Package pdftex.def Info: extra/platform_info.pdf , page2 used on input line 323
-.
-(pdftex.def)             Requested size: 784.7051pt x 1109.75424pt.
-File: extra/platform_info.pdf Graphic file (type pdf)
-<use extra/platform_info.pdf, page 2>
-Package pdftex.def Info: extra/platform_info.pdf , page2 used on input line 323
+Package pdftex.def Info: extra/platform_info.pdf , page2 used on input line 371
 .
 (pdftex.def)             Requested size: 784.7051pt x 1109.75424pt.
 File: extra/platform_info.pdf Graphic file (type pdf)
 <use extra/platform_info.pdf, page 2>
-Package pdftex.def Info: extra/platform_info.pdf , page2 used on input line 323
-.
-(pdftex.def)             Requested size: 784.7051pt x 1109.75424pt.
-[63 <./extra/platform_info.pdf>]
-
-pdfTeX warning: pdflatex (file ./extra/platform_info.pdf): PDF inclusion: found
- PDF version <1.7>, but at most version <1.5> allowed
-<extra/platform_info.pdf, id=1234, page=3, 597.55246pt x 845.07718pt>
-File: extra/platform_info.pdf Graphic file (type pdf)
-<use extra/platform_info.pdf, page 3>
-Package pdftex.def Info: extra/platform_info.pdf , page3 used on input line 323
+Package pdftex.def Info: extra/platform_info.pdf , page2 used on input line 371
 .
 (pdftex.def)             Requested size: 784.7051pt x 1109.75424pt.
 File: extra/platform_info.pdf Graphic file (type pdf)
-<use extra/platform_info.pdf, page 3>
-Package pdftex.def Info: extra/platform_info.pdf , page3 used on input line 323
-.
-(pdftex.def)             Requested size: 784.7051pt x 1109.75424pt.
-File: extra/platform_info.pdf Graphic file (type pdf)
-<use extra/platform_info.pdf, page 3>
-Package pdftex.def Info: extra/platform_info.pdf , page3 used on input line 323
-.
-(pdftex.def)             Requested size: 784.7051pt x 1109.75424pt.
-[64 <./extra/platform_info.pdf>]
-
-pdfTeX warning: pdflatex (file ./extra/platform_info.pdf): PDF inclusion: found
- PDF version <1.7>, but at most version <1.5> allowed
-<extra/platform_info.pdf, id=1242, page=4, 597.55246pt x 845.07718pt>
-File: extra/platform_info.pdf Graphic file (type pdf)
-<use extra/platform_info.pdf, page 4>
-Package pdftex.def Info: extra/platform_info.pdf , page4 used on input line 323
-.
-(pdftex.def)             Requested size: 784.7051pt x 1109.75424pt.
-File: extra/platform_info.pdf Graphic file (type pdf)
-<use extra/platform_info.pdf, page 4>
-Package pdftex.def Info: extra/platform_info.pdf , page4 used on input line 323
-.
-(pdftex.def)             Requested size: 784.7051pt x 1109.75424pt.
-File: extra/platform_info.pdf Graphic file (type pdf)
-<use extra/platform_info.pdf, page 4>
-Package pdftex.def Info: extra/platform_info.pdf , page4 used on input line 323
-.
-(pdftex.def)             Requested size: 784.7051pt x 1109.75424pt.
-[65 <./extra/platform_info.pdf>]
-
-pdfTeX warning: pdflatex (file ./extra/platform_info.pdf): PDF inclusion: found
- PDF version <1.7>, but at most version <1.5> allowed
-<extra/platform_info.pdf, id=1258, page=5, 597.55246pt x 845.07718pt>
-File: extra/platform_info.pdf Graphic file (type pdf)
-<use extra/platform_info.pdf, page 5>
-Package pdftex.def Info: extra/platform_info.pdf , page5 used on input line 323
-.
-(pdftex.def)             Requested size: 784.7051pt x 1109.75424pt.
-File: extra/platform_info.pdf Graphic file (type pdf)
-<use extra/platform_info.pdf, page 5>
-Package pdftex.def Info: extra/platform_info.pdf , page5 used on input line 323
-.
-(pdftex.def)             Requested size: 784.7051pt x 1109.75424pt.
-File: extra/platform_info.pdf Graphic file (type pdf)
-<use extra/platform_info.pdf, page 5>
-Package pdftex.def Info: extra/platform_info.pdf , page5 used on input line 323
-.
-(pdftex.def)             Requested size: 784.7051pt x 1109.75424pt.
-[66 <./extra/platform_info.pdf>]
-
-pdfTeX warning: pdflatex (file ./extra/platform_info.pdf): PDF inclusion: found
- PDF version <1.7>, but at most version <1.5> allowed
-<extra/platform_info.pdf, id=1266, page=6, 597.55246pt x 845.07718pt>
-File: extra/platform_info.pdf Graphic file (type pdf)
-<use extra/platform_info.pdf, page 6>
-Package pdftex.def Info: extra/platform_info.pdf , page6 used on input line 323
-.
-(pdftex.def)             Requested size: 784.7051pt x 1109.75424pt.
-File: extra/platform_info.pdf Graphic file (type pdf)
-<use extra/platform_info.pdf, page 6>
-Package pdftex.def Info: extra/platform_info.pdf , page6 used on input line 323
-.
-(pdftex.def)             Requested size: 784.7051pt x 1109.75424pt.
-File: extra/platform_info.pdf Graphic file (type pdf)
-<use extra/platform_info.pdf, page 6>
-Package pdftex.def Info: extra/platform_info.pdf , page6 used on input line 323
+<use extra/platform_info.pdf, page 2>
+Package pdftex.def Info: extra/platform_info.pdf , page2 used on input line 371
 .
 (pdftex.def)             Requested size: 784.7051pt x 1109.75424pt.
 [67 <./extra/platform_info.pdf>]
 
 pdfTeX warning: pdflatex (file ./extra/platform_info.pdf): PDF inclusion: found
  PDF version <1.7>, but at most version <1.5> allowed
-<extra/platform_info.pdf, id=1281, page=7, 597.55246pt x 845.07718pt>
+<extra/platform_info.pdf, id=1280, page=3, 597.55246pt x 845.07718pt>
+File: extra/platform_info.pdf Graphic file (type pdf)
+<use extra/platform_info.pdf, page 3>
+Package pdftex.def Info: extra/platform_info.pdf , page3 used on input line 371
+.
+(pdftex.def)             Requested size: 784.7051pt x 1109.75424pt.
+File: extra/platform_info.pdf Graphic file (type pdf)
+<use extra/platform_info.pdf, page 3>
+Package pdftex.def Info: extra/platform_info.pdf , page3 used on input line 371
+.
+(pdftex.def)             Requested size: 784.7051pt x 1109.75424pt.
+File: extra/platform_info.pdf Graphic file (type pdf)
+<use extra/platform_info.pdf, page 3>
+Package pdftex.def Info: extra/platform_info.pdf , page3 used on input line 371
+.
+(pdftex.def)             Requested size: 784.7051pt x 1109.75424pt.
+[68 <./extra/platform_info.pdf>]
+
+pdfTeX warning: pdflatex (file ./extra/platform_info.pdf): PDF inclusion: found
+ PDF version <1.7>, but at most version <1.5> allowed
+<extra/platform_info.pdf, id=1288, page=4, 597.55246pt x 845.07718pt>
+File: extra/platform_info.pdf Graphic file (type pdf)
+<use extra/platform_info.pdf, page 4>
+Package pdftex.def Info: extra/platform_info.pdf , page4 used on input line 371
+.
+(pdftex.def)             Requested size: 784.7051pt x 1109.75424pt.
+File: extra/platform_info.pdf Graphic file (type pdf)
+<use extra/platform_info.pdf, page 4>
+Package pdftex.def Info: extra/platform_info.pdf , page4 used on input line 371
+.
+(pdftex.def)             Requested size: 784.7051pt x 1109.75424pt.
+File: extra/platform_info.pdf Graphic file (type pdf)
+<use extra/platform_info.pdf, page 4>
+Package pdftex.def Info: extra/platform_info.pdf , page4 used on input line 371
+.
+(pdftex.def)             Requested size: 784.7051pt x 1109.75424pt.
+[69 <./extra/platform_info.pdf>]
+
+pdfTeX warning: pdflatex (file ./extra/platform_info.pdf): PDF inclusion: found
+ PDF version <1.7>, but at most version <1.5> allowed
+<extra/platform_info.pdf, id=1303, page=5, 597.55246pt x 845.07718pt>
+File: extra/platform_info.pdf Graphic file (type pdf)
+<use extra/platform_info.pdf, page 5>
+Package pdftex.def Info: extra/platform_info.pdf , page5 used on input line 371
+.
+(pdftex.def)             Requested size: 784.7051pt x 1109.75424pt.
+File: extra/platform_info.pdf Graphic file (type pdf)
+<use extra/platform_info.pdf, page 5>
+Package pdftex.def Info: extra/platform_info.pdf , page5 used on input line 371
+.
+(pdftex.def)             Requested size: 784.7051pt x 1109.75424pt.
+File: extra/platform_info.pdf Graphic file (type pdf)
+<use extra/platform_info.pdf, page 5>
+Package pdftex.def Info: extra/platform_info.pdf , page5 used on input line 371
+.
+(pdftex.def)             Requested size: 784.7051pt x 1109.75424pt.
+[70 <./extra/platform_info.pdf>]
+
+pdfTeX warning: pdflatex (file ./extra/platform_info.pdf): PDF inclusion: found
+ PDF version <1.7>, but at most version <1.5> allowed
+<extra/platform_info.pdf, id=1311, page=6, 597.55246pt x 845.07718pt>
+File: extra/platform_info.pdf Graphic file (type pdf)
+<use extra/platform_info.pdf, page 6>
+Package pdftex.def Info: extra/platform_info.pdf , page6 used on input line 371
+.
+(pdftex.def)             Requested size: 784.7051pt x 1109.75424pt.
+File: extra/platform_info.pdf Graphic file (type pdf)
+<use extra/platform_info.pdf, page 6>
+Package pdftex.def Info: extra/platform_info.pdf , page6 used on input line 371
+.
+(pdftex.def)             Requested size: 784.7051pt x 1109.75424pt.
+File: extra/platform_info.pdf Graphic file (type pdf)
+<use extra/platform_info.pdf, page 6>
+Package pdftex.def Info: extra/platform_info.pdf , page6 used on input line 371
+.
+(pdftex.def)             Requested size: 784.7051pt x 1109.75424pt.
+[71 <./extra/platform_info.pdf>]
+
+pdfTeX warning: pdflatex (file ./extra/platform_info.pdf): PDF inclusion: found
+ PDF version <1.7>, but at most version <1.5> allowed
+<extra/platform_info.pdf, id=1327, page=7, 597.55246pt x 845.07718pt>
 File: extra/platform_info.pdf Graphic file (type pdf)
 <use extra/platform_info.pdf, page 7>
-Package pdftex.def Info: extra/platform_info.pdf , page7 used on input line 323
+Package pdftex.def Info: extra/platform_info.pdf , page7 used on input line 371
 .
 (pdftex.def)             Requested size: 784.7051pt x 1109.75424pt.
 File: extra/platform_info.pdf Graphic file (type pdf)
 <use extra/platform_info.pdf, page 7>
-Package pdftex.def Info: extra/platform_info.pdf , page7 used on input line 323
+Package pdftex.def Info: extra/platform_info.pdf , page7 used on input line 371
 .
 (pdftex.def)             Requested size: 784.7051pt x 1109.75424pt.
 File: extra/platform_info.pdf Graphic file (type pdf)
 <use extra/platform_info.pdf, page 7>
-Package pdftex.def Info: extra/platform_info.pdf , page7 used on input line 323
+Package pdftex.def Info: extra/platform_info.pdf , page7 used on input line 371
 .
 (pdftex.def)             Requested size: 784.7051pt x 1109.75424pt.
-[68 <./extra/platform_info.pdf>]) (extra/back_cover.tex
+[72 <./extra/platform_info.pdf>]) (extra/back_cover.tex
 LaTeX Font Info:    Font shape `T1/phv/bx/n' in size <7> not available
 (Font)              Font shape `T1/phv/b/n' tried instead on input line 19.
-<figures/sedes.png, id=1288, 402.5439pt x 683.6742pt>
+<figures/sedes.png, id=1334, 402.5439pt x 683.6742pt>
 File: figures/sedes.png Graphic file (type png)
 <use figures/sedes.png>
 Package pdftex.def Info: figures/sedes.png  used on input line 28.
@@ -3112,16 +3110,16 @@ Overfull \hbox (18.18004pt too wide) in paragraph at lines 32--33
 [][][] 
  []
 
-) [69 <./figures/sedes.png>]pdfTeX warning (ext4): destination with the same id
-entifier (name{page.69}) has been already used, duplicate ignored
+) [73 <./figures/sedes.png>]pdfTeX warning (ext4): destination with the same id
+entifier (name{page.73}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
 l.77 \end{document}
-                    [69
+                    [73
 
 ]
 
-Package caption Warning: Unused \captionsetup[figure] on input line 106.
+Package caption Warning: Unused \captionsetup[figure] on input line 122.
 See the caption package documentation for explanation.
 
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 77.
@@ -3130,7 +3128,7 @@ Package atveryend Info: Empty hook `AfterLastShipout' on input line 77.
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 77.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 77.
 Package rerunfilecheck Info: File `thesis_main.out' has not changed.
-(rerunfilecheck)             Checksum: 79D3782D77FD9C41B33EB40B4543F40A;3842.
+(rerunfilecheck)             Checksum: CC78FEEBD31869C9FF8F613DB72FACCC;3902.
 
 
 LaTeX Warning: There were undefined references.
@@ -3140,10 +3138,10 @@ Package logreq Info: Writing requests to 'thesis_main.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 48403 strings out of 492946
- 954091 string characters out of 3135527
- 1517154 words of memory out of 3000000
- 51143 multiletter control sequences out of 15000+200000
+ 48415 strings out of 492946
+ 954472 string characters out of 3135527
+ 1521262 words of memory out of 3000000
+ 51150 multiletter control sequences out of 15000+200000
  616730 words of font info for 152 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
  57i,19n,81p,8366b,2006s stack positions out of 5000i,500n,10000p,200000b,50000s
@@ -3172,9 +3170,9 @@ Program Files/MiKTeX 2.9/fonts/type1/public/tipa/tipa12.pfb><C:/Program Files/M
 iKTeX 2.9/fonts/type1/urw/helvetic/uhvb8a.pfb><C:/Program Files/MiKTeX 2.9/font
 s/type1/urw/helvetic/uhvr8a.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/urw/he
 lvetic/uhvro8a.pfb>
-Output written on thesis_main.pdf (78 pages, 14358016 bytes).
+Output written on thesis_main.pdf (82 pages, 14373633 bytes).
 PDF statistics:
- 1487 PDF objects out of 1728 (max. 8388607)
- 275 named destinations out of 1000 (max. 500000)
- 773 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 1534 PDF objects out of 1728 (max. 8388607)
+ 280 named destinations out of 1000 (max. 500000)
+ 781 words of extra memory for PDF output out of 10000 (max. 10000000)
 
