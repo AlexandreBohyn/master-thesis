@@ -191,7 +191,7 @@ GetGenoPEV <- function(var){
                  var,'_SOLUTIONR.xlsx')
   temp <- read_xlsx(path)%>%
     dplyr::filter(Effect == "geno")%>%
-    summarise(PEV = mean(StdErrPred))
+    summarise(PEV = mean(StdErrPred^2))
   return(temp)
 }
 

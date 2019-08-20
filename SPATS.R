@@ -91,7 +91,7 @@ for(i in c(1:4)){
 }
 colnames(dim) <- c('Model','Effective_FRESH_LS','Effective_FRESH_RS',
                    'Effective_DRY_LS','Effective_DRY_RS')
-perc <- function(x,na.rm=TRUE)(x/sum(x, na.rm = na.rm)*100)
+perc <- function(x,na.rm=TRUE)(100*x/sum(x, na.rm = na.rm))
 
 dim[7:11,]%>%
   mutate_at(c("Effective_FRESH_LS"),perc, na.rm = TRUE)
