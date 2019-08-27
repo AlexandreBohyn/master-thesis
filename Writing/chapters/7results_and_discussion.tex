@@ -8,14 +8,14 @@ Using the individual weights attributed to each plant, we compute the weighted m
 \centering
  \caption{Correlation matrix of the four variables.}
 \begin{tabular}{lrrrr}
-  \hline
+  \toprule
  & DRY\_LS & DRY\_RS & FRESH\_RS & FRESH\_LS \\ 
-  \hline
+  \midrule
 DRY\_LS & 1.00 & 0.70 & 0.84 & 0.93 \\ 
   DRY\_RS & 0.70 & 1.00 & 0.76 & 0.68 \\ 
   FRESH\_RS & 0.84 & 0.76 & 1.00 & 0.93 \\ 
   FRESH\_LS & 0.93 & 0.68 & 0.93 & 1.00 \\ 
-   \hline
+   \bottomrule
 \end{tabular}
 \label{tab:var_correlation}
 \end{table}
@@ -83,7 +83,6 @@ Genotype & NS placed & NS kept & GR \\
 Using the weighted means and standard deviations, we created boxplots ordered by descending mean value for tank A, presented in Figure \ref{fig:dotplot_all_variables}. The numerical values of these results are presented in Table \ref{tab:summary_table_all_variables}, in Appendix \ref{appendix:mean_std_table}.
 It is clear that values for tank A are almost always higher than for tank B expect for some genotypes (e.g. genotype 12 on all variables and genotype 11 on the dry weights), even if there seems to be more variation in tank A. A t-test proved this difference to be highly significant\footnote{The test were performed with a significance level, $\alpha$ = 0.05.} (see Table \ref{tab:mean_diff_between_tanks_t_test}). However, the value for tank B is higher for some genotypes (e.g. genotype 12 for all variables and genotype 11 for the dry weights). This shows that those genotypes might be more suited to a still growing environment.\\
 
-
 \begin{table}[hbtp]
   \rowcolors{2}{gray!25}{white}
 \centering
@@ -100,7 +99,7 @@ Mean value in tank B & 1.755 & 1.79 & 0.1725 & 0.1666 \\
 \label{tab:mean_diff_between_tanks_t_test}
 \end{table}
 
-To further assess difference in means between the two tanks, we performed a paired t-test of the means difference between the two tanks, for all variables. The resulting p-values are presented in table \ref{tab:ind_geno_t_test_pval} in Appendix \ref{appendix:t_test}. We see that the difference in mainly significant for the fresh weights (which is also visible on Figure \ref{fig:dotplot_all_variables} \textbf{a} and \textbf{b}) and only for a handful of genotypes (6, 23, 10, 26, 4 and 8). We chose to use multiple univariate t-tests, because multivariate t-tests are extremely sensitive. Any violation to the multivariate normality assumption and equality of variance-covariance matrices will lead a significant result. \\
+To further assess difference in means between the two tanks, we performed a paired t-test of the means difference between the two tanks, for all variables. The resulting p-values are presented in table \ref{tab:ind_geno_t_test_pval} in Appendix \ref{appendix:t_test}. We see that the difference in mainly significant for the fresh weights (which is also visible on Figure \ref{fig:dotplot_all_variables} \textbf{a} and \textbf{b}) and only for a handful of genotypes (6, 23, 10, 26, 4 and 8). We chose to use multiple univariate t-tests, because multivariate t-tests are extremely sensitive. Any violation to the multivariate normality assumption and equality of variance-covariance matrices will lead a significant result.
 
 \begin{figure}
 \centering
@@ -163,7 +162,7 @@ The analysis of the estimated coefficient for the genotypes and for the tanks is
 \subsection{Visual analysis}
 The raw data, the fitted data and the spatial model residuals are presented, for all variables, in Figure \ref{fig:spats_model_results}. The difference between tanks is more pronounced for the fresh weights than for the dry weights, just as stated in the previous section. However, this difference is well represented in the fitted data, where tank B (on the right in each picture) consistently display lower weight values. A strip effect is also noticeable for tank B, where the last strips have lower values than the first ones. This might be an effect of the still growing environment, since this effect is not present in tank A, which was constantly moving.\\
 
-No clear pattern emerges from the residuals, expect the fact that tank A seems to have more single data point with lower values that were not picked up by the spatial surface. This means that tank A had more local heterogeneities. A analysis of the residuals distribution revealed no violation to the normality assumption.\\
+No clear pattern emerges from the residuals, expect the fact that tank A seems to have more single data point with lower values that were not picked up by the spatial surface. This means that tank A had more local heterogeneities. Indeed, when we consider the movement in tank A, it makes sense not to see clear spatial trends revealed in the data, and rather having a wider variations among the residuals. A analysis of the residuals distribution revealed no violation to the normality assumption.\\
 
 Furthermore, a comparison of the scales of the fitted values and the raw data on Figure \ref{fig:spats_model_results} shows us that the smooth surface could not account for the extreme values present in the raw data. For example the scale of the weight values for FRESH\_RS goes from 0 to 8, whereas it only goes from 0 to to 5 for the fitted surface. However, the scale of the residuals is lower than the one of the fitted values, indicating that the smooth surface accounts for a good amount of the spatial variation.
 
@@ -322,7 +321,7 @@ In this section we compare the two models on three different points:
 	\item The genetic variance and the heritability
 	\item The estimates of the genotypic random effects
 \end{itemize}
-Table \ref{tab:tank_effect_model_comparison} presents the estimates of the fixed tank effects for each model. The estimates from the BSS model are consistently lower than the ones from the SpATS model. Furthermore, both values are close to the weighted means by tank, obtained from the raw results (see Table \ref{tab:mean_diff_between_tanks_t_test}). Univariate t-tests for the difference in means using the mean value and the standard deviation from the model estimation showed no significant differences\footnote{All test were performed with a significance level, $\alpha$ = 0.05.} between the estimates of the two models. Finally, the tank effect was significant for all variables and in each model, this confirms the visual representation of the fitted values, where the tank effect was very clear.\\
+Table \ref{tab:tank_effect_model_comparison} presents the estimates of the fixed tank effects for each model. The estimates from the BSS model are consistently lower than the ones from the SpATS model, but univariate t-tests for the difference in means using the mean value and the standard deviation, showed no significant differences\footnote{All test were performed with a significance level, $\alpha$ = 0.05.} between the estimates of the two models. Furthermore, both values are close to the weighted means by tank, obtained from the raw results (see Table \ref{tab:mean_diff_between_tanks_t_test}). Finally, the tank effect was significant for all variables and in each model, confirming the clear tank effect in this platform.\\
 
 \begin{table}[htbp]
 \rowcolors{2}{gray!25}{white}
@@ -343,7 +342,7 @@ Table \ref{tab:tank_effect_model_comparison} presents the estimates of the fixed
   \label{tab:tank_effect_model_comparison}%
 \end{table}%
 
-Table \ref{tab:geno_var_heritability} presents the genetic variability and the heritability of all variables for both models. The SpATS model seem to be slightly more effective at estimating genotypic effects since the genetic variance $\sigma^2_{g}$ is always lower than for the BSS model.\\
+Table \ref{tab:geno_var_heritability} presents the genetic variability ($\sigma^2_{g}$) and the heritability ($H^2$) of all variables for both models. The SpATS model seem to be slightly more effective at estimating genotypic effects since the genetic variance is always lower than for the BSS model.\\
 
 \begin{table}[htbp]
 \rowcolors{2}{gray!25}{white}
@@ -365,9 +364,9 @@ Table \ref{tab:geno_var_heritability} presents the genetic variability and the h
 \label{tab:geno_var_heritability}
 \end{table}%
  
-The heritability used in this table is defined as the part of phenotypic variation that is due to the genotype (see section 3.4.4 of chapter 3 for more details). Just as for the variances, the heritability is higher (and therefore better) for the SpATS model than for the BSS model. This is especially true for the DRY\_RS variable, where the difference in heritability is doubled compared to the other models. However, when we look at the estimates of the genotypic random effects between models on Figure \ref{fig:genotype_comparison_BSS_SPATS}, we see that these differences are not relevant since estimates from the two models are correlated to more than 99\%. Once again, these high correlation are confirmed by the similar fitted values displayed in both models (see Figure \ref{fig:spats_model_results} and Figure \ref{fig:BSS_model_results}).\\
+The heritability used in this table is defined as the part of phenotypic variation that is due to the genotype (see section 3.4.4 of chapter 3 for more details). Just as for the variances, the heritability is higher (and therefore better) for the SpATS model than for the BSS model. This is especially true for the DRY\_RS variable, where the difference in heritability is doubled compared to the other variables. However, when we look at the estimates of the genotypic random effects between models on Figure \ref{fig:genotype_comparison_BSS_SPATS}, we see that these differences are not relevant since estimates from the two models are correlated to more than 99\%. These high correlations were expected, given the similarity between the fitted values displayed in both models (see Figure \ref{fig:spats_model_results} and Figure \ref{fig:BSS_model_results}).\\
 
-Furthermore, the genotype order given by the models are very similar to the one exposed in the sorted means boxplots (Figure \ref{fig:dotplot_all_variables}), with the first two genotypes being 16 and 14. They clearly stand out in the comparison plots (Figure \ref{fig:genotype_comparison_BSS_SPATS}). The distinction of genotypes order in the DRY\_RS model is less obvious, but it is still similar to the pattern picked up in the analysis of the weighted means.\\
+Furthermore, the genotype orders given by the models are very similar to the ones exposed in the sorted means boxplots (Figure \ref{fig:dotplot_all_variables}), with the first two genotypes being 16 and 14. They clearly stand out in the comparison plots (Figure \ref{fig:genotype_comparison_BSS_SPATS}). The distinction of genotypes order in the DRY\_RS model is less obvious, but it is still similar to the pattern picked up in the analysis of the weighted means. Without any additional information on the genotypes, it is hard to interpret this ranking in a meaningful way.\\
  
  
  \begin{figure}
@@ -381,11 +380,11 @@ In conclusion of this comparison, both models yield very similar results in term
 
 \subsection{Parametrization}
 
-In terms of parametrization, both models are similar in their formulation of the spatial model as a mixed model. They include the same fixed effects and the same basic random effect (such as genotype). The major difference between both models is in the way they account for extra spatial variations. The BSS model fits a variogram over spatially dependant and independent residuals,using either an auto-regressive process or a linear variance structure, whereas the SpATS model uses tensor product of P-splines.\\
+In terms of parametrization, both models are similar in their formulation of the spatial model as a mixed model. They include the same fixed effects and the same basic random effects (such as genotype). The major difference between both models is in the way they account for extra spatial variation. The BSS model fits a variogram over spatially dependant and independent residuals,using either an auto-regressive process or a linear variance structure, whereas the SpATS model uses tensor product of P-splines.\\
 
-A main disadvantage of the BSS models is that it uses the base mixed model to account for global trends and the fitted variogram to account for the local trends. This distinction between global and local can lead to variances underestimation issues \parencite{zimmerman_random_1991} or local trends overestimation issues \parencite{gumpertz1991raleigh}, when the global trends are not well accounted for. Conversely, SpATS models all the field trends (both global and local) in a single continuous process, thus avoiding the distinction between global and local trends.\\
+A main disadvantage of the BSS model is that it uses the basic mixed model to account for global trends and the fitted variogram to account for the local trends. This distinction between global and local can lead to variance underestimation issues \parencite{zimmerman_random_1991} or local trends overestimation issues \parencite{gumpertz1991raleigh}, when the global trends are not well accounted for. Conversely, SpATS models all the field trends (both global and local) in a single continuous process, thus avoiding the distinction between global and local trends.\\
 
-Another disadvantage is that the BSS models the random and the spatially correlated data as a single term. Theoretically, only the spatially dependent data should be captured by the model and the remaining variation should be random. However, several authors showed that a part of the random error is often modelled as spatially correlated data \parencite{cullis_spatial_1998,piepho_problems_2015}. This is especially true for models with high auto-correlation values like ours, where there is a possible of confounding between rows and columns and spatial covariance structure. Nevertheless, these issues are dampened when using a linear variance structure, as we did with the dry weights.\\
+Another disadvantage is the process that the BSS is modelling. It contains both the random and the spatially correlated data as a single term. Theoretically, only the spatially dependent data should be captured by the model and the remaining variation should be random. However, several authors showed that a part of the random error is often modelled as spatially correlated data \parencite{cullis_spatial_1998,piepho_problems_2015}. This is especially true for models with high auto-correlation values like ours, where there is a possibility of confounding between rows and columns and spatial covariance structure. Nevertheless, these issues are dampened when using a linear variance structure, as we did with the dry weights.\\
 
-However, the weakness of the SpATS models resides in its covariance structure. The BSS model allows for more diverse way of modelling the spatial covariance structure, even using non-linear terms, whereas the SpATS model only has a linear structure. Since no studies have been conducted on this matter, \textcite{velazco_modelling_2017} cannot estimate how much it affects spatial modelling in field trials.
+However, the weakness of the SpATS models resides in its covariance structure. The BSS model allows for more diverse way of modelling the spatial covariance structure, even using non-linear terms, whereas the SpATS model only has a linear structure. Since no studies have been conducted on this matter, it is hard to estimate how much it affects spatial modelling in field trials \parencite{velazco_modelling_2017}.
  

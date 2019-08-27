@@ -1,1 +1,22 @@
-max. 2 pages long 
+%Background
+The rising threat posed by climate change and overpopulation has put food security as one of the major concern for the next decades. Plant breeding has been seen has one of the solution to take care of this global issue. In the recent years, large amount of progress has been made in genetic editing and sequencing techniques, to improve plants yield and make them more resistant. However, to fully take advantage of those innovations, similar progress needs to be made in plant phenotyping.
+Indeed, there is currently a bottleneck created by the lack of efficient high-throughput phenotyping platforms, to link the genetic data to useful traits in plants. 
+While these platforms are slowly emerging, the necessary tools to analyse their data are not ready yet.\\
+
+
+%Problem statement
+Over the years, a lot of complex experimental designs for field trials have been developed to better account for spatial variability. However, in practice, experimenters are often not using those designs because of their complexity and their difficulty of interpretation. In parallel, different kind of spatial models have been developed, also to account for variability in the data. Two categories of models are standing out: models based on the modelling of the spatial covariance structure, and other based on the modelling of spatial variation using polynomial splines. In the latter category, the SpATS model was recently created and showed promising results in the analysis of both simulated data and real trials.\\
+
+
+%Objective of the study and methodology.
+Because of the need to constantly characterize plant growth, phenotyping platforms often involve moving plants. Since most of these platforms are relatively new, the impact of movement has not yet been well studied. In this thesis, we aimed at characterizing the effect of movement on plant growth, in the phenotyping platform located in the UCLouvain greenhouses. Another goal was to analyse the efficiency of two different spatial models, to account for the spatial variation on the platform, and also to estimate the genotypic effects. For this purpose, we created a custom experimental design, fitted to the platform setup and conducted an experiment including 30 different genotypes of maize. We split the seeds between a moving tank and a still tank. After the experiment, we harvested the plants and used their dry and fresh weights as variable for our spatial models. We tested the SpATS model against a standard spatial model, using auto-regressive processes ($AR(1)$) and linear variance structures ($LV$) to model the spatial covariance structure. We compared the models on their estimation of the genotypic effects, on the fitted values they provided and on the way they modelled spatial trends.\\
+
+\vspace{1cm}
+
+%Results
+The experimental results displayed a strong difference between the two tanks and between genotypes and a lot of spatial variability. Both models proved the effect of movement to be highly significant on plant growth. They were also able to capture the difference in genotypes correctly. The estimates of the genotypic effects were correlated to more than 99\% between the two models. The spatial variations were well accounted for in both models, as they gave very similar fitted values. However the spatial trends were more smooth in the still tank than in the moving tank. The main difference between the models was the parametrization. SpATS uses the concept of effective dimensions to assess the relative contribution of each component to the modelled spatial surface. This allows an easy interpretation of the directions and intensity of the spatial trends.\\
+
+
+%Conclusions
+These findings proved that genotypes differences can be correctly estimated on the UCLouvain phenotyping platform, as the two models showed satisfying results. The difference between the tank also had a significant influence on the plant weights. The moving tank was a better environment for plant growth. However, even in greenhouses, growing conditions remain highly variable and the efficiency of the models cannot be fully assessed with a single trial. Overall the SpATS model was still better in terms of interpretation and adaptability to highly heterogeneous environment. It showed promising results and a great potential for spatial data analysis.
+

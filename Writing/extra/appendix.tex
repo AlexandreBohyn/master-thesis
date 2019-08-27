@@ -86,7 +86,7 @@ Since the model is purely parametric, it can be estimated by minimizing the resi
     \text{,}
 \end{aligned}
 \]
-where $\boldsymbol{P}=\invbreve{\lambda}\left(\boldsymbol{I}_{P} \otimes \invbreve{\boldsymbol{D}}^{t} \invbreve{\boldsymbol{D}}\right)+\breve{\lambda}\left(\breve{\boldsymbol{D}}^{t} \breve{\boldsymbol{D}} \otimes \boldsymbol{I}_{L}\right)$ is the penalty matrix, $\invbreve{\lambda}$ and $\breve{\lambda}$ are the smoothing parameters acting, respectively, on the columns and rows of $\mathbf{A}$, and $\invbreve{\mathbf{D}}$ and $\breve{\mathbf{D}}$ are the matrices that form differences of order $d_u$ and $d_v$ respectively. The minimizer of \ref{eq:least_squares_penalized} then becomes 
+where $\boldsymbol{P}=\invbreve{\lambda}\left(\boldsymbol{I}_{P} \otimes \invbreve{\boldsymbol{D}}^{t} \invbreve{\boldsymbol{D}}\right)+\breve{\lambda}\left(\breve{\boldsymbol{D}}^{t} \breve{\boldsymbol{D}} \otimes \boldsymbol{I}_{L}\right)$ is the penalty matrix, $\invbreve{\lambda}$ and $\breve{\lambda}$ are the smoothing parameters acting, respectively, on the columns and rows of $\mathbf{A}$, and $\invbreve{\mathbf{D}}$ and $\breve{\mathbf{D}}$ are the matrices that form differences of order $d_u$ and $d_v$ respectively. The minimizer of the starting equation then becomes 
 \[
     \widehat{\boldsymbol{\alpha}}=\left(\boldsymbol{B}^{t} \boldsymbol{B}+\boldsymbol{P}\right)^{-1} \boldsymbol{B}^{t} 
     \boldsymbol{y}
@@ -185,14 +185,14 @@ corresponding variance effect $\lambda_{sk} = \sigma^2_{e} / \sigma^2_{sk}$, are
 \chapter{Additional figures and tables}
 %\section{Germination table}
 %\label{appendix:germ_table}
-\section{Graphical analysis of the residuals}
-\label{appendix:residuals}
-
-\begin{sidewaysfigure}
-	\includegraphics[width = 0.9\textwidth]{../../Figures/residuals_analysis_plot.pdf}
-	\caption[Graphical analysis of the residuals og the SpATS model]{Graphical analysis of the residuals of the SpATS model for each variable: a convexhull of the lagplots of the residuals with different levels of lag (first row) and an histogram with a zero-mean, and same variance, normal distribution (second row).}
-	\label{fig:residuals_analysis_plot}
-\end{sidewaysfigure}
+%%\section{Graphical analysis of the residuals}
+%%\label{appendix:residuals}
+%%
+%%\begin{sidewaysfigure}
+%%	\includegraphics[width = 0.9\textwidth]{../../Figures/residuals_analysis_plot.pdf}
+%%	\caption[Graphical analysis of the residuals og the SpATS model]{Graphical analysis of the residuals of the SpATS model for each variable: a convexhull of the lagplots of the residuals with different levels of lag (first row) and an histogram with a zero-mean, and same variance, normal distribution (second row).}
+%%	\label{fig:residuals_analysis_plot}
+%%\end{sidewaysfigure}
 
 \section{Descriptive statistics}
 \label{appendix:mean_std_table}
