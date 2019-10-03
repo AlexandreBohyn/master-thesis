@@ -1,0 +1,11 @@
+NAME;DESCRIPTION
+REAL_GENOTYPE;Actual genotype implemented on the platform (NA is for blank plots)
+QR;QR code of the plant
+TANK;TANK code of the plant
+STRIP;STRIP code of the plant
+POSITION;POSITION code of the plant
+GENOTYPE;Planned genotype in the experimental design
+FRESH_LS;Fresh weight of the leaf system (LS) 
+FRESH_RS;Fresh weight of the root system (RS) 
+DRY_LS;Dry weight of the leaf system (LS)
+DRY_RS;Dry weight of the root system (RS)
